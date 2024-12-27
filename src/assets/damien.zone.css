@@ -480,6 +480,10 @@ figcaption {
   display: none;
 }
 
+.post-datetime {
+  font-style: italic;
+}
+
 /* Comentario overrides */
 body main .comentario-root.comentario-root {
   /* Remove background behind composer wrapper */
