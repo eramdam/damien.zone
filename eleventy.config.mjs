@@ -38,7 +38,13 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("htmlButtons", function () {
     return Array.from(buttons)
       .map((button) => {
-        return `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;
+        const img = `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;
+
+        if (button.link) {
+          return `<a href="${button.link}" target="_blank" rel="noopener" title="${button.name}">${img}</a>`;
+        }
+
+        return img;
       })
       .join("");
   });
