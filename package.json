@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve"
+    "start": "rimraf _site; npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/node": "^22.10.2",
     "eleventy-auto-cache-buster": "^0.7.0",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1"
   }
 }

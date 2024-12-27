@@ -1,16 +1,15 @@
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import siteData from "./_data/site.mjs";
+import buttons from "./_data/buttons.json" with { type: "json" };
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
-    enableLogging: process.env.ELEVENTY_RUN_MODE === "build",
-  });
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-  eleventyConfig.addPassthroughCopy("assets/*.css");
-  eleventyConfig.addPassthroughCopy("assets/*.js");
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("public");
   eleventyConfig.addGlobalData("layout", "base.html");
   eleventyConfig.addGlobalData("title", "");
   eleventyConfig.addLayoutAlias("base", "base.html");
@@ -32,6 +31,14 @@ export default function (eleventyConfig) {
     }
 
     return [title, baseTitle].filter((x) => x).join(" | ");
+  });
+
+  eleventyConfig.addShortcode("htmlButtons", function () {
+    return Array.from(buttons)
+      .map((button) => {
+        return `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;
+      })
+      .join("");
   });
 
   eleventyConfig.addShortcode("bodyClass", function () {
