@@ -16,6 +16,8 @@ I'm on mastodon at [@eramdam@erambert.me](https://social.erambert.me/@eramdam) a
 
 ### Recent posts
 
+POSTS WILL BE HERE
+
 ### Friends' links
 
 - [cd-rom journal](https://cdrom.ca/)
