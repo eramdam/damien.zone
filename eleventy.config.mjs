@@ -2,6 +2,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import buttons from "./src/_data/buttons.json" with { type: "json" };
 import siteData from "./src/_data/site.mjs";
+import { DateTime } from "luxon";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -61,6 +62,10 @@ export default function (eleventyConfig) {
       .join(" ");
 
     return final;
+  });
+
+  eleventyConfig.addFilter("postDate", function (date) {
+    return DateTime.fromJSDate(date).toUTC().toFormat("d MMM, yyyy");
   });
 
   eleventyConfig.setInputDirectory("src");
