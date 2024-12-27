@@ -13,6 +13,7 @@
     "@11ty/eleventy": "^3.0.0"
   },
   "devDependencies": {
+    "@types/node": "^22.10.2",
     "eleventy-auto-cache-buster": "^0.7.0",
     "prettier": "^3.4.2"
   }
