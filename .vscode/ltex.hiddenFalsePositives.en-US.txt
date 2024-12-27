@@ -1,0 +1,2 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q{% htmlButtons %}\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QA Node.js-based tool that syncs your GitHub stars to a given Raindrop collection.\\E$"}
