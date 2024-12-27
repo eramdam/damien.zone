@@ -22,13 +22,13 @@ You can also contact me by email at [damien@erambert.me](mailto:damien@erambert.
 
 Here's mine, by the way! (made by [Gwyn](https://shadenexus.com/)!)
 
-<div class="buttons-mybutton"><img class="pixel" src="https://files.damien.zone/88x31_damien.png" /><br/><textarea name="buttoncode" aria-label="Button code" style="resize: none;" onclick="this.select()" spellcheck="false"><a href="https://damien.zone" title="damien dot zone"><img src="https://files.damien.zone/88x31_damien.png" alt="damien dot zone" style="image-rendering:pixelated;" /></a></textarea></div>
+<div class="buttons-mybutton">{% include 'meta/my-button.html' %}</div>
 
-<!-- buttons -->
-<!-- TODO -->
-<!-- </Buttons> -->
+<div class="buttons">
+  {% htmlButtons %}
+</div>
 
-<div class="eggbug-buttons"><img src="https://files.damien.zone/buttons/eggbugforeverowo.png" class="pixel" /></div>
+<div class="eggbug-buttons"><img src="/public/buttons/eggbugforeverowo.png" class="pixel" /></div>
 
 ## friends' links
 
