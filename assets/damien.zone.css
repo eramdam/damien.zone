@@ -212,7 +212,7 @@ header .title {
   margin-right: 15px;
   content: "";
   display: block;
-  background: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/sakamoto-baguette-transparent-icon.webp");
+  background: url("/assets/avatar.webp");
   background-size: cover;
   background-repeat: no-repeat;
   width: 40px;
