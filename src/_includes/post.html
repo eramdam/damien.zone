@@ -7,7 +7,14 @@
 
 <body class="{% bodyClass %}">
   {% include "header.html" %}
-  <main>{{ content }}</main>
+  <main>
+    <h1>{{ title }} </h1>
+    <p class="post-datetime">
+      {{ published_date | postDate }}
+    </p>
+    {{ content }}
+
+  </main>
   {% include "footer.html" %}
 </body>
 
