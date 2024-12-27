@@ -8,8 +8,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
+  // Styles, scripts and media used by the general layout
   eleventyConfig.addPassthroughCopy("src/assets");
+  // Buttons, stuff people might want to grab/reference
   eleventyConfig.addPassthroughCopy("src/public");
+  // Images used inside articles/pages
+  eleventyConfig.addPassthroughCopy("src/img");
 
   eleventyConfig.addLayoutAlias("base", "base.html");
   eleventyConfig.addGlobalData("layout", "base.html");
