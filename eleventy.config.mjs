@@ -3,9 +3,12 @@ import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import buttons from "./src/_data/buttons.json" with { type: "json" };
 import siteData from "./src/_data/site.mjs";
 import { DateTime } from "luxon";
+import he from "he";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
+  eleventyConfig.addWatchTarget("src/helpers/**/*.(js|mjs)");
+
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
@@ -33,7 +36,7 @@ export default function (eleventyConfig) {
       throw new Error(`Missing title for ${context.page.inputPath}`);
     }
 
-    return [title, baseTitle].filter((x) => x).join(" | ");
+    return he.encode([title, baseTitle].filter((x) => x).join(" | "));
   });
 
   eleventyConfig.addShortcode("htmlButtons", function () {

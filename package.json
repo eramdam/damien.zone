@@ -12,9 +12,13 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "he": "^1.2.0",
+    "html-to-text": "^9.0.5",
     "luxon": "^3.5.0"
   },
   "devDependencies": {
+    "@types/he": "^1.2.3",
+    "@types/html-to-text": "^9.0.4",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.2",
     "eleventy-auto-cache-buster": "^0.7.0",
