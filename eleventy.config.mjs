@@ -14,11 +14,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/public");
   // Images used inside articles/pages
   eleventyConfig.addPassthroughCopy("src/img");
-
   eleventyConfig.addLayoutAlias("base", "base.html");
-  eleventyConfig.addGlobalData("layout", "base.html");
-
-  eleventyConfig.addGlobalData("title", "");
   eleventyConfig.setLiquidOptions({
     // https://liquidjs.com/tutorials/options.html#jsTruthy
     jsTruthy: true,
