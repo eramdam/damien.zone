@@ -1,15 +1,15 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import buttons from "./_data/buttons.json" with { type: "json" };
-import siteData from "./_data/site.mjs";
+import buttons from "./src/_data/buttons.json" with { type: "json" };
+import siteData from "./src/_data/site.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/public");
 
   eleventyConfig.addLayoutAlias("base", "base.html");
   eleventyConfig.addGlobalData("layout", "base.html");
@@ -62,4 +62,7 @@ export default function (eleventyConfig) {
 
     return final;
   });
+
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("_site");
 }
