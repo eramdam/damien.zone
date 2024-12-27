@@ -1,7 +1,7 @@
-import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-import siteData from "./_data/site.mjs";
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import buttons from "./_data/buttons.json" with { type: "json" };
+import siteData from "./_data/site.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
