@@ -1,4 +1,5 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import buttons from "./src/_data/buttons.json" with { type: "json" };
 import siteData from "./src/_data/site.mjs";
@@ -9,6 +10,7 @@ import he from "he";
 export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/helpers/**/*.(js|mjs)");
 
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
