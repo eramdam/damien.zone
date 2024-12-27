@@ -7,14 +7,14 @@
 <link rel="shortcut icon" type="image/svg+xml"
   href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E🐈‍⬛%3C/text%3E%3C/svg%3E" />
 
-<title>{{ title }}</title>
+<title>{% htmlTitle %}</title>
 <!-- Primary Meta Tags -->
-<meta name="title" content="damien erambert" />
+<meta name="title" content="{% htmlTitle %}" />
 <meta name="description" content="{{ description }}" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:title" content="damien erambert" />
+<meta property="og:title" content="{% htmlTitle %}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ page.url | htmlBaseUrl: site.url }}" />
 <meta property="og:description" content="{{ description }}" />

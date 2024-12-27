@@ -1,7 +1,5 @@
 ---
-title: damien's zone
 description: french software engineer living and working in the Bay Area on web stuff
-layout: base
 ---
 
 French software engineer living and working in the Bay Area on web stuff.
