@@ -10,9 +10,11 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("public");
-  eleventyConfig.addGlobalData("layout", "base.html");
-  eleventyConfig.addGlobalData("title", "");
+
   eleventyConfig.addLayoutAlias("base", "base.html");
+  eleventyConfig.addGlobalData("layout", "base.html");
+
+  eleventyConfig.addGlobalData("title", "");
   eleventyConfig.setLiquidOptions({
     // https://liquidjs.com/tutorials/options.html#jsTruthy
     jsTruthy: true,
