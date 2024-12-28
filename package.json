@@ -11,23 +11,22 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy": "^3.0.0",
     "@date-fns/tz": "^1.2.0",
+    "@shopify/prettier-plugin-liquid": "^1.6.3",
+    "@types/he": "^1.2.3",
+    "@types/html-to-text": "^9.0.4",
+    "@types/node": "^22.10.2",
     "date-fns": "^4.1.0",
     "glob": "^11.0.0",
     "he": "^1.2.0",
     "html-to-text": "^9.0.5",
-    "markdown-it": "^14.1.0",
     "markdown-it-footnote": "^4.0.0",
-    "rimraf": "^6.0.1"
-  },
-  "devDependencies": {
-    "@types/he": "^1.2.3",
-    "@types/html-to-text": "^9.0.4",
-    "@types/node": "^22.10.2",
+    "markdown-it": "^14.1.0",
     "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }
