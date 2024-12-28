@@ -1,9 +1,5 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import buttons from "./src/_data/buttons.json" with { type: "json" };
-import siteData from "./src/_data/site.mjs";
-import { DateTime } from "luxon";
-import he from "he";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
@@ -24,53 +20,6 @@ export default function (eleventyConfig) {
     // https://liquidjs.com/tutorials/options.html#Strict
     strictVariables: true,
     strictFilters: true,
-  });
-
-  eleventyConfig.addShortcode("htmlTitle", function () {
-    const context = this.ctx?.environments ?? this.ctx ?? {};
-    const title = context.title;
-    const baseTitle = siteData.name;
-
-    if (!title && context.page.url !== "/") {
-      throw new Error(`Missing title for ${context.page.inputPath}`);
-    }
-
-    return he.encode([title, baseTitle].filter((x) => x).join(" | "));
-  });
-
-  eleventyConfig.addShortcode("htmlButtons", function () {
-    return Array.from(buttons)
-      .map((button) => {
-        const img = `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;
-
-        if (button.link) {
-          return `<a href="${button.link}" target="_blank" rel="noopener" title="${button.name}">${img}</a>`;
-        }
-
-        return img;
-      })
-      .join("");
-  });
-
-  eleventyConfig.addShortcode("bodyClass", function () {
-    const context = this.ctx?.environments ?? this.ctx ?? {};
-    const isHome = this.page.url === "/";
-    const isPost = Array.from(context.tags || []).includes("blog");
-
-    const final = [
-      isHome && "home",
-      isPost && "post",
-      !isHome && !isPost && "page",
-      context.class_name,
-    ]
-      .filter(Boolean)
-      .join(" ");
-
-    return final;
-  });
-
-  eleventyConfig.addFilter("postDate", function (date) {
-    return DateTime.fromJSDate(date).toUTC().toFormat("d MMM, yyyy");
   });
 
   eleventyConfig.setInputDirectory("src");

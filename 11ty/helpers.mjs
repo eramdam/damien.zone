@@ -1,3 +1,26 @@
+import { TZDate } from "@date-fns/tz";
+import {
+  format as formatBase,
+  formatDistanceToNow as formatDistanceBase,
+} from "date-fns";
+import assert from "node:assert";
+import he from "he";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
+import siteData from "../src/_data/site.mjs";
+import buttons from "../src/_data/buttons.json" with { type: "json" };
+
+const timezone = "America/Los_Angeles";
+
+/**
+ * Returns the formatted date string in the given format.
+ *
+ * @see https://date-fns.org/docs/format
+ */
+function format(date, pattern) {
+  assert(pattern, "needs a date pattern");
+  return formatBase(new TZDate(date, timezone), pattern);
+}
+
 /** Returns a copy of {@link array} with {@link items} removed. */
 function omit(array, ...items) {
   return (array ?? []).filter((item) => !items.includes(item));
@@ -6,4 +29,49 @@ function omit(array, ...items) {
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function helpersPlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("omit", omit);
+  eleventyConfig.addLiquidFilter("format", format);
+  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+
+  eleventyConfig.addShortcode("htmlTitle", function () {
+    const context = this.ctx?.environments ?? this.ctx ?? {};
+    const title = context.title;
+    const baseTitle = siteData.name;
+
+    if (!title && context.page.url !== "/") {
+      throw new Error(`Missing title for ${context.page.inputPath}`);
+    }
+
+    return he.encode([title, baseTitle].filter((x) => x).join(" | "));
+  });
+
+  eleventyConfig.addShortcode("bodyClass", function () {
+    const context = this.ctx?.environments ?? this.ctx ?? {};
+    const isHome = this.page.url === "/";
+    const isPost = Array.from(context.tags || []).includes("blog");
+
+    const final = [
+      isHome && "home",
+      isPost && "post",
+      !isHome && !isPost && "page",
+      context.class_name,
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    return final;
+  });
+
+  eleventyConfig.addShortcode("htmlButtons", function () {
+    return Array.from(buttons)
+      .map((button) => {
+        const img = `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;
+
+        if (button.link) {
+          return `<a href="${button.link}" target="_blank" rel="noopener" title="${button.name}">${img}</a>`;
+        }
+
+        return img;
+      })
+      .join("");
+  });
 }

@@ -12,17 +12,18 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@date-fns/tz": "^1.2.0",
+    "date-fns": "^4.1.0",
     "glob": "^11.0.0",
     "he": "^1.2.0",
     "html-to-text": "^9.0.5",
-    "luxon": "^3.5.0",
     "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@types/he": "^1.2.3",
     "@types/html-to-text": "^9.0.4",
-    "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.2",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
