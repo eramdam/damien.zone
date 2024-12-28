@@ -10,5 +10,9 @@ export function description() {
 }
 
 export function permalink(data) {
-  return `/${data.slug ?? data.page.fileSlug}/index.html`;
+  return `/${data.slug ?? removeDateFromSlug(data.page.fileSlug)}/index.html`;
+}
+
+function removeDateFromSlug(slug) {
+  return String(slug).replace(/^(\d{2}-\d{2})-/, "");
 }
