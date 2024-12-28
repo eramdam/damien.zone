@@ -1,4 +1,9 @@
 @import url("./hack-font/hack-subset.css");
+@import url("./@fontsource/young-serif/index.css");
+@import url("./@fontsource/atkinson-hyperlegible/400.css");
+@import url("./@fontsource/atkinson-hyperlegible/700.css");
+@import url("./@fontsource/atkinson-hyperlegible/400-italic.css");
+@import url("./@fontsource/atkinson-hyperlegible/700-italic.css");
 
 /* Comentario */
 @import url("./comentario.css");
