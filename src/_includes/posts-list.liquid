@@ -1,11 +1,5 @@
----
-title: Blog
-layout: base
-description: french software engineer living and working in the Bay Area on web stuff
----
-
 <ul class="blog-posts">
-{% for post in collections.blog %}
+{% for post in posts %}
 <li>
   <span>
     <i>{{ post.data.published_date | postDate }}</i>
