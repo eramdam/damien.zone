@@ -58,9 +58,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("bodyClass", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const isHome = this.page.url === "/";
+    const isPost = Array.from(context.tags || []).includes("blog");
+
     const final = [
-      // TODO: handle posts when they're there.
-      isHome ? "home" : "page",
+      isHome && "home",
+      isPost && "post",
+      !isHome && !isPost && "page",
       context.class_name,
     ]
       .filter(Boolean)
