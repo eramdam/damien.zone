@@ -3,6 +3,12 @@
 @import url("https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
 
+/* Comentario */
+@import url("./styles/comentario.css");
+
+/* Syntax highlighting */
+@import url("./styles/syntax.css");
+
 /* common variables */
 :root {
   --width: 80ch;
@@ -11,12 +17,14 @@
   --border-radius: 6px;
 
   --offblack-background: #212028;
-  --offwhite-background: hsl(32, 65%, 96%);
+  --offwhite-background: hsl(0, 33%, 96%);
 }
 
 /* light colors */
 :root {
   --color-accent: #be133c;
+  --color-main-background: white;
+  --color-main-border: var(--color-accent);
   --color-offblack: var(--offblack-background);
   --color-offwhite: var(--offwhite-background);
   --color-background: var(--color-offwhite);
@@ -44,6 +52,8 @@
   /* dark colors */
   :root {
     --color-accent: hsl(343, 81%, 40%);
+    --color-main-background: black;
+    --color-main-border: var(--color-accent);
     --color-offblack: var(--offblack-background);
     --color-offwhite: color-mix(in srgb, black 10%, var(--offwhite-background));
     --color-text: var(--color-offwhite);
@@ -77,6 +87,7 @@ h6 {
   font-synthesis: none;
   font-family: "Young Serif", serif;
   color: var(--color-heading);
+  text-wrap: balance;
 }
 
 body {
@@ -111,18 +122,22 @@ a {
 }
 
 main {
+  line-height: 1.6;
+
   margin-top: 40px;
-  padding: 0 30px;
+  padding: 0 24px;
   padding-bottom: 20px;
-  border-width: 3px;
+  border-width: 1px;
   border-color: var(--color-accent);
   border-style: ridge;
-  border-radius: 0;
+  border-radius: 6px;
+  background-color: var(--color-main-background);
 }
 
-main small .tags {
+/* TODO: figure out why this was there */
+/* main small .tags {
   display: none;
-}
+} */
 
 nav a {
   margin-right: 8px;
@@ -136,10 +151,6 @@ b {
 button {
   margin: 0;
   cursor: pointer;
-}
-
-main {
-  line-height: 1.6;
 }
 
 table {
@@ -329,7 +340,6 @@ figcaption {
 }
 
 /* Links / buttons stuff */
-
 .page.links main .buttons {
   text-wrap: balance;
   text-align: center;
@@ -364,7 +374,6 @@ figcaption {
 }
 
 /* Webring widget */
-
 #myWebRing {
   margin: 10px auto;
   font-family: var(--font-monospace) !important;
@@ -458,284 +467,9 @@ figcaption {
   font-style: italic;
 }
 
-/* Comentario overrides */
-body main .comentario-root.comentario-root {
-  /* Remove background behind composer wrapper */
-  --cmntr-bg: transparent;
-
-  /* Tweak color in light mode */
-  @media (prefers-color-scheme: light) {
-    --cmntr-bg-shade: white;
-  }
-
-  /* Theme-specific: Remove background behind `code` element inside code blocks */
-  pre code {
-    background-color: transparent;
-    color: inherit;
-  }
-
-  /* Theme-specific: Remove border around blockquote */
-  blockquote {
-    border-top: transparent;
-    border-bottom: transparent;
-  }
-
-  /* Theme-specific: Change color of default button */
-  .comentario-btn-tool,
-  .comentario-btn-link {
-    --cmntr-btn-hover-color: color-mix(in srgb, white 24%, var(--color-accent));
-    --cmntr-btn-active-color: color-mix(
-      in srgb,
-      black 30%,
-      var(--color-accent)
-    );
-  }
-  .comentario-btn-link {
-    --cmntr-btn-color: color-mix(in srgb, black 10%, var(--color-accent));
-  }
-
-  /* Theme-specific: Change color of primary button */
-  .comentario-btn-primary {
-    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
-    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
-    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
-  }
-
-  /* Theme-specific: Change style of secondary button */
-  .comentario-btn-secondary {
-    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
-    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
-    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
-    background-color: transparent;
-    box-shadow: none !important;
-    border: 2px solid var(--cmntr-btn-bg);
-    color: var(--cmntr-btn-bg);
-
-    &:hover {
-      border-color: var(--cmntr-btn-hover-bg);
-      color: white;
-    }
-    &:active {
-      border-color: var(--cmntr-btn-active-bg);
-      color: white;
-    }
-  }
-
-  /* Add quotes around blockquote content */
-  blockquote p:first-of-type:before {
-    content: open-quote;
-  }
-  blockquote p:last-of-type:after {
-    content: close-quote;
-  }
-
-  /* Remove red border when textarea is invalid but still empty */
-  textarea.comentario-touched:invalid:empty,
-  .comentario-add-comment-host:not(.comentario-editor-inserted),
-  textarea {
-    border: 1px solid #959595;
-  }
-  @media (prefers-color-scheme: dark) {
-    textarea.comentario-touched:invalid:empty,
-    .comentario-add-comment-host:not(.comentario-editor-inserted),
-    textarea {
-      border: 1px solid #4a4a4a;
-    }
-  }
-
-  /* 
-    Only transition the color-related properties of the textarea.
-    Prevents the resizing of the textarea from feeling "laggy".
-   */
-  textarea {
-    transition-property: box-shadow, color, background-color, border,
-      border-color;
-  }
-
-  /* Tweak background color of textarea */
-  .comentario-add-comment-host:not(.comentario-editor-inserted),
-  textarea {
-    --cmntr-input-bg: white;
-    --cmntr-bg: white;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .comentario-add-comment-host:not(.comentario-editor-inserted),
-    textarea {
-      --cmntr-input-bg: black;
-      --cmntr-bg: black;
-    }
-  }
-
-  /* Disable "children collapse" toggler. */
-  .comentario-card-expand-toggler {
-    pointer-events: none;
-  }
-
-  /* Hide colored borders. */
-  [class*="comentario-border-"] {
-    border-left-color: transparent !important;
-  }
-
-  /* Hide background behind toolbar in preview mode. */
-  .comentario-toolbar.comentario-disabled:has(
-      ~ .comentario-comment-editor-preview
-    ) {
-    background-color: transparent;
-  }
-
-  /* Make badges more legible */
-  .comentario-badge {
-    font-size: 10px;
-    font-weight: bold;
-  }
-
-  /* Hide moderator badge */
-  .comentario-badge-moderator {
-    display: none;
-  }
-
-  /* Make badge more legible in dark mode */
-  @media (prefers-color-scheme: dark) {
-    .comentario-badge {
-      color: black;
-    }
-  }
-
-  /* Make author links fit nicer with the rest of the style */
-  .comentario-card a.comentario-name {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      color: currentColor;
-    }
-  }
-
-  /* Make links in comments less "aggressive" */
-  .comentario-card-body a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    text-decoration-color: currentColor;
-
-    &:hover {
-      text-decoration-thickness: 2px;
-      color: currentColor;
-    }
-  }
-
-  /* Use site link color for "watermark" */
-  .comentario-footer {
-    --cmntr-link-color: var(--color-accent);
-    --cmntr-link-hover-color: color-mix(
-      in srgb,
-      black 20%,
-      var(--color-accent)
-    );
-  }
-
-  /* Hide sorting buttons
-    TODO: show it again and find a way to make the buttons not ugly
-  */
-  .comentario-sort-bar {
-    display: none;
-  }
-}
-
 code:not([class]) {
   font-family: var(--font-monospace);
   font-size: 0.8em;
   color: var(--color-code-text);
   font-variant-ligatures: none;
-}
-
-pre[class^="language-"] {
-  border-radius: 6px;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: var(--color-syntax-background);
-  border: 1px solid var(--color-syntax-border);
-  color: var(--color-syntax-text);
-  overflow-x: auto;
-}
-
-/* Reset color for nested scripts */
-.token.script {
-  color: var(--color-syntax-default);
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--color-syntax-comment);
-  font-style: italic;
-}
-
-.token.punctuation {
-  color: var(--color-syntax-punctuation);
-}
-
-.token.attr-value,
-.token.selector,
-.token.string,
-.token.char,
-.token.boolean,
-.token.number,
-.token.regex,
-/* .token.builtin, */
-.token.inserted {
-  color: var(--color-syntax-string);
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: var(--color-syntax-punctuation);
-}
-
-.token.atrule,
-.token.function,
-.token.class-name {
-  color: var(--color-syntax-property);
-}
-
-.token.tag,
-.token.tag > .token.class-name {
-  color: var(--color-syntax-keyword);
-}
-
-.token.keyword {
-  color: var(--color-syntax-keyword);
-}
-
-.language-css .token.property,
-.token.attr-name,
-/* .token.property, */
-.token.variable,
-.token.constant,
-.token.symbol,
-.token.deleted,
-.token.important {
-  color: var(--color-syntax-property);
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
 }
