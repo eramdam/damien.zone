@@ -128,6 +128,16 @@ a {
     text-underline-offset: 4px;
     color: var(--color-link-base);
   }
+
+  .footnote-ref & {
+    color: var(--color-accent);
+    text-underline-offset: initial;
+    text-decoration-thickness: initial;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 main {
