@@ -6,7 +6,6 @@ tags:
   - astro
   - mastodon
   - vercel
-description: ""
 image: /img/blog/mastodon-light.png
 class_name: ""
 ---

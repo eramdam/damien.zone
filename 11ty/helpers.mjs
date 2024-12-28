@@ -1,13 +1,13 @@
-import { TZDate } from "@date-fns/tz";
-import {
-  format as formatBase,
-  formatDistanceToNow as formatDistanceBase,
-} from "date-fns";
-import assert from "node:assert";
-import he from "he";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
-import siteData from "../src/_data/site.mjs";
+import { TZDate } from "@date-fns/tz";
+import { format as formatBase } from "date-fns";
+import he from "he";
+import assert from "node:assert";
+import path from "node:path";
+import { createContentHash } from "../helpers/files.mjs";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
+import contentHashes from "../src/_data/contentHashes.mjs";
+import siteData from "../src/_data/site.mjs";
 
 const timezone = "America/Los_Angeles";
 
@@ -42,6 +42,31 @@ export function helpersPlugin(eleventyConfig) {
     }
 
     return he.encode([title, baseTitle].filter((x) => x).join(" | "));
+  });
+
+  eleventyConfig.addAsyncShortcode("openGraphImages", function () {
+    const context = this.ctx?.environments ?? this.ctx ?? {};
+    const hasCustomImage = !!context.image;
+    const currentImage = context.image ?? "/assets/open_graph.webp";
+    const hash = context.image
+      ? createContentHash(path.join("src/", context.image))
+      : contentHashes.openGraph;
+
+    let markup = `
+      <meta
+        property="og:image"
+        content="${currentImage}?v=${hash}"
+      />
+    `;
+
+    if (hasCustomImage) {
+      return markup.trim();
+    }
+
+    return `${markup}
+      <meta property="og:image:width" content="64">
+      <meta property="og:image:height" content="64">
+    `.trim();
   });
 
   eleventyConfig.addShortcode("bodyClass", function () {
