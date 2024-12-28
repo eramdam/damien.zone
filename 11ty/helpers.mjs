@@ -50,7 +50,7 @@ export function helpersPlugin(config) {
   config.addAsyncShortcode("openGraphImages", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const hasCustomImage = !!context.image;
-    const currentImage = context.image ?? "/assets/open_graph.webp";
+    const currentImage = context.image || "/assets/open_graph.webp";
     const hash = context.image
       ? context.image.startsWith("http")
         ? Date.now().toString(16)
