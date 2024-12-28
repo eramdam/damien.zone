@@ -6,11 +6,11 @@ last_modified: 2024-10-07T04:42:50.759Z
 tags:
   - cohost
 description: a little post about the Bay Araa Cohost Wake that happened today
-image: "https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/img_7694.webp"
+image: "/img/blog/img_7694.webp"
 ---
 
 <figure>
-<img src="https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/img_7694.webp" />
+<img src="/img/blog/img_7694.webp" />
 <figcaption>A custom eggbug made by <a href="https://bsky.app/profile/bethposting.bsky.social">Bethposting</a> out of foam clay, acrylic paint, mod podge and armature wire</figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ I posted about it, people said they'd be interested, [Nicky](https://nickyflower
 
 18 days later, earlier today as I write this: we had **40 people** show up!! I don't actually have a group picture to show because I wasn't the one who took them and not everyone wants to be visible publicly in such a picture, so you'll have to take my word for it.
 
-In fact, I barely had any time to take many pictures myself! The only ones I have are of [Cohost 2](https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/img_7695-2.webp), a huge scroll of paper that Nicky brought so we could make posts by hand.  
+In fact, I barely had any time to take many pictures myself! The only ones I have are of [Cohost 2](/img/blog/img_7695-2.webp), a huge scroll of paper that Nicky brought so we could make posts by hand.  
 It was a lot of fun, wish I took more pictures. But I feel chatting with people, recognizing folks from the website and having a good time was more important than taking pictures, you know?
 
 People hung out, some of them played a fighting game with specialized controllers[^1], people talked about the website, nerd shit, linguistics, and a bunch of other things. Emails were gathered so people could organize and try to make this a more recurring thing, now that we know we can motivate at least _some_ people to meet up.

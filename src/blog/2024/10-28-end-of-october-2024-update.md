@@ -18,17 +18,17 @@ Then, as soon as I came back, my friend [Joanna](https://www.joannablackhart.com
 Excuse the shoddy photography job lmao.
 
 <figure>
-<img src="https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/servers.webp" alt="three, multiple meters-all servers, all belonging to the Internet Archive" />
+<img src="/img/blog/servers.webp" alt="three, multiple meters-all servers, all belonging to the Internet Archive" />
 <figcaption>Servers!! A few of the many (I was told) servers that the Internet Archive HQ in San Francisco houses</figcaption>
 </figure>
 
 <figure>
-<img src="https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/petabox.webp" alt="A red-colored, older looking, computer server. The first 'one petabyte box'." />
+<img src="/img/blog/petabox.webp" alt="A red-colored, older looking, computer server. The first 'one petabyte box'." />
 <figcaption>A <a href="https://en.wikipedia.org/wiki/PetaBox">Petabox</a>!! I didn't know the Internet Archive had one of these so early (2004!) but it makes sense that they would, after all.</figcaption>
 </figure>
 
 <figure>
-<img src="https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/16mm-scanner.webp" alt="A 16mm film scanner. It's almost a meter tall and has one big reel on each of its sides" />
+<img src="/img/blog/16mm-scanner.webp" alt="A 16mm film scanner. It's almost a meter tall and has one big reel on each of its sides" />
 <figcaption>
 A 16mm film scanner! It was super impressive to see move in person, especially considering how "tiny" 16mm film is in comparison. 
 </figcaption>
