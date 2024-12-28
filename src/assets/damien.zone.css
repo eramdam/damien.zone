@@ -7,8 +7,15 @@
 /* common variables */
 :root {
   --width: 80ch;
-  --font-monospace: "Hack", monospace;
-  --font-secondary: "Atkinson Hyperlegible", sans-serif;
+  --font-fallback-main: system-ui, sans-serif;
+  --font-fallback-mono: ui-monospace, "Cascadia Code", "SFMono-Regular",
+    "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  --font-fallback-serif: Superclarendon, "Bookman Old Style", "URW Bookman",
+    "URW Bookman L", "Georgia Pro", Georgia, serif;
+
+  --font-monospace: "Hack", var(--font-fallback-mono);
+  --font-serif: "Young Serif", var(--font-fallback-serif);
+  --font-main: "Atkinson Hyperlegible", var(--font-fallback-main);
   --border-radius: 6px;
 
   --offblack-background: #212028;
@@ -86,7 +93,7 @@ h6 {
 }
 
 body {
-  font-family: var(--font-secondary);
+  font-family: var(--font-main);
   font-size: 1.125rem;
   margin: auto;
   padding: 20px;
