@@ -61,7 +61,7 @@ It had the following features (taken from the [README file](https://github.com/e
 And here it is running on modern Chrome on modern macOS 😄
 
 <figure class="rehype-figure">
-  <img src="https://files.damien.zone/btd-post-mortem2/btd-0.0.8.jpg" alt="The first public version of Better TweetDeck running in Chrome on macOS in 2023">
+  <img src="/img/blog/btd-post-mortem2/btd-0.0.8.jpg" alt="The first public version of Better TweetDeck running in Chrome on macOS in 2023">
   <figcaption>The first public version of Better TweetDeck running in Chrome on macOS in 2023</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ And here it is running on modern Chrome on modern macOS 😄
 
 <small>February 2014</small>
 
-A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](https://files.damien.zone/btd-post-mortem2/btd-1.0.0.png).
+A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](/img/blog/btd-post-mortem2/btd-1.0.0.png).
 
 The extension's user base was tiny at the time (around 200 weekly users), but it was fine by me. I was making this for myself _first_ and for others second. It was mostly spreading through word of mouth at that point.
 
@@ -79,7 +79,7 @@ The extension's user base was tiny at the time (around 200 weekly users), but it
 
 But little did I know, the TweetDeck team had noticed it despite its small reach. That's when I got an email from [James Broadhead](https://twitter.com/jamesbroadhead), suggesting that I apply for a summer internship at Twitter UK in London!
 
-!["Hi Damien! I'm a Software Engineer on the TweetDeck team. We came across Better TweetDeck, which I've used for the past day or so -- you've got some really neat ideas in there. I wonder if you'd be interested in coming to London for the summer as an intern to work on TweetDeck? The title says 'Software Engineer', but if you're interested in working closely with our design team on UI/UX work, I'm sure that we can arrange that. It's a paid position, which should cover a summer in the UK :) Although we don't have any full-time roles advertised at the moment, getting a position after a good internship should be easy to arrange, if you're interested. I'm not a recruiter, but if you're interested, I can pass your details along  (or just apply through the site directly). All the best - James Broadhead"](https://files.damien.zone/btd-post-mortem2/btd-email-james.png "The email I got from James back then (thanks to him for finding a copy of it, by the way)")
+!["Hi Damien! I'm a Software Engineer on the TweetDeck team. We came across Better TweetDeck, which I've used for the past day or so -- you've got some really neat ideas in there. I wonder if you'd be interested in coming to London for the summer as an intern to work on TweetDeck? The title says 'Software Engineer', but if you're interested in working closely with our design team on UI/UX work, I'm sure that we can arrange that. It's a paid position, which should cover a summer in the UK :) Although we don't have any full-time roles advertised at the moment, getting a position after a good internship should be easy to arrange, if you're interested. I'm not a recruiter, but if you're interested, I can pass your details along  (or just apply through the site directly). All the best - James Broadhead"](/img/blog/btd-post-mortem2/btd-email-james.png "The email I got from James back then (thanks to him for finding a copy of it, by the way)")
 
 Thus began a months-long application process for this internship. I remember having maybe half a dozen interviews with various Twitter employees trying to gauge my front-end dev skills at the time. Even though I didn't get the spot in the end, it was incredibly flattering and enriching to go through the process. I genuinely couldn't believe folks at Twitter found my dinky little extension useful! It was completely wild to me.
 
@@ -130,7 +130,7 @@ In August 2014, I released [version 2.0](https://github.com/eramdam/BetterTweetD
 Here are the settings in action, along with their "dynamic preview" system I was so proud of at the time!
 
 <figure class="rehype-figure">
-<video src="https://files.damien.zone/btd-post-mortem2/btd-2.0-settings.mp4" poster="https://files.damien.zone/btd-post-mortem2/btd-2.0-settings.jpg" playsinline controls preload="none"></video>
+<video src="/img/blog/btd-post-mortem2/btd-2.0-settings.mp4" poster="/img/blog/btd-post-mortem2/btd-2.0-settings.jpg" playsinline controls preload="none"></video>
 <figcaption>
   The settings from Better TweetDeck 2.0, running on modern Chrome
 </figcaption>
@@ -226,7 +226,7 @@ Thankfully, Mozilla was working on implementing the [WebExtensions API](https://
 
 After quite a bit of back and forth in initial reviews with the Mozilla Add-ons team, Better TweetDeck landed on Firefox in May 2017!
 
-![Better TweetDeck 3.3.4 running on Firefox 52](https://files.damien.zone/btd-post-mortem2/btd-firefox.jpg)
+![Better TweetDeck 3.3.4 running on Firefox 52](/img/blog/btd-post-mortem2/btd-firefox.jpg)
 
 ### The one with the "Edit button"
 
@@ -240,7 +240,7 @@ One recurring theme of Better TweetDeck was that I wasn't very good at versionin
 2. ["Clear" button in the columns' header](https://github.com/eramdam/BetterTweetDeck/pull/224). On its own, it was a small improvement, but I built on top of it to add more actions in that area later.
 
 <figure class="rehype-figure">
-<video src="https://files.damien.zone/btd-post-mortem2/btd-collapsible-columns.mp4" poster="https://files.damien.zone/btd-post-mortem2/btd-collapsible-columns.jpg" playsinline controls></video>
+<video src="/img/blog/btd-post-mortem2/btd-collapsible-columns.mp4" poster="/img/blog/btd-post-mortem2/btd-collapsible-columns.jpg" playsinline controls></video>
 <figcaption>
   A demo of Better TweetDeck's collapsible columns in action. Enjoy the "retro" Chrome UI as a bonus.
 </figcaption>
@@ -262,7 +262,7 @@ This time, I had properly versioned the version since it added two pretty "big" 
 A long-time request and one of my favorite features. If you've used Slack, Discord or Mastodon, you know what this does, otherwise, look at the video below!
 
 <figure class="rehype-figure">
-<video src="https://files.damien.zone/btd-post-mortem2/btd-emoji-shortcodes.mp4" poster="https://files.damien.zone/btd-post-mortem2/btd-emoji-shortcodes.jpg" playsinline controls></video>
+<video src="/img/blog/btd-post-mortem2/btd-emoji-shortcodes.mp4" poster="/img/blog/btd-post-mortem2/btd-emoji-shortcodes.jpg" playsinline controls></video>
 <figcaption>
   A demo of the emoji autocompletion feature
 </figcaption>
@@ -273,7 +273,7 @@ A long-time request and one of my favorite features. If you've used Slack, Disco
 Another long requested feature. It was a bit of a mess to implement at the time but was well worth it. It also let me introduce a subtle but [effective April Fools' joke](https://twitter.com/search?q=%40Bettertdeck%20jif&src=typed_query&f=live) in Better TweetDeck 😄
 
 <figure class="rehype-figure">
-<video src="https://files.damien.zone/btd-post-mortem2/btd-gif-picker.mp4" poster="https://files.damien.zone/btd-post-mortem2/btd-gif-picker.jpg" playsinline controls></video>
+<video src="/img/blog/btd-post-mortem2/btd-gif-picker.mp4" poster="/img/blog/btd-post-mortem2/btd-gif-picker.jpg" playsinline controls></video>
 <figcaption>
   A demo of the emoji autocompletion feature
 </figcaption>
@@ -294,7 +294,7 @@ This may sound weird nowadays, but TweetDeck had mute capabilities way before th
 
 Those options showed up as options in the "Mute" tab of TweetDeck's settings:
 
-![Better TweetDeck's Advanced Mute Engine additions](https://files.damien.zone/btd-post-mortem2/btd-advanced-mute.png)
+![Better TweetDeck's Advanced Mute Engine additions](/img/blog/btd-post-mortem2/btd-advanced-mute.png)
 
 Over time, pixeldesu and I ended up adding more specific/"niche" muting options to that menu.
 
@@ -344,12 +344,12 @@ I don't want to say the project's codebase was perfect because, looking back, th
 
 The switch to a TypeScript codebase really paid dividends, as it meant I could add features more easily and have fun with it. One of those features was the customization of the "logo" in the bottom left of TweetDeck's UI!
 
-This started with the fact that TweetDeck, for a few years prior that, had been replacing the [regular logo](https://files.damien.zone/btd-post-mortem2/tweetdeck-logo96.png) with a [Pride-themed variant](https://files.damien.zone/btd-post-mortem2/tweetdeck-pride.2019.svg) during [London Pride](https://en.wikipedia.org/wiki/Pride_in_London?useskin=vector) in July. If you're wondering why London Pride in July and not June with Pride month like the US, that is because (most of) the TweetDeck team was based in London!
+This started with the fact that TweetDeck, for a few years prior that, had been replacing the [regular logo](/img/blog/btd-post-mortem2/tweetdeck-logo96.png) with a [Pride-themed variant](/img/blog/btd-post-mortem2/tweetdeck-pride.2019.svg) during [London Pride](https://en.wikipedia.org/wiki/Pride_in_London?useskin=vector) in July. If you're wondering why London Pride in July and not June with Pride month like the US, that is because (most of) the TweetDeck team was based in London!
 
 Anyway, I thought it would be fun to riff on that and offer multiple variants in Better TweetDeck. It would only be visible to the user themselves, of course, but people liked it a lot, which made it worth it. It also made the weirdest, most annoying people mad, which is very funny.
 
 <figure class="rehype-figure">
-<img src="https://files.damien.zone/btd-post-mortem2/btd-pride-settings.png" alt="The list of different logos that the user could choose from in Better TweetDeck 4.2.0" />
+<img src="/img/blog/btd-post-mortem2/btd-pride-settings.png" alt="The list of different logos that the user could choose from in Better TweetDeck 4.2.0" />
 <figcaption>
 The list of different logos that the user could choose from in Better TweetDeck 4.2.0
 </figcaption>
@@ -380,13 +380,13 @@ The first one being [content warning detection](https://github.com/eramdam/Bette
 If you are unaware, it was a workaround to the fact that Twitter still doesn't have any good way of marking the content of a tweet as sensitive, which led people to using a syntax like "cw // phobia" to indicate sensitive content.
 This PR interpreted the syntax and presented a Mastodon-like UI to toggle the display of the content in question, pretty good stuff!
 
-![Screenshot showing the Content Warning detection in practice at an earlier stage of development](https://files.damien.zone/btd-post-mortem2/btd-content-warnings.png)
+![Screenshot showing the Content Warning detection in practice at an earlier stage of development](/img/blog/btd-post-mortem2/btd-content-warnings.png)
 
 The second one was [pronoun extraction](https://twitter.com/BetterTDeck/status/1455252017996201984) (sic), which, like the name implies, grabbed pronouns from users' bio and location fields and displayed them above their tweets.
 It's the kind of feature whose [implementation](https://github.com/eramdam/BetterTweetDeck/blob/main/src/features/pronounsDisplay.ts) is more complex than one may think but which looks very simple when used.
 
 <figure class="rehype-figure">
-  <img src="https://files.damien.zone/btd-post-mortem2/btd-pronouns-display.png" alt="Screenshot showing the pronouns display in practice">
+  <img src="/img/blog/btd-post-mortem2/btd-pronouns-display.png" alt="Screenshot showing the pronouns display in practice">
   <figcaption>
     Screenshot showing the pronouns display in practice
   </figcaption>
