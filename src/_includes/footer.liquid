@@ -1,14 +1,18 @@
 <footer style="padding: 25px 0">
   <span id="footer-directive">
-    <p><img class="pixel" loading="lazy" src="https://files.damien.zone/buttons/i-was-on-cohost.gif"
-        title="I was on cohost" alt="I was on cohost" /></p>
-    <div class="buttons-mybutton-footer">
-      Link to this site!{% include 'meta/my-button.html' %}
-    </div>
+    <p>
+      <img
+        class="pixel"
+        loading="lazy"
+        src="https://files.damien.zone/buttons/i-was-on-cohost.gif"
+        title="I was on cohost"
+        alt="I was on cohost"
+      >
+    </p>
+    <div class="buttons-mybutton-footer">Link to this site!{% include 'meta/my-button.html' %}</div>
 
     {% include 'meta/webring.html' %}
 
     <script src="/assets/script.js?v={{ contentHashes.script }}" type="text/javascript"></script>
-
   </span>
 </footer>

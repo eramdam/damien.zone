@@ -10,11 +10,7 @@ pagination:
   addAllPagesToCollections: true
   filter: ["blog", "all"]
 ---
-
-<h1 class="tag">
-  #{{ tag }}
-</h1>
+<h1 class="tag">#{{ tag }}</h1>
 
 {% assign posts = collections[tag] | reverse %}
-{% render 'posts-list', posts: posts  %}
-
+{% render 'posts-list', posts: posts %}
