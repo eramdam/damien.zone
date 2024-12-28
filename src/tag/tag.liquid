@@ -15,5 +15,6 @@ pagination:
   #{{ tag }}
 </h1>
 
-{% render 'posts-list', posts: collections[tag]   %}
+{% assign posts = collections[tag] | reverse %}
+{% render 'posts-list', posts: posts  %}
 

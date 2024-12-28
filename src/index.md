@@ -17,7 +17,8 @@ I'm on mastodon at [@eramdam@erambert.me](https://social.erambert.me/@eramdam) a
 
 ### Recent posts
 
-POSTS WILL BE HERE
+{% assign recents = collections.blog | reverse | take: 5 %}
+{% render 'posts-list', posts: recents %}
 
 ### Friends' links
 

@@ -39,7 +39,6 @@ async function downloadFile(url: string, filename: string) {
   const fileStream = fs.createWriteStream(destination);
   await finished(Readable.fromWeb(res.body!).pipe(fileStream));
 
-  console.log({ __dirname });
   const rootDirname = __dirname.replace("bin", "");
 
   return destination.replace(rootDirname, "").replace("public/", "/");
