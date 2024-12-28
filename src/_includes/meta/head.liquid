@@ -80,14 +80,14 @@
 <title>{% htmlTitle %}</title>
 <!-- Primary Meta Tags -->
 <meta name="title" content="{% htmlTitle %}" />
-<meta name="description" content="{{ description }}" />
+<meta name="description" content="{{ description | escape }}" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta property="og:title" content="{% htmlTitle %}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ page.url | htmlBaseUrl: site.url }}" />
-<meta property="og:description" content="{{ description }}" />
+<meta property="og:description" content="{{ description | escape }}" />
 <meta
   property="og:image"
   content="/assets/open_graph.webp?v={{ contentHashes.openGraph }}"
