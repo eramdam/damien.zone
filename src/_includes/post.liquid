@@ -1,28 +1,32 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% include 'meta/head' %}    
+    {% include 'meta/head' %}
   </head>
 
   <body class="{% bodyClass %}">
-    {% include "nav.html" %}
+    {% include 'nav.html' %}
     <main>
       <h1>{{ title }}</h1>
       <p class="post-datetime">
-      <time datetime="{{ page.date | dateToRfc3339 }}" title="{{ page.date | format: "iii, MMM d, y, ppp" }}">
-        {{ page.date | format: "PPP" }}
-      </time>  
+        <time datetime="{{ page.date | dateToRfc3339 }}" title="{{ page.date | format: "iii, MMM d, y, ppp" }}">
+          {{ page.date | format: 'PPP' }}
+        </time>
       </p>
 
       {{ content }}
-      {%- assign tags = tags | omit: 'blog' -%} {% if tags %}
+      {%- assign tags = tags | omit: 'blog' -%}
+      {% if tags %}
         <p class="tags">
           {% for tag in tags %}
-          <a href="/tag/{{ tag |  url_encode }}">#{{- tag | escape -}}</a>
+            <a href="/tag/{{ tag |  url_encode }}"
+              >#
+              {{- tag | escape -}}
+            </a>
           {% endfor %}
         </p>
       {% endif %}
     </main>
-    {% include "footer" %}
+    {% include 'footer' %}
   </body>
 </html>
