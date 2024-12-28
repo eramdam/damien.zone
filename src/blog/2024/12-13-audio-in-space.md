@@ -1,9 +1,15 @@
 ---
 title: Audio in space
 slug: audio-in-space
-date: 2024-12-13T06:02:00+00:00
-last_modified: 2024-12-13T06:03:01.918877+00:00
-tags: ["Apple Music", "music", "spatial audio"]
+date: 2024-12-13T06:02:00.000Z
+last_modified: 2024-12-13T06:03:01.918Z
+tags:
+  - Apple Music
+  - music
+  - spatial audio
+description: In which I yap about Spatial Audio on Apple Music
+image: ""
+class_name: ""
 ---
 
 Ever since I first tried it shortly after its introduction, Dolby Atmos on Apple Music felt, to me, gimmicky at best and counterproductive at worst? It's like, either the effect is _too_ noticeable and it's distracting _or_ it just doesn't add anything when it just doesn't make a whole song fall flat? If that makes sense?
@@ -88,4 +94,6 @@ Perhaps Spatial Audio only works when the master is treated as its own thing and
 I don't know, I'm not an audio engineer, just a guy who listens to music perhaps a bit too much and who has opinions.
 
 Thank you ~~for coming to my TED talk~~,  
-\- damien​
+\- damien
+
+​
