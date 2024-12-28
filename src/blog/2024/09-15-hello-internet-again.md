@@ -43,7 +43,6 @@ pardon the mess, appreciate you <3
 
 \- damien
 
-<hr />
-
 [^1]: whatever that means
+
 [^2]: I don't like saying social media sites have "a community" because there's so many people on them but _I_ definitely had something I would call a community on cohost
