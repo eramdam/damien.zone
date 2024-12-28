@@ -9,6 +9,10 @@ pre[class^="language-"] {
   overflow-x: auto;
 }
 
+:is(pre, code)[class^="language-"] {
+  font-family: var(--font-monospace);
+}
+
 /* Reset color for nested scripts */
 .token.script {
   color: var(--color-syntax-default);
