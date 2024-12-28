@@ -13,6 +13,19 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     enableLogging: false,
+    globstring: "assets/**/*",
+    extensions: [
+      "css",
+      "js",
+      "png",
+      "jpg",
+      "jpeg",
+      "gif",
+      "mp4",
+      "ico",
+      "webp",
+      "avif",
+    ],
   });
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
