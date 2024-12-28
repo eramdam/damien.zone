@@ -1,5 +1,5 @@
 (() => {
-  const urlsAllowList = ["damien.zone", "127.0.0.1:3000", "localhost:8080"];
+  const urlsAllowList = ["damien.zone", "127.0.0.1:3000", "localhost:3000"];
   if (urlsAllowList.every((url) => !window.location.href.includes(url))) {
     return;
   }

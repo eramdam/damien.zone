@@ -78,4 +78,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
+  eleventyConfig.setServerOptions({
+    port: 3000,
+  });
 }
