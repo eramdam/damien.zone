@@ -16,7 +16,7 @@ Ever since I first tried it shortly after its introduction, Dolby Atmos on Apple
 
 At any rate, I was having a normal evening and randomly decided to give it a try again, and boy do I have thoughts.
 
-A little setup note: all my listening is being done on Apple Music on macOS 15.1.1, with AirPods Max, with the "Lossless (ALAC up to 24-bit/48kHz)" preset, "Dolby Atmos" set to "Always On" [like so](https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/442x.webp) and "Spatial Audio" set to "Fixed" in macOS.  
+A little setup note: all my listening is being done on Apple Music on macOS 15.1.1, with AirPods Max, with the "Lossless (ALAC up to 24-bit/48kHz)" preset, "Dolby Atmos" set to "Always On" [like so](/img/blog/442x.webp) and "Spatial Audio" set to "Fixed" in macOS.  
 I also used the ["Music Library Tracker"](https://dodoapps.io/music-library-tracker/) app on iOS to even _find_ which tracks in my library were available in Spatial Audio! Truly bonkers that I need a 3rd party app to do that, but whatever.  
 Also, I'm putting embed codes for each track. I'm going to assume Dolby Atmos is _not_ available when playing them from the web, but at least it'll be easy to open them in a native Apple Music app if you have that.
 

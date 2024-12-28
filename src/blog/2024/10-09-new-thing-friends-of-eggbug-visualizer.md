@@ -7,10 +7,10 @@ tags:
   - cohost
   - tools
 description: a nice way to look at your find-your-friends.json file
-image: "https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/20-fullpage.webp"
+image: "/img/blog/friends-of-eggbug/20-fullpage.webp"
 ---
 
-![Screen Shot 2024-10-08 at 19](https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/20-fullpage.webp)
+![Screen Shot 2024-10-08 at 19](/img/blog/friends-of-eggbug/20-fullpage.webp)
 
 Cohost started to send data exports to users. As soon as I got mine last night, I went to look at my "find my friends" page. It's very convenient! But unfortunately, I don't really like looking at tables for that stuff...
 

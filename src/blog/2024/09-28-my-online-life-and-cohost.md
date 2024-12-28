@@ -29,7 +29,7 @@ A year later, I would get my first Mac. A 24" Aluminum iMac, running Mac OS X Le
 Sadly, [ShapeShifter](https://www.macintoshrepository.org/11531-shapeshifter-osx-theming-) was already defunct. Even then, apps like [CandyBar](https://en.wikipedia.org/wiki/CandyBar) and websites like the [IconFactory](https://iconfactory.com/) and their amazing icons, wallpapers and skins were incredible resources.  
 Obviously, like any Mac user of that era, I ended up on forums like [MacThemes.net](https://web.archive.org/web/20100304153810/http://macthemes.net/). I was still messing around with Photoshop, so I kept learning a lot.
 
-But at that point, I was more into UI and web design than anything else. I made skins for apps like [Bowtie](http://bowtieapp.com/) and [Ecoute](https://en.wikipedia.org/wiki/Ecoute), I made a theme for Leopard I can't find traces of ("Disinmaso for Leopard", if someone finds it), I made a [mod for iTunes 10 that brought back the iTunes 9 colors back](https://www.macstories.net/mac/want-itunes-9-look-back-theres-a-mod-for-that/), and a skin for [VLC media player](https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/vlc-better-by-default.jpg). More on that bit later.
+But at that point, I was more into UI and web design than anything else. I made skins for apps like [Bowtie](http://bowtieapp.com/) and [Ecoute](https://en.wikipedia.org/wiki/Ecoute), I made a theme for Leopard I can't find traces of ("Disinmaso for Leopard", if someone finds it), I made a [mod for iTunes 10 that brought back the iTunes 9 colors back](https://www.macstories.net/mac/want-itunes-9-look-back-theres-a-mod-for-that/), and a skin for [VLC media player](/img/blog/vlc-better-by-default.jpg). More on that bit later.
 
 ### the twitter years
 
