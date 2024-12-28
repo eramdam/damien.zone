@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "rimraf _site; npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "rimraf _site; npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
@@ -13,19 +13,18 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11tyrocks/eleventy-plugin-lightningcss": "^1.4.0",
+    "glob": "^11.0.0",
     "he": "^1.2.0",
     "html-to-text": "^9.0.5",
-    "luxon": "^3.5.0"
+    "luxon": "^3.5.0",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@types/he": "^1.2.3",
     "@types/html-to-text": "^9.0.4",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.2",
-    "eleventy-auto-cache-buster": "^0.7.0",
     "prettier": "^3.4.2",
-    "rimraf": "^6.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

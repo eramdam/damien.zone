@@ -1,7 +1,5 @@
-import lightningCSS from "@11tyrocks/eleventy-plugin-lightningcss";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import buttons from "./src/_data/buttons.json" with { type: "json" };
 import siteData from "./src/_data/site.mjs";
 import { DateTime } from "luxon";
@@ -10,29 +8,7 @@ import { helpersPlugin } from "./11ty/helpers.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(lightningCSS, {
-    nesting: true,
-    customMedia: false,
-    minify: true,
-    sourceMap: process.env.ELEVENTY_RUN_MODE !== "build",
-  });
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
-    enableLogging: false,
-    globstring: "assets/**/*",
-    extensions: [
-      "css",
-      "js",
-      "png",
-      "jpg",
-      "jpeg",
-      "gif",
-      "mp4",
-      "ico",
-      "webp",
-      "avif",
-    ],
-  });
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
 
@@ -42,7 +18,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/public");
   // Images used inside articles/pages
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addLayoutAlias("base", "base.html");
   eleventyConfig.setLiquidOptions({
     // https://liquidjs.com/tutorials/options.html#jsTruthy
     jsTruthy: true,
