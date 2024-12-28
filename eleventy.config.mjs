@@ -1,3 +1,4 @@
+import lightningCSS from "@11tyrocks/eleventy-plugin-lightningcss";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
@@ -10,6 +11,7 @@ import he from "he";
 export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/helpers/**/*.(js|mjs)");
 
+  eleventyConfig.addPlugin(lightningCSS);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     enableLogging: false,

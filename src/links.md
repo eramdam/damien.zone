@@ -1,5 +1,6 @@
 ---
 title: links
+layout: base
 description: Where to find me as well as links/blogs I like
 is_page: true
 class_name: links

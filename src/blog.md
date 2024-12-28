@@ -1,5 +1,6 @@
 ---
 title: Blog
+layout: base
 description: french software engineer living and working in the Bay Area on web stuff
 ---
 
