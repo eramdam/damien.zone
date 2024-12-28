@@ -1,8 +1,8 @@
 /* Comentario */
-@import url("./styles/_comentario.css");
+@import url("./styles/comentario.css");
 
 /* Syntax highlighting */
-@import url("./styles/_syntax.css");
+@import url("./styles/syntax.css");
 
 /* common variables */
 :root {

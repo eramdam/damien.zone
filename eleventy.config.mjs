@@ -9,9 +9,12 @@ import he from "he";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("src/helpers/**/*.(js|mjs)");
-
-  eleventyConfig.addPlugin(lightningCSS);
+  eleventyConfig.addPlugin(lightningCSS, {
+    nesting: true,
+    customMedia: false,
+    minify: true,
+    sourceMap: process.env.ELEVENTY_RUN_MODE !== "build",
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     enableLogging: false,
