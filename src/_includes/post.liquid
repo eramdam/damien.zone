@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include 'meta/head.html' %}
+  </head>
+
+  <body class="{% bodyClass %}">
+    {% include "header.html" %}
+    <main>
+      <h1>{{ title }}</h1>
+      <p class="post-datetime">{{ published_date | postDate }}</p>
+
+      {{ content }}
+      {%- assign tags = tags | omit: 'blog' -%} {% if tags %}
+        <p class="tags">
+          {% for tag in tags %}
+          <a href="/tag/{{ tag |  url_encode }}">#{{- tag | escape -}}</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+    </main>
+    {% include "footer.html" %}
+  </body>
+</html>

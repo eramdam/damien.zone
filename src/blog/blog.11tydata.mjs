@@ -1,6 +1,6 @@
 import { htmlToText, truncateText } from "../helpers/types.mjs";
 
-export const layout = "post.html";
+export const layout = "post.liquid";
 
 export const tags = ["blog"];
 
