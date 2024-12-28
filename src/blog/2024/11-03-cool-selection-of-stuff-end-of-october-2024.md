@@ -1,5 +1,5 @@
 ---
-title: 'Cool Selection of Stuff: end of October 2024'
+title: "Cool Selection of Stuff: end of October 2024"
 slug: cool-selection-of-stuff-end-of-october-2024
 date: 2024-11-03T07:00:00.000Z
 last_modified: 2024-11-05T03:38:19.297Z
@@ -155,4 +155,5 @@ See ya in the next one,
 \- damien
 
 [^1]: I cannot, for the life of me, find any coverage about this feature. But it exists and will show up if you follow someone with, I think, "a lot" of followers? It's basically a modal that shows a bunch of accounts' avatars and will prompt you to follow all of them.
+
 [^3]: The stack itself isn't relevant, IMO. But if you have to know, it's using [Astro](https://astro.build), which I like! I just don't think I can trust myself (yet) to use it for a blog again, lol

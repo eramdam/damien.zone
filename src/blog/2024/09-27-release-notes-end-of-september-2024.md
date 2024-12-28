@@ -1,5 +1,5 @@
 ---
-title: 'release notes, end of september 2024'
+title: "release notes, end of september 2024"
 slug: release-notes-end-of-september-2024
 date: 2024-09-27T01:00:00.000Z
 last_modified: 2024-09-27T05:05:04.401Z

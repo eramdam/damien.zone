@@ -1,5 +1,5 @@
 ---
-title: 'Better TweetDeck, a Post-Mortem, Part 2: A written history and credits'
+title: "Better TweetDeck, a Post-Mortem, Part 2: A written history and credits"
 slug: bettertweetdeck-post-mortem-part-2
 date: 2024-01-29T08:00:00.000Z
 last_modified: 2024-12-07T04:55:00.206Z
@@ -494,11 +494,17 @@ I want to try to keep using this blog more regularly, so feel free to add it to 
 So long, and thanks for all the fish! 🐬
 
 [^3]: They will probably recognize themselves if they're reading this 😄
+
 [^6]: Typing this out is very funny when you think about the fact there are around 3,500 emoji now!
+
 [^7]: Here's a [link](https://erambert.me/btd-graph) to a chart showing that data. Surely there's a way to present it in a nicer way, but I don't know how 😅
+
 [^8]: Despite being fresh out of university at the time, I had already worked on a few freelance projects, as well as a project you [may](https://dribbble.com/shots/176127-VLC-for-OS-X-Lion-style) [know](https://dribbble.com/shots/196481-VLC-QuickTime-X-Like) [about](https://dribbble.com/shots/1734291-VLC-on-Yosemite-dark-mode-and-sidebar-icons).
+
 [^9]: At least that's what I can remember from the few emails I sent them back then, I lost the emails they sent _me_, so I don't remember the details.
+
 [^10]: Not that I really wanted it to. I always wanted to keep BTD free of charge and free of ads or anything.
+
 [^11]: Analytics/telemetry would have been really useful during that time, but I never set that up by pure laziness.
 
 [gulp]: https://gulpjs.com/

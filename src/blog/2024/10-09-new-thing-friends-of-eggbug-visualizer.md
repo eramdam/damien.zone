@@ -1,5 +1,5 @@
 ---
-title: 'New thing: Friends of eggbug visualizer'
+title: "New thing: Friends of eggbug visualizer"
 slug: new-thing-friends-of-eggbug-visualizer
 date: 2024-10-09T02:27:00.000Z
 last_modified: 2024-10-11T01:44:29.795Z
@@ -7,7 +7,7 @@ tags:
   - cohost
   - tools
 description: a nice way to look at your find-your-friends.json file
-image: 'https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/20-fullpage.webp'
+image: "https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/20-fullpage.webp"
 ---
 
 ![Screen Shot 2024-10-08 at 19](https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/20-fullpage.webp)

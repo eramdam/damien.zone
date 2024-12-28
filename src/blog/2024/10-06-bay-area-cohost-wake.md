@@ -6,7 +6,7 @@ last_modified: 2024-10-07T04:42:50.759Z
 tags:
   - cohost
 description: a little post about the Bay Araa Cohost Wake that happened today
-image: 'https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/img_7694.webp'
+image: "https://bear-images.sfo2.cdn.digitaloceanspaces.com/damien/img_7694.webp"
 ---
 
 <figure>

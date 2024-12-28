@@ -1,5 +1,5 @@
 ---
-title: 'shot on iPhone with Halide: Gesaffelstein at Portola 2024'
+title: "shot on iPhone with Halide: Gesaffelstein at Portola 2024"
 slug: shot-on-iphone-with-halide-gesaffelstein-at-portola-2024
 date: 2024-09-29T20:01:00.000Z
 last_modified: 2024-09-30T22:09:11.694Z
@@ -10,7 +10,7 @@ tags:
   - live music
   - music
   - photography
-image: 'https://damiens-files.xyz/gesaffelstein-2024/IMG_6646%2015%20Edited.jpg'
+image: "https://damiens-files.xyz/gesaffelstein-2024/IMG_6646%2015%20Edited.jpg"
 ---
 
 I just saw Gesaffelstein last night at [Portola](https://portolamusicfestival.com/) and **boy** that shit ripped. I had already watched his set from Coachella earlier this year, so I "knew" what to expect. But as always, watching a live performance is one thing, **being** there in person is another.

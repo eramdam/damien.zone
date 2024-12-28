@@ -1,5 +1,5 @@
 ---
-title: 'Justice Live! in Paris, 2024 // tiny update'
+title: "Justice Live! in Paris, 2024 // tiny update"
 slug: justice-live-in-paris-2024
 date: 2024-12-21T23:00:00.000Z
 last_modified: 2024-12-22T09:06:33.813Z
@@ -9,8 +9,8 @@ tags:
   - justice
   - music
   - photography
-description: 'pictures of Justice live in Paris on December 18th, and a tiny update'
-image: 'https://damiensfiles.b-cdn.net/justice-paris-2024/article-og.webp'
+description: "pictures of Justice live in Paris on December 18th, and a tiny update"
+image: "https://damiensfiles.b-cdn.net/justice-paris-2024/article-og.webp"
 ---
 
 Saw Justice two times in Paris last week, which makes it four times this year[^1]. While my spot for the first Paris show was not great (literally the highest, furthest from the stage), I had a much better spot the night after.
