@@ -6,6 +6,7 @@ import buttons from "./src/_data/buttons.json" with { type: "json" };
 import siteData from "./src/_data/site.mjs";
 import { DateTime } from "luxon";
 import he from "he";
+import { helpersPlugin } from "./11ty/helpers.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -33,6 +34,7 @@ export default function (eleventyConfig) {
     ],
   });
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(helpersPlugin);
 
   // Styles, scripts and media used by the general layout
   eleventyConfig.addPassthroughCopy("src/assets");
