@@ -11,7 +11,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/helpers/**/*.(js|mjs)");
 
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
+    enableLogging: false,
+  });
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   // Styles, scripts and media used by the general layout
