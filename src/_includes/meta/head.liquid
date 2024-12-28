@@ -88,10 +88,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ page.url | htmlBaseUrl: site.url }}" />
 <meta property="og:description" content="{{ description | escape }}" />
-<meta
-  property="og:image"
-  content="/assets/open_graph.webp?v={{ contentHashes.openGraph }}"
-/>
+{%- openGraphImages -%}
 
 <link rel="canonical" href="{{ page.url | htmlBaseUrl: site.url }}" />
 <link rel="me" href="https://social.erambert.me/@eramdam" />

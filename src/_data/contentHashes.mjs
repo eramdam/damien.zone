@@ -1,17 +1,4 @@
-import * as crypto from "node:crypto";
-import * as fs from "node:fs";
-import { globSync } from "glob";
-
-function createContentHash(...globs) {
-  const files = globSync(globs);
-  const hash = crypto.createHash("md5");
-
-  files.forEach((filename) => {
-    hash.update(fs.readFileSync(filename));
-  });
-
-  return hash.digest("hex");
-}
+import { createContentHash } from "../../helpers/files.mjs";
 
 export default {
   stylesheet: createContentHash(
