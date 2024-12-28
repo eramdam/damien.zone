@@ -8,7 +8,7 @@ tags:
   - javascript
   - meta
   - typescript
-description: 'if you''re being stupid enough about it, you can do some cool stuff'
+description: "if you're being stupid enough about it, you can do some cool stuff"
 ---
 
 #now playing: [Pictures of Purple Skies by Memorex Memories](https://memorexmemories.bandcamp.com/album/pictures-of-purple-skies)

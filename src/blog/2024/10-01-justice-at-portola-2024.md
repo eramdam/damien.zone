@@ -10,7 +10,7 @@ tags:
   - live music
   - music
   - photography
-image: 'https://damiensfiles.b-cdn.net/justice-2024/IMG_6962%201%20Edited.jpg'
+image: "https://damiensfiles.b-cdn.net/justice-2024/IMG_6962%201%20Edited.jpg"
 class_name: justice-portola-2024
 ---
 

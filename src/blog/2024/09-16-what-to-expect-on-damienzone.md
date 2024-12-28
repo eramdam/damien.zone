@@ -6,7 +6,7 @@ last_modified: 2024-09-21T08:34:28.295Z
 tags:
   - cohost
   - meta
-description: 'reflecting and, well, what to expect from this little space of mine'
+description: "reflecting and, well, what to expect from this little space of mine"
 ---
 
 #now playing: [BRAT by Charli XCX](https://album.link/us/i/1739079974)\_
@@ -50,5 +50,7 @@ love you,
 \- damien
 
 [^1]: assuming you use the tools the site gives you in order to be "discovered" (which you might think would be a low bar and yet)
+
 [^2]: and Bluesky, sorry not sorry if you're coming from there lol
+
 [^3]: and trust me I _know_ about those issues. more on that in a later blog post

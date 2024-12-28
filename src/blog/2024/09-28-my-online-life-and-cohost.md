@@ -1,5 +1,5 @@
 ---
-title: 'my online life, and cohost'
+title: "my online life, and cohost"
 slug: my-online-life-and-cohost
 date: 2024-09-28T07:00:00.000Z
 last_modified: 2024-10-02T06:44:14.691Z
@@ -8,7 +8,7 @@ tags:
   - mastodon
   - social media
   - twitter
-description: 'reflecting about my life online, and cohost'
+description: "reflecting about my life online, and cohost"
 ---
 
 _This post is mirrored on cohost as well and was written with it in mind. But also not? It's fine, don't worry about it._
