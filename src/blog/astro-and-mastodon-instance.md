@@ -1,6 +1,6 @@
 ---
 title: Running my own Mastodon instance "behind" Astro on Vercel
-published_date: 2024-08-11T07:00:00+00:00
+date: 2024-08-11T07:00:00+00:00
 last_modified: 2024-11-02T03:15:47.146155+00:00
 tags: ["astro", "mastodon", "vercel"]
 meta_image: /img/blog/mastodon-light.png

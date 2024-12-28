@@ -8,7 +8,7 @@
     {% include "header.html" %}
     <main>
       <h1>{{ title }}</h1>
-      <p class="post-datetime">{{ published_date | postDate }}</p>
+      <p class="post-datetime">{{ date | postDate }}</p>
 
       {{ content }}
       {%- assign tags = tags | omit: 'blog' -%} {% if tags %}
