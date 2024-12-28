@@ -26,13 +26,16 @@ function omit(array, ...items) {
   return (array ?? []).filter((item) => !items.includes(item));
 }
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-export function helpersPlugin(eleventyConfig) {
-  eleventyConfig.addLiquidFilter("omit", omit);
-  eleventyConfig.addLiquidFilter("format", format);
-  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+/** @param {import("@11ty/eleventy").UserConfig} config */
+export function helpersPlugin(config) {
+  config.addLiquidFilter("omit", omit);
+  config.addLiquidFilter("format", format);
+  config.addFilter("take", function (array, count) {
+    return array.slice(0, count);
+  });
+  config.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
 
-  eleventyConfig.addShortcode("htmlTitle", function () {
+  config.addShortcode("htmlTitle", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const title = context.title;
     const baseTitle = siteData.name;
@@ -44,12 +47,14 @@ export function helpersPlugin(eleventyConfig) {
     return he.encode([title, baseTitle].filter((x) => x).join(" | "));
   });
 
-  eleventyConfig.addAsyncShortcode("openGraphImages", function () {
+  config.addAsyncShortcode("openGraphImages", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const hasCustomImage = !!context.image;
     const currentImage = context.image ?? "/assets/open_graph.webp";
     const hash = context.image
-      ? createContentHash(path.join("src/", context.image))
+      ? context.image.startsWith("http")
+        ? Date.now().toString(16)
+        : createContentHash(path.join("src/", context.image))
       : contentHashes.openGraph;
 
     let markup = `
@@ -69,7 +74,7 @@ export function helpersPlugin(eleventyConfig) {
     `.trim();
   });
 
-  eleventyConfig.addShortcode("bodyClass", function () {
+  config.addShortcode("bodyClass", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const isHome = this.page.url === "/";
     const isPost = Array.from(context.tags || []).includes("blog");
@@ -86,7 +91,7 @@ export function helpersPlugin(eleventyConfig) {
     return final;
   });
 
-  eleventyConfig.addShortcode("htmlButtons", function () {
+  config.addShortcode("htmlButtons", function () {
     return Array.from(buttons)
       .map((button) => {
         const img = `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;

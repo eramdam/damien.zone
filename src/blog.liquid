@@ -4,4 +4,5 @@ layout: base
 description: french software engineer living and working in the Bay Area on web stuff
 ---
 
-{% render 'posts-list', posts: collections.blog %}
+{% assign posts = collections.blog | reverse %}
+{% render 'posts-list', posts: posts %}
