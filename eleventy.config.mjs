@@ -3,17 +3,15 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 import markdownItFootnote from "markdown-it-footnote";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import { bigPostImagePlugin } from "./11ty/bigPostImage.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
-  eleventyConfig.addPlugin(bigPostImagePlugin);
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
-    globstring: "/assets/**/*",
+    globstring: "/{assets,img/blog,img/projects}/**/*",
     extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
   });
 
