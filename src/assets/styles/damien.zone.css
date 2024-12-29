@@ -55,6 +55,8 @@
   --color-syntax-property: #7038e5;
   --color-syntax-string: #008323;
   --color-syntax-punctuation: #a34a3d;
+
+  --webring-color-accent: color-mix(in srgb, white 20%, var(--color-accent));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -84,6 +86,8 @@
     --color-syntax-property: #bdaeff;
     --color-syntax-string: #42e071;
     --color-syntax-punctuation: hsl(9, 10%, 65%);
+
+    --webring-color-accent: var(--color-accent);
   }
 }
 
@@ -382,43 +386,6 @@ figcaption {
   margin-bottom: 20px;
 }
 
-/* Webring widget */
-#myWebRing {
-  margin: 10px auto;
-  font-family: var(--font-monospace) !important;
-  background: transparent !important;
-  border-width: 4px;
-  border-color: var(--color-accent);
-  border-style: ridge;
-  border-radius: var(--border-radius);
-  width: 400px !important;
-}
-
-@media (max-width: 480px) {
-  #myWebRing {
-    width: 300px !important;
-  }
-}
-
-#myWebRing img {
-  display: none;
-}
-
-#myWebRing > div:first-child {
-  background-image: url("https://gumdisease.neocities.org/images/eggbug.png");
-  background-position: right center;
-  background-repeat: no-repeat;
-}
-
-#myWebRing b {
-  color: inherit !important;
-}
-
-#myWebRing > div:last-child {
-  background-color: var(--color-accent) !important;
-  height: 26px !important;
-}
-
 /* Gallery stuff */
 .gallery ul {
   display: grid;
@@ -481,4 +448,53 @@ code:not([class]) {
   font-size: 0.8em;
   color: var(--color-code-text);
   font-variant-ligatures: none;
+}
+
+/* Webring widget */
+#myWebRing {
+  margin: 10px auto;
+  font-family: var(--font-monospace);
+  border-width: 4px;
+  border-color: var(--webring-color-accent);
+  border-style: ridge;
+  border-radius: var(--border-radius);
+  width: 400px;
+
+  & .webring-head {
+    height: 100px;
+    overflow: hidden;
+  }
+  & .webring-foot {
+    font-weight: bold;
+    background-color: var(--webring-color-accent);
+    height: 26px;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+  & .webring-head-text {
+    width: 100%;
+    position: relative;
+    top: 0%;
+    transform: translate(5px, 8px);
+  }
+}
+
+@media (max-width: 480px) {
+  #myWebRing {
+    width: 300px !important;
+  }
+}
+
+#myWebRing {
+  position: relative;
+}
+
+#myWebRing img {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
