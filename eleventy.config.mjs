@@ -2,6 +2,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 import markdownItFootnote from "markdown-it-footnote";
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -9,6 +10,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.setQuietMode(true);
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
+    globstring: "/{assets,img/blog,img/projects}/**/*",
+    extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
+  });
 
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
 
