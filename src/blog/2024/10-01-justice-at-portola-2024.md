@@ -10,7 +10,7 @@ tags:
   - live music
   - music
   - photography
-image: "https://damiensfiles.b-cdn.net/justice-2024/IMG_6962%201%20Edited.jpg"
+image: "/img/blog/photos/justice-portola-2024/IMG_6962%201%20Edited.jpg"
 class_name: justice-portola-2024
 ---
 
@@ -22,27 +22,27 @@ But I think I managed to get some pretty damn good pictures given the situation.
 
 Everything else is straight out of the iPhone 13 Pro's camera system. Which, for some of them, is outstanding to see, honestly. As always, click the thumbnails to get the JPEG at 100% quality.
 
-<div class="big-image"><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_6962%201%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_6962%201%20Edited.jpg" alt=""></a></div>
+<div class="big-image"><a href="/img/blog/photos/justice-portola-2024/IMG_6962%201%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_6962%201%20Edited.jpg" alt=""></a></div>
 <div class="gallery">
   <ul>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7071%202%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7071%202%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7073%203%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7073%203%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7081%204%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7081%204%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7085%205%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7085%205%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7089%206%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7089%206%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7092%207%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7092%207%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7103%208%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7103%208%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7117%209%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7117%209%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7125%2010%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7125%2010%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7165%2011%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7165%2011%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7317%2012%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7317%2012%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7319%2013%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7319%2013%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7453%2014%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7453%2014%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7464%2015%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7464%2015%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7467%2016%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7467%2016%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7468%2017%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7468%2017%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7494%2018%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7494%2018%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7506%2019%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7506%2019%20Edited.jpg" alt=""></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_7539%2020%20Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_7539%2020%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7071%202%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7071%202%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7073%203%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7073%203%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7081%204%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7081%204%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7085%205%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7085%205%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7089%206%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7089%206%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7092%207%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7092%207%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7103%208%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7103%208%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7117%209%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7117%209%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7125%2010%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7125%2010%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7165%2011%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7165%2011%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7317%2012%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7317%2012%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7319%2013%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7319%2013%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7453%2014%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7453%2014%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7464%2015%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7464%2015%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7467%2016%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7467%2016%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7468%2017%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7468%2017%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7494%2018%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7494%2018%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7506%2019%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7506%2019%20Edited.jpg" alt=""></a></li>
+    <li><a href="/img/blog/photos/justice-portola-2024/IMG_7539%2020%20Edited.jpg"><img loading="lazy" decoding="async" src="/img/blog/photos/justice-portola-2024/thumbs/IMG_7539%2020%20Edited.jpg" alt=""></a></li>
   </ul>
 </div>
