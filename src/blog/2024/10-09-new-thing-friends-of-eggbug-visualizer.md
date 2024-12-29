@@ -16,7 +16,7 @@ Cohost started to send data exports to users. As soon as I got mine last night, 
 
 So, of course, I wrote a tool to scratch that itch. It's called "Friends of eggbug visualizer"[^1], it works in the browser, no data is sent anywhere, and it keeps your list in your browser's own storage. This way you can import your `find-your-friends.json` file once, and keep coming back to the list later on to go through your list.
 
-<center>Check it out at <a href="https://friends-of-eggbug.vercel.app/">https://friends-of-eggbug.vercel.app/<a>!</center>
+<center>Check it out at <a href="https://friends-of-eggbug.vercel.app/">https://friends-of-eggbug.vercel.app/</a>!</center>
 
 The source code is available on [GitHub](https://github.com/eramdam/friends-of-eggbug/).
 
