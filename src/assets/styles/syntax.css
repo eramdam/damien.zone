@@ -6,7 +6,6 @@ pre[class^="language-"] {
   border: 1px solid var(--color-syntax-border);
   color: var(--color-syntax-text);
   overflow-x: auto;
-  overflow-x: auto;
 }
 
 :is(pre, code)[class^="language-"] {
