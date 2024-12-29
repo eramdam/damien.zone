@@ -23,16 +23,16 @@ function omit(array, ...items) {
   return (array ?? []).filter((item) => !items.includes(item));
 }
 
-/** @param {import("@11ty/eleventy").UserConfig} config */
-export function helpersPlugin(config) {
-  config.addLiquidFilter("omit", omit);
-  config.addLiquidFilter("format", format);
-  config.addFilter("take", function (array, count) {
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+export function helpersPlugin(eleventyConfig) {
+  eleventyConfig.addFilter("omit", omit);
+  eleventyConfig.addFilter("format", format);
+  eleventyConfig.addFilter("take", function (array, count) {
     return array.slice(0, count);
   });
-  config.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
 
-  config.addShortcode("htmlTitle", function () {
+  eleventyConfig.addShortcode("htmlTitle", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const title = context.title;
     const baseTitle = siteData.name;
@@ -44,7 +44,7 @@ export function helpersPlugin(config) {
     return he.encode([title, baseTitle].filter((x) => x).join(" | "));
   });
 
-  config.addAsyncShortcode("openGraphImages", function () {
+  eleventyConfig.addShortcode("openGraphImages", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const hasCustomImage = !!context.image;
     const currentImage = context.image || "/assets/open_graph.webp";
@@ -66,7 +66,7 @@ export function helpersPlugin(config) {
     `.trim();
   });
 
-  config.addShortcode("bodyClass", function () {
+  eleventyConfig.addShortcode("bodyClass", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const isHome = this.page.url === "/";
     const isPost = Array.from(context.tags || []).includes("blog");
@@ -83,7 +83,7 @@ export function helpersPlugin(config) {
     return final;
   });
 
-  config.addShortcode("htmlButtons", function () {
+  eleventyConfig.addShortcode("htmlButtons", function () {
     return Array.from(buttons)
       .map((button) => {
         const img = `<img class="pixel" decoding="async" loading="lazy" src="${button.src.replace("./", "/")}" title="${button.name}" alt="${button.name}" />`;

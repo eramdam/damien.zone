@@ -1,15 +1,17 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import { helpersPlugin } from "./11ty/helpers.mjs";
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItNamedHeadings from "markdown-it-named-headers";
-import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
+import { helpersPlugin } from "./11ty/helpers.mjs";
+import { feedsPlugin } from "./11ty/feed.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
+  eleventyConfig.addPlugin(feedsPlugin);
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
