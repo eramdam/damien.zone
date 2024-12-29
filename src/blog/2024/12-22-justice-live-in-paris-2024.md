@@ -10,7 +10,7 @@ tags:
   - music
   - photography
 description: "pictures of Justice live in Paris on December 18th, and a tiny update"
-image: "https://damiensfiles.b-cdn.net/justice-paris-2024/article-og.webp"
+image: "/img/photos/justice-paris-2024/article-og.webp"
 ---
 
 Saw Justice two times in Paris last week, which makes it four times this year[^1]. While my spot for the first Paris show was not great (literally the highest, furthest from the stage), I had a much better spot the night after.
@@ -29,13 +29,13 @@ Oh and also, I renamed this blog to "damien's zone". It's not super creative, bu
 See y'all in the new year ❤️,  
 \- damien
 
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218212945.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218212945.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218214206.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218214206.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218215830.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218215830.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222617.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222617.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222629.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222629.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223033.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223033.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223039.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223039.jpg" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223450.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223450.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218212945.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218212945.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218214206.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218214206.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218215830.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218215830.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218222617.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218222617.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218222629.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218222629.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218223033.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218223033.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218223039.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218223039.jpg" alt=""></a>
+<a href="/img/photos/justice-paris-2024/DMN_20241218223450.jpg"><img src="/img/photos/justice-paris-2024/DMN_INSTA_20241218223450.jpg" alt=""></a>
 
 [^1]: Boston, San Francisco, and now Paris.
