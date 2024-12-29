@@ -15,10 +15,13 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+
       - run: npm ci
+
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
