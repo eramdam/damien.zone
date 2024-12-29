@@ -54,7 +54,9 @@ export function helpersPlugin(config) {
     const hash = context.image
       ? context.image.startsWith("http")
         ? Date.now().toString(16)
-        : createContentHash(path.join("src/", context.image))
+        : createContentHash(
+            path.join("src/", decodeURIComponent(context.image)),
+          )
       : contentHashes.openGraph;
 
     let markup = `
