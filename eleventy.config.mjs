@@ -4,7 +4,7 @@ import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItNamedHeadings from "markdown-it-named-headers";
 import { helpersPlugin } from "./11ty/helpers.mjs";
-import { feedsPlugin } from "./11ty/feed.mjs";
+import { feedsPlugin } from "./11ty/feeds.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {

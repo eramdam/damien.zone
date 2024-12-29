@@ -1,0 +1,38 @@
+---
+permalink: '/feed.xml'
+eleventyExcludeFromCollections: true
+---
+{%- assign posts = collections.blog -%}
+{%- assign title = site.name -%}
+{%- assign pageUrl = site.url -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ title | escape }}</title>
+  <id>{{ pageUrl | htmlBaseUrl: site.url }}</id>
+  <link href="{{ permalink | htmlBaseUrl: site.url }}" rel="self"/>
+  <link href="{{ pageUrl | htmlBaseUrl: site.url }}" />
+  <updated>{{ posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  {%- assign posts = posts | reverse -%}
+  {%- for post_ in posts limit:15 -%}
+    {%- assign post = post_ -%}
+    {%- assign absolutePostUrl = post.url | htmlBaseUrl: site.url %}
+    <entry>
+      <title>{{ post.data.title | escape }}</title>
+      <link href="{{ absolutePostUrl }}" rel="alternate"/>
+      <id>{{ absolutePostUrl }}</id>
+      <published>{{ post.date | dateToRfc3339 }}</published>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <author>
+        <name>Damien</name>
+      </author>
+      {%- assign tags = post.data.tags | omit: 'blog' -%}
+      {%- for tag in tags -%}
+        <category term="{{ tag | escape }}" label="{{ tag | escape }}"/>
+      {%- endfor -%}
+      <content type="html">
+        {{- post.content | renderTransforms: post.data.page, site.url | escape -}}
+        {%- feedPostFooter absolutePostUrl -%}
+      </content>
+    </entry>
+  {% endfor %}
+</feed>

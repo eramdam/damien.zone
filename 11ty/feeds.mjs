@@ -1,33 +1,24 @@
-import { feedPlugin, dateToRfc3339 } from "@11ty/eleventy-plugin-rss";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
 import fs from "node:fs";
-import siteData from "../src/_data/site.mjs";
+import he from "he";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function feedsPlugin(eleventyConfig) {
-  eleventyConfig.addFilter("dateToRfc3339", dateToRfc3339);
-
-  const rssOptions = {
-    collection: {
-      name: "blog",
-      limit: 10,
-    },
-    metadata: {
-      language: "en",
-      title: siteData.name,
-      subtitle:
-        "french software engineer living and working in the Bay Area on web stuff",
-      base: siteData.url,
-      author: {
-        name: "Damien Erambert",
-        email: "damien@erambert.me", // Optional
-      },
-    },
-  };
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "atom",
-    outputPath: "/feed.xml",
-    ...rssOptions,
+  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addFilter("absoluteUrl", rssPlugin.absoluteUrl);
+  eleventyConfig.addFilter(
+    "getNewestCollectionItemDate",
+    rssPlugin.getNewestCollectionItemDate,
+  );
+  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addFilter(
+    "htmlToAbsoluteUrls",
+    rssPlugin.convertHtmlToAbsoluteUrls,
+  );
+  eleventyConfig.addShortcode("feedPostFooter", (postUrl) => {
+    return he.encode(`<a href="${postUrl}">Comments →</a>`);
   });
+
   eleventyConfig.on("eleventy.after", async ({ dir, results }) => {
     const atomItem = results.find((f) => f.outputPath.includes("/feed.xml"));
     if (atomItem) {
