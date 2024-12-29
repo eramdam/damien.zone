@@ -225,7 +225,7 @@ header .title h1 {
 }
 
 header .title h1,
-header .title::before {
+header .title img {
   filter: drop-shadow(0 10px 10px rgb(0 0 0 / 0.2))
     drop-shadow(0 4px 6px rgb(0 0 0 / 0.1));
 }
@@ -237,19 +237,13 @@ header .title {
   transition: none;
 }
 
-.title::before {
+.title img {
   margin-right: 15px;
-  content: "";
   display: block;
-  background: url("/assets/avatar.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
 }
 
 @media (prefers-color-scheme: dark) {
-  .title::before {
+  .title img {
     background-color: var(--offwhite-background);
     border-radius: 99999999px;
   }

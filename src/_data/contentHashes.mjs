@@ -6,5 +6,6 @@ export default {
     "src/assets/styles/**/*.css",
   ),
   openGraph: createContentHash("src/assets/open_graph.webp"),
+  avatar: createContentHash("src/assets/avatar.webp"),
   script: createContentHash("src/assets/script.js"),
 };
