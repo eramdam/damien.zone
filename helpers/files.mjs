@@ -4,15 +4,14 @@ import { globSync } from "glob";
 
 export function createContentHash(...globs) {
   const files = globSync(globs);
-  const hash = crypto.createHash("md5");
 
   if (!files.length) {
     throw new Error(`No files found for ${globs.join(",")}`);
   }
 
-  files.forEach((filename) => {
-    hash.update(fs.readFileSync(filename));
-  });
+  return createStringHash(files.map((f) => fs.readFileSync(f)).join(""));
+}
 
-  return hash.digest("hex");
+export function createStringHash(string) {
+  return crypto.createHash("md5").update(string).digest("hex");
 }
