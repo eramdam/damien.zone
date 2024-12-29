@@ -498,3 +498,8 @@ code:not([class]) {
   top: 0;
   right: 0;
 }
+
+.img-bip {
+  height: auto;
+  max-width: 100%;
+}
