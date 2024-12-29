@@ -2,6 +2,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 import markdownItFootnote from "markdown-it-footnote";
+import markdownItNamedHeadings from "markdown-it-named-headers";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
@@ -15,7 +16,9 @@ export default function (eleventyConfig) {
     extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
   });
 
-  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItFootnote).use(markdownItNamedHeadings),
+  );
 
   // Styles, scripts and media used by the general layout
   eleventyConfig.addPassthroughCopy("src/assets");
