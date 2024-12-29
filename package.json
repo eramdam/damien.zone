@@ -23,6 +23,7 @@
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^22.10.2",
     "date-fns": "^4.1.0",
+    "eleventy-auto-cache-buster": "^0.7.0",
     "glob": "^11.0.0",
     "he": "^1.2.0",
     "html-to-text": "^9.0.5",

@@ -3,10 +3,7 @@ import { TZDate } from "@date-fns/tz";
 import { format as formatBase } from "date-fns";
 import he from "he";
 import assert from "node:assert";
-import path from "node:path";
-import { createContentHash, createStringHash } from "../helpers/files.mjs";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
-import contentHashes from "../src/_data/contentHashes.mjs";
 import siteData from "../src/_data/site.mjs";
 
 const timezone = "America/Los_Angeles";
@@ -51,18 +48,11 @@ export function helpersPlugin(config) {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const hasCustomImage = !!context.image;
     const currentImage = context.image || "/assets/open_graph.webp";
-    const hash = context.image
-      ? context.image.startsWith("http")
-        ? createStringHash(context.image)
-        : createContentHash(
-            path.join("src/", decodeURIComponent(context.image)),
-          )
-      : contentHashes.openGraph;
 
     let markup = `
       <meta
         property="og:image"
-        content="${currentImage}?v=${hash}"
+        content="${currentImage}"
       />
     `;
 
