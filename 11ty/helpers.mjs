@@ -4,7 +4,7 @@ import { format as formatBase } from "date-fns";
 import he from "he";
 import assert from "node:assert";
 import path from "node:path";
-import { createContentHash } from "../helpers/files.mjs";
+import { createContentHash, createStringHash } from "../helpers/files.mjs";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
 import contentHashes from "../src/_data/contentHashes.mjs";
 import siteData from "../src/_data/site.mjs";
@@ -53,7 +53,7 @@ export function helpersPlugin(config) {
     const currentImage = context.image || "/assets/open_graph.webp";
     const hash = context.image
       ? context.image.startsWith("http")
-        ? Date.now().toString(16)
+        ? createStringHash(context.image)
         : createContentHash(
             path.join("src/", decodeURIComponent(context.image)),
           )
