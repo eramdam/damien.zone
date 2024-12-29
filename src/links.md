@@ -29,7 +29,7 @@ Here's mine, by the way! (made by [Gwyn](https://shadenexus.com/)!)
   {% htmlButtons %}
 </div>
 
-<div class="eggbug-buttons"><img src="/public/buttons/eggbugforeverowo.png" class="pixel" /></div>
+<div class="eggbug-buttons"><img src="/public/buttons/eggbugforeverowo.png" class="pixel" alt="" /></div>
 
 ## friends' links
 
