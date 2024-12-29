@@ -10,7 +10,7 @@ image: "/img/blog/img_7694.webp"
 ---
 
 <figure>
-<img src="/img/blog/img_7694.webp" />
+<img src="/img/blog/img_7694.webp" alt="A custom eggbug made by Beth out of foam clay, acrylic paint, mod podge and armature wire" />
 <figcaption>A custom eggbug made by <a href="https://bsky.app/profile/bethposting.bsky.social">Bethposting</a> out of foam clay, acrylic paint, mod podge and armature wire</figcaption>
 </figure>
 

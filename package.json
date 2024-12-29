@@ -15,6 +15,7 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@date-fns/tz": "^1.2.0",
