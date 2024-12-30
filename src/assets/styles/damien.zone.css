@@ -257,15 +257,6 @@ header .title {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  header .title img {
-    filter: drop-shadow(0 2px 0 var(--offwhite-background))
-      drop-shadow(0 -2px 0 var(--offwhite-background))
-      drop-shadow(2px 0 0 var(--offwhite-background))
-      drop-shadow(-2px 0 0 var(--offwhite-background));
-  }
-}
-
 .inline {
   width: auto !important;
 }
