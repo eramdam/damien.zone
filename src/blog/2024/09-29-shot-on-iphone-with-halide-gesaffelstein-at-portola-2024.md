@@ -10,7 +10,7 @@ tags:
   - live music
   - music
   - photography
-image: "/img/photos/gesaffelstein-2024/thumbs/IMG_6646 15 Edited.jpg"
+image: "https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6646%2015%20Edited.jpg"
 ---
 
 I just saw Gesaffelstein last night at [Portola](https://portolamusicfestival.com/) and **boy** that shit ripped. I had already watched his set from Coachella earlier this year, so I "knew" what to expect. But as always, watching a live performance is one thing, **being** there in person is another.
@@ -30,23 +30,23 @@ At any rate, here are the pictures (click to load the full, uncompressed JPEGs):
 
 <div class="gallery">
   <ul>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6415 1 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6415 1 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6447 2 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6447 2 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6497 3 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6497 3 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6535 4 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6535 4 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6540 5 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6540 5 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6546 6 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6546 6 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6558 7 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6558 7 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6568 8 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6568 8 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6577 9 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6577 9 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6578 10 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6578 10 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6585 11 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6585 11 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6589 12 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6589 12 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6628 13 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6628 13 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6644 14 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6644 14 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6646 15 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6646 15 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6686 16 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6686 16 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="/img/photos/gesaffelstein-2024/IMG_6719 17 Edited.jpg"><img loading="lazy" src="/img/photos/gesaffelstein-2024/thumbs/IMG_6719 17 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6415 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6415 1 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6447 2 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6447 2 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6497 3 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6497 3 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6535 4 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6535 4 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6540 5 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6540 5 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6546 6 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6546 6 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6558 7 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6558 7 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6568 8 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6568 8 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6577 9 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6577 9 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6578 10 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6578 10 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6585 11 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6585 11 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6589 12 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6589 12 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6628 13 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6628 13 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6644 14 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6644 14 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6646 15 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6646 15 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6686 16 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6686 16 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6719 17 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6719 17 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
   </ul>
 </div>
 
