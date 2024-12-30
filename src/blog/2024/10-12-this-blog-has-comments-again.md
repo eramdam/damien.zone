@@ -38,7 +38,7 @@ Therefore, I think a "friends of ~~damien~~ eggbug" shared instance of Comentari
 
 I will probably keep my own instance because I have no clue if it can be migrated from a machine to another without breaking everything, but I want people to have access to that thing because I feel it might just be It? Maybe? We will see.
 
-Oh, and also, if you're interested in self-hosting it, I detailed my [setup here](https://damien.zone/my-comentario-self-hosting-setup/).
+Oh, and also, if you're interested in self-hosting it, I detailed my [setup here](/my-comentario-self-hosting-setup/).
 
 See ya,  
 \- damien
