@@ -15,7 +15,7 @@ In this part, I will try to recount the history of Better TweetDeck as well as s
 
 ## A timeline of Better TweetDeck
 
-As it turns out, trying to recall and tell 9 years of history of a project without prior notes is kinda hard! Who knew! And I think most of it would be boring, as the bulk of my changelogs aren't particularly interesting. So, rather than go through every single release, I will try to do a "best highlights" retelling of what the project went through. If you want to follow along, I have put together a copy of the full changelog of (almost) every tagged version of Better TweetDeck [right here](/btd-changelog).
+As it turns out, trying to recall and tell 9 years of history of a project without prior notes is kinda hard! Who knew! And I think most of it would be boring, as the bulk of my changelogs aren't particularly interesting. So, rather than go through every single release, I will try to do a "best highlights" retelling of what the project went through. If you want to follow along, I have put together a copy of the full changelog of (almost) every tagged version of Better TweetDeck [right here](/btd/btd-changelog).
 
 ### A bunch of JS and CSS put together
 
@@ -497,7 +497,7 @@ So long, and thanks for all the fish! 🐬
 
 [^6]: Typing this out is very funny when you think about the fact there are around 3,500 emoji now!
 
-[^7]: Here's a [link](https://erambert.me/btd-graph) to a chart showing that data. Surely there's a way to present it in a nicer way, but I don't know how 😅
+[^7]: Here's a [link](/btd/btd-graph) to a chart showing that data. Surely there's a way to present it in a nicer way, but I don't know how 😅
 
 [^8]: Despite being fresh out of university at the time, I had already worked on a few freelance projects, as well as a project you [may](https://dribbble.com/shots/176127-VLC-for-OS-X-Lion-style) [know](https://dribbble.com/shots/196481-VLC-QuickTime-X-Like) [about](https://dribbble.com/shots/1734291-VLC-on-Yosemite-dark-mode-and-sidebar-icons).
 
