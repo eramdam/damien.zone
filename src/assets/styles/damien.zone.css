@@ -228,10 +228,12 @@ header .title h1 {
   border-radius: calc(var(--border-radius) * 2);
 }
 
-header .title h1,
-header .title img {
-  filter: drop-shadow(0 10px 10px rgb(0 0 0 / 0.2))
-    drop-shadow(0 4px 6px rgb(0 0 0 / 0.1));
+@media (prefers-color-scheme: light) {
+  header .title h1,
+  header .title img {
+    filter: drop-shadow(0 10px 10px rgb(0 0 0 / 0.2))
+      drop-shadow(0 4px 6px rgb(0 0 0 / 0.1));
+  }
 }
 
 header .title {
@@ -244,12 +246,23 @@ header .title {
 .title img {
   margin-right: 15px;
   display: block;
+
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-resolution: 2x) {
+  .title img {
+    image-rendering: pixelated;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  .title img {
-    background-color: var(--offwhite-background);
-    border-radius: 99999999px;
+  header .title img {
+    filter: drop-shadow(0 2px 0 var(--offwhite-background))
+      drop-shadow(0 -2px 0 var(--offwhite-background))
+      drop-shadow(2px 0 0 var(--offwhite-background))
+      drop-shadow(-2px 0 0 var(--offwhite-background));
   }
 }
 
