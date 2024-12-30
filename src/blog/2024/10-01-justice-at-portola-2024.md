@@ -2,7 +2,7 @@
 title: Justice at Portola 2024
 slug: justice-at-portola-2024
 date: 2024-10-01T00:25:00.000Z
-last_modified: 2024-10-01T00:48:10.497Z
+updated: 2024-10-01T00:48:10.497Z
 tags:
   - halide
   - iphone photography

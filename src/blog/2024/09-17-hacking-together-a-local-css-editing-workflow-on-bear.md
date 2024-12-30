@@ -2,7 +2,7 @@
 title: hacking together a local CSS editing workflow on bear
 slug: hacking-together-a-local-css-editing-workflow-on-bear
 date: 2024-09-17T05:38:00.000Z
-last_modified: 2024-09-21T08:33:17.565Z
+updated: 2024-09-21T08:33:17.565Z
 tags:
   - bear
   - javascript

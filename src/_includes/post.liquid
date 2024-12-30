@@ -8,10 +8,17 @@
     {% include 'nav.html' %}
     <main>
       <h1>{{ title }}</h1>
-      <p class="post-datetime">
-        <time datetime="{{ page.date | dateToRfc3339 }}" title="{{ page.date | format: "iii, MMM d, y, ppp" }}">
+      <p class="post-datetime ">
+        <time
+          class="dt-published"
+          datetime="{{ page.date | dateToRfc3339 }}"
+          title="{{ page.date | format: "iii, MMM d, y, ppp" }}"
+        >
           {{ page.date | format: 'PPP' }}
         </time>
+        {% if updated %}
+          <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
+        {% endif %}
       </p>
 
       {{ content }}

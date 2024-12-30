@@ -2,6 +2,7 @@
 title: Running my own Mastodon instance "behind" Astro on Vercel
 slug: astro-and-mastodon-instance
 date: 2024-08-11T07:00:00.000Z
+updated: 2024-11-02T03:15:47.146155+00:00
 tags:
   - astro
   - mastodon

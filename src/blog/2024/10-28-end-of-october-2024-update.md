@@ -2,7 +2,7 @@
 title: End of October 2024 update
 slug: end-of-october-2024-update
 date: 2024-10-28T04:40:00.000Z
-last_modified: 2024-10-29T00:55:41.901Z
+updated: 2024-10-29T00:55:41.901Z
 tags:
   - internet archive
   - meta

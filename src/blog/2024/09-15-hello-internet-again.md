@@ -2,7 +2,7 @@
 title: hello internet (again)
 slug: hello-internet-again
 date: 2024-09-15T18:03:00.000Z
-last_modified: 2024-09-16T04:45:35.470Z
+updated: 2024-09-16T04:45:35.470Z
 tags:
   - cohost
   - meta

@@ -2,7 +2,7 @@
 title: "shot on iPhone with Halide: Gesaffelstein at Portola 2024"
 slug: shot-on-iphone-with-halide-gesaffelstein-at-portola-2024
 date: 2024-09-29T20:01:00.000Z
-last_modified: 2024-09-30T22:09:11.694Z
+updated: 2024-09-30T22:09:11.694Z
 tags:
   - gesaffelstein
   - halide

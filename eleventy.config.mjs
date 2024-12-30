@@ -32,7 +32,8 @@ export default function (eleventyConfig) {
     // https://liquidjs.com/tutorials/options.html#jsTruthy
     jsTruthy: true,
     // https://liquidjs.com/tutorials/options.html#Strict
-    strictVariables: true,
+    strictVariables: false,
+    lenientIf: true,
     strictFilters: true,
   });
 

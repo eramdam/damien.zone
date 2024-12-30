@@ -2,7 +2,7 @@
 title: "Better TweetDeck, a Post-Mortem, Part 2: A written history and credits"
 slug: bettertweetdeck-post-mortem-part-2
 date: 2024-01-29T08:00:00.000Z
-last_modified: 2024-12-07T04:55:00.206Z
+updated: 2024-12-07T04:55:00.206Z
 tags:
   - better tweetdeck
 description: >-

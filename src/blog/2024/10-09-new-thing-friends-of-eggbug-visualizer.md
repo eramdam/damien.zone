@@ -2,7 +2,7 @@
 title: "New thing: Friends of eggbug visualizer"
 slug: new-thing-friends-of-eggbug-visualizer
 date: 2024-10-09T02:27:00.000Z
-last_modified: 2024-10-11T01:44:29.795Z
+updated: 2024-10-11T01:44:29.795Z
 tags:
   - cohost
   - tools

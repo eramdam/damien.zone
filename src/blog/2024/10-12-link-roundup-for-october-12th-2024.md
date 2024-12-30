@@ -2,7 +2,7 @@
 title: "link roundup for october 12th, 2024"
 slug: link-roundup-for-october-12th-2024
 date: 2024-10-12T07:00:00.000Z
-last_modified: 2024-10-13T05:07:23.923Z
+updated: 2024-10-13T05:07:23.923Z
 tags:
   - cats
   - cohost

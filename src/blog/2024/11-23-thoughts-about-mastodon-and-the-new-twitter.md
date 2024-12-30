@@ -2,7 +2,7 @@
 title: thoughts about mastodon and the "new Twitter"
 slug: thoughts-about-mastodon-and-the-new-twitter
 date: 2024-11-23T22:14:48.885Z
-last_modified: 2024-11-23T22:14:48.891Z
+updated: 2024-11-23T22:14:48.891Z
 tags:
   - bluesky
   - mastodon
