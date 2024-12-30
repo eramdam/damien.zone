@@ -10,7 +10,6 @@ tags:
   - music
   - photography
 description: "pictures of Justice live in Paris on December 18th, and a tiny update"
-test: foo
 image: "https://damiensfiles.b-cdn.net/justice-paris-2024/article-og.webp"
 ---
 
