@@ -2,6 +2,7 @@
 title: 'Better TweetDeck, A Post-Mortem, Part 1: frequently asked questions'
 slug: bettertweetdeck-post-mortem-part-1-faq
 date: 2023-07-12T07:00:00.000Z
+updated: 2024-09-22T01:42:24.008191+00:00
 tags:
   - better tweetdeck
 description: >-

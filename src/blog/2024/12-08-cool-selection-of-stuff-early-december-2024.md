@@ -2,7 +2,7 @@
 title: "Cool Selection of Stuff: early December 2024"
 slug: cool-selection-of-stuff-early-december-2024
 date: 2024-12-07T23:20:11.607Z
-last_modified: 2024-12-07T23:20:11.609Z
+updated: 2024-12-07T23:20:11.609Z
 tags: []
 ---
 

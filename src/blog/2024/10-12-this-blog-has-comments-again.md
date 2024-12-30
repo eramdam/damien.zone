@@ -2,7 +2,7 @@
 title: this blog has comments (again)
 slug: this-blog-has-comments-again
 date: 2024-10-12T08:01:00.000Z
-last_modified: 2024-10-12T09:39:40.295Z
+updated: 2024-10-12T09:39:40.295Z
 tags:
   - comentario
   - comments

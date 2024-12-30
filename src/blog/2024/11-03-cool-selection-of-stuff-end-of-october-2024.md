@@ -2,7 +2,7 @@
 title: "Cool Selection of Stuff: end of October 2024"
 slug: cool-selection-of-stuff-end-of-october-2024
 date: 2024-11-03T07:00:00.000Z
-last_modified: 2024-11-05T03:38:19.297Z
+updated: 2024-11-05T03:38:19.297Z
 tags:
   - music
   - bluesky

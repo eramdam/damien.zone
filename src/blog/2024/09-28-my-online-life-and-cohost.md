@@ -2,7 +2,7 @@
 title: "my online life, and cohost"
 slug: my-online-life-and-cohost
 date: 2024-09-28T07:00:00.000Z
-last_modified: 2024-10-02T06:44:14.691Z
+updated: 2024-10-02T06:44:14.691Z
 tags:
   - cohost
   - mastodon

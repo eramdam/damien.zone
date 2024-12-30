@@ -2,7 +2,7 @@
 title: what to expect on damien dot zone
 slug: what-to-expect-on-damienzone
 date: 2024-09-16T05:24:00.000Z
-last_modified: 2024-09-21T08:34:28.295Z
+updated: 2024-09-21T08:34:28.295Z
 tags:
   - cohost
   - meta

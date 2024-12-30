@@ -2,7 +2,7 @@
 title: "Justice Live! in Paris, 2024 // tiny update"
 slug: justice-live-in-paris-2024
 date: 2024-12-21T23:00:00.000Z
-last_modified: 2024-12-22T09:06:33.813Z
+updated: 2024-12-22T09:06:33.813Z
 tags:
   - halide
   - iphone photography

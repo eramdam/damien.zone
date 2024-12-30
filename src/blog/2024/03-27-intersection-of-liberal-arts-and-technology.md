@@ -2,7 +2,7 @@
 title: The intersection of liberal arts and technology
 slug: intersection-of-liberal-arts-and-technology
 date: 2024-03-27T07:00:00.000Z
-last_modified: 2024-09-21T08:44:02.283Z
+updated: 2024-09-21T08:44:02.283Z
 tags:
   - design
   - technology

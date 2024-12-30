@@ -2,7 +2,7 @@
 title: Bay Area Cohost Wake
 slug: bay-area-cohost-wake
 date: 2024-10-06T07:00:00.000Z
-last_modified: 2024-10-07T04:42:50.759Z
+updated: 2024-10-07T04:42:50.759Z
 tags:
   - cohost
 description: a little post about the Bay Araa Cohost Wake that happened today

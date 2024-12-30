@@ -1,9 +1,12 @@
+import { getLastUpdatedTimestamp } from "../../helpers/gitDate.mjs";
 import { htmlToText, truncateText } from "../helpers/types.mjs";
 
 export const layout = "post.liquid";
 
 export const tags = ["blog"];
-export const date = "git created";
+export function updated() {
+  return getLastUpdatedTimestamp(this.page);
+}
 
 export function description() {
   return truncateText(htmlToText(this.content));
