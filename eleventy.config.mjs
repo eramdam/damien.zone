@@ -5,6 +5,7 @@ import markdownItFootnote from "markdown-it-footnote";
 import markdownItNamedHeadings from "markdown-it-named-headers";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 import { feedsPlugin } from "./11ty/feeds.mjs";
+import { dateNowMarkdown } from "./11ty/dateNowMarkdown.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -12,6 +13,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
+  eleventyConfig.addPlugin(dateNowMarkdown);
   eleventyConfig.setQuietMode(true);
   if (process.env.ELEVENTY_RUN_MODE === "build") {
     eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
