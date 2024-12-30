@@ -1,2 +1,0 @@
-src/img/blog/photos/**/* filter=lfs diff=lfs merge=lfs -text
-src/img/photos/**/* filter=lfs diff=lfs merge=lfs -text
