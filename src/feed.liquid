@@ -11,6 +11,7 @@ eleventyExcludeFromCollections: true
   <id>{{ pageUrl | htmlBaseUrl: site.url }}</id>
   <link href="{{ permalink | htmlBaseUrl: site.url }}" rel="self"/>
   <link href="{{ pageUrl | htmlBaseUrl: site.url }}" rel="alternate" type="text/html" />
+  <icon>{{ "/favicon-bg.png" | htmlBaseUrl: site.url }}</icon>
   <updated>{{ posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   {%- assign posts = posts | reverse -%}
   {%- for post_ in posts limit:15 -%}
