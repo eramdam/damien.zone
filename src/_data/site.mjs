@@ -1,4 +1,4 @@
 export default {
   name: "damien's zone",
-  url: "https://damien.zone",
+  url: process.env.URL ?? "https://damien.zone",
 };
