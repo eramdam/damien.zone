@@ -47,8 +47,11 @@
 <link rel="preload" href="/assets/styles/hack-font/fonts/hack-bold-subset.woff2" as="font" crossorigin="anonymous">
 
 <link rel="stylesheet" href="/assets/styles/damien.zone.css?v={{ contentHashes.stylesh-16eet }}">
-<link rel="icon" sizes="16x16 32x32" href="/assets/favicon/favicon-16-32.ico">
-<link rel="icon" href="/assets/favicon/favicon.webp">
+{% comment %} https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7 {% endcomment %}
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="{{ site.name |  escape }}">
 
 <title>{% htmlTitle %}</title>
 <!-- Primary Meta Tags -->
