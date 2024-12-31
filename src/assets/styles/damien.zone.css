@@ -222,6 +222,7 @@ footer > :not(#footer-directive) {
 
 header .title h1 {
   font-size: 1.4em;
+  font-weight: normal;
   padding: 5px 10px;
   background: var(--color-accent);
   color: var(--offwhite-background);
@@ -244,17 +245,12 @@ header .title {
 }
 
 .title img {
-  margin-right: 15px;
+  margin-right: 14px;
   display: block;
 
   width: 40px;
   height: 40px;
-}
-
-@media (min-resolution: 2x) {
-  .title img {
-    image-rendering: pixelated;
-  }
+  image-rendering: pixelated;
 }
 
 .inline {
