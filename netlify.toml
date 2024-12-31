@@ -9,6 +9,3 @@ to = "/feed.xml"
 [[redirects]]
 from = "/feed?type=rss"
 to = "/feed.xml"
-
-[dev]
-targetPort = 3000
