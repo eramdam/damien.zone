@@ -62,7 +62,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ page.url | htmlBaseUrl: site.url }}">
 <meta property="og:description" content="{{ description | escape }}">
-{%- openGraphImages -%}
+<meta property="og:image" content="{{ image | default: '/assets/open_graph.webp' }}">
+<meta name="theme-color" content="#be133c" media="(min-width: 99999999999px)">
 
 <link rel="canonical" href="{{ page.url | htmlBaseUrl: site.url }}">
 <link rel="me" href="https://social.erambert.me/@eramdam">

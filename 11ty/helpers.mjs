@@ -46,7 +46,6 @@ export function helpersPlugin(eleventyConfig) {
 
   eleventyConfig.addShortcode("openGraphImages", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
-    const hasCustomImage = !!context.image;
     const currentImage = context.image || "/assets/open_graph.webp";
 
     let markup = `
@@ -56,14 +55,7 @@ export function helpersPlugin(eleventyConfig) {
       />
     `;
 
-    if (hasCustomImage) {
-      return markup.trim();
-    }
-
-    return `${markup}
-      <meta property="og:image:width" content="64">
-      <meta property="og:image:height" content="64">
-    `.trim();
+    return markup.trim();
   });
 
   eleventyConfig.addShortcode("bodyClass", function () {
