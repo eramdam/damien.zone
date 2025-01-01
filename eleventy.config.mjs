@@ -3,6 +3,7 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItNamedHeadings from "markdown-it-named-headers";
+import markdownItAttrs from "markdown-it-attrs";
 import { dateNowMarkdown } from "./11ty/dateNowMarkdown.mjs";
 import { feedsPlugin } from "./11ty/feeds.mjs";
 import { helpersPlugin } from "./11ty/helpers.mjs";
@@ -23,7 +24,10 @@ export default function (eleventyConfig) {
   }
 
   eleventyConfig.amendLibrary("md", (mdLib) =>
-    mdLib.use(markdownItFootnote).use(markdownItNamedHeadings),
+    mdLib
+      .use(markdownItAttrs)
+      .use(markdownItFootnote)
+      .use(markdownItNamedHeadings),
   );
 
   // Styles, scripts and media used by the general layout
