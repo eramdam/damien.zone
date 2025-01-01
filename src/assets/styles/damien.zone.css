@@ -147,7 +147,7 @@ a {
 main {
   line-height: 1.6;
 
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0 24px;
   padding-bottom: 20px;
   border-width: 1px;
@@ -292,6 +292,10 @@ td {
     padding: 20px;
     margin-top: 30px;
     margin-bottom: 10px;
+
+    & :is(ul, p, h1):first-child {
+      margin-top: 0;
+    }
   }
 
   ul.blog-posts li {
@@ -481,12 +485,6 @@ code:not([class]) {
   }
 }
 
-@media (max-width: 480px) {
-  #myWebRing {
-    width: 300px !important;
-  }
-}
-
 #myWebRing {
   position: relative;
 }
@@ -497,4 +495,14 @@ code:not([class]) {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media (max-width: 480px) {
+  #myWebRing {
+    width: 300px !important;
+    overflow: hidden;
+  }
+  #myWebRing img {
+    right: -20px;
+  }
 }
