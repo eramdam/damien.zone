@@ -61,7 +61,9 @@ export function helpersPlugin(eleventyConfig) {
   eleventyConfig.addShortcode("bodyClass", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
     const isHome = this.page.url === "/";
-    const isPost = Array.from(context.tags || []).includes("blog");
+    const isPost = Array.from(context.tags || []).some(
+      (t) => t === "blog" || t === "drafts",
+    );
 
     const final = [
       isHome && "home",
