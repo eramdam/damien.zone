@@ -144,7 +144,8 @@ a {
   }
 }
 
-main {
+main,
+.main-block {
   line-height: 1.6;
 
   margin-top: 20px;
@@ -205,15 +206,6 @@ blockquote {
   & p:last-of-type:after {
     content: close-quote;
   }
-}
-
-footer {
-  padding: 25px 0;
-  text-align: center;
-}
-
-footer > :not(#footer-directive) {
-  opacity: 0.6;
 }
 
 .title:hover {
@@ -308,19 +300,6 @@ td {
 }
 
 /* Custom stuff */
-
-footer {
-  text-align: center;
-}
-
-footer img {
-  display: initial;
-  vertical-align: middle;
-}
-
-footer p {
-  text-align: center;
-}
 
 .pixel {
   image-rendering: pixelated;
@@ -455,54 +434,27 @@ code:not([class]) {
 }
 
 /* Webring widget */
-#myWebRing {
-  margin: 10px auto;
-  font-family: var(--font-monospace);
-  border-width: 4px;
-  border-color: var(--webring-color-accent);
-  border-style: ridge;
-  border-radius: var(--border-radius);
-  width: 400px;
-
-  & .webring-head {
-    height: 100px;
-    overflow: hidden;
-  }
-  & .webring-foot {
-    font-weight: bold;
-    background-color: var(--webring-color-accent);
-    height: 26px;
-
-    & a {
-      text-decoration: none;
-    }
-  }
-  & .webring-head-text {
-    width: 100%;
-    position: relative;
-    top: 0%;
-    transform: translate(5px, 8px);
-  }
+footer.main-block {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #myWebRing {
-  position: relative;
+  max-width: 250px;
+  margin: 100px auto;
+  margin-bottom: 20px;
 }
 
-#myWebRing img {
-  height: 100px;
-  width: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
+body.links .links-links {
+  padding-left: 0;
 }
 
-@media (max-width: 480px) {
-  #myWebRing {
-    width: 300px !important;
-    overflow: hidden;
-  }
-  #myWebRing img {
-    right: -20px;
-  }
+body.links .links-links {
+  column-count: 3;
+  text-align: center;
+}
+
+body.links .links-links li {
+  list-style-type: none;
+  display: block;
 }

@@ -19,42 +19,50 @@ You can find me on:
 
 You can also contact me by email at [damien@erambert.me](mailto:damien@erambert.me)
 
-## have you seen these cool buttons??
+## button collection
 
-Here's mine, by the way! (made by [Gwyn](https://shadenexus.com/)!)
+If I know you and you have a button, let me know so I can add it underneath!    
+Here's mine, by the way (made by [Gwyn](https://shadenexus.com/)!){style="float:left;"}
 
 <div class="buttons-mybutton">{% include 'meta/my-button.html' %}</div>
-
+<br />
 <div class="buttons">
   {% htmlButtons %}
 </div>
+<br />
 
-<div class="eggbug-buttons"><img src="/public/buttons/eggbugforeverowo.png" class="pixel" alt="" /></div>
 
 ## friends' links
 
 - [cd-rom journal](https://cdrom.ca/)
 - [cervine.online](https://cervine.online/)
-- [drac.at](https://drac.at/) - ticky
-- [evie on→line](https://ewie.online/) - evie finch
-- [jkap](https://jkap.io) - jae kaplan
-- [kataspace](https://ellen.zone/) - ellen kaplan
-- [kyn snoozes](https://kyn.bearblog.dev/) - kyn
+- [drac.at](https://drac.at/)
+- [evie on→line](https://ewie.online/)
+- [izzy muerte](https://izzys.casa/)
+- [jkap](https://jkap.io)
+- [kataspace](https://ellen.zone/)
+- [kyn snoozes](https://kyn.bearblog.dev/)
 - [lex feathers](https://lexfeathers.ca/)
 - [lizard.tools](https://lizard.tools)
-- [maff.scot](https://maff.scot/) - maffsie
-- [midnight reading](https://renkotsuban.com/) - renkon
-- [nicky flowers](https://nickyflowers.com/) - nicky flowers
-- [nullrouted space](https://nullrouted.space/) - sadiq saif
-- [platinumtulip](https://platinumtulip.garden/) - tulip
-- [someplace elsewhere](https://blog.someplace-else.xyz/) - nat clayton
-- [the transsexual chofetz chaim](https://shelraphen.com/) - shel raphen
-- [videodante](https://blog.dante.cool/) - dante douglas
-- [wavebeem](https://www.wavebeem.com/) - sage fennel
+- [maff.scot](https://maff.scot/)
+- [midnight reading](https://renkotsuban.com/)
+- [nicky flowers](https://nickyflowers.com/)
+- [nullrouted space](https://nullrouted.space/)
+- [platinumtulip](https://platinumtulip.garden/)
+- [someplace elsewhere](https://blog.someplace-else.xyz/)
+- [the transsexual chofetz chaim](https://shelraphen.com/)
+- [videodante](https://blog.dante.cool/)
+- [wavebeem](https://www.wavebeem.com/)
+{.links-links}
 
-## just cool links, really
+## cool links
 
 - [crouton.net](https://crouton.net)
 - [internet-ti.me](https://internet-ti.me/)
 - [Push Processing](https://pushprocess.ing/)
 - [Website League](https://websiteleague.org/)
+{.links-links}
+
+
+
+{% include 'meta/webring.html' %}
