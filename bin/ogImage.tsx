@@ -1,8 +1,6 @@
 import satori from "satori";
 import fs from "node:fs";
-import React from "react";
-import { Resvg } from "@resvg/resvg-js";
-import sharp from "sharp";
+import { optimize } from "svgo";
 
 (async () => {
   const fontBuffer = fs.readFileSync(
@@ -64,11 +62,9 @@ import sharp from "sharp";
       ],
     },
   );
-  const resvg = new Resvg(svg);
-  const pngData = resvg.render().asPng();
-  sharp(pngData)
-    .webp({
-      lossless: true,
-    })
-    .toFile("./src/assets/open_graph.webp");
+  const result = optimize(svg, {
+    multipass: true,
+  });
+
+  fs.writeFileSync("./src/assets/open_graph.svg", result.data);
 })();
