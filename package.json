@@ -8,8 +8,10 @@
     "start": "run-s cleanup start:site",
     "build:site": "npx @11ty/eleventy",
     "build": "run-s cleanup build:site",
-    "new": "node bin/newPost.mjs",
-    "ogImage": "tsx --tsconfig ./bin/tsconfig.json bin/ogImage.tsx"
+    "new": "npm run _tsx -- bin/newPost.ts",
+    "_tsx": "tsx --tsconfig ./bin/tsconfig.json",
+    "ogImage": "npm run _tsx -- bin/ogImage.tsx",
+    "buttons": "npm run _tsx -- bin/ogImage.tsx"
   },
   "keywords": [],
   "author": "",
