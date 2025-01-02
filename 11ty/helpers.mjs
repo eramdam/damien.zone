@@ -46,7 +46,7 @@ export function helpersPlugin(eleventyConfig) {
 
   eleventyConfig.addShortcode("openGraphImages", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
-    const currentImage = context.image || "/assets/open_graph.webp";
+    const currentImage = context.image || "/assets/open_graph.svg";
 
     let markup = `
       <meta
