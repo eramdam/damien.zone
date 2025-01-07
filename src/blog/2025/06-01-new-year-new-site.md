@@ -4,7 +4,6 @@ slug: new-year-new-site
 date: 2025-01-07T02:07:13.112Z
 tags:
   - meta
-description: ""
 image: /img/blog/damienzone25/damien-zone-2025.webp
 ---
 
