@@ -23,7 +23,7 @@ export function getLastUpdatedTimestamp(pageData) {
   let timestamp = getGitLastUpdatedTimeStamp(pageData.inputPath);
 
   if (!timestamp) {
-    return undefined;
+    return pageData.date;
   }
 
   return new Date(timestamp);
