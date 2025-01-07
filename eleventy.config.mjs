@@ -5,7 +5,6 @@ import markdownItFootnote from "markdown-it-footnote";
 import markdownItNamedHeadings from "markdown-it-named-headers";
 import markdownItAttrs from "markdown-it-attrs";
 import implicitFigures from "markdown-it-image-figures";
-import { dateNowMarkdown } from "./11ty/dateNowMarkdown.mjs";
 import { feedsPlugin } from "./11ty/feeds.mjs";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 
@@ -15,7 +14,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
-  eleventyConfig.addPlugin(dateNowMarkdown);
   eleventyConfig.setQuietMode(true);
   if (process.env.ELEVENTY_RUN_MODE === "build") {
     eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
@@ -26,7 +24,6 @@ export default function (eleventyConfig) {
 
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib
-
       .use(markdownItAttrs)
       .use(markdownItFootnote)
       .use(markdownItNamedHeadings)
