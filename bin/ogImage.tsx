@@ -1,6 +1,7 @@
 import satori from "satori";
 import fs from "node:fs";
 import { optimize } from "svgo";
+import sharp from "sharp";
 
 (async () => {
   const fontBuffer = fs.readFileSync(
@@ -66,5 +67,9 @@ import { optimize } from "svgo";
     multipass: true,
   });
 
-  fs.writeFileSync("./src/assets/open_graph.svg", result.data);
+  await sharp(Buffer.from(result.data))
+    .webp({
+      lossless: true,
+    })
+    .toFile("./src/assets/open_graph.webp");
 })();
