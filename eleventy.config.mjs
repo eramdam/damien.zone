@@ -15,12 +15,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
   eleventyConfig.setQuietMode(true);
-  if (process.env.ELEVENTY_RUN_MODE === "build") {
-    eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
-      globstring: "/{assets,img/blog,img/projects}/**/*",
-      extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
-    });
-  }
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
+    globstring: "/{assets,img/blog,img/projects}/**/*",
+    extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
+  });
 
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib
