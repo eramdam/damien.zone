@@ -1,2 +1,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q{% htmlButtons %}\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QA Node.js-based tool that syncs your GitHub stars to a given Raindrop collection.\\E$"}
+{"rule":"AI_HYDRA_LEO_MISSING_COMMA","sentence":"^\\Qdamien.zone january 2025 release notes\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qdamien.zone january 2025 release notes\\E$"}
