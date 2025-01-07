@@ -1,5 +1,5 @@
 ---
-title: New year, (almost) new site!
+title: New year, new site!
 slug: new-year-new-site
 date: 2025-01-01T20:55:59.154Z
 tags: []
@@ -38,13 +38,13 @@ While the goal of this migration was to have a 1:1 copy of the way the site look
 
 I also changed a bunch of little things in the main design around contrast and colors. Here's a little comparison:
 
-![Before, in dark mode](/img/blog/damienzone25/damienzone2025-before-dark.webp)
+![](/img/blog/damienzone25/damienzone2025-before-dark.webp "Before, in dark mode")
 
-![After, in dark mode](/img/blog/damienzone25/damienzone2025-after-dark.webp)
+![](/img/blog/damienzone25/damienzone2025-after-dark.webp "After, in dark mode")
 
-![Before, in light mode](/img/blog/damienzone25/damienzone2025-before-light.webp)
+![](/img/blog/damienzone25/damienzone2025-before-light.webp "Before, in light mode")
 
-![After, in light mode](/img/blog/damienzone25/damienzone2025-after-light.webp)
+![](/img/blog/damienzone25/damienzone2025-after-light.webp "After, in light mode")
 
 
 ### Misc
