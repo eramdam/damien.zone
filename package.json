@@ -9,6 +9,7 @@
     "build:site": "npx @11ty/eleventy",
     "build": "run-s cleanup build:site",
     "new": "npm run _tsx -- bin/newPost.ts",
+    "publish": "npm run _tsx -- bin/publishDraft.ts",
     "_tsx": "tsx --tsconfig ./bin/tsconfig.json",
     "ogImage": "npm run _tsx -- bin/ogImage.tsx",
     "buttons": "npm run _tsx -- bin/ogImage.tsx"
@@ -45,6 +46,7 @@
     "svgo": "^4.0.0-rc.1"
   },
   "devDependencies": {
+    "@inquirer/prompts": "^7.2.1",
     "@resvg/resvg-js": "^2.6.2",
     "@types/react": "^19.0.2",
     "react": "^19.0.0",
