@@ -7,6 +7,11 @@ tags:
 image: /img/blog/damienzone25/damien-zone-2025.webp
 ---
 
+<picture>
+<source srcset="/img/blog/damienzone25/damien-zone-2025-dark.webp" media="(prefers-color-scheme: dark)">
+<img srcset="/img/blog/damienzone25/damien-zone-2025.webp"  />
+</picture>
+
 Here it is, the new year! I can't say I'm especially overjoyed about it, but I'm also fine with leaving 2024 behind, so... you know.
 
 At any rate, as you (maybe) can see, this website got a bit of an overhaul!  
