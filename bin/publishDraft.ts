@@ -31,9 +31,9 @@ import { glob } from "glob";
   const date = new Date();
   const year = date.getUTCFullYear();
   const prefix =
-    date.getDate().toString().padStart(2, "0") +
+    (date.getMonth() + 1).toString().padStart(2, "0") +
     "-" +
-    (date.getMonth() + 1).toString().padStart(2, "0");
+    date.getDate().toString().padStart(2, "0");
   if (!fs.existsSync("./src/blog/" + year)) {
     fs.mkdirSync("./src/blog/" + year);
   }
