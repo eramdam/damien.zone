@@ -124,6 +124,12 @@
     "filename": "lizards-tools.png"
   },
   {
+    "link": "https://lmnt.me",
+    "name": "Louie Mantia",
+    "src": "./public/buttons/lmnt.gif",
+    "filename": "lmnt.gif"
+  },
+  {
     "link": "https://meow.garden/",
     "name": "meow.garden",
     "src": "./public/buttons/meowgarden-88x31.png",
