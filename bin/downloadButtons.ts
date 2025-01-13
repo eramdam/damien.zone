@@ -4,7 +4,7 @@ import { Readable } from "node:stream";
 import { finished } from "node:stream/promises";
 import { URL } from "url";
 import fs from "node:fs";
-import buttons from "../_data/buttons.json" with { type: "json" };
+import buttons from "../src/_data/buttons.json" with { type: "json" };
 
 type ButtonDef = (typeof buttons)[number];
 
@@ -20,7 +20,7 @@ type ButtonDef = (typeof buttons)[number];
       buttonDef.src = `./public${imageSrc}`;
     } else {
       assert(
-        fs.existsSync(buttonDef.src),
+        fs.existsSync(path.resolve("src/", buttonDef.src)),
         `There is no file for ${buttonDef.src}`,
       );
     }
@@ -35,13 +35,13 @@ type ButtonDef = (typeof buttons)[number];
 
 async function downloadFile(url: string, filename: string) {
   const res = await fetch(url);
-  const destination = path.resolve("./public/buttons/", filename);
+  const destination = path.resolve("src/", "public/buttons/", filename);
   const fileStream = fs.createWriteStream(destination);
   await finished(Readable.fromWeb(res.body!).pipe(fileStream));
 
   const rootDirname = __dirname.replace("bin", "");
 
-  return destination.replace(rootDirname, "").replace("public/", "/");
+  return destination.replace(rootDirname, "").replace("src/public/", "/");
 }
 
 function getFilenameFromURL(url: URL) {
@@ -50,7 +50,7 @@ function getFilenameFromURL(url: URL) {
 
 function updateButtonConfig(buttons: ButtonDef[]) {
   return fs.writeFileSync(
-    "./_data/buttons.json",
+    "./src/_data/buttons.json",
     JSON.stringify(buttons, null, 2),
     "utf-8",
   );
