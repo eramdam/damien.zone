@@ -19,7 +19,7 @@ You can find me on:
 
 You can also contact me by email at [damien@erambert.me](mailto:damien@erambert.me)
 
-## button collection
+## buttons collection
 
 If I know you and you have a button, let me know so I can add it underneath!    
 Here's mine, by the way (made by [Gwyn](https://shadenexus.com/)!){style="float:left;"}
