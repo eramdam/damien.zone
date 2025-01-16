@@ -90,4 +90,22 @@ export function helpersPlugin(eleventyConfig) {
       })
       .join("");
   });
+
+  // https://github.com/11ty/eleventy/issues/927#issuecomment-627703544
+  eleventyConfig.addCollection("tagList", (collections) => {
+    const tags = collections
+      .getAll()
+      .reduce((tags, item) => tags.concat(item.data.tags), [])
+      .filter((tag) => !!tag)
+      .filter(
+        (tag) =>
+          tag !== "blog" &&
+          tag !== "all" &&
+          tag !== "drafts" &&
+          tag !== "tagList",
+      )
+      .sort();
+
+    return Array.from(new Set(tags));
+  });
 }

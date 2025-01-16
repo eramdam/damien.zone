@@ -170,6 +170,11 @@ main > .tags {
   margin-bottom: 0;
 }
 
+.tags-list a,
+main > .tags a {
+  text-transform: lowercase;
+}
+
 nav a {
   margin-right: 8px;
 }
@@ -525,16 +530,13 @@ code:not([class]) {
   margin-bottom: 20px;
 }
 
-body.links .links-links {
+:is(body.links .links-links, .tags-list) {
   padding-left: 0;
-}
-
-body.links .links-links {
   column-count: 3;
   text-align: center;
 }
 
-body.links .links-links li {
+:is(body.links .links-links, .tags-list) li {
   list-style-type: none;
   display: block;
 }

@@ -1,0 +1,14 @@
+---
+title: tags
+layout: base
+description: french software engineer living and working in the Bay Area on web stuff
+---
+<h1>tags</h1>
+
+<ul class="tags-list">
+  {% for tag in collections.tagList %}
+    <li>
+      <a href="/tag/{{ tag |  url_encode }}">#{{ tag }}</a>
+    </li>
+  {% endfor %}
+</ul>
