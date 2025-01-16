@@ -26,7 +26,7 @@
       {% if tags %}
         <p class="tags">
           {% for tag in tags %}
-            <a href="/tag/{{ tag |  url_encode }}"
+            <a href="/tag/{{ tag | url_encode }}"
               >#
               {{- tag | escape -}}
             </a>
