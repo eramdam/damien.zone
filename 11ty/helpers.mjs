@@ -5,6 +5,7 @@ import he from "he";
 import assert from "node:assert";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
 import siteData from "../src/_data/site.mjs";
+import { truncateHTML } from "../helpers/strings.mjs";
 
 const timezone = "America/Los_Angeles";
 
@@ -31,6 +32,7 @@ export function helpersPlugin(eleventyConfig) {
     return array.slice(0, count);
   });
   eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
 
   eleventyConfig.addShortcode("htmlTitle", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
