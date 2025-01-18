@@ -25,12 +25,12 @@ function omit(array, ...items) {
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function helpersPlugin(eleventyConfig) {
-  eleventyConfig.addFilter("omit", omit);
-  eleventyConfig.addFilter("format", format);
-  eleventyConfig.addFilter("take", function (array, count) {
+  eleventyConfig.addLiquidFilter("omit", omit);
+  eleventyConfig.addLiquidFilter("format", format);
+  eleventyConfig.addLiquidFilter("take", function (array, count) {
     return array.slice(0, count);
   });
-  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
 
   eleventyConfig.addShortcode("htmlTitle", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};

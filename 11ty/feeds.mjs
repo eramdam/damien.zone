@@ -3,14 +3,14 @@ import he from "he";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function feedsPlugin(eleventyConfig) {
-  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
-  eleventyConfig.addFilter("absoluteUrl", rssPlugin.absoluteUrl);
-  eleventyConfig.addFilter(
+  eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("absoluteUrl", rssPlugin.absoluteUrl);
+  eleventyConfig.addLiquidFilter(
     "getNewestCollectionItemDate",
     rssPlugin.getNewestCollectionItemDate,
   );
-  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
-  eleventyConfig.addFilter(
+  eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter(
     "htmlToAbsoluteUrls",
     rssPlugin.convertHtmlToAbsoluteUrls,
   );
