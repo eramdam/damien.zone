@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
     globstring: "/{assets,img/blog,img/projects}/**/*",
     extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
   });
+  eleventyConfig.setLayoutsDirectory("_layouts");
 
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib
