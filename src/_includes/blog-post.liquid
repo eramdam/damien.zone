@@ -1,0 +1,41 @@
+{% if in_feed %}
+  <h1>
+    <a href="{{ link | escape }}">
+      {{ title | escape }}
+    </a>
+  </h1>
+{% else %}
+  <h1>{{ title | escape }}</h1>
+{% endif %}
+
+<p class="post-datetime ">
+  {% comment %}
+    <time
+      class="dt-published"
+      datetime="{{ date | dateToRfc3339 }}"
+      title="{{ date | format: "iii, MMM d, y, ppp" }}"
+    >
+      {{ date | format: 'PPP' }}
+    </time>
+  {% endcomment %}
+  {% if updated %}
+    <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
+  {% endif %}
+</p>
+
+{% if in_feed %}
+  {{ content | truncateHTML: 300, link: link }}
+{% else %}
+  {{ content }}
+{% endif %}
+{%- assign tags = tags | omit: 'blog' -%}
+{% if tags %}
+  <p class="tags">
+    {% for tag in tags %}
+      <a href="/tag/{{ tag | url_encode }}"
+        >#
+        {{- tag | escape -}}
+      </a>
+    {% endfor %}
+  </p>
+{% endif %}
