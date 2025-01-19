@@ -14,7 +14,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
-  eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
     extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
