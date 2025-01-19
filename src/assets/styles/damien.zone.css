@@ -17,6 +17,12 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* common variables */
 :root {
   --width: 80ch;
@@ -36,6 +42,11 @@
 
   --main-horizontal-padding: 24px;
   --color-text-muted: hsl(from var(--color-syntax-comment) h 0% l);
+
+  /* thx @wavebeem for the tip */
+  --link-underline-offset: calc(1em / 6);
+  --link-underline-thickness: calc(1em / 12);
+  --link-underline-thickness-hover: calc(var(--link-underline-thickness) + 1px);
 }
 
 /* light colors */
@@ -100,20 +111,11 @@
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   font-synthesis: none;
   font-family: "Young Serif", serif;
   color: var(--color-heading);
   text-wrap: balance;
-}
-
-:is(h1, h2, h3, h4, h5, h6) a {
-  text-decoration: none;
 }
 
 body {
@@ -132,18 +134,14 @@ body {
 
 a {
   color: inherit;
-  cursor: pointer;
   text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
   text-decoration-color: var(--color-accent);
-  transition:
-    text-underline-offset,
-    color 160ms ease;
+  text-decoration-thickness: var(--link-underline-thickness);
+  text-underline-offset: var(--link-underline-offset);
 
   &:hover {
-    text-decoration: none;
     color: var(--color-link-base);
+    --link-underline-thickness: var(--link-underline-thickness-hover);
   }
 
   .footnote-ref & {
@@ -189,8 +187,6 @@ main:has(> :not(.main-block)),
   & > .tags a {
     color: var(--color-text-muted);
     text-decoration-color: currentColor;
-    text-decoration-thickness: 1px;
-    text-underline-offset: initial;
   }
 }
 
@@ -528,11 +524,9 @@ figure[data-type="image"] {
 
 code:not([class]) {
   font-family: var(--font-monospace);
-  font-size: 0.9em;
-  font-weight: bold;
+  font-size: 0.85em;
   background-color: var(--offblack-background);
   border-radius: var(--border-radius);
-  color: var(--color-code-text);
   padding: 0.1em 0.4em;
   font-variant-ligatures: none;
 
