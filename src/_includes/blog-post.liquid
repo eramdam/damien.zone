@@ -1,12 +1,8 @@
-{% if in_feed %}
-  <h1>
-    <a href="{{ link | escape }}">
-      {{ title | escape }}
-    </a>
-  </h1>
-{% else %}
-  <h1>{{ title | escape }}</h1>
-{% endif %}
+<h1>
+  <a href="{{ link | escape }}">
+    {{ title | escape }}
+  </a>
+</h1>
 
 <p class="post-datetime ">
   {% comment %}
