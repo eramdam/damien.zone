@@ -13,5 +13,5 @@ export function createContentHash(...globs) {
 }
 
 export function createStringHash(string) {
-  return crypto.createHash("md5").update(string).digest("hex");
+  return crypto.createHash("sha256").update(string).digest("hex");
 }
