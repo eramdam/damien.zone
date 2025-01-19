@@ -35,6 +35,7 @@
   --offwhite-background: hsl(0, 33%, 96%);
 
   --main-horizontal-padding: 24px;
+  --color-text-muted: hsl(from var(--color-syntax-comment) h 0% l);
 }
 
 /* light colors */
@@ -141,7 +142,7 @@ a {
     color 160ms ease;
 
   &:hover {
-    text-underline-offset: 4px;
+    text-decoration: none;
     color: var(--color-link-base);
   }
 
@@ -153,6 +154,12 @@ a {
     &:hover {
       text-decoration: none;
     }
+  }
+
+  &.footnote-backref {
+    color: var(--color-accent);
+    text-underline-offset: initial;
+    text-decoration-thickness: initial;
   }
 }
 
@@ -174,10 +181,17 @@ main:has(> :not(.main-block)),
   border-style: solid;
   border-radius: 6px;
   background-color: var(--color-main-background);
-}
 
-main > .tags {
-  margin-bottom: 0;
+  & > .tags {
+    margin-bottom: 0;
+  }
+
+  & > .tags a {
+    color: var(--color-text-muted);
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: initial;
+  }
 }
 
 .tags-list a,
