@@ -5,15 +5,13 @@
 </h1>
 
 <p class="post-datetime ">
-  {% comment %}
-    <time
-      class="dt-published"
-      datetime="{{ date | dateToRfc3339 }}"
-      title="{{ date | format: "iii, MMM d, y, ppp" }}"
-    >
-      {{ date | format: 'PPP' }}
-    </time>
-  {% endcomment %}
+  <time
+    class="dt-published"
+    datetime="{{ date | dateToRfc3339 }}"
+    title="{{ date | format: "iii, MMM d, y, ppp" }}"
+  >
+    {{ date | format: 'PPP' }}
+  </time>
   {% if updated %}
     <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
   {% endif %}
