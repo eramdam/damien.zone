@@ -2,7 +2,6 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 // import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import eleventySass from "eleventy-sass";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItFootnote from "markdown-it-footnote";
 import implicitFigures from "markdown-it-image-figures";
@@ -12,7 +11,6 @@ import { helpersPlugin } from "./11ty/helpers.mjs";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventySass);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
@@ -22,17 +20,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
     hashAlgorithm: "sha256",
-    extensions: [
-      "js",
-      "png",
-      "jpg",
-      "jpeg",
-      "gif",
-      "mp4",
-      "ico",
-      "webp",
-      "css",
-    ],
+    extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
   });
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {

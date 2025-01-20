@@ -1,17 +1,17 @@
-// Fonts
-@use "fonts";
+/* Fonts */
+@import url("./fonts.css");
 
 /* Comentario */
-@use "comentario";
+@import url("./comentario.css");
 
 /* Syntax highlighting */
-@use "syntax";
+@import url("./syntax.css");
 
 /* Image gallery */
-@use "image-gallery";
+@import url("./image-gallery.css");
 
 /* Webmentions */
-@use "webmentions";
+@import url("./webmentions.css");
 
 ::before,
 ::after,
