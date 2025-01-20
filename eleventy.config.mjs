@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
+    hashAlgorithm: "sha256",
     extensions: [
       "js",
       "png",
@@ -33,7 +34,7 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
-    if (data.hidden && process.env.ELEVENTY_RUN_MODE === "build") {
+    if (data.hidden) {
       return false;
     }
   });
@@ -71,6 +72,7 @@ export default function (eleventyConfig) {
     strictFilters: true,
   });
 
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
 }
