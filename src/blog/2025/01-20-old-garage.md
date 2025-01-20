@@ -1,6 +1,6 @@
 ---
 title: Site update (january 2025)
-slug: old-garage
+slug: site-update-january-2025
 date: 2025-01-20T09:50:43.741Z
 tags:
   - meta
