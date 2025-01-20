@@ -3,6 +3,7 @@ import { select, Separator } from "@inquirer/prompts";
 import fs from "node:fs";
 import path from "node:path";
 import { glob } from "glob";
+import slug from "slug";
 
 (async () => {
   const drafts = await glob("./src/drafts/*.md");
@@ -42,6 +43,7 @@ import { glob } from "glob";
     delete fields.data.updated;
   }
   fields.data.date = date;
+  fields.data.slug = slug(fields.data.title);
 
   const newFilename = `./src/blog/${year}/${prefix}-${fields.data.slug}.md`;
   const newFileContent = matter.stringify(fields.content, fields.data);
