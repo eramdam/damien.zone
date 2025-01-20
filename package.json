@@ -29,6 +29,7 @@
     "@types/he": "^1.2.3",
     "@types/html-to-text": "^9.0.4",
     "@types/node": "^22.10.2",
+    "@types/slug": "^5.0.9",
     "cheerio": "^1.0.0",
     "cross-spawn": "^7.0.6",
     "date-fns": "^4.1.0",
@@ -50,6 +51,7 @@
     "random-word-slugs": "^0.1.7",
     "rimraf": "^6.0.1",
     "sanitize-html": "^2.14.0",
+    "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
     "truncate-html": "^1.2.0-beta.1"
   },
