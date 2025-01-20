@@ -1,18 +1,12 @@
 ---
-description: "Posts tagged with {{ tag }}"
+description: "Posts tagged with {{ posts.tag }}"
 layout: "base"
-permalink: "/tag/{{ tag | url_encode }}/"
-pagination:
-  data: "collections"
-  alias: "tag"
-  size: 1
-  addAllPagesToCollections: true
-  filter: ["blog", "all", "tagList"]
+permalink: "/tag/{{ posts.tag | url_encode }}/{{ posts.slug }}/"
 class_name: h-feed
 ---
 <div class="main-block skinny">
-  <h1 class="tag">Posts with #{{ tag }}</h1>
+  <h1 class="tag">Posts with #{{ posts.tag }}</h1>
 </div>
 
-{% assign posts = collections[tag] | reverse %}
-{% render 'blog-posts', posts: posts %}
+{% comment %} {% assign posts = collections[tag] | reverse %} {% endcomment %}
+{% render 'blog-posts', posts: posts.posts, pagination: posts.pagination %}
