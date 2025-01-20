@@ -427,6 +427,11 @@ figure[data-type="image"] {
       border-left: none;
       border-right: none;
     }
+
+    & figcaption {
+      padding-left: calc(var(--main-horizontal-padding) / 2);
+      padding-right: calc(var(--main-horizontal-padding) / 2);
+    }
   }
 }
 
