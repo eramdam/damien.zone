@@ -44,7 +44,7 @@ export async function webMentions() {
   for (let page = 0; ; page++) {
     try {
       let response = await Fetch(`${endpoint}&page=${page}`, {
-        duration: "1s", // save for 1 minute
+        duration: "1d", // save for 1 day
         verbose: true,
       });
       response = JSON.parse(response.toString());
@@ -131,7 +131,7 @@ export async function webMentions() {
       String(mention.content.html).includes(`????`)
     ) {
       try {
-        const mastodonResponse = await Fetch(mention.url, {
+        const mastodonResponse = await fetch(mention.url, {
           headers: {
             "Content-Type": "application/ld+json",
             Accept: "application/ld+json",
