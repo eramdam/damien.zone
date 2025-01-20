@@ -188,6 +188,10 @@ main:has(> :not(.main-block)),
     color: var(--color-text-muted);
     text-decoration-color: currentColor;
   }
+
+  & > .tags a::before {
+    content: "#";
+  }
 }
 
 .tags-list a,
