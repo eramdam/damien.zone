@@ -5,7 +5,7 @@
   "scripts": {
     "_eleventy": "npx @11ty/eleventy",
     "cleanup": "rimraf _site",
-    "start:site": "npm run _eleventy -- --serve --incremental",
+    "start:site": "npm run _eleventy -- --serve",
     "start": "run-s cleanup start:site",
     "build:site": "npm run _eleventy",
     "build": "run-s cleanup build:site",
