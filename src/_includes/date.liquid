@@ -1,0 +1,12 @@
+<time
+  datetime="{{ date | dateToRfc3339 }}"
+  title="{{ date | format: "iii, MMM d, y, ppp" }}"
+  {% if class %}
+    class="{{ class }}"
+  {% endif %}
+>
+  {{ date | format: 'PPP' }}
+</time>
+{% if updated %}
+  <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
+{% endif %}

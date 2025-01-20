@@ -24,6 +24,19 @@ function omit(array, ...items) {
   return (array ?? []).filter((item) => !items.includes(item));
 }
 
+/** Returns whether the given URL is for this site. */
+function isSiteUrl(url) {
+  url = url.toString();
+  if (!url.startsWith("http://") && !url.startsWith("https://")) return true;
+  return url.startsWith("https://damien.zone.com");
+}
+
+/** Returns the hostname of the given URL. */
+function urlHostname(url) {
+  if (typeof url === "string") url = new URL(url);
+  return url.hostname;
+}
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function helpersPlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("omit", omit);
@@ -110,4 +123,7 @@ export function helpersPlugin(eleventyConfig) {
 
     return Array.from(new Set(tags));
   });
+
+  eleventyConfig.addLiquidFilter("isSiteUrl", isSiteUrl);
+  eleventyConfig.addLiquidFilter("urlHostname", urlHostname);
 }
