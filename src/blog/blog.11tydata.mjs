@@ -1,3 +1,4 @@
+import Fetch from "@11ty/eleventy-fetch";
 import escapeHtml from "escape-html";
 import sanitizeHtml from "sanitize-html";
 import { getLastUpdatedTimestamp } from "../../helpers/gitDate.mjs";
@@ -41,26 +42,29 @@ export async function webMentions() {
   const allMentions = [];
 
   for (let page = 0; ; page++) {
-    const response = await fetch(`${endpoint}&page=${page}`);
-    if (!response.ok) {
-      console.error(
-        `${response.status} ${response.statusText} fetching ${endpoint}`,
+    try {
+      let response = await Fetch(`${endpoint}&page=${page}`, {
+        duration: "1s", // save for 1 minute
+        verbose: true,
+      });
+      response = JSON.parse(response.toString());
+      const { children } = response;
+      allMentions.push(
+        ...children.filter(
+          (mention) =>
+            // Don't show self-mentions
+            !mention.url.startsWith("https://damien.zone/") &&
+            !mention.url.includes("https://social.erambert.me") &&
+            !mention.url.includes("https://bsky.app/profile/eramdam.me") &&
+            // Don't show transparent reposts, but do show ones that add content.
+            (mention["wm-property"] !== "repost-of" || "content" in mention),
+        ),
       );
+      if (children.length < perPage) break;
+    } catch (e) {
+      console.error(e, `fetching ${endpoint}`);
       break;
     }
-    const { children } = await response.json();
-    allMentions.push(
-      ...children.filter(
-        (mention) =>
-          // Don't show self-mentions
-          !mention.url.startsWith("https://damien.zone/") &&
-          !mention.url.includes("https://social.erambert.me") &&
-          !mention.url.includes("https://bsky.app/profile/eramdam.me") &&
-          // Don't show transparent reposts, but do show ones that add content.
-          (mention["wm-property"] !== "repost-of" || "content" in mention),
-      ),
-    );
-    if (children.length < perPage) break;
   }
 
   for (const mention of allMentions) {
@@ -128,6 +132,10 @@ export async function webMentions() {
     if (date2) return 1;
     return 0;
   });
+
+  // if (allMentions.length) {
+  //   console.log("Mentions for ", url);
+  // }
 
   return allMentions;
 }
