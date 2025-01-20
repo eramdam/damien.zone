@@ -224,7 +224,8 @@ hr {
   border-top: 1px dashed;
 }
 
-img {
+img,
+video {
   max-width: 100%;
 }
 
@@ -391,14 +392,15 @@ figcaption {
   height: 16px;
 }
 
-figure[data-type="image"] {
+figure[data-type="image"],
+figure[data-type="video"] {
   & figcaption {
     text-align: center;
     font-weight: bold;
     width: 100%;
   }
 
-  & img {
+  & :is(img, video) {
     --border-alpha: 0.4;
     border-radius: 12px;
     display: block;
@@ -409,7 +411,7 @@ figure[data-type="image"] {
   }
 
   @media (prefers-color-scheme: dark) {
-    & img {
+    & :is(img, video) {
       --border-alpha: 0.5;
     }
   }
@@ -420,7 +422,7 @@ figure[data-type="image"] {
     margin-left: calc(var(--main-horizontal-padding) * -1);
     margin-right: calc(var(--main-horizontal-padding) * -1);
 
-    & img {
+    & :is(img, video) {
       border-radius: 0;
       padding-left: 0;
       padding-right: 0;

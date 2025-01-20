@@ -126,4 +126,11 @@ export function helpersPlugin(eleventyConfig) {
 
   eleventyConfig.addLiquidFilter("isSiteUrl", isSiteUrl);
   eleventyConfig.addLiquidFilter("urlHostname", urlHostname);
+
+  eleventyConfig.addLiquidShortcode("video", (videoUrl, caption = "") => {
+    return `<figure data-type="video">
+      <video src="${videoUrl}" playsinline controls></video>
+      ${caption && `<figcaption>${caption}</figcaption>`}
+    </figure>`;
+  });
 }
