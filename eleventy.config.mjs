@@ -19,7 +19,17 @@ export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
-    extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
+    extensions: [
+      "js",
+      "png",
+      "jpg",
+      "jpeg",
+      "gif",
+      "mp4",
+      "ico",
+      "webp",
+      "css",
+    ],
   });
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
