@@ -22,6 +22,8 @@ But I think I managed to get some pretty damn good pictures given the situation.
 
 Everything else is straight out of the iPhone 13 Pro's camera system. Which, for some of them, is outstanding to see, honestly. As always, click the thumbnails to get the JPEG at 100% quality.
 
+---
+
 <div class="big-image"><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_6962 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_6962 1 Edited.jpg" alt=""></a></div>
 <div class="gallery">
   <ul>

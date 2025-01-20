@@ -17,6 +17,12 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* common variables */
 :root {
   --width: 80ch;
@@ -35,6 +41,12 @@
   --offwhite-background: hsl(0, 33%, 96%);
 
   --main-horizontal-padding: 24px;
+  --color-text-muted: hsl(from var(--color-syntax-comment) h 0% l);
+
+  /* thx @wavebeem for the tip */
+  --link-underline-offset: calc(1em / 6);
+  --link-underline-thickness: calc(1em / 12);
+  --link-underline-thickness-hover: calc(var(--link-underline-thickness) + 1px);
 }
 
 /* light colors */
@@ -99,12 +111,7 @@
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   font-synthesis: none;
   font-family: "Young Serif", serif;
   color: var(--color-heading);
@@ -127,18 +134,14 @@ body {
 
 a {
   color: inherit;
-  cursor: pointer;
   text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
   text-decoration-color: var(--color-accent);
-  transition:
-    text-underline-offset,
-    color 160ms ease;
+  text-decoration-thickness: var(--link-underline-thickness);
+  text-underline-offset: var(--link-underline-offset);
 
   &:hover {
-    text-underline-offset: 4px;
     color: var(--color-link-base);
+    --link-underline-thickness: var(--link-underline-thickness-hover);
   }
 
   .footnote-ref & {
@@ -150,9 +153,21 @@ a {
       text-decoration: none;
     }
   }
+
+  &.footnote-backref {
+    color: var(--color-accent);
+    text-underline-offset: initial;
+    text-decoration-thickness: initial;
+  }
 }
 
-main,
+a[href]:not(:has(> img)):focus,
+a[href]:has(> img):focus img {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+main:has(> :not(.main-block)),
 .main-block {
   line-height: 1.6;
 
@@ -164,14 +179,23 @@ main,
   border-style: solid;
   border-radius: 6px;
   background-color: var(--color-main-background);
-}
 
-main > .tags {
-  margin-bottom: 0;
+  & > .tags {
+    margin-bottom: 0;
+  }
+
+  & > .tags a {
+    color: var(--color-text-muted);
+    text-decoration-color: currentColor;
+  }
+
+  & > .tags a::before {
+    content: "#";
+  }
 }
 
 .tags-list a,
-main > .tags a {
+main:has(> :not(.main-block)) > .tags a {
   text-transform: lowercase;
 }
 
@@ -307,7 +331,8 @@ td {
     padding: 0 10px;
   }
 
-  main {
+  main:has(> :not(.main-block)),
+  .main-block {
     --main-horizontal-padding: 20px;
     padding: var(--main-horizontal-padding);
     margin-top: 30px;
@@ -318,7 +343,7 @@ td {
     }
   }
 
-  main,
+  main:has(> :not(.main-block)),
   .main-block {
     border-radius: 0;
     border-left: none;
@@ -413,13 +438,13 @@ figure[data-type="image"] {
 }
 
 /* Links / buttons stuff */
-.page.links main .buttons {
+.page.links main:has(> :not(.main-block)) .buttons {
   text-wrap: balance;
   text-align: center;
   line-height: 20px;
 }
 
-.page.links main .buttons > :is(a, img) {
+.page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
   margin: 2px;
 }
 
@@ -487,7 +512,6 @@ figure[data-type="image"] {
 
 .gallery li {
   position: relative;
-  flex-basis: calc(50% - 20px);
 }
 .gallery img {
   width: 100%;
@@ -505,11 +529,9 @@ figure[data-type="image"] {
 
 code:not([class]) {
   font-family: var(--font-monospace);
-  font-size: 0.9em;
-  font-weight: bold;
+  font-size: 0.85em;
   background-color: var(--offblack-background);
   border-radius: var(--border-radius);
-  color: var(--color-code-text);
   padding: 0.1em 0.4em;
   font-variant-ligatures: none;
 
@@ -539,4 +561,36 @@ code:not([class]) {
 :is(body.links .links-links, .tags-list) li {
   list-style-type: none;
   display: block;
+}
+
+.read-more {
+  background-color: var(--color-accent);
+  color: var(--color-offwhite);
+  text-decoration: none;
+  padding: 0em 0.36em;
+  font-size: 85%;
+  border-radius: var(--border-radius);
+  display: block;
+  width: max-content;
+  margin: 0.5em 0;
+
+  &:hover {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+}
+
+nav.pagination {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+p small {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.main-block.skinny {
+  padding-bottom: 0;
 }

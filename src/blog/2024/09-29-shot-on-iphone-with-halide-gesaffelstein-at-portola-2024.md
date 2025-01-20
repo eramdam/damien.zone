@@ -28,6 +28,8 @@ I only had to adjust the exposure/brightness on a handful of shots! It's incredi
 
 At any rate, here are the pictures (click to load the full, uncompressed JPEGs):
 
+---
+
 <div class="gallery">
   <ul>
     <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6415 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6415 1 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>

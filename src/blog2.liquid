@@ -1,0 +1,13 @@
+---
+title: blog
+layout: base
+description: french software engineer living and working in the Bay Area on web stuff
+pagination:
+  data: collections.blog
+  size: 5
+  alias: posts
+  reverse: true
+permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html'
+class_name: h-feed
+---
+{% render 'blog-posts', posts: posts %}
