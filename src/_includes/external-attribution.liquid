@@ -1,0 +1,29 @@
+<a
+  class="attribution attribution-external u-url {{ class }}"
+  href="{{ url }}"
+  {% if nofollow %}
+    rel="nofollow"
+  {% endif %}
+>
+  {% if author %}
+    <span class="p-author h-card mention">
+      {% if authorAvatar %}
+        <data class="u-photo" value="{{ authorAvatar.value | escape }}"></data>
+      {% endif %}
+      {% if authorUrl %}
+        <data value="{{ authorUrl | escape }}" class="u-url"></data>
+      {%- endif -%}
+      {{ author | escape }}
+    </span>
+  {% endif %}
+  <span class="attribution-meta">
+    {{ verb | default: 'posted' | escape }}
+    {% if date %}
+      {% render 'date', date: date, class: 'dt-published' %}
+    {% endif %}
+    {% unless url | isSiteUrl %}
+      on
+      {{ url | urlHostname | escape }}
+    {% endunless %}
+  </span>
+</a>

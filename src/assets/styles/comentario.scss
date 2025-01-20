@@ -2,6 +2,7 @@
 body main .comentario-root.comentario-root {
   /* Remove background behind composer wrapper */
   --cmntr-bg: transparent;
+  --cmntr-card-border: rgb(from var(--color-text-muted) r g b / 0.4);
 
   /* Tweak color in light mode */
   @media (prefers-color-scheme: light) {
@@ -142,6 +143,10 @@ body main .comentario-root.comentario-root {
     }
   }
 
+  .comentario-card:first-child {
+    border-top: none;
+  }
+
   /* Make author links fit nicer with the rest of the style */
   .comentario-card a.comentario-name {
     color: inherit;
@@ -184,5 +189,9 @@ body main .comentario-root.comentario-root {
   */
   .comentario-sort-bar {
     display: none;
+  }
+
+  .comentario-card .comentario-card-self {
+    padding-top: 18px;
   }
 }
