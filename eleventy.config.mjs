@@ -1,11 +1,12 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+// import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import markdownItFootnote from "markdown-it-footnote";
-import markdownItNamedHeadings from "markdown-it-named-headers";
-import markdownItAttrs from "markdown-it-attrs";
-import implicitFigures from "markdown-it-image-figures";
 import eleventySass from "eleventy-sass";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItFootnote from "markdown-it-footnote";
+import implicitFigures from "markdown-it-image-figures";
+import markdownItNamedHeadings from "markdown-it-named-headers";
 import { feedsPlugin } from "./11ty/feeds.mjs";
 import { helpersPlugin } from "./11ty/helpers.mjs";
 
@@ -17,6 +18,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
   eleventyConfig.setQuietMode(true);
+  // eleventyConfig.addPlugin(dirOutputPlugin);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
     hashAlgorithm: "sha256",
