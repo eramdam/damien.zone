@@ -586,3 +586,7 @@ p small {
   font-size: 0.85em;
   opacity: 0.8;
 }
+
+.main-block.skinny {
+  padding-bottom: 0;
+}

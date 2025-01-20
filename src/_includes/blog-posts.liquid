@@ -1,0 +1,26 @@
+{% assign pages = pagination.pages.size %}
+{% for post in posts %}
+  <article class="main-block">
+    {% render 'blog-post',
+      date: post.date,
+      content: post.content,
+      tags: post.data.tags,
+      title: post.data.title,
+      updated: post.data.updated,
+      link: post.url,
+      in_feed: true
+    %}
+  </article>
+{% endfor %}
+{% assign pageNumber = pagination.pageNumber | plus: 1 %}
+{% if pages > 1 %}
+  <nav class="main-block pagination">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" rel="prev"> &LeftArrow; </a>
+    {% endif %}
+    Page {{ pageNumber }} out of {{ pages }}
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" rel="next"> &RightArrow; </a>
+    {% endif %}
+  </nav>
+{% endif %}
