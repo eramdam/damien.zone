@@ -120,6 +120,28 @@ export async function webMentions() {
         mention[prop] = new Date(Date.parse(mention[prop]));
       }
     }
+
+    // It seems Mastodon mentions have their emoji replaced by "????" because of Bridgy
+    // Therefore, we fetch the Mastodon JSON object to get the right HTML text
+    if (
+      mention["wm-source"] &&
+      String(mention["wm-source"]).startsWith(
+        "https://brid.gy/comment/mastodon/",
+      ) &&
+      String(mention.content.html).includes(`????`)
+    ) {
+      try {
+        const mastodonResponse = await Fetch(mention.url, {
+          headers: {
+            "Content-Type": "application/ld+json",
+            Accept: "application/ld+json",
+          },
+        });
+
+        const mastodonJson = await mastodonResponse.json();
+        mention.content.html = mastodonJson.content;
+      } catch (e) {}
+    }
   }
 
   allMentions.sort((mention1, mention2) => {
