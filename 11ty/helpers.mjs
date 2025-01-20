@@ -40,7 +40,7 @@ export function helpersPlugin(eleventyConfig) {
     const baseTitle = siteData.name;
 
     if (!title && context.page.url !== "/") {
-      throw new Error(`Missing title for ${context.page.inputPath}`);
+      return baseTitle;
     }
 
     return he.encode([title, baseTitle].filter((x) => x).join(" | "));
