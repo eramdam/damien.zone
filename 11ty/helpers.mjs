@@ -5,6 +5,7 @@ import he from "he";
 import assert from "node:assert";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
 import siteData from "../src/_data/site.mjs";
+import { truncateHTML } from "../helpers/strings.mjs";
 
 const timezone = "America/Los_Angeles";
 
@@ -25,12 +26,13 @@ function omit(array, ...items) {
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export function helpersPlugin(eleventyConfig) {
-  eleventyConfig.addFilter("omit", omit);
-  eleventyConfig.addFilter("format", format);
-  eleventyConfig.addFilter("take", function (array, count) {
+  eleventyConfig.addLiquidFilter("omit", omit);
+  eleventyConfig.addLiquidFilter("format", format);
+  eleventyConfig.addLiquidFilter("take", function (array, count) {
     return array.slice(0, count);
   });
-  eleventyConfig.addFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("dateToRfc3339", rssPlugin.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("truncateHTML", truncateHTML);
 
   eleventyConfig.addShortcode("htmlTitle", function () {
     const context = this.ctx?.environments ?? this.ctx ?? {};
@@ -38,7 +40,7 @@ export function helpersPlugin(eleventyConfig) {
     const baseTitle = siteData.name;
 
     if (!title && context.page.url !== "/") {
-      throw new Error(`Missing title for ${context.page.inputPath}`);
+      return baseTitle;
     }
 
     return he.encode([title, baseTitle].filter((x) => x).join(" | "));
