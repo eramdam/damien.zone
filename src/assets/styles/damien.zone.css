@@ -191,7 +191,7 @@ main:has(> :not(.main-block)),
 }
 
 .tags-list a,
-main > .tags a {
+main:has(> :not(.main-block)) > .tags a {
   text-transform: lowercase;
 }
 
@@ -327,7 +327,8 @@ td {
     padding: 0 10px;
   }
 
-  main {
+  main:has(> :not(.main-block)),
+  .main-block {
     --main-horizontal-padding: 20px;
     padding: var(--main-horizontal-padding);
     margin-top: 30px;
@@ -338,7 +339,7 @@ td {
     }
   }
 
-  main,
+  main:has(> :not(.main-block)),
   .main-block {
     border-radius: 0;
     border-left: none;
@@ -433,13 +434,13 @@ figure[data-type="image"] {
 }
 
 /* Links / buttons stuff */
-.page.links main .buttons {
+.page.links main:has(> :not(.main-block)) .buttons {
   text-wrap: balance;
   text-align: center;
   line-height: 20px;
 }
 
-.page.links main .buttons > :is(a, img) {
+.page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
   margin: 2px;
 }
 
@@ -579,4 +580,9 @@ nav.pagination {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+}
+
+p small {
+  font-size: 0.85em;
+  opacity: 0.8;
 }
