@@ -1,0 +1,44 @@
+diff --git a/node_modules/@11ty/eleventy-plugin-directory-output/.eleventy.js b/node_modules/@11ty/eleventy-plugin-directory-output/.eleventy.js
+index 408a2f3..4e94e75 100644
+--- a/node_modules/@11ty/eleventy-plugin-directory-output/.eleventy.js
++++ b/node_modules/@11ty/eleventy-plugin-directory-output/.eleventy.js
+@@ -231,20 +231,33 @@ module.exports = function(eleventyConfig, opts = {}) {
+   function getBenchmarks(inputPath, outputPath) {
+     let benchmarks = {};
+     let keys = {
+-      render: `> Render > ${outputPath}`,
++      render: `> Render > ${inputPath}`,
++      renderPermalink: `> Render Permalink > ${inputPath}`,
+       compile: `> Compile > ${inputPath}`,
++      compilePermalink: `> Compile Permalink > ${inputPath}`,
+     };
+ 
+-    if(eleventyConfig.benchmarkManager) {
++    if (eleventyConfig.benchmarkManager) {
+       let benchmarkGroup = eleventyConfig.benchmarkManager.get("Aggregate");
+ 
+-      if("has" in benchmarkGroup && benchmarkGroup.has(keys.render)) {
+-        let b1 = benchmarkGroup.get(keys.render);
++      const matchingRenderBenchmarkKey = benchmarkGroup.has(keys.render)
++        ? keys.render
++        : Object.entries(benchmarkGroup.benchmarks).find(([key]) => {
++            return key.startsWith(keys.renderPermalink);
++          })?.[0];
++      const matchingCompileBenchmarkKey = benchmarkGroup.has(keys.compile)
++        ? keys.compile
++        : Object.entries(benchmarkGroup.benchmarks).find(([key]) => {
++            return key.startsWith(keys.compilePermalink);
++          })?.[0];
++
++      if (matchingRenderBenchmarkKey) {
++        let b1 = benchmarkGroup.get(matchingRenderBenchmarkKey);
+         benchmarks.render = b1.getTotal();
+       }
+ 
+-      if("has" in benchmarkGroup && benchmarkGroup.has(keys.compile)) {
+-        let b2 = benchmarkGroup.get(keys.compile);
++      if (matchingRenderBenchmarkKey) {
++        let b2 = benchmarkGroup.get(matchingCompileBenchmarkKey);
+         benchmarks.compile = b2.getTotal();
+       }
+     }
