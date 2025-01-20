@@ -1,5 +1,9 @@
 (() => {
-  const urlsAllowList = ["damien.zone"];
+  const urlsAllowList = [
+    "damien.zone",
+    "6dbd5db13be1.ngrok.app",
+    "localhost:8080",
+  ];
   if (urlsAllowList.every((url) => !window.location.href.includes(url))) {
     return;
   }
