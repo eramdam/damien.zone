@@ -1,17 +1,17 @@
 // Fonts
-@use "./fonts.scss";
+@use "fonts";
 
 /* Comentario */
-@use "./comentario.scss";
+@use "comentario";
 
 /* Syntax highlighting */
-@use "./syntax.scss";
+@use "syntax";
 
 /* Image gallery */
-@use "./image-gallery.scss";
+@use "image-gallery";
 
 /* Webmentions */
-@use "./webmentions.scss";
+@use "webmentions";
 
 ::before,
 ::after,
