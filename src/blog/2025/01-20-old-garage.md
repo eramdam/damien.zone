@@ -6,7 +6,7 @@ tags:
   - meta
 ---
 
-I've done some tweaks to the layout of the site around [links](https://damien.zone), `code bits` and other things I'm probably forgetting.
+I've done some tweaks to the layout of the site around [links](https://damien.zone), `code bits` and other things I'm probably forgetting. The [/blog](/blog) page looks a bit more feed-like now as well.
 
 Oh, yeah, and the blog has [Webmentions](https://nex-3.com/blog/a-non-technical-intro-to-webmentions/) support now! Meaning that if you mention my blog from your website or on social media (Bluesky, Mastodon), it should appear alongside comments on the blog. 
 
