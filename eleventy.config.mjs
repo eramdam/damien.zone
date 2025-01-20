@@ -20,6 +20,11 @@ export default function (eleventyConfig) {
     extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
   });
   eleventyConfig.setLayoutsDirectory("_layouts");
+  eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+    if (data.hidden && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false;
+    }
+  });
 
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib
