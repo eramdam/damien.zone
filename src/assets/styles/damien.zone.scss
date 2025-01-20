@@ -10,6 +10,9 @@
 /* Image gallery */
 @use "./image-gallery.scss";
 
+/* Webmentions */
+@use "./webmentions.scss";
+
 ::before,
 ::after,
 * {
