@@ -36,7 +36,6 @@
     "cross-spawn": "^7.0.6",
     "date-fns": "^4.1.0",
     "eleventy-auto-cache-buster": "^0.7.0",
-    "eleventy-sass": "^3.0.0-beta.0",
     "escape-html": "^1.0.3",
     "glob": "^11.0.0",
     "gray-matter": "^4.0.3",
