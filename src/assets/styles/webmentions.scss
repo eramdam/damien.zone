@@ -1,0 +1,73 @@
+.web-mentions-header {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  a {
+    font-size: 0.5em;
+    font-family: var(--font-main);
+    font-weight: normal;
+    justify-self: flex-end;
+  }
+}
+
+.web-mentions {
+  list-style-type: none;
+  padding-left: 0;
+
+  .wm-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 99999999px;
+  }
+
+  > .u-comment {
+    display: grid;
+    grid-template-areas:
+      "avatar name"
+      "bottom bottom";
+    column-gap: 10px;
+    grid-template-columns: 32px 1fr;
+
+    border-top: 1px solid rgb(from var(--color-text-muted) r g b / 0.4);
+    margin-top: 16px;
+    padding-top: 18px;
+
+    .wm-avatar {
+      grid-area: avatar;
+    }
+
+    .e-content {
+      grid-area: bottom;
+      font-size: 15px;
+    }
+
+    .attribution-external {
+      grid-area: name;
+
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+
+      &:hover .attribution-meta {
+        text-decoration: underline;
+      }
+    }
+
+    .p-author {
+      font-weight: bold;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.5;
+    }
+
+    .attribution-meta {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgb(from currentColor r g b / 0.6);
+    }
+  }
+}
