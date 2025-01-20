@@ -58,7 +58,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/public");
   // Images used inside articles/pages
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addPassthroughCopy("src/**/*.{png,jpg,jpeg,webp,svg}");
+  eleventyConfig.addPassthroughCopy("src/_test/*.{png,jpg,jpeg,webp,svg}");
 
   // For stuff like favicon files.
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
