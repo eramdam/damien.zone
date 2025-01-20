@@ -10,6 +10,8 @@
     {% include 'nav.html' %}
     <main class="h-entry">
       {% render 'blog-post', date: page.date, content: content, tags: tags, title: title, updated: updated %}
+
+      {% include 'webmentions' %}
     </main>
     {% include 'footer' %}
   </body>

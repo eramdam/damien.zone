@@ -10,16 +10,7 @@
 </h1>
 
 <p class="post-datetime">
-  <time
-    class="dt-published"
-    datetime="{{ date | dateToRfc3339 }}"
-    title="{{ date | format: "iii, MMM d, y, ppp" }}"
-  >
-    {{ date | format: 'PPP' }}
-  </time>
-  {% if updated %}
-    <time datetime="{{ updated | dateToRfc3339 }}" class="dt-updated"></time>
-  {% endif %}
+  {% render 'date', date: date, class: 'dt-published' %}
 </p>
 
 <div class="e-content">
