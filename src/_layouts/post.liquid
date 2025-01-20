@@ -5,8 +5,10 @@
   </head>
 
   <body class="{% bodyClass %}">
+    <data class="p-name" value="{{site.name}}"></data>
+    <data class="u-photo" value="/avatar/avatar-bg.png"></data>
     {% include 'nav.html' %}
-    <main>
+    <main class="h-entry">
       {% render 'blog-post', date: page.date, content: content, tags: tags, title: title, updated: updated %}
     </main>
     {% include 'footer' %}

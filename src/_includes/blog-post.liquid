@@ -1,10 +1,15 @@
-<h1>
-  <a href="{{ link | escape }}">
+<div class="p-author h-card">
+  <data class="p-name" value="{{ site.author | escape }}"></data>
+  <data class="u-url u-uid" value="/"></data>
+  <data class="u-photo" value="/avatar/avatar-bg.png"></data>
+</div>
+<h1 class="p-name">
+  <a href="{{ link | escape }}" rel="canonical" class="u-url u-uid">
     {{ title | escape }}
   </a>
 </h1>
 
-<p class="post-datetime ">
+<p class="post-datetime">
   <time
     class="dt-published"
     datetime="{{ date | dateToRfc3339 }}"
@@ -17,17 +22,18 @@
   {% endif %}
 </p>
 
-{% if in_feed %}
-  {{ content | truncateHTML: 300, link: link }}
-{% else %}
-  {{ content }}
-{% endif %}
+<div class="e-content">
+  {% if in_feed %}
+    {{ content | truncateHTML: 300, link: link }}
+  {% else %}
+    {{ content }}
+  {% endif %}
+</div>
 {%- assign tags = tags | omit: 'blog' -%}
 {% if tags %}
   <p class="tags">
     {% for tag in tags %}
-      <a href="/tag/{{ tag | url_encode }}"
-        >#
+      <a href="/tag/{{ tag | url_encode }}" class="p-category">
         {{- tag | escape -}}
       </a>
     {% endfor %}
