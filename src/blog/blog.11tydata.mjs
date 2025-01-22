@@ -3,6 +3,7 @@ import escapeHtml from "escape-html";
 import sanitizeHtml from "sanitize-html";
 import { getLastUpdatedTimestamp } from "../../helpers/gitDate.mjs";
 import { htmlToText, truncateText } from "../helpers/types.mjs";
+import truncateHTML from "truncate-html";
 
 export const layout = "post.liquid";
 
