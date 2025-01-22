@@ -57,6 +57,9 @@ export async function webMentions() {
             !mention.url.startsWith("https://damien.zone/") &&
             !mention.url.includes("https://social.erambert.me") &&
             !mention.url.includes("https://bsky.app/profile/eramdam.me") &&
+            !mention.url.includes(
+              "https://bsky.app/profile/did:plc:ywh4n7ihypdnwb4n2kzlzrht",
+            ) &&
             // Don't show transparent reposts, but do show ones that add content.
             (mention["wm-property"] !== "repost-of" || "content" in mention),
         ),
