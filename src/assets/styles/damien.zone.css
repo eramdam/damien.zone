@@ -128,7 +128,6 @@ body {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-synthesis: none;
   font-family: "Young Serif", serif;
   color: var(--color-heading);
   text-wrap: balance;

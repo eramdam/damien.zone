@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "_eleventy": "npx @11ty/eleventy",
     "cleanup": "rimraf _site",
-    "start:site": "npm run _eleventy -- --serve",
-    "start": "run-s cleanup start:site",
-    "build:site": "npm run _eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "build:site": "npx @11ty/eleventy",
     "build": "run-s cleanup build:site",
     "new": "npm run _tsx -- bin/newPost.ts",
     "publish": "npm run _tsx -- bin/publishDraft.ts",
