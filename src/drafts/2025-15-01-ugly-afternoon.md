@@ -54,7 +54,7 @@ This is pretty easy, just open the local folder of the game on Steam, open Balat
 
 This proved more difficult...but only because I accidentally made my life harder 😅 
 
-### What I _should_ have done
+### What I should have done
 
 I _should_ have realized that [Balatro+](https://apps.apple.com/us/app/balatro/id6502451661) (Apple Arcade version of the game) is a universal macOS/iPadOS/iOS app. Meaning that I could just download the game on my Mac and...open the `.app` package and _voilà_! The iOS source code, easily accessible!
 
@@ -83,3 +83,22 @@ So here's how I managed to grab the source of the iOS port, which required getti
 Tada! The files are there!
 
 ![](/img/blog/balatro-touch/balatro-ios-folder.webp)
+
+
+## Comparing the two codebases
+
+This part wasn't complicated in itself, it just took a long time. 
+
+I first opened the two folders in a Visual Studio Code workspace, renamed all the files in the iOS folder with a `.ios.lua` extension, and went through most of the files that seemed relevant and compared them against their iOS counterpart.    
+Then, every time I found a bit of code that seemed useful, I would copy it over the desktop file and launch the game until I got what I wanted.  
+
+
+**Special trick that helped me a lot with this**
+
+So you know how I said earlier that the source code of Balatro is just _there_ in an "archive"? Well, on macOS, you can abuse symlinks to have `Balatro.love` point to my own modified copy of the code, which makes it easy to quickly test changes!
+
+![](/img/blog/balatro-touch/balatro-mac-symlink.webp)
+
+
+## Turning this into a mod
+
