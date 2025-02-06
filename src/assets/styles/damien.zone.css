@@ -85,7 +85,11 @@
   /* dark colors */
   :root {
     --color-accent: hsl(343, 81%, 40%);
-    --color-main-background: black;
+    --color-main-background: color-mix(
+      in srgb,
+      black 75%,
+      var(--offblack-background)
+    );
     --color-main-border: var(--color-accent);
     --color-offblack: var(--offblack-background);
     --color-offwhite: color-mix(in srgb, black 10%, var(--offwhite-background));
