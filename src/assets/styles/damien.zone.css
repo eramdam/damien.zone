@@ -36,7 +36,7 @@
 
   --font-monospace: "Hack", var(--font-fallback-mono);
   --font-serif: "Young Serif", var(--font-fallback-serif);
-  --font-main: "Atkinson Hyperlegible", var(--font-fallback-main);
+  --font-main: "Atkinson Hyperlegible Next", var(--font-fallback-main);
   --border-radius: 6px;
 
   --offblack-background: #212028;
