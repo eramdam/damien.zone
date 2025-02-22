@@ -34,7 +34,7 @@
   --font-fallback-serif: Superclarendon, "Bookman Old Style", "URW Bookman",
     "URW Bookman L", "Georgia Pro", Georgia, serif;
 
-  --font-monospace: "Hack", var(--font-fallback-mono);
+  --font-monospace: "Atkinson Hyperlegible Mono", var(--font-fallback-mono);
   --font-serif: "Young Serif", var(--font-fallback-serif);
   --font-main: "Atkinson Hyperlegible Next", var(--font-fallback-main);
   --border-radius: 6px;
