@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "cleanup": "rimraf _site",
-    "start": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --incremental",
     "build:site": "npx @11ty/eleventy",
     "build": "run-s cleanup build:site",
     "new": "npm run _tsx -- bin/newPost.ts",
@@ -53,7 +53,7 @@
     "sanitize-html": "^2.14.0",
     "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
-    "truncate-html": "^1.2.0-beta.1"
+    "truncate-html": "^1.2.0"
   },
   "devDependencies": {
     "@inquirer/prompts": "^7.2.1",
