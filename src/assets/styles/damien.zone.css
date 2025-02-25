@@ -567,3 +567,8 @@ p small {
 .main-block.skinny {
   padding-bottom: 0;
 }
+
+.eleventy-plugin-embed-mastodon blockquote.mastodon-embed {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
