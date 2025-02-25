@@ -36,7 +36,7 @@ Not _that_ hard, but not easy either, it turns out!
 
 ## Background
 
-If you are unaware, Balatro is a game written using the [Löve](https://love2d.org/) framework in [Lua](https://www.lua.org/) and more importantly... the code of the game is available on the file system when you buy it! All of it, neither obfuscated nor minified! This is, obviously, very convenient when it comes to making mods ([of which there are many](https://github.com/jie65535/awesome-balatro)), and it greatly simplified what I wanted to do.
+If you are unaware, Balatro is a game written using the [LÖVE](https://love2d.org/) framework in [Lua](https://www.lua.org/) and more importantly... the code of the game is available on the file system when you buy it! All of it, neither obfuscated nor minified! This is, obviously, very convenient when it comes to making mods ([of which there are many](https://github.com/jie65535/awesome-balatro)), and it greatly simplified what I wanted to do.
 
 The plan was "simple":
 1. get the Balatro PC/Mac source code
