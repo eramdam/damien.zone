@@ -572,3 +572,7 @@ p small {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+p s {
+  opacity: 0.4;
+}
