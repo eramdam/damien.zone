@@ -132,7 +132,6 @@ body {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-synthesis: none;
   font-family: "Young Serif", serif;
   color: var(--color-heading);
   text-wrap: balance;
@@ -422,7 +421,8 @@ figure[data-type="video"] {
 }
 
 @media (max-width: 767px) {
-  figure[data-type="image"] {
+  figure[data-type="image"],
+  figure[data-type="video"] {
     margin-left: calc(var(--main-horizontal-padding) * -1);
     margin-right: calc(var(--main-horizontal-padding) * -1);
 
@@ -567,4 +567,13 @@ p small {
 
 .main-block.skinny {
   padding-bottom: 0;
+}
+
+.eleventy-plugin-embed-mastodon blockquote.mastodon-embed {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+p s {
+  opacity: 0.4;
 }
