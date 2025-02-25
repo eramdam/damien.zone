@@ -34,9 +34,9 @@
   --font-fallback-serif: Superclarendon, "Bookman Old Style", "URW Bookman",
     "URW Bookman L", "Georgia Pro", Georgia, serif;
 
-  --font-monospace: "Hack", var(--font-fallback-mono);
+  --font-monospace: "Atkinson Hyperlegible Mono", var(--font-fallback-mono);
   --font-serif: "Young Serif", var(--font-fallback-serif);
-  --font-main: "Atkinson Hyperlegible", var(--font-fallback-main);
+  --font-main: "Atkinson Hyperlegible Next", var(--font-fallback-main);
   --border-radius: 6px;
 
   --offblack-background: #212028;
@@ -85,7 +85,11 @@
   /* dark colors */
   :root {
     --color-accent: hsl(343, 81%, 40%);
-    --color-main-background: black;
+    --color-main-background: color-mix(
+      in srgb,
+      black 75%,
+      var(--offblack-background)
+    );
     --color-main-border: var(--color-accent);
     --color-offblack: var(--offblack-background);
     --color-offwhite: color-mix(in srgb, black 10%, var(--offwhite-background));
