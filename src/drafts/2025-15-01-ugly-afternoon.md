@@ -6,7 +6,7 @@ tags: [
   "programming",
   "balatro"
 ]
-description: ''
+description: ' I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download at https://github.com/eramdam/balatro-touch-mode! This post will is mostly about the process of making the mod itself.'
 image: /img/blog/balatro-touch/balatro-touch-mode.webp
 ---
 
