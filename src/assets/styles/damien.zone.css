@@ -421,7 +421,8 @@ figure[data-type="video"] {
 }
 
 @media (max-width: 767px) {
-  figure[data-type="image"] {
+  figure[data-type="image"],
+  figure[data-type="video"] {
     margin-left: calc(var(--main-horizontal-padding) * -1);
     margin-right: calc(var(--main-horizontal-padding) * -1);
 
