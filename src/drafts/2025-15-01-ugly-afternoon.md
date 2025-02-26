@@ -6,13 +6,13 @@ tags: [
   "programming",
   "balatro"
 ]
-description: "I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download at https://github.com/eramdam/balatro-touch-mode! This post will is mostly about the process of making the mod itself."
+description: "I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download at https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself."
 image: /img/blog/balatro-touch/balatro-touch-mode.webp
 ---
 
 ![](/img/blog/balatro-touch/balatro-touch-mode.webp)
 
-_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download [here](https://github.com/eramdam/balatro-touch-mode)! This post will is mostly about the process of making the mod itself._
+_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download [here](https://github.com/eramdam/sticky-fingers)! This post will is mostly about the process of making the mod itself._
 
 ## How I got here
 
@@ -112,7 +112,7 @@ https://social.erambert.me/@eramdam@social.erambert.me/113813401719828118/
 
 After a while, I had a local-only Git repo called `balatro-touch-desktop` which house the desktop files that I modified by hand. This was very convenient to quickly iterate/see what I actually changed between the original code and my "mod" but, well, it wasn't exactly a real Balatro mod. The best I could do was generate a `.patch` file that could be applied to the vanilla game.
 
-I do not intend for this article to be a "how to make a Balatro mod" tutorial[^1] but, at the very high level I needed a way to turn my [Git patch](https://github.com/eramdam/balatro-touch-mode/blob/main/touch-mode/touch-mode.patch) into a proper mod that used [lovely-injector](https://github.com/ethangreen-dev/lovely-injector) to modify the games' files.
+I do not intend for this article to be a "how to make a Balatro mod" tutorial[^1] but, at the very high level I needed a way to turn my [Git patch](https://github.com/eramdam/sticky-fingers/blob/main/touch-mode/touch-mode.patch) into a proper mod that used [lovely-injector](https://github.com/ethangreen-dev/lovely-injector) to modify the games' files.
 
 If you're unfamiliar, Lovely's README file has [examples of patches](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#patches) that can be applied.
 
@@ -130,7 +130,7 @@ After that, I ~~had the perfect excuse to play Balatro~~ had to test the mod to 
 
 ![](/img/blog/balatro-touch/balatro-touch-og-sell-zone.webp "Balatro with the touch control mod, showing the default sell zone for jokers (in the top right of the game's UI)")
 
-Thankfully, smods provides [a built-in way to make a mod configurable](https://github.com/Steamodded/smods/wiki/Mod-functions#modconfig_tab) so after an hour or two, I had managed to [make an option](https://github.com/eramdam/balatro-touch-mode/commit/b6c2bf5590470a30b36d66ad35d08a899b984a11) (turned on by default) that moved the sell target further to prevent this from happening again.
+Thankfully, smods provides [a built-in way to make a mod configurable](https://github.com/Steamodded/smods/wiki/Mod-functions#modconfig_tab) so after an hour or two, I managed to [make an option](https://github.com/eramdam/sticky-fingers/commit/b6c2bf5590470a30b36d66ad35d08a899b984a11) (turned on by default) that moved the sell target further to prevent this from happening again.
 
 ![](/img/blog/balatro-touch/balatro-mod-option.webp "The options tab of the mod, with \"Harder Joker sell target\" checked.")
 
@@ -138,13 +138,13 @@ Thankfully, smods provides [a built-in way to make a mod configurable](https://g
 
 ## Releasing the mod
 
-And there you have it! The mod is available on GitHub, as I'm writing this I just updated it for compatibility with Balatro 1.0.1o which, thankfully, barely changed anything.
+And there you have it! The mod is available on GitHub, as I'm writing this I just updated it for compatibility with Balatro 1.0.1o.
 
-[https://github.com/eramdam/balatro-touch-mode](https://github.com/eramdam/balatro-touch-mode)
+[https://github.com/eramdam/sticky-fingers](https://github.com/eramdam/sticky-fingers)
 
 Let me know if you enjoy it and/or have any issues with it!
 
-Byyyyye  
+Bye!  
 \- damien
 
 
