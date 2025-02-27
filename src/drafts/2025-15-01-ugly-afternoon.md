@@ -4,39 +4,38 @@ date: 2025-01-16T01:20:13.153Z
 tags: [
   "games",
   "programming",
-  "balatro"
+  "Balatro"
 ]
-description: "I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download at https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself."
+description: "I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called \"Sticky Fingers\" and is available to download on https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself."
 image: /img/blog/balatro-touch/balatro-touch-mode.webp
 ---
 
 ![](/img/blog/balatro-touch/balatro-touch-mode.webp)
 
-_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's available to download [here](https://github.com/eramdam/sticky-fingers)! This post will is mostly about the process of making the mod itself._
+_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called "Sticky Fingers" and is available to download on https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself._
 
 ## How I got here
 
 If you're reading this, I probably do not need to explain [Balatro](https://www.playbalatro.com/) to you. To say I got _into_ this game would be an understatement. According to Steam, I've spent **210 hours** playing it last year and I expect to spend half of that amount playing it in the next year. The game's good, turns out.  
 
 Balatro released on PC in February 2024, Mac in March, and got an official mobile port in September of the same year.   
-And that mobile port is great! I'm an iOS user so I can only judge it there but outside the UI being a _bit_ hard to read on my iPhone 13 Pro <small>(I can't imagine how it must be on something smaller)</small>, it rules.   
-Great use of the haptic engine and most importantly... great touch controls! 
+And that mobile port is great! Great use of the haptic engine and most importantly… great touch controls! 
 
 If you don't know what I'm talking about, here's a little recording showing them off:
 
 {% video "/img/blog/balatro-touch/balatro-touch-ios.mp4" "Balatro on iOS and its touch controls to buy/sell/use cards" %}
 
-After playing the game on iOS a bunch, I've come to really like those controls and I would often miss it when playing on my Mac.    
+After playing the game on iOS a bunch, I've come to really like those controls and would often miss them when playing on my Mac.    
 
-So I did the reasonable thing...Hoping that _someone_ ported those controls to the desktop version of Balatro.
+So I did the reasonable thing… Hoping that _someone_ ported those controls to the desktop version of Balatro.
 
-Until I got fed up with waiting and asked myself: "How hard could it be, really?"
+Until I got fed up with waiting and asked myself: ✨ "How hard could it be, really?" ✨
 
 Not _that_ hard, but not easy either, it turns out!
 
 ## Background
 
-If you are unaware, Balatro is a game written using the [LÖVE](https://love2d.org/) framework in [Lua](https://www.lua.org/) and more importantly... the code of the game is available on the file system when you buy it! All of it, neither obfuscated nor minified! This is, obviously, very convenient when it comes to making mods ([of which there are many](https://github.com/jie65535/awesome-balatro)), and it greatly simplified what I wanted to do.
+If you are unaware, Balatro is a game written using the [LÖVE](https://love2d.org/) framework in [Lua](https://www.lua.org/) and more importantly… the code of the game is available on the file system when you buy it! All of it, neither obfuscated nor minified! This is, obviously, very convenient when it comes to making mods ([of which there are many](https://github.com/jie65535/awesome-balatro)), and it greatly simplified what I wanted to do.
 
 The plan was "simple":
 1. get the Balatro PC/Mac source code
@@ -52,11 +51,11 @@ This is pretty easy, just open the local folder of the game on Steam, open Balat
 
 ## Getting the Balatro iOS source code
 
-This proved more difficult...but only because I accidentally made my life harder 😅 
+This proved more difficult…but only because I accidentally made my life harder 😅 
 
 ### What I should have done
 
-I _should_ have realized that [Balatro+](https://apps.apple.com/us/app/balatro/id6502451661) (Apple Arcade version of the game) is a universal macOS/iPadOS/iOS app. Meaning that I could just download the game on my Mac and...open the `.app` package and _voilà_! The iOS source code, easily accessible!
+I _should_ have realized that [Balatro+](https://apps.apple.com/us/app/balatro/id6502451661) (Apple Arcade version of the game) is a universal macOS/iPadOS/iOS app. Meaning that I could just download the game on my Mac and…open the `.app` package and _voilà_! The iOS source code, easily accessible!
 
 ![](/img/blog/balatro-touch/balatro-ios-apple-arcade.webp "A Finder window on macOS showing the content of Balatro+ (Balatro.app)")
 
@@ -77,8 +76,8 @@ So here's how I managed to grab the source of the iOS port, which required getti
 
 ![](/img/blog/balatro-touch/balatro-imazing-library.webp)
 
-7. Uncompress the `.ipa` file since `.ipa` files are just fancy archives
-8. Go to `Payload/Balatro.app/game` and...
+7. Decompress the `.ipa` file, since `.ipa` files are just fancy archives
+8. Go to `Payload/Balatro.app/game` and…
 
 Tada! The files are there!
 
@@ -112,11 +111,11 @@ https://social.erambert.me/@eramdam@social.erambert.me/113813401719828118/
 
 After a while, I had a local-only Git repo called `balatro-touch-desktop` which house the desktop files that I modified by hand. This was very convenient to quickly iterate/see what I actually changed between the original code and my "mod" but, well, it wasn't exactly a real Balatro mod. The best I could do was generate a `.patch` file that could be applied to the vanilla game.
 
-I do not intend for this article to be a "how to make a Balatro mod" tutorial[^1] but, at the very high level I needed a way to turn my [Git patch](https://github.com/eramdam/sticky-fingers/blob/main/touch-mode/touch-mode.patch) into a proper mod that used [lovely-injector](https://github.com/ethangreen-dev/lovely-injector) to modify the games' files.
+I do not intend for this article to be a "how to make a Balatro mod" tutorial[^1] but, at the very high level, I needed a way to turn my [Git patch](https://github.com/eramdam/sticky-fingers/blob/main/touch-mode/touch-mode.patch) into a proper mod that used [lovely-injector](https://github.com/ethangreen-dev/lovely-injector) to modify the games' files.
 
 If you're unfamiliar, Lovely's README file has [examples of patches](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#patches) that can be applied.
 
-On paper, this seemed simple enough, the problem was that my changes were precise/small enough that it was very tricky to write a patch by hand. Adding new functions entirely is simple enough, but adding a new logic block nested inside 3 levels of if/else logic? It drove me nuts, and it wouldn't even work because I kept generating invalid Lua files 🫠. 
+On paper, this seemed simple enough, the problem was that my changes were precise/small enough that it was very tricky to write a patch by hand. Adding new functions entirely is straightforward, but adding and extra `elseif` clause 3 levels deep? That drove me nuts, and it wouldn't even work because I kept generating invalid Lua files 🫠. 
 
 This is when [Amy](https://github.com/a-e-m) essentially saved my butt and wrote a [tool](https://github.com/a-e-m/lovely-differ) that did exactly what I wanted! Turn my Git diff into a `lovely.toml` patch file!
 
@@ -126,7 +125,7 @@ From that point on, putting the mod together was relatively simple, and there I 
 
 ## Improving on it
 
-After that, I ~~had the perfect excuse to play Balatro~~ had to test the mod to make sure nothing crashed or behaved weirdly, and hooray, everything worked just fine! The only "issue" was that the "Sell" target for jokers was _way_ too close to the main joker area which made it **very** easy to accidentally sell a joker when re-arranging them quickly (ask me how I know).
+After that, I ~~had the perfect excuse to play Balatro~~ had to test the mod to make sure nothing crashed or behaved weirdly. Thankfully, everything worked just fine! The only "issue" was that the "Sell" target for jokers was _way_ too close to the main joker area, which made it too easy to accidentally sell a joker when re-arranging them quickly (ask me how I know).
 
 ![](/img/blog/balatro-touch/balatro-touch-og-sell-zone.webp "Balatro with the touch control mod, showing the default sell zone for jokers (in the top right of the game's UI)")
 
@@ -138,7 +137,7 @@ Thankfully, smods provides [a built-in way to make a mod configurable](https://g
 
 ## Releasing the mod
 
-And there you have it! The mod is available on GitHub, as I'm writing this I just updated it for compatibility with Balatro 1.0.1o.
+And there you have it! The mod is available on GitHub, as I'm writing this, I just updated it for compatibility with Balatro 1.0.1o.
 
 [https://github.com/eramdam/sticky-fingers](https://github.com/eramdam/sticky-fingers)
 
