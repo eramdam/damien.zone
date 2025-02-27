@@ -1,18 +1,22 @@
 ---
 title: Modding Balatro on PC to add touch controls
-date: 2025-01-16T01:20:13.153Z
-tags: [
-  "games",
-  "programming",
-  "Balatro"
-]
-description: "I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called \"Sticky Fingers\" and is available to download on https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself."
+date: 2025-02-27T00:04:55.304Z
+tags:
+  - games
+  - programming
+  - Balatro
+description: >-
+  I've made a Balatro mod that adds the touch controls of the iOS version on PC.
+  It's called "Sticky Fingers" and is available to download on
+  GitHub ! This post will is mostly about the
+  process of making the mod itself.
 image: /img/blog/balatro-touch/balatro-touch-mode.webp
+slug: modding-balatro-on-pc-to-add-touch-controls
 ---
 
 ![](/img/blog/balatro-touch/balatro-touch-mode.webp)
 
-_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called "Sticky Fingers" and is available to download on https://github.com/eramdam/sticky-fingers! This post will is mostly about the process of making the mod itself._
+_TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called "Sticky Fingers" and is available to [download on GitHub](https://github.com/eramdam/sticky-fingers)! This post will is mostly about the process of making the mod itself._
 
 ## How I got here
 
@@ -88,7 +92,7 @@ Tada! The files are there!
 
 This part wasn't complicated in itself, it just took a long time. 
 
-I first opened the two folders in a Visual Studio Code workspace, renamed all the files in the iOS folder with a `.ios.lua` extension, and went through most of the files that seemed relevant and compared them against their iOS counterpart.    
+I opened the two folders in a Visual Studio Code workspace and went through most of the files that seemed relevant and compared them against their iOS counterpart.    
 Then, every time I found a bit of code that seemed useful, I would copy it over the desktop file and launch the game until I got what I wanted.  
 
 <details>
