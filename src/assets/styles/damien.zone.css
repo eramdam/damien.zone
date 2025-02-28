@@ -187,6 +187,7 @@ main:has(> :not(.main-block)),
 
   & > .tags {
     margin-bottom: 0;
+    word-spacing: 1ch;
   }
 
   & > .tags a {
