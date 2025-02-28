@@ -166,10 +166,10 @@ a {
   }
 }
 
-a[href]:not(:has(> img)):focus,
-a[href]:has(> img):focus img {
+*:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+  border-radius: 4px;
 }
 
 main:has(> :not(.main-block)),
@@ -404,14 +404,27 @@ figure[data-type="video"] {
     width: 100%;
   }
 
-  & :is(img, video) {
-    --border-alpha: 0.4;
-    border-radius: 12px;
-    display: block;
+  --border-alpha: 0.4;
+  --radius: 12px;
+
+  & a {
+    display: flex;
+    padding: 4px;
     margin-bottom: 10px;
     border: 2px solid rgb(from var(--color-accent) r g b / var(--border-alpha));
+  }
+
+  & video {
+    display: block;
+    border: 2px solid rgb(from var(--color-accent) r g b / var(--border-alpha));
     padding: 4px;
-    background-color: transparent;
+  }
+
+  & :is(a, video) {
+    border-radius: var(--radius);
+  }
+  & a img {
+    border-radius: calc(var(--radius) / 2);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -427,12 +440,17 @@ figure[data-type="video"] {
     margin-left: calc(var(--main-horizontal-padding) * -1);
     margin-right: calc(var(--main-horizontal-padding) * -1);
 
-    & :is(img, video) {
-      border-radius: 0;
+    & :is(a, video) {
       padding-left: 0;
       padding-right: 0;
       border-left: none;
       border-right: none;
+    }
+
+    & a,
+    & video,
+    & a img {
+      border-radius: 0;
     }
 
     & figcaption {
