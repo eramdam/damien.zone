@@ -10,11 +10,11 @@ description: >-
   It's called "Sticky Fingers" and is available to download on
   GitHub ! This post will is mostly about the
   process of making the mod itself.
-image: /img/blog/balatro-touch/balatro-touch-mode.webp
+image: /img/blog/balatro-touch/sticky-fingers-hero.webp
 slug: modding-balatro-on-pc-to-add-touch-controls
 ---
 
-![](/img/blog/balatro-touch/balatro-touch-mode.webp)
+![](/img/blog/balatro-touch/sticky-fingers-hero.webp)
 
 _TL;DR: I've made a Balatro mod that adds the touch controls of the iOS version on PC. It's called "Sticky Fingers" and is available to [download on GitHub](https://github.com/eramdam/sticky-fingers)! This post will is mostly about the process of making the mod itself._
 

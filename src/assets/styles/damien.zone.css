@@ -408,7 +408,7 @@ figure[data-type="video"] {
   --radius: 12px;
 
   & a {
-    display: flex;
+    display: inline-flex;
     padding: 4px;
     margin-bottom: 10px;
     border: 2px solid rgb(from var(--color-accent) r g b / var(--border-alpha));
