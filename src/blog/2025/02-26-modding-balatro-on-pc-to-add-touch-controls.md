@@ -1,6 +1,6 @@
 ---
 title: Modding Balatro on PC to add touch controls
-date: 2025-02-27T00:04:55.304Z
+date: 2025-03-02T03:06:14.600Z
 tags:
   - games
   - programming
