@@ -8,6 +8,7 @@ import implicitFigures from "markdown-it-image-figures";
 import markdownItNamedHeadings from "markdown-it-named-headers";
 import { feedsPlugin } from "./11ty/feeds.mjs";
 import { helpersPlugin } from "./11ty/helpers.mjs";
+import embedMastodon from "eleventy-plugin-embed-mastodon";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -15,7 +16,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(helpersPlugin);
   eleventyConfig.addPlugin(feedsPlugin);
-  eleventyConfig.setQuietMode(true);
+  eleventyConfig.addPlugin(embedMastodon, {
+    server: "social.erambert.me",
+  });
+
+  eleventyConfig.setQuietMode(false);
   // eleventyConfig.addPlugin(dirOutputPlugin);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
