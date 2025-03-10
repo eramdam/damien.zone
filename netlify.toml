@@ -9,6 +9,10 @@ from = "/feed"
 to = "/feed.xml"
 
 [[redirects]]
+from = "/ping"
+to = "https://plausible.erambert.me/js/script.js"
+
+[[redirects]]
 from = "/feed/?type=rss"
 to = "/feed.xml"
 
