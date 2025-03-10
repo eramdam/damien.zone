@@ -127,10 +127,13 @@ export function helpersPlugin(eleventyConfig) {
   eleventyConfig.addLiquidFilter("isSiteUrl", isSiteUrl);
   eleventyConfig.addLiquidFilter("urlHostname", urlHostname);
 
-  eleventyConfig.addLiquidShortcode("video", (videoUrl, caption = "") => {
-    return `<figure data-type="video">
-      <video src="${videoUrl}" playsinline controls></video>
+  eleventyConfig.addLiquidShortcode(
+    "video",
+    (videoUrl, caption = "", poster = "") => {
+      return `<figure data-type="video">
+      <video src="${videoUrl}" poster="${poster}" playsinline controls preload="none"></video>
       ${caption && `<figcaption>${caption}</figcaption>`}
     </figure>`;
-  });
+    },
+  );
 }
