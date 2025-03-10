@@ -27,7 +27,7 @@ And that mobile port is great! Great use of the haptic engine and most important
 
 If you don't know what I'm talking about, here's a little recording showing them off:
 
-{% video "/img/blog/balatro-touch/balatro-touch-ios.mp4" "Balatro on iOS and its touch controls to buy/sell/use cards" %}
+{% video "/img/blog/balatro-touch/balatro-touch-ios.mp4" "Balatro on iOS and its touch controls to buy/sell/use cards" "/img/blog/balatro-touch/balatro-touch-ios-poster.webp" %}
 
 After playing the game on iOS a bunch, I've come to really like those controls and would often miss them when playing on my Mac.    
 
