@@ -25,7 +25,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
     globstring: "/{assets,img/blog,img/projects}/**/*",
     hashAlgorithm: "sha256",
-    extensions: ["js", "png", "jpg", "jpeg", "gif", "mp4", "ico", "webp"],
+    extensions: ["js", "png", "jpg", "jpeg", "gif", "ico", "webp"],
   });
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
