@@ -27,15 +27,13 @@ At its peak, Better TweetDeck had ~70,000 weekly users on the various browser ad
 
 If you've used it, **thank you ❤️** and also: you might find this [post interesting](/bettertweetdeck-post-mortem-part-2/)
 
-## Mac Themes Bot
+## Mac Themes Garden
 
-[Twitter](https://x.com/macintoshthemes) - [Mastodon](https://social.erambert.me/@macthemes) - [Bluesky](https://bsky.app/profile/macthemes.bsky.social) - [https://github.com/eramdam/shapeshifter-themes](https://github.com/eramdam/shapeshifter-themes)
+[macthemes.garden](https://macthemes.garden) - [Mastodon bot](https://social.erambert.me/@macthemes) - [Bluesky bot](https://bsky.app/profile/macthemes.bsky.social) - [https://github.com/eramdam/macthemes.garden](https://github.com/eramdam/macthemes.garden)
 
-![Screen Shot 2024-09-26 at 22](/img/projects/23.png)
+![Mac Themes Garden](/img/projects/macthemes-garden.webp)
 
-Back in 2018(!), I set up a bot that posts themes for [Kaleidoscope](<https://en.wikipedia.org/wiki/Kaleidoscope_(software)>) (Classic Mac) and [ShapeShifter](https://en.wikipedia.org/wiki/Unsanity#Software) (Mac OS X).
-I did it to follow the path of [@kaleidoscopemac](https://web.archive.org/web/20191021204432/https://twitter.com/kaleidoscopemac) on Twitter.  
-In late-2023, I started "re-archiving" the ~4,000 schemes that are available for Kaleidoscope specifically. I hope to, sometime next year, make a website out of it.
+_Mac Themes Garden_ is a website showcasing more than (at the time of writing) 3,900 Kaleidoscope schemes from the late 90s to the early 2000s. A perfect excuse to indulge in some retro web design and CSS trickery to mimick the Mac OS 9 UI.
 
 ## Mastodon Archive Viewer
 
