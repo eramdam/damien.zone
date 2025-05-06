@@ -45,7 +45,7 @@ export async function webMentions() {
   for (let page = 0; ; page++) {
     try {
       let response = await Fetch(`${endpoint}&page=${page}`, {
-        duration: "1d", // save for 1 day
+        duration: "6h", // save for 1 day
         verbose: true,
       });
       response = JSON.parse(response.toString());
