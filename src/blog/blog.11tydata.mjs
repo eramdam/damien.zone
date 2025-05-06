@@ -27,6 +27,7 @@ function removeDateFromSlug(slug) {
 // Based off https://github.com/nex3/nex3.github.io/blob/b9e6eefeaf6bddf17c092019bdc852aa588d9eea/source/blog/blog.11tydata.js
 export async function webMentions() {
   const { url } = this.page;
+  console.log({ url });
   if (!url) {
     return [];
   }
@@ -159,9 +160,12 @@ export async function webMentions() {
     return 0;
   });
 
-  // if (allMentions.length) {
-  //   console.log("Mentions for ", url);
-  // }
+  if (allMentions.length) {
+    if (url === "/introducing-mac-themes-garden/") {
+      console.log("Mentions for ", url);
+      console.log(allMentions);
+    }
+  }
 
   return allMentions;
 }
