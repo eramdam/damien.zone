@@ -125,14 +125,16 @@ export async function webMentions() {
       }
     }
 
-    // It seems Mastodon mentions have their emoji replaced by "????" because of Bridgy
+    // It seems Mastodon mentions have their emoji replaced by "????" and their content truncated because of Bridgy
     // Therefore, we fetch the Mastodon JSON object to get the right HTML text
     if (
       mention["wm-source"] &&
-      String(mention["wm-source"]).startsWith(
+      (String(mention["wm-source"]).startsWith(
         "https://brid.gy/comment/mastodon/",
-      ) &&
-      String(mention.content.html).includes(`????`)
+      ) ||
+        String(mention["wm-source"]).startsWith(
+          "https://brid.gy/post/mastodon/",
+        ))
     ) {
       try {
         const mastodonResponse = await fetch(mention.url, {
