@@ -136,6 +136,12 @@
     "filename": "lmnt.gif"
   },
   {
+    "link": "https://macthemes.garden",
+    "name": "Mac Themes Garden",
+    "src": "./public/buttons/macthemes.garden.png",
+    "filename": "macthemes.garden.png"
+  },
+  {
     "link": "https://meow.garden/",
     "name": "meow.garden",
     "src": "./public/buttons/meowgarden-88x31.png",

@@ -1,4 +1,3 @@
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q{% htmlButtons %}\\E$"}
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QA Node.js-based tool that syncs your GitHub stars to a given Raindrop collection.\\E$"}
-{"rule":"AI_HYDRA_LEO_MISSING_COMMA","sentence":"^\\Qdamien.zone january 2025 release notes\\E$"}
-{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qdamien.zone january 2025 release notes\\E$"}
+{"rule":"COLLECTIVE_NOUN_VERB_AGREEMENT_VBP","sentence":"^\\QWithout going into details (which you can read here), the process looks like this:\nOpen my Mac OS 9 VM in UTM.app (QEMU frontend)\nGo through the folder of schemes\nSelect a given scheme, apply it\nTake 3 screenshots:\nOne of the scheme's about box.\\E$"}
+{"rule":"IT_VBZ","sentence":"^\\QWithout going into details (which you can read here), the process looks like this:\nOpen my Mac OS 9 VM in UTM.app (QEMU frontend)\nGo through the folder of schemes\nSelect a given scheme, apply it\nTake 3 screenshots:\nOne of the scheme's about box.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QMaking Da Website\\E$"}
