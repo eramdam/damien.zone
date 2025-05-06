@@ -1,12 +1,12 @@
 ---
-title: "Introducing Mac Themes Garden!"
+title: Introducing Mac Themes Garden!
 slug: introducing-mac-themes-garden
-date: 2025-05-04T06:35:56.745Z
-tags: 
-  - "retrocomputing"
-  - "mac"
-description: 'A website for old Macintosh themes and some background.'
-image: '/img/projects/macthemes-garden.webp'
+date: 2025-05-06T03:12:50.426Z
+tags:
+  - retrocomputing
+  - mac
+description: A website for old Macintosh themes and some background.
+image: /img/projects/macthemes-garden.webp
 templateEngineOverride: md
 ---
 
