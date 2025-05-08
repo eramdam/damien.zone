@@ -77,6 +77,12 @@
     "filename": "estrogenandspite.png"
   },
   {
+    "link": "https://eva.town",
+    "name": "eva.town",
+    "src": "./public/buttons/eva-town.png",
+    "filename": "eva-town.png"
+  },
+  {
     "link": "https://ewie.online/",
     "name": "evie on→line",
     "src": "./public/buttons/88x31-evie.png",
