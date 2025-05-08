@@ -473,6 +473,11 @@ figure[data-type="video"] {
   margin: 2px;
 }
 
+.page.links main:has(> :not(.main-block)) .buttons img {
+  max-width: 88px;
+  max-height: 31px;
+}
+
 .eggbug-buttons {
   text-align: center;
   margin: 20px 0;
