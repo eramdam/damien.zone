@@ -2,8 +2,12 @@
 title: blog
 layout: base
 description: french software engineer living and working in the Bay Area on web stuff
-permalink: /old-blog.html
-hidden: true
+pagination:
+  data: collections.blog
+  size: 5
+  alias: posts
+  reverse: true
+permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html'
+class_name: h-feed
 ---
-{% assign posts = collections.blog | reverse %}
-{% render 'posts-list', posts: posts %}
+{% render 'blog-posts', posts: posts, pagination: pagination %}
