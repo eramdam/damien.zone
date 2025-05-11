@@ -14,8 +14,9 @@
 </p>
 
 <div class="e-content">
+  {% assign truncate_limit = size_limit | default: 300 %}
   {% if in_feed %}
-    {{ content | truncateHTML: 300, link: link }}
+    {{ content | truncateHTML: truncate_limit, link: link }}
   {% else %}
     {{ content }}
   {% endif %}
