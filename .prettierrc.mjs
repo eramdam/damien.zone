@@ -1,3 +1,3 @@
 export default {
-  plugins: ["@shopify/prettier-plugin-liquid"],
+  // plugins: ["@shopify/prettier-plugin-liquid"],
 };
