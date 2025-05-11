@@ -604,3 +604,7 @@ p small {
 p s {
   opacity: 0.4;
 }
+
+body.credits .pixel.favicon {
+  height: 24px;
+}
