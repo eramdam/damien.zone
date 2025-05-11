@@ -1,0 +1,24 @@
+---
+import "../assets/styles/damien.zone.css";
+import { SITE } from "../siteConstants";
+import Footer from "./footer.astro";
+import Head from "./head.astro";
+import Navigation from "./navigation.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head />
+  </head>
+
+  <body class="">
+    <data class="p-name" value={SITE.name}></data>
+    <data class="u-photo" value="/avatar/avatar-bg.png"></data>
+    <Navigation />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
