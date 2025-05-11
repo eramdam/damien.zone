@@ -1,9 +1,13 @@
 ---
 import "../assets/styles/damien.zone.css";
 import { SITE } from "../siteConstants";
+import { getCanonicalUrl } from "../siteHelpers";
 import Footer from "./footer.astro";
 import Head from "./head.astro";
 import Navigation from "./navigation.astro";
+
+const isHome = Astro.url.pathname === "/";
+const isPost = false;
 ---
 
 <!doctype html>
@@ -12,7 +16,9 @@ import Navigation from "./navigation.astro";
     <Head />
   </head>
 
-  <body class="">
+  <body
+    class:list={[isHome && "home", Astro.props.frontmatter?.class_name ?? ""]}
+  >
     <data class="p-name" value={SITE.name}></data>
     <data class="u-photo" value="/avatar/avatar-bg.png"></data>
     <Navigation />

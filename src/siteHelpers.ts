@@ -1,10 +1,16 @@
+import type { AstroGlobal } from "astro";
 import { SITE } from "./siteConstants";
 
-export function getTitleFromProps(props: Record<string, any>) {
-  const baseTitle = SITE.name;
-  const titleFromProps = props.content?.title ?? props.frontmatter?.title;
+export function getCanonicalUrl(astro: AstroGlobal) {
+  return new URL(astro.url.pathname, astro.site);
+}
 
-  if (!titleFromProps && props.url === "") {
+export function getTitleFromProps(astro: AstroGlobal) {
+  const baseTitle = SITE.name;
+  const titleFromProps =
+    astro.props.content?.title ?? astro.props.frontmatter?.title;
+
+  if (!titleFromProps && astro.url.pathname === "/") {
     return baseTitle;
   }
 
