@@ -27,16 +27,22 @@
     "date-fns": "^4.1.0",
     "hast": "^0.0.2",
     "hastscript": "^9.0.1",
+    "mdast-util-directive": "^3.1.0",
     "prettier": "^3.5.3",
     "rehype": "^13.0.2",
     "rehype-rewrite": "^4.0.2",
     "remark-attributes": "^0.3.2",
+    "remark-directive": "^4.0.0",
+    "remark-directive-rehype": "^0.4.2",
+    "remark-directive-sugar": "^1.1.2",
     "rimraf": "^6.0.1",
     "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
     "to-vfile": "^8.0.0",
     "truncate-html": "^1.2.1",
-    "user-agent-data-types": "^0.4.2"
+    "unist-util-visit": "^5.0.0",
+    "user-agent-data-types": "^0.4.2",
+    "vfile": "^6.0.3"
   },
   "devDependencies": {
     "@inquirer/prompts": "^7.5.0",
