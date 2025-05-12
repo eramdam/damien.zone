@@ -1,6 +1,6 @@
 ---
-import { SITE } from "../siteConstants";
-import { getTitleFromProps } from "../siteHelpers";
+import { SITE } from "../helpers/siteConstants";
+import { getTitleFromProps } from "../helpers/siteHelpers";
 
 const finalTitle = getTitleFromProps(Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
