@@ -1,9 +1,16 @@
 ---
+import assert from "node:assert";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
 
 const finalTitle = getTitleFromProps(Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const contentProps = Astro.props.content ?? Astro.props.frontmatter;
+const description = contentProps?.description;
+assert(description, `Missing description for ${canonicalURL}`);
+const image = contentProps?.image || "/assets/open_graph.webp";
+assert(image);
+assert(finalTitle, `Missing description for ${canonicalURL}`);
 ---
 
 <meta charset="utf-8" />
@@ -21,7 +28,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <title>{finalTitle}</title>
 <!-- Primary Meta Tags -->
 <meta name="title" content={finalTitle} />
-<meta name="description" content={Astro.props.content?.description} />
+<meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -29,11 +36,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:title" content={finalTitle} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:description" content="{{ description | escape }}" />
-<meta
-  property="og:image"
-  content="{{ image | default: '/assets/open_graph.webp' }}"
-/>
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
 <meta
   name="theme-color"
   content="#212028"
