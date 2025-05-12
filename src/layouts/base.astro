@@ -12,7 +12,7 @@ import Navigation from "../components/Navigation.astro";
     <Head />
   </head>
 
-  <Body>
+  <Body class:list={Astro.props.frontmatter?.class_name}>
     <Navigation />
     <main>
       <slot />
