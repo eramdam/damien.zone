@@ -1,0 +1,33 @@
+---
+import buttons from "../_data/buttons.json" with { type: "json" };
+---
+
+{
+  buttons.map((button) => {
+    const buttonImg = (
+      <img
+        class="pixel"
+        decoding="async"
+        loading="lazy"
+        src={button.src.replace("./", "/")}
+        title={button.name}
+        alt={button.name}
+      />
+    );
+
+    if (button.link) {
+      return (
+        <a
+          href={button.link}
+          target="_blank"
+          rel="noopener"
+          title={button.name}
+        >
+          {buttonImg}
+        </a>
+      );
+    }
+
+    return buttonImg;
+  })
+}

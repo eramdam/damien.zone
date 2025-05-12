@@ -2,6 +2,7 @@
 interface Props {
   isPost?: boolean;
   frontmatter?: Record<string, any>;
+  class?: string;
 }
 const isHome = Astro.url.pathname === "/";
 const isPost = Astro.props.isPost;
@@ -12,7 +13,7 @@ const isPost = Astro.props.isPost;
     isPost && "post",
     isHome && "home",
     !isHome && !isPost && "page",
-    Astro.props.frontmatter?.class_name ?? "",
+    Astro.props.class ?? "",
   ]}
 >
   <slot />

@@ -471,13 +471,15 @@ figure[data-type="video"] {
 
 /* Links / buttons stuff */
 .page.links main:has(> :not(.main-block)) .buttons {
-  text-wrap: balance;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
   line-height: 20px;
+  gap: 4px;
 }
 
 .page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
-  margin: 2px;
+  text-decoration: none;
+  line-height: 0;
 }
 
 .page.links main:has(> :not(.main-block)) .buttons img {
@@ -501,6 +503,10 @@ figure[data-type="video"] {
   margin-top: 10px;
   margin-bottom: 14px;
   gap: 4px;
+}
+
+p:has(+ .buttons-mybutton) {
+  float: left;
 }
 
 .buttons-mybutton {

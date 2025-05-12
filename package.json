@@ -15,6 +15,7 @@
   "description": "",
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.6",
     "@date-fns/tz": "^1.2.0",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^22.15.3",
@@ -24,6 +25,7 @@
     "cheerio": "^1.0.0",
     "date-fns": "^4.1.0",
     "prettier": "^3.5.3",
+    "remark-attributes": "^0.3.2",
     "rimraf": "^6.0.1",
     "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
