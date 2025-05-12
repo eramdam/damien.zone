@@ -20,6 +20,7 @@
     "@types/node": "^22.15.3",
     "@types/slug": "^5.0.9",
     "astro": "^5.7.12",
+    "astro-expressive-code": "^0.41.2",
     "cheerio": "^1.0.0",
     "date-fns": "^4.1.0",
     "prettier": "^3.5.3",
