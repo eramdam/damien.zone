@@ -40,7 +40,7 @@ export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
 function makeFigureFromImage(img: Element): Element {
   const props = img.properties;
   const title = props.title;
-  const alt = props.alt ?? title;
+  const alt = props.alt || title;
   const src = props.src;
 
   return h("figure", { "data-type": "image" }, [
@@ -55,6 +55,6 @@ function makeFigureFromImage(img: Element): Element {
       }),
     ]),
     // Only add figcaption if there's alt text
-    ...(alt ? [h("figcaption", { alt })] : []),
+    ...(alt ? [h("figcaption", { alt }, alt)] : []),
   ]);
 }
