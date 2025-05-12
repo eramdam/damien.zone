@@ -5,7 +5,7 @@
 @import url("./comentario.css");
 
 /* Syntax highlighting */
-@import url("./syntax.css");
+/* @import url("./syntax.css"); */
 
 /* Image gallery */
 @import url("./image-gallery.css");
@@ -545,6 +545,12 @@ code:not([class]) {
   @media (prefers-color-scheme: light) {
     background-color: var(--offwhite-background);
   }
+}
+
+pre[class] code {
+  background-color: unset;
+  padding: unset;
+  border-radius: unset;
 }
 
 @media (min-width: 767px) {
