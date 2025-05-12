@@ -16,3 +16,13 @@ export function getTitleFromProps(astro: AstroGlobal) {
 
   return [titleFromProps, baseTitle].filter(Boolean).join(" | ");
 }
+
+// Convert this to content collection schema maybe?
+export interface PostContentProps {
+  title?: string;
+  description?: string;
+  is_page?: boolean;
+  date: string;
+  tags?: string[];
+  url: string;
+}

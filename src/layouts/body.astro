@@ -1,0 +1,19 @@
+---
+interface Props {
+  isPost?: boolean;
+  frontmatter?: Record<string, any>;
+}
+const isHome = Astro.url.pathname === "/";
+const isPost = Astro.props.isPost;
+---
+
+<body
+  class:list={[
+    isPost && "post",
+    isHome && "home",
+    !isHome && !isPost && "page",
+    Astro.props.frontmatter?.class_name ?? "",
+  ]}
+>
+  <slot />
+</body>

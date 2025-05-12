@@ -1,5 +1,6 @@
 ---
 import "../assets/styles/damien.zone.css";
+import BlogPost from "./BlogPost.astro";
 import Body from "./body.astro";
 import Footer from "./footer.astro";
 import Head from "./head.astro";
@@ -12,10 +13,11 @@ import Navigation from "./navigation.astro";
     <Head />
   </head>
 
-  <Body>
+  <Body isPost>
     <Navigation />
-    <main>
-      <slot />
+    <main class="h-entry">
+      <BlogPost postProps={Astro.props} />
+      <!-- <slot /> -->
     </main>
     <Footer />
   </Body>
