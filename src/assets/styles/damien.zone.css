@@ -449,6 +449,8 @@ figure[data-type="video"] {
   }
   & a img {
     border-radius: calc(var(--radius) / 2);
+    width: auto;
+    height: auto;
   }
 
   @media (prefers-color-scheme: dark) {
