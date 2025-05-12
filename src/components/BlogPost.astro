@@ -10,7 +10,8 @@ interface Props {
 }
 
 const postProps = Astro.props.postProps;
-const contentProps = postProps.content as PostContentProps;
+const contentProps = (postProps.content ??
+  postProps.frontmatter) as PostContentProps;
 const title = contentProps.title;
 const baseCompiledContent = await postProps.compiledContent();
 const finalContent = Astro.props.inFeed

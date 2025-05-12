@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from "astro";
+import assert from "node:assert";
+import Post from "../layouts/post.astro";
+
+export const getStaticPaths = (() => {
+  const posts = Object.values(
+    import.meta.glob("../blog/**/*.md", { eager: true })
+  );
+  return posts.map((post: any) => {
+    assert(post.frontmatter.slug);
+
+    return {
+      props: { post },
+      params: {
+        blogpost: post.frontmatter.slug,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+---
+
+<Post {...Astro.props.post} />
