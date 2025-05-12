@@ -1,0 +1,54 @@
+---
+import { SITE } from "../siteConstants";
+import { getTitleFromProps, type PostContentProps } from "../siteHelpers";
+import PostDate from "./PostDate.astro";
+
+interface Props {
+  postProps: Record<string, any>;
+}
+
+const postProps = Astro.props.postProps;
+const contentProps = postProps.content as PostContentProps;
+const title = contentProps.title;
+---
+
+<div class="p-author h-card">
+  <data class="p-name" value={SITE.author}></data>
+  <data class="u-url u-uid" value="/"></data>
+  <data class="u-photo" value="/avatar/avatar-bg.png"></data>
+</div>
+<h1 class="p-name">
+  <a href={Astro.url} rel="canonical" class="u-url u-uid"> {title} </a>
+</h1>
+
+<p class="post-datetime">
+  <PostDate class="dt-published" date={new Date(contentProps.date)} />
+</p>
+
+<!-- TODO: re-add truncate html stuff -->
+<div class="e-content" set:html={postProps.compiledContent()} />
+{
+  contentProps.tags && (
+    <p class="tags">
+      {contentProps.tags.map((t) => {
+        return (
+          <a
+            href={`/tag/${encodeURIComponent(t)}`}
+            class="p-category"
+            set:text={t}
+          ></a>
+        );
+      })}
+    </p>
+  )
+}
+<!-- {%- assign tags = tags | omit: 'blog' -%}
+{% if tags %}
+  <p class="tags">
+    {% for tag in tags %}
+      <a href="/tag/{{ tag | url_encode }}" class="p-category">
+        {{- tag | escape -}}
+      </a>
+    {% endfor %}
+  </p>
+{% endif %} -->
