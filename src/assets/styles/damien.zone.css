@@ -151,21 +151,36 @@ a {
     --link-underline-thickness: var(--link-underline-thickness-hover);
   }
 
-  .footnote-ref & {
+  &[data-footnote-ref] {
     color: var(--color-accent);
     text-underline-offset: initial;
     text-decoration-thickness: initial;
+
+    &::before {
+      content: "[";
+    }
+    &::after {
+      content: "]";
+    }
 
     &:hover {
       text-decoration: none;
     }
   }
 
-  &.footnote-backref {
+  &[data-footnote-backref] {
     color: var(--color-accent);
     text-underline-offset: initial;
     text-decoration-thickness: initial;
   }
+}
+
+section[data-footnotes] {
+  border-top: 1px dashed gray;
+}
+
+[data-footnotes] #footnote-label {
+  display: none;
 }
 
 *:focus-visible {
