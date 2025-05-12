@@ -20,11 +20,13 @@
     "@types/node": "^22.15.3",
     "@types/slug": "^5.0.9",
     "astro": "^5.7.12",
+    "cheerio": "^1.0.0",
     "date-fns": "^4.1.0",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
+    "truncate-html": "^1.2.1",
     "user-agent-data-types": "^0.4.2"
   },
   "devDependencies": {
