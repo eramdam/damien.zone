@@ -18,7 +18,7 @@ export function customVideoDirective() {
         }
 
         const { attributes } = node;
-        const { src } = attributes;
+        const { src, poster: posterAttribute } = attributes;
 
         if (node.type === "textDirective") {
           if (node.type === "textDirective") {
@@ -34,17 +34,16 @@ export function customVideoDirective() {
         }
 
         const data = node.data || (node.data = {});
-        console.log(node);
-
         const srcParsed = path.parse(src);
-        console.log(srcParsed);
-        const poster = path.format({
-          ...srcParsed,
-          base: `${srcParsed.name}-poster.webp`,
-          name: `${srcParsed.name}-poster`,
-          ext: ".webp",
-        });
-
+        const poster =
+          posterAttribute ??
+          path.format({
+            ...srcParsed,
+            base: `${srcParsed.name}-poster.webp`,
+            name: `${srcParsed.name}-poster`,
+            ext: ".webp",
+          });
+        console.log({ poster });
         const caption =
           node.children?.[0].type === "text" && node.children[0].value;
 
