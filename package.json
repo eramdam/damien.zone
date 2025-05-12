@@ -29,14 +29,13 @@
     "hastscript": "^9.0.1",
     "prettier": "^3.5.3",
     "rehype": "^13.0.2",
+    "rehype-rewrite": "^4.0.2",
     "remark-attributes": "^0.3.2",
     "rimraf": "^6.0.1",
     "slug": "^10.0.0",
     "svgo": "^4.0.0-rc.1",
     "to-vfile": "^8.0.0",
     "truncate-html": "^1.2.1",
-    "unist": "^0.0.1",
-    "unist-util-visit": "^5.0.0",
     "user-agent-data-types": "^0.4.2"
   },
   "devDependencies": {

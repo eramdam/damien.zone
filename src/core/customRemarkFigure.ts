@@ -1,43 +1,44 @@
-import type { Root, Element } from "hast";
+import type { Element } from "hast";
 import { h } from "hastscript";
-import { visit } from "unist-util-visit";
+import type { RehypeRewriteOptions } from "rehype-rewrite";
 
 const isDev = import.meta.env?.DEV ?? process.env.NODE_ENV !== "production";
 
-export function rehypeFigures() {
-  return function (tree: Root) {
-    visit(tree, "element", (node, index) => {
-      if (node.tagName !== "p") {
-        return;
-      }
+export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
+  node,
+  index,
+  parent,
+) {
+  if (node.type !== "element") {
+    return;
+  }
+  if (node.tagName !== "p") {
+    return;
+  }
 
-      // console.log(node.children);
-      const onlyHasImage = node.children.every((child, index) => {
-        if (child.type === "element") {
-          return child.tagName === "img";
-        }
+  const onlyHasImage = node.children.every((child, index) => {
+    if (child.type === "element") {
+      return child.tagName === "img";
+    }
 
-        return child.type === "text" && child.value.trim().length === 0;
-      });
+    return child.type === "text" && child.value.trim().length === 0;
+  });
 
-      if (!onlyHasImage) {
-        return;
-      }
+  if (!onlyHasImage) {
+    return;
+  }
 
-      const images = node.children
-        .filter((e): e is Element => {
-          return e.type === "element" && e.tagName === "img";
-        })
-        .map(makeFigureFromImage);
+  const images = node.children
+    .filter((e): e is Element => {
+      return e.type === "element" && e.tagName === "img";
+    })
+    .map(makeFigureFromImage);
 
-      node.children = images;
-    });
-  };
-}
+  node.children = images;
+};
 
 function makeFigureFromImage(img: Element): Element {
   const props = img.properties;
-  console.log(props);
   const title = props.title;
   const alt = props.alt ?? title;
   const src = props.src;
