@@ -1,6 +1,6 @@
 ---
-import { SITE } from "../siteConstants";
-import { getTitleFromProps, type PostContentProps } from "../siteHelpers";
+import { SITE } from "../helpers/siteConstants";
+import { type PostContentProps } from "../helpers/siteHelpers";
 import PostDate from "./PostDate.astro";
 
 interface Props {
@@ -36,7 +36,7 @@ const title = contentProps.title;
             href={`/tag/${encodeURIComponent(t)}`}
             class="p-category"
             set:text={t}
-          ></a>
+          />
         );
       })}
     </p>

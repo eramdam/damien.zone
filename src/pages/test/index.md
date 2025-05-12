@@ -38,10 +38,10 @@ Wolf ramps subway tile listicle mlkshk fashion axe ut mollit. Eu church-key hell
 ## Another example image
 
 <picture>
-  <source srcset="./pokemonshow-dark.png" media="(prefers-color-scheme: dark)" type="image/png">
-  <source srcset="/_test/pokemonshow-light.png" type="image/png">
+  <source srcset="/test/pokemonshow-dark.png" media="(prefers-color-scheme: dark)" type="image/png">
+  <source srcset="/test/pokemonshow-light.png" type="image/png">
   <img
-    src="./pokemonshow-light.png" alt="pokemonshow" 
+    src="/test/pokemonshow-light.png" alt="pokemonshow" 
     loading="lazy" decoding="async">
 </picture>
 
