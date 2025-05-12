@@ -81,7 +81,7 @@ Food truck hammock echo park [occaecat pariatur](example.com) 3 wolf moon mustac
 
 ## Code Blocks
 
-```html
+```html title="index.html" {1,4} del={"1":2} ins={3}
 <!doctype html>
 <html lang="en">
   <head>
@@ -92,6 +92,82 @@ Food truck hammock echo park [occaecat pariatur](example.com) 3 wolf moon mustac
     <p>Test</p>
   </body>
 </html>
+```
+```diff
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,4 @@
++this is an actual diff file
+-all contents will remain unmodified
+ no whitespace will be removed either
+```
+```bash
+echo "Hello world"
+```
+```diff lang="js"
+  function thisIsJavaScript() {
+    // This entire block gets highlighted as JavaScript,
+    // and we can still add diff markers to it!
+-   console.log('Old code to be removed')
++   console.log('New and shiny code!')
+  }
+```
+```js "given text"
+function demo() {
+  // Mark any given text inside lines
+  return 'Multiple matches of the given text are supported';
+}
+```
+```ts /ye[sp]/
+console.log('The words yes and yep will be marked.')
+```
+
+```js wrap
+// Example with wrap
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+```
+
+```js wrap
+// Example with wrap=false
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+```
+
+```js wrap preserveIndent
+// Example with preserveIndent (enabled by default)
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+```
+
+```js wrap preserveIndent=false
+// Example with preserveIndent=false
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+```
+
+```js wrap hangingIndent=2
+// Example with hangingIndent=2
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+function heavilyIndentedCode() {
+          return 'This long line already starts with a lot of indentation, and its wrapped parts will be indented by 2 additional columns due to hangingIndent=2'
+}
+```
+
+```js wrap hangingIndent=2 preserveIndent=false
+// Example with hangingIndent=2 and preserveIndent=false
+function getLongString() {
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+}
+function heavilyIndentedCode() {
+          return 'Even though this long line starts with a lot of indentation, its wrapped parts will only be indented by 2 columns due to the combination of hangingIndent=2 and preserveIndent=false'
+}
 ```
 
 ## List Types
