@@ -204,7 +204,6 @@ main:has(> :not(.main-block)),
 
   & > .tags {
     margin-bottom: 0;
-    word-spacing: 1ch;
   }
 
   & > .tags a {
@@ -433,7 +432,7 @@ figure[data-type="video"] {
   --border-alpha: 0.4;
   --radius: 12px;
 
-  & a {
+  & > :is(a, img) {
     display: inline-flex;
     padding: 4px;
     margin-bottom: 10px;
@@ -446,7 +445,7 @@ figure[data-type="video"] {
     padding: 4px;
   }
 
-  & :is(a, video) {
+  & > :is(a, img, video) {
     border-radius: var(--radius);
   }
   & a img {
