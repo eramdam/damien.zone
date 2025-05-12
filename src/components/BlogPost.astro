@@ -1,15 +1,21 @@
 ---
 import { SITE } from "../helpers/siteConstants";
 import { type PostContentProps } from "../helpers/siteHelpers";
+import { truncateHTML } from "../helpers/truncateHtml";
 import PostDate from "./PostDate.astro";
 
 interface Props {
   postProps: Record<string, any>;
+  inFeed?: boolean;
 }
 
 const postProps = Astro.props.postProps;
 const contentProps = postProps.content as PostContentProps;
 const title = contentProps.title;
+const baseCompiledContent = await postProps.compiledContent();
+const finalContent = Astro.props.inFeed
+  ? truncateHTML(baseCompiledContent, 300, Astro.url)
+  : baseCompiledContent;
 ---
 
 <div class="p-author h-card">
@@ -25,8 +31,7 @@ const title = contentProps.title;
   <PostDate class="dt-published" date={new Date(contentProps.date)} />
 </p>
 
-<!-- TODO: re-add truncate html stuff -->
-<div class="e-content" set:html={postProps.compiledContent()} />
+<div class="e-content" set:html={finalContent} />
 {
   contentProps.tags && (
     <p class="tags">
@@ -42,13 +47,3 @@ const title = contentProps.title;
     </p>
   )
 }
-<!-- {%- assign tags = tags | omit: 'blog' -%}
-{% if tags %}
-  <p class="tags">
-    {% for tag in tags %}
-      <a href="/tag/{{ tag | url_encode }}" class="p-category">
-        {{- tag | escape -}}
-      </a>
-    {% endfor %}
-  </p>
-{% endif %} -->
