@@ -1,11 +1,8 @@
-import remarkDirectiveRehype from "remark-directive-rehype";
-import { defineConfig, passthroughImageService } from "astro/config";
-import expressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
-import { rewriteWithFigures } from "./src/core/customRemarkFigure";
+import expressiveCode from "astro-expressive-code";
+import { defineConfig, passthroughImageService } from "astro/config";
 import rehypeRewrite from "rehype-rewrite";
-import remarkDirective from "remark-directive";
-import { customVideoDirective } from "./src/core/customVideoDirective";
+import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 
 const isDev = import.meta.env.DEV;
 
@@ -21,7 +18,6 @@ export default defineConfig({
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
   compressHTML: false,
   markdown: {
-    remarkPlugins: [remarkDirective, customVideoDirective as any],
     rehypePlugins: [
       [
         rehypeRewrite,
