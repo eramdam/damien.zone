@@ -197,6 +197,12 @@ main:has(> :not(.main-block)),
     text-decoration-color: currentColor;
   }
 
+  & > .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
+  }
+
   & > .tags a::before {
     content: "#";
   }
