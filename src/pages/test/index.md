@@ -11,7 +11,7 @@ tags:
 ---
 A testbed page to test my CSS.
 
-::video[Balatro on iOS and its touch controls to buy/sell/use cards]{src="/img/blog/balatro-touch/balatro-touch-ios.mp4"}
+::video[Balatro on iOS and its touch controls to buy/sell/use cards]{src="/video/balatro-touch/balatro-touch-ios.mp4"}
 
 ## What's this page about?
 

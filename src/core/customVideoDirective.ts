@@ -60,8 +60,8 @@ export function customVideoDirective() {
             properties: {
               src,
               poster,
-              playsinline: "",
-              controls: "",
+              playsinline: true,
+              controls: true,
               preload: "none",
             },
           },
