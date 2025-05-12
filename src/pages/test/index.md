@@ -11,8 +11,6 @@ tags:
 ---
 A testbed page to test my CSS.
 
-::video[Balatro on iOS and its touch controls to buy/sell/use cards]{src="/video/balatro-touch/balatro-touch-ios.mp4"}
-
 ## What's this page about?
 
 It's an example page meant to show all the different things my website can show/support. Placeholder text from [Hipster Ipsum](https://hipsum.co/)
@@ -35,7 +33,7 @@ Wolf ramps subway tile listicle mlkshk fashion axe ut mollit. Eu church-key hell
 
 ## An example image
 
-<light-dark>![](./balatro-touch-mode.webp "Woah! It's Balatro!!")</light-dark>
+![](./balatro-touch-mode.webp "Woah! It's Balatro!!")
 
 ## Another example image
 
