@@ -428,6 +428,8 @@ figure[data-type="video"] {
     width: 100%;
   }
 
+  text-align: center;
+
   --border-alpha: 0.4;
   --radius: 12px;
 
