@@ -432,7 +432,7 @@ figure[data-type="video"] {
   --border-alpha: 0.4;
   --radius: 12px;
 
-  & > :is(a, img) {
+  & > :is(a, img, picture) {
     display: inline-flex;
     padding: 4px;
     margin-bottom: 10px;
@@ -445,7 +445,7 @@ figure[data-type="video"] {
     padding: 4px;
   }
 
-  & > :is(a, img, video) {
+  & > :is(a, picture, img, video) {
     border-radius: var(--radius);
   }
   & a img {
