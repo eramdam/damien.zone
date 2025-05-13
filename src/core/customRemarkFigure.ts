@@ -6,8 +6,6 @@ const isDev = import.meta.env?.DEV ?? process.env.NODE_ENV !== "production";
 
 export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
   node,
-  index,
-  parent,
 ) {
   if (node.type !== "element") {
     return;
@@ -16,7 +14,7 @@ export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
     return;
   }
 
-  const onlyHasImage = node.children.every((child, index) => {
+  const onlyHasImage = node.children.every((child) => {
     if (child.type === "element") {
       return child.tagName === "img";
     }
@@ -55,6 +53,6 @@ function makeFigureFromImage(img: Element): Element {
       }),
     ]),
     // Only add figcaption if there's alt text
-    ...(alt ? [h("figcaption", { alt }, alt)] : []),
+    ...(alt ? [h("figcaption", String(alt))] : []),
   ]);
 }

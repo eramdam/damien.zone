@@ -1,8 +1,7 @@
-import matter from "gray-matter";
-import { select, Separator } from "@inquirer/prompts";
-import fs from "node:fs";
-import path from "node:path";
+import { select } from "@inquirer/prompts";
 import { glob } from "glob";
+import matter from "gray-matter";
+import fs from "node:fs";
 import slug from "slug";
 
 (async () => {
