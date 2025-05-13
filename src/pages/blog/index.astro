@@ -1,16 +1,10 @@
 ---
 import BlogPost from "../../components/BlogPost.astro";
+import { sortPosts } from "../../helpers/siteHelpers";
 import Base from "../../layouts/base.astro";
-const posts = Object.values(
-  import.meta.glob("../../blog/**/*.md", { eager: true })
-).toSorted((a, b) => {
-  return (
-    // @ts-expect-error
-    new Date(b.frontmatter.date).valueOf() -
-    // @ts-expect-error
-    new Date(a.frontmatter.date).valueOf()
-  );
-});
+const posts = sortPosts(
+  Object.values(import.meta.glob("../../blog/**/*.md", { eager: true }))
+);
 const firstPage = posts.slice(0, 5);
 const numberOfPages = Math.ceil(posts.length / 5);
 ---

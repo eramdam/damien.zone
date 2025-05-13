@@ -2,23 +2,14 @@
 import type { GetStaticPaths } from "astro";
 import Base from "../../../layouts/base.astro";
 import BlogPost from "../../../components/BlogPost.astro";
+import { sortPosts } from "../../../helpers/siteHelpers";
 export const getStaticPaths = (({ paginate }) => {
   const posts = Object.values(
     import.meta.glob("../../../blog/**/*.md", { eager: true })
   );
-  return paginate(
-    posts.toSorted((a, b) => {
-      return (
-        // @ts-expect-error
-        new Date(b.frontmatter.date).valueOf() -
-        // @ts-expect-error
-        new Date(a.frontmatter.date).valueOf()
-      );
-    }),
-    {
-      pageSize: 5,
-    }
-  );
+  return paginate(sortPosts(posts), {
+    pageSize: 5,
+  });
 }) satisfies GetStaticPaths;
 
 // console.log(Astro.props.page);

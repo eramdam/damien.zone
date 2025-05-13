@@ -17,6 +17,15 @@ export function getTitleFromProps(astro: AstroGlobal) {
   return [titleFromProps, baseTitle].filter(Boolean).join(" | ");
 }
 
+export function sortPosts(posts: any[]) {
+  return posts.toSorted((a, b) => {
+    return (
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+    );
+  });
+}
+
 // Convert this to content collection schema maybe?
 export interface PostContentProps {
   title?: string;

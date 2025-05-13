@@ -1,13 +1,49 @@
 ---
+import { uniq } from "lodash-es";
 import type { GetStaticPaths } from "astro";
+import Base from "../../layouts/base.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import PostsList from "../../components/PostsList.astro";
+import { sortPosts } from "../../helpers/siteHelpers";
 export const getStaticPaths = (() => {
   const posts = Object.values(
     import.meta.glob("../../blog/**/*.md", { eager: true })
   );
-  const tags = posts.flatMap((p: any) => {
-    return p.frontmatter.tags;
-  });
 
-  return [];
+  const tags = uniq(
+    posts.flatMap((p: any) => {
+      return p.frontmatter.tags;
+    })
+  );
+
+  return tags.map((tag) => {
+    return {
+      props: {
+        tag,
+        posts: sortPosts(posts).filter((p: any) =>
+          (p.frontmatter.tags || []).includes(tag)
+        ),
+      },
+      params: {
+        tag,
+      },
+    };
+  });
 }) satisfies GetStaticPaths;
+const { posts } = Astro.props;
 ---
+
+<Base
+  content={{
+    title: `Posts tagged with ${Astro.props.tag}`,
+    description: `Posts tagged with ${Astro.props.tag}`,
+  }}
+>
+  <h1 class="tag">Posts with #{Astro.props.tag}</h1>
+  <PostsList
+    posts={posts as {
+      frontmatter: Record<string, string>;
+      compiledContent: any;
+    }[]}
+  />
+</Base>
