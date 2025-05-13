@@ -1,0 +1,38 @@
+---
+import BlogPost from "../../components/BlogPost.astro";
+import Base from "../../layouts/base.astro";
+const posts = Object.values(
+  import.meta.glob("../../blog/**/*.md", { eager: true })
+).toSorted((a, b) => {
+  return (
+    // @ts-expect-error
+    new Date(b.frontmatter.date).valueOf() -
+    // @ts-expect-error
+    new Date(a.frontmatter.date).valueOf()
+  );
+});
+const firstPage = posts.slice(0, 5);
+const numberOfPages = Math.ceil(posts.length / 5);
+---
+
+<Base
+  content={{
+    title: "Blog",
+    description:
+      "french software engineer living and working in the Bay Area on web stuff",
+  }}
+>
+  {
+    firstPage.map((post) => {
+      return (
+        <article class="main-block h-entry">
+          <BlogPost postProps={post} inFeed />
+        </article>
+      );
+    })
+  }
+  <nav class="main-block pagination">
+    Page 1 out of {numberOfPages}
+    <a href={`/blog/page/2`} rel="next"> &RightArrow; </a>
+  </nav>
+</Base>

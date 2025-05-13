@@ -11,6 +11,10 @@ export default defineConfig({
     service: passthroughImageService(),
   },
 
+  redirects: {
+    "/blog/page/1": "/blog",
+  },
+
   devToolbar: {
     enabled: false,
   },
