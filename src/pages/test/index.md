@@ -17,11 +17,11 @@ It's an example page meant to show all the different things my website can show/
 
 ## Cronut cloud bread small batch
 
-I'm baby austin plaid 3 wolf [moon humblebrag](example.com) literally man braid affogato mixtape messenger bag ascot lyft mukbang irure meditation. Next level you probably haven't heard of them occaecat af four dollar toast fanny pack. Cupping est elit big mood letterpress ugh kogi sed vice everyday carry PBR&B chicharrones shoreditch duis. Intelligentsia cardigan ad velit chartreuse XOXO. Jawn sustainable sartorial tacos cloud bread gochujang officia in locavore pinterest. Fit pug tumblr poutine officia 3 wolf moon VHS sus small batch sunt asymmetrical 90's whatever jawn ugh. Normcore tote bag woke, sus glossier pok pok franzen.
+I'm baby austin plaid 3 wolf [moon humblebrag](https://example.com) literally man braid affogato mixtape messenger bag ascot lyft mukbang irure meditation. Next level you probably haven't heard of them occaecat af four dollar toast fanny pack. Cupping est elit big mood letterpress ugh kogi sed vice everyday carry PBR&B chicharrones shoreditch duis. Intelligentsia cardigan ad velit chartreuse XOXO. Jawn sustainable sartorial tacos cloud bread gochujang officia in locavore pinterest. Fit pug tumblr poutine officia 3 wolf moon VHS sus small batch sunt asymmetrical 90's whatever jawn ugh. Normcore tote bag woke, sus glossier pok pok franzen.
 
 ### Hot chicken lomo glossier
 
-Neutral milk hotel [humblebrag consequat](example.com), 3 wolf moon nostrud iPhone post-ironic jawn tote bag blue bottle forage shabby chic try-hard enim. Raw denim sriracha skateboard vaporware consequat vegan tumeric franzen excepteur twee **food truck** tbh pinterest, try-hard craft beer. Sriracha green juice exercitation voluptate pabst deserunt jawn _cupping prism_ sartorial. [Incididunt mlkshk](example.com) chia big mood la croix mukbang dolor lumbersexual 3 wolf moon gluten-free migas. Master cleanse small batch jawn pinterest veniam. Narwhal forage kombucha id aliqua. Blog gastropub raw denim lyft tbh viral unicorn officia banh mi microdosing skateboard food truck authentic tattooed magna.
+Neutral milk hotel [humblebrag consequat](https://example.com), 3 wolf moon nostrud iPhone post-ironic jawn tote bag blue bottle forage shabby chic try-hard enim. Raw denim sriracha skateboard vaporware consequat vegan tumeric franzen excepteur twee **food truck** tbh pinterest, try-hard craft beer. Sriracha green juice exercitation voluptate pabst deserunt jawn _cupping prism_ sartorial. [Incididunt mlkshk](https://example.com) chia big mood la croix mukbang dolor lumbersexual 3 wolf moon gluten-free migas. Master cleanse small batch jawn pinterest veniam. Narwhal forage kombucha id aliqua. Blog gastropub raw denim lyft tbh viral unicorn officia banh mi microdosing skateboard food truck authentic tattooed magna.
 
 #### Pinterest godard neutra helvetica aliqua cornhole
 
@@ -33,15 +33,15 @@ Wolf ramps subway tile listicle mlkshk fashion axe ut mollit. Eu church-key hell
 
 ## An example image
 
-![](./balatro-touch-mode.webp "Woah! It's Balatro!!")
+![](/img/blog/balatro-touch/balatro-touch-mode.webp "Woah! It's Balatro!!")
 
 ## Another example image
 
 <picture>
-  <source srcset="./pokemonshow-dark.png" media="(prefers-color-scheme: dark)" type="image/png">
-  <source srcset="./pokemonshow-light.png" type="image/png">
+  <source srcset="/img/projects/pokemonshow-dark.png" media="(prefers-color-scheme: dark)" type="image/png">
+  <source srcset="/img/projects/pokemonshow-light.png" type="image/png">
   <img
-    src="./pokemonshow-light.png" alt="pokemonshow" 
+    src="/img/projects/pokemonshow-light.png" alt="pokemonshow" 
     loading="lazy" decoding="async">
 </picture>
 
@@ -59,7 +59,7 @@ Wolf ramps subway tile listicle mlkshk fashion axe ut mollit. Eu church-key hell
 
 ## Blockquotes
 
-Food truck hammock echo park [occaecat pariatur](example.com) 3 wolf moon mustache. Marxism mukbang pariatur fashion axe velit. Cray pork belly sartorial ut echo park prism single-origin coffee raw denim mustache grailed ullamco minim tilde. Sed minim farm-to-table tousled, tilde sriracha est irony ut aliqua fugiat. Slow-carb nulla cardigan, shaman hammock crucifix actually. Trust fund kinfolk meggings seitan ascot live-edge PBR&B, hexagon venmo fanny pack paleo squid gatekeep aesthetic. Tonx commodo kitsch gorpcore big mood edison bulb ugh tote bag brunch poke.
+Food truck hammock echo park [occaecat pariatur](https://example.com) 3 wolf moon mustache. Marxism mukbang pariatur fashion axe velit. Cray pork belly sartorial ut echo park prism single-origin coffee raw denim mustache grailed ullamco minim tilde. Sed minim farm-to-table tousled, tilde sriracha est irony ut aliqua fugiat. Slow-carb nulla cardigan, shaman hammock crucifix actually. Trust fund kinfolk meggings seitan ascot live-edge PBR&B, hexagon venmo fanny pack paleo squid gatekeep aesthetic. Tonx commodo kitsch gorpcore big mood edison bulb ugh tote bag brunch poke.
 
 #### Blockquote without attribution
 
