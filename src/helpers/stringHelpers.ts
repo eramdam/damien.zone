@@ -1,4 +1,2 @@
-export const url_decode = (x: string) =>
-  decodeURIComponent(x).replace(/\+/g, " ");
-export const url_encode = (x: string) =>
-  encodeURIComponent(x).replace(/%20/g, "+");
+export const tag_url_decode = (x: string) => x.replace(/\+/g, " ");
+export const tag_url_encode = (x: string) => x.replace(/ /g, "+");

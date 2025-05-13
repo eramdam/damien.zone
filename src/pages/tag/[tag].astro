@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { uniq } from "lodash-es";
 import PostsList from "../../components/PostsList.astro";
 import { sortPosts } from "../../helpers/siteHelpers";
-import { url_encode } from "../../helpers/stringHelpers";
+import { tag_url_encode } from "../../helpers/stringHelpers";
 import Base from "../../layouts/base.astro";
 export const getStaticPaths = (() => {
   const posts = Object.values(
@@ -25,7 +25,7 @@ export const getStaticPaths = (() => {
         ),
       },
       params: {
-        tag: url_encode(tag),
+        tag: tag_url_encode(tag),
       },
     };
   });
