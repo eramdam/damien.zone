@@ -1,6 +1,3 @@
-/* Fonts */
-@import url("./fonts.css");
-
 /* Comentario */
 @import url("./comentario.css");
 
@@ -36,9 +33,10 @@
     Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
     "Georgia Pro", Georgia, serif;
 
-  --font-monospace: "Atkinson Hyperlegible Mono", var(--font-fallback-mono);
+  --font-monospace:
+    "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
   --font-serif: var(--font-fallback-serif);
-  --font-main: "Atkinson Hyperlegible Next", var(--font-fallback-main);
+  --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
   --border-radius: 6px;
 
   --offblack-background: #212028;
