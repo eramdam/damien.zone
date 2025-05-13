@@ -3,7 +3,14 @@ import sanitizeHtml, { type Attributes } from "sanitize-html";
 
 export function sanitizeHtmlForRSS(htmlContent: string, context: APIContext) {
   return sanitizeHtml(htmlContent, {
-    allowedTags: false,
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+      "img",
+      "picture",
+      "video",
+      "source",
+      "figure",
+      "figcaption",
+    ]),
     allowedAttributes: false,
 
     transformTags: {
