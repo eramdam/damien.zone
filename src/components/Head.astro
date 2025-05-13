@@ -11,7 +11,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const contentProps = Astro.props.content ?? Astro.props.frontmatter;
 const description =
   contentProps?.description ||
-  truncateText(htmlToText(await Astro.props.compiledContent()), 10);
+  truncateText(htmlToText(await Astro.props.compiledContent?.()), 10);
 
 assert(description, `Missing description for ${canonicalURL}`);
 const image = contentProps?.image || "/open_graph.webp";

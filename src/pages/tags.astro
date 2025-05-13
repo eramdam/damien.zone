@@ -1,0 +1,31 @@
+---
+import { uniq } from "lodash-es";
+import Base from "../layouts/base.astro";
+import { tag_url_encode } from "../helpers/stringHelpers";
+const posts = Object.values(
+  import.meta.glob("../blog/**/*.md", { eager: true })
+);
+
+const tags = uniq(
+  posts.flatMap((p: any) => {
+    return p.frontmatter.tags;
+  })
+).toSorted();
+console.log(tags);
+---
+
+<Base content={{ description: "List of tags" }}>
+  <h1>tags</h1>
+
+  <ul class="tags-list">
+    {
+      tags.map((tag) => {
+        return (
+          <li>
+            <a href={`/tag/${tag_url_encode(tag)}`}>#{tag}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</Base>
