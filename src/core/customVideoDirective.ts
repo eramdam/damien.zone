@@ -43,7 +43,6 @@ export function customVideoDirective() {
             name: `${srcParsed.name}-poster`,
             ext: ".webp",
           });
-        console.log({ poster });
         const caption =
           node.children?.[0].type === "text" && node.children[0].value;
 
