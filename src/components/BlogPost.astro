@@ -14,8 +14,9 @@ const contentProps = (postProps.content ??
   postProps.frontmatter) as PostContentProps;
 const title = contentProps.title;
 const baseCompiledContent = await postProps.compiledContent();
+const postUrl = new URL(postProps.frontmatter.slug, Astro.site);
 const finalContent = Astro.props.inFeed
-  ? truncateHTML(baseCompiledContent, 300, Astro.url)
+  ? truncateHTML(baseCompiledContent, 300, postUrl)
   : baseCompiledContent;
 ---
 
@@ -25,7 +26,7 @@ const finalContent = Astro.props.inFeed
   <data class="u-photo" value="/avatar/avatar-bg.png"></data>
 </div>
 <h1 class="p-name">
-  <a href={Astro.url} rel="canonical" class="u-url u-uid"> {title} </a>
+  <a href={postUrl} rel="canonical" class="u-url u-uid"> {title} </a>
 </h1>
 
 <p class="post-datetime">
