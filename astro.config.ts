@@ -4,6 +4,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
 import rehypeRewrite from "rehype-rewrite";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 import astroBrokenLinksChecker from "astro-broken-link-checker";
+import type { Element, Root, RootContent } from "hast";
 
 const isDev = import.meta.env.DEV;
 
@@ -29,7 +30,11 @@ export default defineConfig({
       [
         rehypeRewrite,
         {
-          rewrite: (node, index, parent) => {
+          rewrite: (
+            node: Root | RootContent,
+            index?: number,
+            parent?: Root | Element,
+          ) => {
             rewriteWithFigures(node, index, parent);
           },
         },
