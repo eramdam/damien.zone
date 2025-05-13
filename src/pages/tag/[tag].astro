@@ -5,6 +5,7 @@ import Base from "../../layouts/base.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import PostsList from "../../components/PostsList.astro";
 import { sortPosts } from "../../helpers/siteHelpers";
+import { url_encode } from "../../helpers/stringHelpers";
 export const getStaticPaths = (() => {
   const posts = Object.values(
     import.meta.glob("../../blog/**/*.md", { eager: true })
@@ -25,7 +26,7 @@ export const getStaticPaths = (() => {
         ),
       },
       params: {
-        tag,
+        tag: url_encode(tag),
       },
     };
   });
