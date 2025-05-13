@@ -2,13 +2,17 @@
 import assert from "node:assert";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
+import { htmlToText, truncateText } from "../helpers/textHelpers";
 
 const finalTitle = getTitleFromProps(Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const contentProps = Astro.props.content ?? Astro.props.frontmatter;
-const description = contentProps?.description;
+const description =
+  contentProps?.description ||
+  truncateText(htmlToText(await Astro.props.compiledContent()), 10);
+
 assert(description, `Missing description for ${canonicalURL}`);
-const image = contentProps?.image || "/assets/open_graph.webp";
+const image = contentProps?.image || "/open_graph.webp";
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);
 ---
