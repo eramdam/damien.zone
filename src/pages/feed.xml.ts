@@ -1,8 +1,8 @@
-import rss, { pagesGlobToRssItems } from "@astrojs/rss";
-import { SITE } from "../helpers/siteConstants";
+import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { sortPosts } from "../helpers/siteHelpers";
 import { sanitizeHtmlForRSS } from "../helpers/rssHelpers";
+import { SITE } from "../helpers/siteConstants";
+import { sortPosts } from "../helpers/siteHelpers";
 
 export async function GET(context: APIContext) {
   const items = Object.values(

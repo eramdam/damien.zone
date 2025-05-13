@@ -23,7 +23,7 @@ As it turns out, trying to recall and tell 9 years of history of a project witho
 
 I was a student at the time, finishing up my last year of university, living at my parents' place. Unfortunately, we lived in the countryside and that mean we had a <em>terribly</em> slow internet connection. I'm talking less than 1Mbps slow. It wasn't great! But it was manageable.
 
-While I can't remember what prompted me to start using TweetDeck specifically (this was after the acquisition by Twitter). I do remember being extremely annoyed at having to wait for [t.co](t.co) (Twitter's URL shortener) when clicking on. Every. Single. Link. Somehow, this domain is still the slowest domain I regularly encounter, and it was slow at the time already!
+While I can't remember what prompted me to start using TweetDeck specifically (this was after the acquisition by Twitter). I do remember being extremely annoyed at having to wait for [t.co](https://t.co) (Twitter's URL shortener) when clicking on. Every. Single. Link. Somehow, this domain is still the slowest domain I regularly encounter, and it was slow at the time already!
 
 At that point, I had been learning web development for a few years, which made me think that _surely_ there was a way to fix this with a userscript or browser extension, right? So I opened up my Chrome developer tools, looked around on my feed, and would you look at that!
 
@@ -67,7 +67,7 @@ And here it is running on modern Chrome on modern macOS 😄
 
 <small>February 2014</small>
 
-A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](/img/blog/btd-post-mortem2/btd-1.0.0.png).
+A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](/img/blog/btd-post-mortem2/btd-1.0.0.png).
 
 The extension's user base was tiny at the time (around 200 weekly users), but it was fine by me. I was making this for myself _first_ and for others second. It was mostly spreading through word of mouth at that point.
 
@@ -167,7 +167,7 @@ I'm sure I did more on the project itself but again, my past self's poor changel
 
 <small>3.0, August 2016</small>
 
-As the title of this section suggests, I released v3 of BTD in August 2016. It was quite a big release! You can see the [full changelog here](/btd-changelog#300) but the highlights were:
+As the title of this section suggests, I released v3 of BTD in August 2016. It was quite a big release! You can see the [full changelog here](/btd/btd-changelog#300) but the highlights were:
 
 #### Complete rewrite
 
