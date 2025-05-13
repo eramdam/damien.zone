@@ -14,6 +14,8 @@ export default defineConfig({
 
   redirects: {
     "/blog/page/1": "/blog",
+    "/tag/page": "/",
+    "/tag/testing": "/",
   },
 
   devToolbar: {
