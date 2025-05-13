@@ -1,0 +1,13 @@
+---
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+  const posts = Object.values(
+    import.meta.glob("../../blog/**/*.md", { eager: true })
+  );
+  const tags = posts.flatMap((p: any) => {
+    return p.frontmatter.tags;
+  });
+
+  return [];
+}) satisfies GetStaticPaths;
+---
