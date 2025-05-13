@@ -16,7 +16,7 @@ export const htmlToText = initHtmlToText({
 /** Truncates text without breaking words. */
 export function truncateText(text: string, words = 150) {
   const regexp = /[ \n—]+/g;
-  let match;
+  let match: RegExpExecArray | undefined;
   for (let i = 0; i < words; i++) {
     match = regexp.exec(text);
     if (!match) return text;

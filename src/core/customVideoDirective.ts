@@ -1,9 +1,8 @@
 import type { Doctype, ElementContent, Root } from "hast";
-import { visit } from "unist-util-visit";
 import type { Directives } from "mdast-util-directive";
-import type { VFile } from "vfile";
-import fs from "node:fs";
 import path from "node:path";
+import { visit } from "unist-util-visit";
+import type { VFile } from "vfile";
 
 export function customVideoDirective() {
   return function (tree: Root, file: VFile) {

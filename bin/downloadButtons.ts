@@ -35,6 +35,7 @@ async function downloadFile(url: string, filename: string) {
   const res = await fetch(url);
   const destination = path.resolve(".", "public/buttons/", filename);
   const fileStream = fs.createWriteStream(destination);
+  // @ts-expect-error
   await finished(Readable.fromWeb(res.body!).pipe(fileStream));
 
   const rootDirname = __dirname.replace("bin", "");
