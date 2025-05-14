@@ -1,7 +1,7 @@
 ---
+import slug from "slug";
 import { SITE } from "../helpers/siteConstants";
 import { type PostContentProps } from "../helpers/siteHelpers";
-import { tag_url_encode } from "../helpers/stringHelpers";
 import { truncateHTML } from "../helpers/truncateHtml";
 import PostDate from "./PostDate.astro";
 
@@ -39,13 +39,7 @@ const finalContent = Astro.props.inFeed
   contentProps.tags && (
     <p class="tags">
       {contentProps.tags.map((t) => {
-        return (
-          <a
-            href={`/tag/${tag_url_encode(t)}`}
-            class="p-category"
-            set:text={t}
-          />
-        );
+        return <a href={`/tag/${slug(t)}`} class="p-category" set:text={t} />;
       })}
     </p>
   )

@@ -5,7 +5,7 @@ import type { VFile } from "vfile";
 
 export function augmentFrontmatterFields() {
   // All remark and rehype plugins return a separate function
-  return function (tree: Root, file: VFile) {
+  return function (_tree: Root, file: VFile) {
     if (!file.data.astro.frontmatter.image) {
       file.data.astro.frontmatter.image = "/open_graph.webp";
     }

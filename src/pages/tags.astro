@@ -1,7 +1,7 @@
 ---
 import { uniq } from "lodash-es";
+import slug from "slug";
 import Base from "../layouts/base.astro";
-import { tag_url_encode } from "../helpers/stringHelpers";
 const posts = Object.values(
   import.meta.glob("../blog/**/*.md", { eager: true })
 );
@@ -21,7 +21,7 @@ const tags = uniq(
       tags.map((tag) => {
         return (
           <li>
-            <a href={`/tag/${tag_url_encode(tag)}`}>#{tag}</a>
+            <a href={`/tag/${slug(tag)}`}>#{tag}</a>
           </li>
         );
       })
