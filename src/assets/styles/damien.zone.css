@@ -35,7 +35,7 @@
 
   --font-monospace:
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
-  --font-serif: var(--font-fallback-serif);
+  --font-serif: "Merriweather Variable", var(--font-fallback-serif);
   --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
   --border-radius: 6px;
 
@@ -132,7 +132,7 @@ body {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-main);
+  font-family: var(--font-serif);
   color: var(--color-heading);
   text-wrap: balance;
 }
@@ -273,8 +273,8 @@ blockquote {
 
 header .title h1 {
   font-size: 1.4em;
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 777;
+  /* font-style: italic; */
   padding: 5px 10px;
   background: var(--color-accent);
   color: var(--offwhite-background);
