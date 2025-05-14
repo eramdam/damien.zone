@@ -1,10 +1,11 @@
 import mdx from "@astrojs/mdx";
+import astroBrokenLinksChecker from "astro-broken-link-checker";
 import expressiveCode from "astro-expressive-code";
 import { defineConfig, passthroughImageService } from "astro/config";
-import rehypeRewrite from "rehype-rewrite";
-import { rewriteWithFigures } from "./src/core/customRemarkFigure";
-import astroBrokenLinksChecker from "astro-broken-link-checker";
 import type { Element, Root, RootContent } from "hast";
+import rehypeRewrite from "rehype-rewrite";
+import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
+import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 
 const isDev = import.meta.env.DEV;
 
@@ -39,6 +40,7 @@ export default defineConfig({
           },
         },
       ],
+      augmentFrontmatterFields,
     ],
   },
   integrations: [
