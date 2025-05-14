@@ -30,11 +30,13 @@ export async function GET(context: APIContext) {
 
   const postEntries = await Promise.all(
     sortedPosts.map(async (post) => {
+      const postUrl = new URL(post.frontmatter.slug, context.url);
+
       return `
         <entry>
           <title>${he.encode(post.frontmatter.title)}</title>
-          <link href="${new URL(post.frontmatter.slug, context.url)}" rel="alternate"/>
-          <id>${new URL(post.frontmatter.slug, context.url)}</id>
+          <link href="${postUrl}" rel="alternate"/>
+          <id>${postUrl}</id>
           <published>${dateToRfc3339(new Date(post.frontmatter.date))}</published>
           <updated>${post.frontmatter.updated ? dateToRfc3339(new Date(post.frontmatter.updated)) : ""}</updated>
           <author>
@@ -42,7 +44,7 @@ export async function GET(context: APIContext) {
           </author>
           <content type="html">
             ${he.encode(sanitizeHtmlForRSS(await post.compiledContent(), context))}
-            {%- feedPostFooter absolutePostUrl -%}
+            ${he.encode(`<a href="${postUrl}">Comments →</a>`)}
           </content>
         </entry>
         `;
