@@ -1,9 +1,9 @@
 import assert from "assert";
+import fs from "node:fs";
 import path from "node:path";
 import { Readable } from "node:stream";
 import { finished } from "node:stream/promises";
 import { URL } from "url";
-import fs from "node:fs";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
 
 type ButtonDef = (typeof buttons)[number];
