@@ -37,7 +37,7 @@ The years passed, the bot carried on, made me and a bunch of other people smile 
 
 Around maybe early 2023, I grew frustrated of the fact that the only images I had for the Kaleidoscope ~~themes~~ schemes were those [tiny .gif files](https://github.com/eramdam/shapeshifter-themes/blob/master/assets/!.emperor.gif) from the late 90s.    
 
-### "Recording" 25-year-old schemes
+### “Recording” 25-year-old schemes
 
 So I did the reasonable thing: set up a terribly manual process to take screenshots and record the author information of the [~4,000 themes available](https://archive.org/details/kaleidoscope-scheme-archive), with the intention of making a website showcasing everything once I was done.  
 
