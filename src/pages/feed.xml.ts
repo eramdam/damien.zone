@@ -14,20 +14,6 @@ export async function GET(context: APIContext) {
     new Date(sortedPosts[0].frontmatter.date),
   );
 
-  const formattedItems = await Promise.all(
-    sortedPosts.map(async (i: any) => {
-      return {
-        author: SITE.author,
-        categories: i.frontmatter.tags ?? [],
-        commentsUrl: new URL(i.frontmatter.slug, context.site).toString(),
-        pubDate: new Date(i.frontmatter.date),
-        title: i.frontmatter.title,
-        link: new URL(i.frontmatter.slug, context.site).toString(),
-        content: sanitizeHtmlForRSS(await i.compiledContent(), context),
-      };
-    }),
-  );
-
   const postEntries = await Promise.all(
     sortedPosts.map(async (post) => {
       const postUrl = new URL(post.frontmatter.slug, context.url);

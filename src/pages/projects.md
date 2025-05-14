@@ -1,6 +1,6 @@
 ---
 title: projects
-layout: ../layouts/base.astro
+layout: ../layouts/BaseLayout.astro
 is_page: true
 description: this page lists all my projects, current or past that I want documented. this list isn't nor will be exhaustive.
 ---

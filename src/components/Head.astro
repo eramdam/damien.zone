@@ -15,7 +15,13 @@ const description =
   contentProps?.description ||
   truncateText(htmlToText(await Astro.props.compiledContent?.()), 10);
 
-assert(description, `Missing description for ${canonicalURL}`);
+if (
+  !Astro.props.file?.includes("src/drafts") &&
+  Astro.url.pathname !== "/drafts/"
+) {
+  assert(description, `Missing description for ${canonicalURL}`);
+}
+
 const image = contentProps?.image || "/open_graph.webp";
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);

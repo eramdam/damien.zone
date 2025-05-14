@@ -1,8 +1,8 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Base from "../../../layouts/base.astro";
-import BlogPost from "../../../components/BlogPost.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { sortPosts } from "../../../helpers/siteHelpers";
+import BlogPost from "../../../components/BlogPost.astro";
 export const getStaticPaths = (({ paginate }) => {
   const posts = Object.values(
     import.meta.glob("../../../blog/**/*.md", { eager: true })
@@ -17,7 +17,7 @@ const page = Astro.props.page;
 const posts = Array.from(page.data);
 ---
 
-<Base
+<BaseLayout
   content={{
     title: "Blog",
     description:
@@ -50,4 +50,4 @@ const posts = Array.from(page.data);
       )
     }
   </nav>
-</Base>
+</BaseLayout>

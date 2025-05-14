@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/post.astro"
+layout: "../../layouts/PostLayout.astro"
 title: 'Better TweetDeck, A Post-Mortem, Part 1: frequently asked questions'
 slug: bettertweetdeck-post-mortem-part-1-faq
 date: 2023-07-12T07:00:00.000Z

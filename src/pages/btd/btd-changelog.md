@@ -1,6 +1,6 @@
 ---
 title: Better TweetDeck changelog
-layout: ../../layouts/base.astro
+layout: ../../layouts/BaseLayout.astro
 ---
 
 [← back to the article](/bettertweetdeck-post-mortem-part-2)
