@@ -1,6 +1,6 @@
 ---
 title: Better TweetDeck weekly users over time
-layout: ../../layouts/base.astro
+layout: ../../layouts/BaseLayout.astro
 class_name: btd-graph
 ---
 <style>

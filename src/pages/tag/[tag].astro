@@ -4,7 +4,7 @@ import { uniq } from "lodash-es";
 import slug from "slug";
 import PostsList from "../../components/PostsList.astro";
 import { sortPosts } from "../../helpers/siteHelpers";
-import Base from "../../layouts/base.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export const getStaticPaths = (() => {
   const posts = Object.values(
@@ -34,7 +34,7 @@ export const getStaticPaths = (() => {
 const { posts } = Astro.props;
 ---
 
-<Base
+<BaseLayout
   content={{
     title: `Posts tagged with ${Astro.props.tag}`,
     description: `Posts tagged with ${Astro.props.tag}`,
@@ -47,4 +47,4 @@ const { posts } = Astro.props;
       compiledContent: any;
     }[]}
   />
-</Base>
+</BaseLayout>

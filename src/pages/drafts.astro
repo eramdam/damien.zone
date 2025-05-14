@@ -1,0 +1,26 @@
+---
+import PostsList from "../components/PostsList.astro";
+import { sortPosts } from "../helpers/siteHelpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = Object.values(
+  import.meta.glob("../drafts/*.md", { eager: true })
+);
+---
+
+<BaseLayout content={{ description: "🤫" }}>
+  <PostsList
+    posts={sortPosts(posts).map((p) => {
+      return {
+        ...p,
+        frontmatter: {
+          ...p.frontmatter,
+          slug: `drafts/${p.frontmatter.slug}`,
+        },
+      };
+    }) as {
+      frontmatter: Record<string, string>;
+      compiledContent: any;
+    }[]}
+  />
+</BaseLayout>

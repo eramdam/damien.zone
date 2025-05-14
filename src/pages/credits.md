@@ -1,6 +1,6 @@
 ---
 title: credits
-layout: ../layouts/base.astro
+layout: ../layouts/BaseLayout.astro
 class_name: credits
 ---
 

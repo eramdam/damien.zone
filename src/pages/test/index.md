@@ -1,6 +1,6 @@
 ---
 title: Cupping letterpress keytar
-layout: ../../layouts/post.astro
+layout: ../../layouts/PostLayout.astro
 description: A testbed page to test my CSS.
 is_page: true
 date: "1970-01-01"

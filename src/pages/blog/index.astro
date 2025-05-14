@@ -1,7 +1,7 @@
 ---
 import BlogPost from "../../components/BlogPost.astro";
 import { sortPosts } from "../../helpers/siteHelpers";
-import Base from "../../layouts/base.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 const posts = sortPosts(
   Object.values(import.meta.glob("../../blog/**/*.md", { eager: true }))
 );
@@ -9,7 +9,7 @@ const firstPage = posts.slice(0, 5);
 const numberOfPages = Math.ceil(posts.length / 5);
 ---
 
-<Base
+<BaseLayout
   content={{
     title: "Blog",
     description:
@@ -29,4 +29,4 @@ const numberOfPages = Math.ceil(posts.length / 5);
     Page 1 out of {numberOfPages}
     <a href={`/blog/page/2`} rel="next"> &RightArrow; </a>
   </nav>
-</Base>
+</BaseLayout>

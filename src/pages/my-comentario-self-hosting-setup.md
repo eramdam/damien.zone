@@ -1,7 +1,7 @@
 ---
 title: my Comentario self-hosting setup
 slug: my-comentario-self-hosting-setup
-layout: ../layouts/base.astro
+layout: ../layouts/BaseLayout.astro
 date: 2024-10-12T08:42:00+00:00
 updated: 2024-10-22T07:55:47.543600+00:00
 ---
