@@ -27,6 +27,7 @@ export default defineConfig({
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
   compressHTML: false,
   markdown: {
+    smartypants: false,
     rehypePlugins: [
       [
         rehypeRewrite,
