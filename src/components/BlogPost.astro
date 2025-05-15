@@ -1,0 +1,46 @@
+---
+import slug from "slug";
+import { SITE } from "../helpers/siteConstants";
+import { type PostContentProps } from "../helpers/siteHelpers";
+import { truncateHTML } from "../helpers/truncateHtml";
+import PostDate from "./PostDate.astro";
+
+interface Props {
+  postProps: Record<string, any>;
+  inFeed?: boolean;
+}
+
+const postProps = Astro.props.postProps;
+const contentProps = (postProps.content ??
+  postProps.frontmatter) as PostContentProps;
+const title = contentProps.title;
+const baseCompiledContent = await postProps.compiledContent();
+const postUrl = new URL(postProps.frontmatter.slug, Astro.site);
+const finalContent = Astro.props.inFeed
+  ? truncateHTML(baseCompiledContent, 300, postUrl)
+  : baseCompiledContent;
+---
+
+<div class="p-author h-card">
+  <data class="p-name" value={SITE.author}></data>
+  <data class="u-url u-uid" value="/"></data>
+  <data class="u-photo" value="/avatar/avatar-bg.png"></data>
+</div>
+<h1 class="p-name">
+  <a href={postUrl} rel="canonical" class="u-url u-uid"> {title} </a>
+</h1>
+
+<p class="post-datetime">
+  <PostDate class="dt-published" date={new Date(contentProps.date)} />
+</p>
+
+<div class="e-content" set:html={finalContent} />
+{
+  contentProps.tags && (
+    <p class="tags">
+      {contentProps.tags.map((t) => {
+        return <a href={`/tag/${slug(t)}`} class="p-category" set:text={t} />;
+      })}
+    </p>
+  )
+}

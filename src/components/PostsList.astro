@@ -1,0 +1,32 @@
+---
+import { dateToRfc3339, formatDate } from "../helpers/componentHelpers";
+
+interface Props {
+  posts: { frontmatter: Record<string, string>; compiledContent: any }[];
+}
+
+const posts = Astro.props.posts;
+---
+
+<ul class="blog-posts">
+  {
+    posts.map((post) => {
+      const postDate = new Date(post.frontmatter.date);
+      return (
+        <li>
+          <span>
+            <i>
+              <time
+                datetime={dateToRfc3339(postDate)}
+                title={formatDate(postDate, "iii, MMM d, y, ppp")}
+              >
+                {formatDate(postDate, "d MMM, yyyy")}
+              </time>
+            </i>
+          </span>
+          <a href={`/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+        </li>
+      );
+    })
+  }
+</ul>

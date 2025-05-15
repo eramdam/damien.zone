@@ -45,9 +45,7 @@ I want to have the options to maybe host more than one account on my instance so
 
 All I had to was write this in a file under `src/pages/.well-known/webfinger.ts`, make sure my site was using the [Vercel adapter](https://docs.astro.build/en/guides/integrations-guide/vercel/) to run in server mode instead of static mode and I was done!
 
-file: src/pages/.well-known/webfinger.ts
-
-```typescript
+```typescript title="src/pages/.well-known/webfinger.ts"
 import { APIRoute } from "astro";
 
 const destinationInstance = "https://social.erambert.me";
@@ -74,9 +72,9 @@ Now people could query `@eramdam@erambert.me` and find me as if they queried `@e
 
 After having written this post, [Tixie](https://mastodon.guerilla.studio/@tixie) made me realize that I _could_ use Astro's `redirect` method instead of doing a fetch in the endpoint code? Both seem to work but I am a bit worried about the potentially missing `Access-Control-Allow-Origin` header...
 
-file: src/pages/.well-known/webfinger.ts
 
-```typescript
+
+```typescript title="src/pages/.well-known/webfinger.ts"
 import { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request, redirect }) => {
@@ -92,9 +90,9 @@ export const GET: APIRoute = async ({ request, redirect }) => {
 
 Update on September 3rd: It turns out, [Vercel rewrites](https://vercel.com/docs/edge-network/rewrites) work just fine for this and I didn't realize 😄 I added the following file to my repo and I was done
 
-file: vercel.json
 
-```json
+
+```json title="vercel.json"
 {
   "rewrites": [
     {

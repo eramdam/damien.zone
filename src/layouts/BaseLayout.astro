@@ -1,0 +1,22 @@
+---
+import "../assets/styles/damien.zone.css";
+import Body from "../components/Body.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head {...Astro.props} />
+  </head>
+
+  <Body class:list={Astro.props.frontmatter?.class_name}>
+    <Navigation />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </Body>
+</html>

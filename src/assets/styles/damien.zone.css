@@ -1,11 +1,8 @@
-/* Fonts */
-@import url("./fonts.css");
-
 /* Comentario */
 @import url("./comentario.css");
 
 /* Syntax highlighting */
-@import url("./syntax.css");
+/* @import url("./syntax.css"); */
 
 /* Image gallery */
 @import url("./image-gallery.css");
@@ -36,9 +33,10 @@
     Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
     "Georgia Pro", Georgia, serif;
 
-  --font-monospace: "Atkinson Hyperlegible Mono", var(--font-fallback-mono);
-  --font-serif: var(--font-fallback-serif);
-  --font-main: "Atkinson Hyperlegible Next", var(--font-fallback-main);
+  --font-monospace:
+    "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
+  --font-serif: "Merriweather Variable", var(--font-fallback-serif);
+  --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
   --border-radius: 6px;
 
   --offblack-background: #212028;
@@ -134,7 +132,7 @@ body {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-main);
+  font-family: var(--font-serif);
   color: var(--color-heading);
   text-wrap: balance;
 }
@@ -151,21 +149,36 @@ a {
     --link-underline-thickness: var(--link-underline-thickness-hover);
   }
 
-  .footnote-ref & {
+  &[data-footnote-ref] {
     color: var(--color-accent);
     text-underline-offset: initial;
     text-decoration-thickness: initial;
+
+    &::before {
+      content: "[";
+    }
+    &::after {
+      content: "]";
+    }
 
     &:hover {
       text-decoration: none;
     }
   }
 
-  &.footnote-backref {
+  &[data-footnote-backref] {
     color: var(--color-accent);
     text-underline-offset: initial;
     text-decoration-thickness: initial;
   }
+}
+
+section[data-footnotes] {
+  border-top: 1px dashed gray;
+}
+
+[data-footnotes] #footnote-label {
+  display: none;
 }
 
 *:focus-visible {
@@ -189,12 +202,17 @@ main:has(> :not(.main-block)),
 
   & > .tags {
     margin-bottom: 0;
-    word-spacing: 1ch;
   }
 
   & > .tags a {
     color: var(--color-text-muted);
     text-decoration-color: currentColor;
+  }
+
+  & > .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
   }
 
   & > .tags a::before {
@@ -255,8 +273,8 @@ blockquote {
 
 header .title h1 {
   font-size: 1.4em;
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 777;
+  /* font-style: italic; */
   padding: 5px 10px;
   background: var(--color-accent);
   color: var(--offwhite-background);
@@ -407,10 +425,12 @@ figure[data-type="video"] {
     width: 100%;
   }
 
+  text-align: center;
+
   --border-alpha: 0.4;
   --radius: 12px;
 
-  & a {
+  & > :is(a, img, picture) {
     display: inline-flex;
     padding: 4px;
     margin-bottom: 10px;
@@ -423,11 +443,13 @@ figure[data-type="video"] {
     padding: 4px;
   }
 
-  & :is(a, video) {
+  & > :is(a, picture, img, video) {
     border-radius: var(--radius);
   }
   & a img {
     border-radius: calc(var(--radius) / 2);
+    width: auto;
+    height: auto;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -465,13 +487,15 @@ figure[data-type="video"] {
 
 /* Links / buttons stuff */
 .page.links main:has(> :not(.main-block)) .buttons {
-  text-wrap: balance;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
   line-height: 20px;
+  gap: 4px;
 }
 
 .page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
-  margin: 2px;
+  text-decoration: none;
+  line-height: 0;
 }
 
 .page.links main:has(> :not(.main-block)) .buttons img {
@@ -495,6 +519,10 @@ figure[data-type="video"] {
   margin-top: 10px;
   margin-bottom: 14px;
   gap: 4px;
+}
+
+p:has(+ .buttons-mybutton) {
+  float: left;
 }
 
 .buttons-mybutton {
@@ -539,6 +567,12 @@ code:not([class]) {
   @media (prefers-color-scheme: light) {
     background-color: var(--offwhite-background);
   }
+}
+
+pre[class] code {
+  background-color: unset;
+  padding: unset;
+  border-radius: unset;
 }
 
 @media (min-width: 767px) {
@@ -603,4 +637,8 @@ p small {
 
 p s {
   opacity: 0.4;
+}
+
+body.credits .pixel.favicon {
+  height: 24px;
 }

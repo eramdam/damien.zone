@@ -1,0 +1,24 @@
+---
+import "../assets/styles/damien.zone.css";
+import BlogPost from "../components/BlogPost.astro";
+
+import Body from "../components/Body.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head {...Astro.props} />
+  </head>
+
+  <Body isPost>
+    <Navigation />
+    <main class="h-entry">
+      <BlogPost postProps={Astro.props} />
+    </main>
+    <Footer />
+  </Body>
+</html>

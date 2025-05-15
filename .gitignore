@@ -1,7 +1,9 @@
 node_modules
 _site
+dist
 **/.DS_Store
 .cache
+.astro
 
 # Local Netlify folder
 .netlify
