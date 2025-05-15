@@ -1,17 +1,8 @@
-[[plugins]]
-package = "netlify-plugin-cache"
-
-[plugins.inputs]
-paths = [".cache"]
+[build]
+command = "npm run build"
+publish = "dist"
 
 [[redirects]]
-from = "/feed"
-to = "/feed.xml"
-
-[[redirects]]
-from = "/feed/?type=rss"
-to = "/feed.xml"
-
-[[redirects]]
-from = "/feed?type=rss"
-to = "/feed.xml"
+from = "/public/88x31_damien.png"
+status = 301
+to = "/88x31_damien.png"

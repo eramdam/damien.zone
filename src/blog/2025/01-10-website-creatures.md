@@ -11,4 +11,6 @@ description: ''
 image: /img/blog/websitecreatures/IMG_8615.webp
 ---
 
-![](/img/blog/websitecreatures/IMG_8615.webp "A good creature in plush form is the mark of a, if not good, fine website imo")
+![](/img/blog/websitecreatures/IMG_8615.webp "")
+
+A good creature in plush form is the mark of a, if not good, fine website imo

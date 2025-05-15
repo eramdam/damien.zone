@@ -1,0 +1,30 @@
+---
+import { SITE } from "../helpers/siteConstants";
+---
+
+<data class="p-name" value={SITE.name}></data>
+<data class="u-photo" value="/avatar/avatar-bg.png"></data>
+<header>
+  <a class="title" href="/">
+    <picture>
+      <source
+        srcset="/avatar/avatar-border.png"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source srcset="/avatar/avatar.png" type="image/png" />
+      <img
+        alt="A black cat with a red bandana, holding a baguette and looking to the left"
+      />
+    </picture>
+    <h1>{SITE.name}</h1>
+  </a>
+  <nav>
+    <p>
+      <a href="/">home</a>
+      <a href="/blog/">blog</a>
+      <a href="/projects/">projects</a>
+      <a href="/links/">links</a>
+      <a href={new URL("feed.xml", Astro.site)}>rss</a>
+    </p>
+  </nav>
+</header>

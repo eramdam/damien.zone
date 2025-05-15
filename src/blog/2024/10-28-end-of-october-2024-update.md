@@ -17,17 +17,17 @@ I spent a week of vacation in Reno for definitely [normal reasons](https://goblf
 Then, as soon as I came back, my friend [Joanna](https://www.joannablackhart.com/) was in town to visit the [Internet Archive](https://archive.org/), so I tagged along. I saw a bunch of very cool shit. Like, look at all this stuff!! Tell me this isn't cool as hell!!
 Excuse the shoddy photography job lmao.
 
-<figure>
+<figure data-type="image">
 <img src="/img/blog/servers.webp" alt="three, multiple meters-all servers, all belonging to the Internet Archive" />
 <figcaption>Servers!! A few of the many (I was told) servers that the Internet Archive HQ in San Francisco houses</figcaption>
 </figure>
 
-<figure>
+<figure data-type="image">
 <img src="/img/blog/petabox.webp" alt="A red-colored, older looking, computer server. The first 'one petabyte box'." />
 <figcaption>A <a href="https://en.wikipedia.org/wiki/PetaBox">Petabox</a>!! I didn't know the Internet Archive had one of these so early (2004!) but it makes sense that they would, after all.</figcaption>
 </figure>
 
-<figure>
+<figure data-type="image">
 <img src="/img/blog/16mm-scanner.webp" alt="A 16mm film scanner. It's almost a meter tall and has one big reel on each of its sides" />
 <figcaption>
 A 16mm film scanner! It was super impressive to see move in person, especially considering how "tiny" 16mm film is in comparison. 

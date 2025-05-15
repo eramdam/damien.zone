@@ -23,11 +23,11 @@ As it turns out, trying to recall and tell 9 years of history of a project witho
 
 I was a student at the time, finishing up my last year of university, living at my parents' place. Unfortunately, we lived in the countryside and that mean we had a <em>terribly</em> slow internet connection. I'm talking less than 1Mbps slow. It wasn't great! But it was manageable.
 
-While I can't remember what prompted me to start using TweetDeck specifically (this was after the acquisition by Twitter). I do remember being extremely annoyed at having to wait for [t.co](t.co) (Twitter's URL shortener) when clicking on. Every. Single. Link. Somehow, this domain is still the slowest domain I regularly encounter, and it was slow at the time already!
+While I can't remember what prompted me to start using TweetDeck specifically (this was after the acquisition by Twitter). I do remember being extremely annoyed at having to wait for [t.co](https://t.co) (Twitter's URL shortener) when clicking on. Every. Single. Link. Somehow, this domain is still the slowest domain I regularly encounter, and it was slow at the time already!
 
 At that point, I had been learning web development for a few years, which made me think that _surely_ there was a way to fix this with a userscript or browser extension, right? So I opened up my Chrome developer tools, looked around on my feed, and would you look at that!
 
-```html
+```html {5}
 <a
   href="https://t.co/1234"
   target="_blank"
@@ -60,16 +60,14 @@ It had the following features (taken from the [README file](https://github.com/e
 <small>I used to swear a bit (too much) when writing code</small>  
 And here it is running on modern Chrome on modern macOS 😄
 
-<figure class="rehype-figure">
-  <img src="/img/blog/btd-post-mortem2/btd-0.0.8.jpg" alt="The first public version of Better TweetDeck running in Chrome on macOS in 2023">
-  <figcaption>The first public version of Better TweetDeck running in Chrome on macOS in 2023</figcaption>
-</figure>
+![](/img/blog/btd-post-mortem2/btd-0.0.8.jpg "The first public version of Better TweetDeck running in Chrome on macOS in 2023")
+
 
 ### Hitting 1.0
 
 <small>February 2014</small>
 
-A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](/img/blog/btd-post-mortem2/btd-1.0.0.png).
+A month later, Better TweetDeck hit 1.0! Yay! It now had a proper "welcome" ~~screen~~ banner and a [bunch of new features](/btd/btd-changelog#100). Most of them were tweaks and improvements of existing features, but the biggest part of that changelog was the addition of more "providers" for the thumbnails feature, which made it so links from websites with not-so-great Open Graph support could look nicer and have more functionality inside TweetDeck. I would love to show how it looked back then, but I couldn't find a screenshot of that specific feature running on that specific version of TweetDeck 🙃. So, instead, enjoy a [screenshot of the options page in modern Chrome](/img/blog/btd-post-mortem2/btd-1.0.0.png).
 
 The extension's user base was tiny at the time (around 200 weekly users), but it was fine by me. I was making this for myself _first_ and for others second. It was mostly spreading through word of mouth at that point.
 
@@ -129,7 +127,7 @@ In August 2014, I released [version 2.0](https://github.com/eramdam/BetterTweetD
 
 Here are the settings in action, along with their "dynamic preview" system I was so proud of at the time!
 
-<figure class="rehype-figure">
+<figure data-type="video">
 <video src="/img/blog/btd-post-mortem2/btd-2.0-settings.mp4" poster="/img/blog/btd-post-mortem2/btd-2.0-settings.jpg" playsinline controls preload="none"></video>
 <figcaption>
   The settings from Better TweetDeck 2.0, running on modern Chrome
@@ -169,7 +167,7 @@ I'm sure I did more on the project itself but again, my past self's poor changel
 
 <small>3.0, August 2016</small>
 
-As the title of this section suggests, I released v3 of BTD in August 2016. It was quite a big release! You can see the [full changelog here](/btd-changelog#300) but the highlights were:
+As the title of this section suggests, I released v3 of BTD in August 2016. It was quite a big release! You can see the [full changelog here](/btd/btd-changelog#300) but the highlights were:
 
 #### Complete rewrite
 
@@ -239,7 +237,7 @@ One recurring theme of Better TweetDeck was that I wasn't very good at versionin
 1. [Collapsible columns](https://github.com/eramdam/BetterTweetDeck/pull/208). This was a good alternative to deleting a column, because sometimes you wanted to just "hide" a column temporarily, or just needed to clean up your view.
 2. ["Clear" button in the columns' header](https://github.com/eramdam/BetterTweetDeck/pull/224). On its own, it was a small improvement, but I built on top of it to add more actions in that area later.
 
-<figure class="rehype-figure">
+<figure data-type="video">
 <video src="/img/blog/btd-post-mortem2/btd-collapsible-columns.mp4" poster="/img/blog/btd-post-mortem2/btd-collapsible-columns.jpg" playsinline controls></video>
 <figcaption>
   A demo of Better TweetDeck's collapsible columns in action. Enjoy the "retro" Chrome UI as a bonus.
@@ -261,7 +259,7 @@ This time, I had properly versioned the version since it added two pretty "big" 
 
 A long-time request and one of my favorite features. If you've used Slack, Discord or Mastodon, you know what this does, otherwise, look at the video below!
 
-<figure class="rehype-figure">
+<figure data-type="video">
 <video src="/img/blog/btd-post-mortem2/btd-emoji-shortcodes.mp4" poster="/img/blog/btd-post-mortem2/btd-emoji-shortcodes.jpg" playsinline controls></video>
 <figcaption>
   A demo of the emoji autocompletion feature
@@ -272,7 +270,7 @@ A long-time request and one of my favorite features. If you've used Slack, Disco
 
 Another long requested feature. It was a bit of a mess to implement at the time but was well worth it. It also let me introduce a subtle but [effective April Fools' joke](https://twitter.com/search?q=%40Bettertdeck%20jif&src=typed_query&f=live) in Better TweetDeck 😄
 
-<figure class="rehype-figure">
+<figure data-type="video">
 <video src="/img/blog/btd-post-mortem2/btd-gif-picker.mp4" poster="/img/blog/btd-post-mortem2/btd-gif-picker.jpg" playsinline controls></video>
 <figcaption>
   A demo of the emoji autocompletion feature
@@ -348,12 +346,8 @@ This started with the fact that TweetDeck, for a few years prior that, had been 
 
 Anyway, I thought it would be fun to riff on that and offer multiple variants in Better TweetDeck. It would only be visible to the user themselves, of course, but people liked it a lot, which made it worth it. It also made the weirdest, most annoying people mad, which is very funny.
 
-<figure class="rehype-figure">
-<img src="/img/blog/btd-post-mortem2/btd-pride-settings.png" alt="The list of different logos that the user could choose from in Better TweetDeck 4.2.0" />
-<figcaption>
-The list of different logos that the user could choose from in Better TweetDeck 4.2.0
-</figcaption>
-</figure>
+![](/img/blog/btd-post-mortem2/btd-pride-settings.png "The list of different logos that the user could choose from in Better TweetDeck 4.2.0")
+
 
 ### TweetDeck Beta
 
@@ -385,12 +379,7 @@ This PR interpreted the syntax and presented a Mastodon-like UI to toggle the di
 The second one was [pronoun extraction](https://twitter.com/BetterTDeck/status/1455252017996201984) (sic), which, like the name implies, grabbed pronouns from users' bio and location fields and displayed them above their tweets.
 It's the kind of feature whose [implementation](https://github.com/eramdam/BetterTweetDeck/blob/main/src/features/pronounsDisplay.ts) is more complex than one may think but which looks very simple when used.
 
-<figure class="rehype-figure">
-  <img src="/img/blog/btd-post-mortem2/btd-pronouns-display.png" alt="Screenshot showing the pronouns display in practice">
-  <figcaption>
-    Screenshot showing the pronouns display in practice
-  </figcaption>
-</figure>
+![Screenshot showing the pronouns display in practice](/img/blog/btd-post-mortem2/btd-pronouns-display.png "Screenshot showing the pronouns display in practice")
 
 It's also another feature that I _knew_ the TweetDeck/Twitter folks were aware of, because one engineer there told me they saw it, and Twitter ended up testing an [actual pronouns field](https://twitter.com/uwukko/status/1515618844244590592) later on! But alas, I doubt this will ever materialize under Twitter's current administration.
 
@@ -410,12 +399,7 @@ Clown stuff. Anyway, the harassment fortunately didn't last very long and was cu
 
 Later on, I would add a UI that let users see what users the mute filters they set up "caught". A lot of folks wanted me to implement an auto-blocking mechanism, but I didn't want to work around Twitter's very strict rate limits around blocking, and also wanted to be able to sleep at night knowing I didn't ship a bug that made my code block a whole bunch of people by mistake. So this "mute catching" thing was the best compromise IMO since it would let people export the list of users to a format that tools like BlockParty could use to mass-block accounts.
 
-<figure class="rehype-figure">
-  <img src="https://user-images.githubusercontent.com/1409924/147862067-416852b7-2f1c-483a-bbed-389972881765.png" alt="Screenshot of the mute catches modal in Better TweetDeck 4.7.0">
-  <figcaption>
-    Screenshot of the mute catches modal in Better TweetDeck 4.7.0
-  </figcaption>
-</figure>
+![](https://user-images.githubusercontent.com/1409924/147862067-416852b7-2f1c-483a-bbed-389972881765.png "Screenshot of the mute catches modal in Better TweetDeck 4.7.0")
 
 ### Dawn of the Final Year
 
@@ -443,12 +427,8 @@ There was still uncertainty around whether or not Musk would end up buying Twitt
 
 This was a very silly decision, so I decided to make fun of it in what would be the last major feature update for Better TweetDeck.
 
-<figure class="rehype-figure">
-  <img src="https://user-images.githubusercontent.com/1409924/201475115-71e23d45-63e7-416d-a993-ee5ec22aba1b.png" alt='Setting to change the checkmark icon for "Blue verified" users'>
-  <figcaption>
-    Setting to change the checkmark icon for "Blue verified" users
-  </figcaption>
-</figure>
+![](https://user-images.githubusercontent.com/1409924/201475115-71e23d45-63e7-416d-a993-ee5ec22aba1b.png alt='Setting to change the checkmark icon for "Blue verified" users')
+
 
 Unsurprisingly, this made some of the most boring people on Earth (those who want to pay 8 bucks to feel important online) very upset, so it was well worth it.
 
