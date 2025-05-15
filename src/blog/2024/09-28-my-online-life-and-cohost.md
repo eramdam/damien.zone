@@ -144,7 +144,7 @@ I will miss a _fucking website_, but damn, what a website it was.
 
 Well. Chances are you might be reading this inside an RSS feed already, so this (https://damien.zone) is what's next for me.  
 My relationship to microblogging/social media in general is gonna change, I think.  
-I am still going to use [Mastodon](https://social.erambert.me/@eramdam) for the "tiny posts" stuff. I might try to use [Bluesky](https://bsky.app/profile/eramdam.me) more, especially since a bunch of cohost folks are following me there, but I am going to complain—I made that joke already.  
+I am still going to use [Mastodon](https://social.erambert.me/@eramdam) for the "tiny posts" stuff. I might try to use [Bluesky](https://bsky.app/profile/damien.zone) more, especially since a bunch of cohost folks are following me there, but I am going to complain—I made that joke already.  
 My [Twitter account](https://twitter.com/Eramdam) is still up. I locked it a few weeks ago, and I don't think I will re-open it anytime soon, or maybe ever? Time will tell. Don't expect me to post there very much.
 
 I want to try to use social media less if I'm being honest. I've been using Discord and regular-ass instant messaging a lot more for the past few weeks. It's been great to just be able to talk to more people. I am seeing a bunch of people from cohost and beyond in person in the coming weeks and months, I am looking forward to that. I collected some of my cohost mutuals' information, added them on Discord and other places. I know I missed some of you, I will try to do an exhaustive "sweep" when my data export with the "find your friends" page is available.
