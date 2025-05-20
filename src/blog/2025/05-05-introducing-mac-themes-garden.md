@@ -5,6 +5,7 @@ date: 2025-05-06T03:12:50.426Z
 tags:
   - retrocomputing
   - mac
+  - mac themes garden
 description: A website for old Macintosh themes and some background.
 image: /img/projects/macthemes-garden.webp
 templateEngineOverride: md
