@@ -630,7 +630,7 @@ p small {
   padding-bottom: 0;
 }
 
-.eleventy-plugin-embed-mastodon blockquote.mastodon-embed {
+blockquote.mastodon-embed {
   margin-left: auto !important;
   margin-right: auto !important;
 }
