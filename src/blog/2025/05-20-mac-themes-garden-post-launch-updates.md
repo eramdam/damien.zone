@@ -1,10 +1,13 @@
 ---
-title: "Mac Themes Garden: post-launch updates"
-slug: dry-dress
-date: 2025-05-20T03:09:53.173Z
-tags: ["mac themes garden", "mac", "retrocomputing"]
-description: 'A few small updates about/to Mac Themes Garden'
-image: '/img/blog/macthemes-update.webp'
+title: 'Mac Themes Garden: post-launch updates'
+slug: mac-themes-garden-post-launch-updates
+date: 2025-05-21T06:07:16.555Z
+tags:
+  - mac themes garden
+  - mac
+  - retrocomputing
+description: A few small updates about/to Mac Themes Garden
+image: /img/blog/macthemes-update.webp
 ---
 
 ![](/img/blog/macthemes-update.webp)
