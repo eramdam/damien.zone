@@ -22,7 +22,11 @@ if (
   assert(description, `Missing description for ${canonicalURL}`);
 }
 
-const image = contentProps?.image || "/open_graph.webp";
+const image = contentProps?.image
+  ? contentProps.image.startsWith("/")
+    ? new URL(contentProps.image, Astro.site)
+    : contentProps.image
+  : new URL("/open_graph.webp", Astro.site);
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);
 ---
