@@ -18,6 +18,7 @@ export default defineConfig({
     "/blog/page/1": "/blog",
     "/tag/page": "/",
     "/tag/testing": "/",
+    "/feed": "/feed.xml",
   },
 
   devToolbar: {
