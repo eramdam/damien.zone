@@ -7,7 +7,7 @@ description: this page lists all my projects, current or past that I want docume
 
 # Projects
 
-this page lists all my projects, current or past that I want documented. this list isn't nor will be exhaustive. anything that isn't listed here is most likely on my [GitHub](https://github.com/eramdam)
+This page lists all my projects, current, or past that I want documented. This list isn't nor will be exhaustive. Anything that isn't listed here is most likely on my [GitHub](https://github.com/eramdam)
 
 
 ## Mac Themes Garden
@@ -63,7 +63,7 @@ Better TweetDeck was a project I started back in 2014 to make TweetDeck... bette
 
 At its peak, Better TweetDeck had ~70,000 weekly users on the various browser add-on marketplaces.
 
-If you've used it, **thank you ❤️** and also: you might find this [post interesting](/bettertweetdeck-post-mortem-part-2/)
+If you've used it, **thank you ❤️** and: you might find this [post interesting](/bettertweetdeck-post-mortem-part-2/)
 
 
 ## pokemonshow
