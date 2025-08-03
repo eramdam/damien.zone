@@ -142,6 +142,12 @@
     "filename": "lmnt.gif"
   },
   {
+    "link": "https://lyra.horse",
+    "name": "lyra.horse",
+    "src": "/buttons/lyra.horse.png",
+    "filename": "lyra.horse.png"
+  },
+  {
     "link": "https://macthemes.garden",
     "name": "Mac Themes Garden",
     "src": "/buttons/macthemes.garden.png",
@@ -206,6 +212,12 @@
     "name": "Queer Computer Club",
     "src": "/buttons/qcq.png",
     "filename": "qcq.png"
+  },
+  {
+    "link": "https://sapphic.moe/",
+    "name": "Sapphic Angels",
+    "src": "/buttons/sapphic.png",
+    "filename": "sapphic.png"
   },
   {
     "link": "https://shadenexus.com/",
