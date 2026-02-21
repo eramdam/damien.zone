@@ -1,6 +1,7 @@
 ---
 import Body from "../components/Body.astro";
 import CommonIncludes from "../components/CommonIncludes.redesign.astro";
+import Footer from "../components/Footer.redesign.astro";
 import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.redesign.astro";
 ---
@@ -8,15 +9,15 @@ import Navigation from "../components/Navigation.redesign.astro";
 <!doctype html>
 <html lang="en">
   <head>
-    <CommonIncludes />
     <Head {...Astro.props} />
+    <CommonIncludes />
   </head>
-  <Body class:list={Astro.props.frontmatter?.class_name}>
+  <Body class:list={[Astro.props.frontmatter?.class_name, "damien-redesign"]}>
     <Navigation />
     <main>
       <slot />
     </main>
 
-    <script src="../assets/main.mjs"></script>
+    <Footer />
   </Body>
 </html>
