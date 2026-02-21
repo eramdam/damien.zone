@@ -1,8 +1,8 @@
 ---
-import "../assets/styles/damien.zone.css";
 import BlogPost from "../components/BlogPost.astro";
 
 import Body from "../components/Body.astro";
+import CommonIncludes from "../components/CommonIncludes.astro";
 import Footer from "../components/Footer.astro";
 import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.astro";
@@ -11,6 +11,7 @@ import Navigation from "../components/Navigation.astro";
 <!doctype html>
 <html lang="en">
   <head>
+    <CommonIncludes />
     <Head {...Astro.props} />
   </head>
 

@@ -1,8 +1,4 @@
 ---
-import "@fontsource-variable/atkinson-hyperlegible-mono";
-import "@fontsource-variable/atkinson-hyperlegible-next";
-import "@fontsource-variable/merriweather";
-
 import assert from "node:assert";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
@@ -82,7 +78,7 @@ assert(finalTitle, `Missing description for ${canonicalURL}`);
 <script is:inline>
   const isChromeAndroid =
     navigator.userAgentData?.brands.some((b) =>
-      b.brand.includes("Google Chrome")
+      b.brand.includes("Google Chrome"),
     ) && navigator.userAgentData.mobile;
   if (isChromeAndroid) {
     document
