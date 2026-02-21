@@ -47,7 +47,7 @@ export default defineConfig({
   },
   integrations: [
     expressiveCode({
-      themes: ["github-dark", "github-light"],
+      themes: ["rose-pine-dawn"],
       styleOverrides: {
         frames: {
           frameBoxShadowCssValue: "none",

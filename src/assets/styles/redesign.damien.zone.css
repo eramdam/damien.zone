@@ -1,5 +1,6 @@
 @import url("./redesign.reset.css");
 
+/* Fonts and sizes. */
 :root {
   --font-fallback-main: system-ui, sans-serif;
   --font-fallback-mono:
@@ -13,15 +14,18 @@
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
   --font-serif: "Merriweather Variable", var(--font-fallback-serif);
   --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
+
+  --font-size-main: 1.2rem;
+  --font-size-small: 1rem;
+  --media-radius: 10px;
 }
 
+/* Colors */
 :root {
   --color-accent: hsl(346 82% 41%);
   --color-white: white;
   --color-black: black;
-}
 
-:root {
   --color-offwhite: hsl(
     from var(--color-accent) calc(h - 346) calc(s - 49) calc(l + 55)
   );
@@ -37,6 +41,7 @@
     var(--color-accent-comp) 40%,
     black
   );
+
   /* --color-offblack-off: color-mix(in srgb, var(--color-accent-off) 60%, black); */
 }
 
@@ -48,8 +53,6 @@
   --color-fg-header: var(--color-offwhite);
   --color-text: var(--color-offblack);
   --color-link: var(--color-accent-off);
-  --color-link-hover: var(--color-offblack-comp);
-  --color-small-prose: var(--color-offblack-comp);
   --color-blockquote-border: var(--color-accent);
 
   --content-width: 50rem;
@@ -60,7 +63,7 @@ body {
   margin: 0;
   font-family: var(--font-main);
   background-color: var(--color-bg-main);
-  font-size: 1.2rem;
+  font-size: var(--font-size-main);
   line-height: 1.5;
   color: var(--color-text);
 }
@@ -109,7 +112,7 @@ header nav {
   border-radius: 12px;
   text-transform: capitalize;
   font-weight: 666;
-  font-size: 1em;
+  font-size: var(--font-size-main);
   display: flex;
   overflow: hidden;
 
@@ -159,11 +162,12 @@ h1.greeting {
 main {
   a:any-link {
     color: var(--color-link);
-    text-decoration-thickness: 2px;
+    /* text-decoration-thickness: 2px; */
   }
 
   a:any-link:hover {
-    color: var(--color-link-hover);
+    background-color: var(--color-link);
+    color: var(--color-bg-main);
   }
 
   small {
@@ -211,4 +215,28 @@ main {
     margin-inline: 0;
     position: relative;
   }
+
+  figure {
+    margin-inline: 0;
+  }
+
+  img,
+  video {
+    border-radius: var(--media-radius);
+  }
+
+  img {
+    cursor: zoom-in;
+  }
+
+  figcaption {
+    margin-block: 0.6em;
+    font-style: italic;
+    font-size: var(--font-size-small);
+    text-align: center;
+  }
+}
+
+::view-transition-image-pair(img-zoom) {
+  isolation: isolate;
 }

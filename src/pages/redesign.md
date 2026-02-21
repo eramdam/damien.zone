@@ -65,6 +65,22 @@ Neutral milk hotel [humblebrag consequat](https://example.com), 3 wolf moon nost
 </html>
 ```
 
+## Images & videos
+
+<figure>
+<img src="/img/blog/balatro-touch/balatro-touch-mode.webp" alt="">
+<figcaption>
+Woah! It's Balatro!!
+</figcaption>
+</figure>
+
+<figure data-type="video">
+<video src="/img/blog/btd-post-mortem2/btd-2.0-settings.mp4" poster="/img/blog/btd-post-mortem2/btd-2.0-settings.jpg" playsinline controls preload="none"></video>
+<figcaption>
+  The settings from Better TweetDeck 2.0, running on modern Chrome
+</figcaption>
+</figure>
+
 ## Blockquotes
 
 Food truck hammock echo park [occaecat pariatur](https://example.com) 3 wolf moon mustache. Marxism mukbang pariatur fashion axe velit. Cray pork belly sartorial ut echo park prism single-origin coffee raw denim mustache grailed ullamco minim tilde. Sed minim farm-to-table tousled, tilde sriracha est irony ut aliqua fugiat. Slow-carb nulla cardigan, shaman hammock crucifix actually. Trust fund kinfolk meggings seitan ascot live-edge PBR&B, hexagon venmo fanny pack paleo squid gatekeep aesthetic. Tonx commodo kitsch gorpcore big mood edison bulb ugh tote bag brunch poke.
