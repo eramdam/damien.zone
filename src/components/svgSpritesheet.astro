@@ -1,11 +1,16 @@
 ---
 import path from "node:path";
-const svgSpritesheet = Object.entries(
+
+const files = Object.entries(
   import.meta.glob("../assets/anon-avatars/*.svg", {
     eager: true,
     query: "?raw",
   }),
-)
+);
+
+// const ids = files.map((p) => path.basename(p[0]).replace(".svg", ""));
+
+const svgSpritesheet = files
   .map(([key, value]) => {
     const id = path.basename(key).replace(".svg", "");
     // @ts-expect-error
@@ -17,3 +22,12 @@ const svgSpritesheet = Object.entries(
 ---
 
 <svg id="svg-sprites" style="display: none;" set:html={svgSpritesheet} />
+<!-- {
+  ids.map((s) => {
+    return (
+      <svg width="20" height="20" style="color: black">
+        <use xlink:href={`#${s}`} />
+      </svg>
+    );
+  })
+} -->
