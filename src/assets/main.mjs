@@ -59,6 +59,7 @@ function replaceAnonAvatars(mainPost) {
       return e.getAttribute("id");
     });
     console.log(possibleIds);
+    console.log(avatarEls);
     Array.from(avatarEls).forEach((avatar) => {
       if (!(avatar instanceof Element)) {
         return;
@@ -70,9 +71,10 @@ function replaceAnonAvatars(mainPost) {
       }
 
       const commentId = idEl.getAttribute("id").replace("comentario-", "");
-      const commentIdAsInt = parseInt(commentId.replaceAll("-", ""), 16);
-      console.log({ commentIdAsInt });
+      const hex = commentId.split("-");
+      const commentIdAsInt = parseInt(hex[0] + "" + hex[1], 16);
       const finalId = possibleIds[commentIdAsInt % possibleIds.length];
+      console.log("mod", commentIdAsInt, commentIdAsInt % possibleIds.length);
 
       avatar.innerHTML = `<svg><use xlink:href="#${finalId}" /></svg>`;
 

@@ -220,12 +220,12 @@ body main .comentario-root.comentario-root {
 
   .comentario-avatar,
   .comentario-avatar-img {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 
   .comentario-bg-anonymous svg {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
   }
 }
