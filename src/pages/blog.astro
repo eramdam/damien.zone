@@ -1,0 +1,44 @@
+---
+import { groupBy } from "lodash-es";
+
+import { sortPosts } from "../helpers/siteHelpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostsList from "../components/PostsList.astro";
+const basePosts = sortPosts(
+  Object.values(import.meta.glob("../blog/**/*.md", { eager: true })),
+);
+const postsByYear = groupBy(basePosts, (p) => {
+  return new Date(p.frontmatter.date).getUTCFullYear();
+});
+---
+
+<BaseLayout
+  content={{
+    title: "Blog",
+    description:
+      "french software engineer living and working in the Bay Area on web stuff",
+  }}
+  frontmatter={{
+    class_name: "blog-feed",
+  }}
+>
+  <h1>Blog</h1>
+
+  <p>This is the archive of the posts I've written over time.</p>
+
+  {
+    Object.keys(postsByYear)
+      .toReversed()
+      .map((k) => {
+        return (
+          <>
+            <h3>
+              {k}
+              <hr />
+            </h3>
+            <PostsList posts={postsByYear[k]} />
+          </>
+        );
+      })
+  }
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
 title: Redesign
-layout: ../layouts/BaseLayout.redesign.astro
+layout: ../layouts/BaseLayout.astro
 description: ""
 class_name: redesign
 ---

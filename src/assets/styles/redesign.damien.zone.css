@@ -19,8 +19,7 @@
   --font-size-small: 1rem;
   --media-radius: 10px;
   --code-radius: 4px;
-  --content-width: min(100vw, 50rem);
-  --header-width: calc(var(--content-width) + 30rem);
+  --content-width: min(100vw, 55rem);
 }
 
 /* Colors */
@@ -88,7 +87,7 @@ header {
 
   top: 0;
   margin: 0 auto;
-  width: min(100%, var(--header-width));
+  /* width: min(100%, var(--header-width)); */
 }
 
 .progressive-blur-container {
@@ -275,16 +274,12 @@ h1.greeting {
 
 /* Prose stuff */
 main {
-  a:any-link {
-    color: var(--color-link);
-    /* text-decoration-thickness: 2px; */
+  /* Make images easier to work with */
+  img,
+  picture,
+  video {
+    max-width: 100%;
   }
-
-  a:any-link:hover {
-    background-color: var(--color-link);
-    color: var(--color-bg-main);
-  }
-
   small {
     font-size: smaller;
     font-weight: bold;
@@ -362,25 +357,11 @@ main {
     background-color: var(--color-code-bg);
     padding: 0.2em 0.3em;
     border-radius: var(--code-radius);
-    white-space: nowrap;
+    white-space: breaks-spaces;
   }
 }
 
 main {
-  & > .tags {
-    margin-bottom: 0;
-  }
-
-  & > .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6ch;
-  }
-
-  & > .tags a::before {
-    content: "#";
-  }
-
   .post-datetime {
     margin-block: 0.5em;
   }
@@ -388,6 +369,37 @@ main {
   p:empty {
     display: none;
   }
+}
+
+main,
+footer {
+  a:any-link {
+    color: var(--color-link);
+  }
+
+  a:any-link:hover {
+    background-color: var(--color-link);
+    color: var(--color-bg-main);
+  }
+
+  figure a:any-link:hover {
+    background-color: transparent;
+    color: none;
+  }
+}
+
+p.tags {
+  margin-bottom: 0;
+}
+
+p.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6ch;
+}
+
+p.tags a::before {
+  content: "#";
 }
 
 section[data-footnotes] {
@@ -399,8 +411,7 @@ section[data-footnotes] {
 }
 
 footer {
-  margin-block-start: 2rem;
-  padding-block-start: 2rem;
+  margin-block-start: 1rem;
   padding-block-end: 2rem;
   font-size: var(--font-size-small);
   border-top: 1px dotted var(--color-accent);
@@ -484,6 +495,7 @@ body.index {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 }
 
 .blog-posts li span {
@@ -492,10 +504,96 @@ body.index {
   flex: 1;
   font-size: var(--font-size-small);
   font-style: normal;
-  /* font-family: var(--font-monospace); */
   text-align: right;
 }
 
 .blog-posts p {
   margin: 0;
+}
+
+.blog-feed h3 {
+  display: flex;
+  font-family: var(--font-monospace);
+}
+
+.blog-feed h3 hr {
+  flex: 1;
+  border: 0;
+  border-top: 1px dashed var(--color-accent);
+  margin-left: 0.8em;
+}
+
+/* Links / buttons stuff */
+.page.links main:has(> :not(.main-block)) .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 20px;
+  gap: 4px;
+}
+
+.page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
+  text-decoration: none;
+  line-height: 0;
+}
+
+.page.links main:has(> :not(.main-block)) .buttons img {
+  max-width: 88px;
+  max-height: 31px;
+}
+
+.eggbug-buttons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.eggbug-button {
+  vertical-align: middle;
+}
+
+.buttons-mybutton-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  gap: 4px;
+}
+
+.buttons-mybutton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* text-align: center; */
+  /* margin-bottom: 20px; */
+}
+
+.buttons-mybutton img {
+  flex-shrink: 0;
+}
+
+.buttons-mybutton textarea {
+  flex: 1;
+}
+
+/* Custom stuff */
+.pixel {
+  image-rendering: pixelated;
+}
+
+:is(body.links .links-links, .tags-list) {
+  padding-left: 0;
+  column-count: 3;
+  text-align: center;
+}
+
+:is(body.links .links-links, .tags-list) li {
+  list-style-type: none;
+  display: block;
+}
+
+#myWebRing {
+  max-width: 250px;
+  margin: 100px auto;
+  margin-bottom: 20px;
 }

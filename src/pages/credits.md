@@ -9,7 +9,7 @@ class_name: credits
 Site made with [Astro](https://astro.build), hosted on [Netlify](https://www.netlify.com/).
 
 <p>
-Avatar/favicon (<img src="/avatar/avatar-border.png" class="pixel favicon">) by sage (<a href="https://wavebeem.com">wavebeem.com</a>)
+Avatar/favicon (<img src="/avatar/avatar-border.png" class="pixel favicon" style="height: 24px;">) by sage (<a href="https://wavebeem.com">wavebeem.com</a>)
 </p>
 
 <p>
