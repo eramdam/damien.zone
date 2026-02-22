@@ -4,7 +4,7 @@ layout: ../layouts/BaseLayout.astro
 class_name: pronounciation
 ---
 
-# How do you pronounce that?
+# How do you pronounce your name?
 
 I found that most native English speakers struggling with pronouncing my name 😅 
 

@@ -9,8 +9,10 @@ class_name: "menu"
 
 - [Home](/)
 - [Blog](/blog)
+- [Credits](/credits)
 - [Links](/links)
-- [Tags](/projects)
 - [Projects](/projects)
+- [Tags](/projects)
+- [How do you pronounce your name?](/pronounciation)
 - [RSS feed](/feed.xml)
 
