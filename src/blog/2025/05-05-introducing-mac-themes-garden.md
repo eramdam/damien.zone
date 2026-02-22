@@ -202,7 +202,7 @@ So of course I've used every CSS trick in the book to achieve the look. Let me g
 
 ### The window frame
 
-![alt text](/img/blog/macthemes-garden-window.png)
+![](/img/blog/macthemes-garden-window.png)
 
 This is, obviously, a big part of the UI, so I wanted to be as close to the actual look of OS 9 as possible. Let's take a simple, empty example:
 
