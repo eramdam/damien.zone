@@ -333,7 +333,7 @@ main {
     border-radius: var(--media-radius);
   }
 
-  img {
+  img:not([class]) {
     cursor: zoom-in;
   }
 
@@ -412,17 +412,6 @@ body.index {
     height: var(--avatar-size-shadow);
     width: var(--avatar-size-shadow);
   }
-
-  /* .img-shadow::after {
-    
-    content: "";
-    position: absolute;
-    display: block;
-    height: var(--avatar-size-shadow);
-    width: var(--avatar-size-shadow);
-    right: calc(var(--avatar-offset) / -2);
-    background-color: red;
-  } */
 
   .index-block img {
     max-width: var(--avatar-size);
