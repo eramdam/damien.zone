@@ -26,7 +26,7 @@ const emojiToExport = [
 (async () => {
   fs.globSync("./src/assets/anon-avatars/*.svg").map((f) => fs.rmSync(f));
 
-  const font = fontkit.openSync("./bin/NotoEmoji-Regular.ttf");
+  const font = fontkit.openSync("./bin/NotoEmoji-Bold.ttf");
   if (font.type !== "TTF") {
     return;
   }
