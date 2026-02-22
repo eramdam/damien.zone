@@ -11,7 +11,7 @@ image: /img/projects/macthemes-garden.webp
 templateEngineOverride: md
 ---
 
-![Mac Themes Garden](/img/projects/macthemes-garden.webp)
+![](/img/projects/macthemes-garden.webp)
 
 ## The short version
 

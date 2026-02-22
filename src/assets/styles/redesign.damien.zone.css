@@ -315,13 +315,6 @@ main {
     width: 100%;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-block-end: revert;
-  }
-
   blockquote {
     border-left-width: 2px;
     border-left-style: dotted;
@@ -329,6 +322,14 @@ main {
     padding-inline: 16px;
     margin-inline: 0;
     position: relative;
+    font-style: italic;
+
+    & p:first-of-type:before {
+      content: open-quote;
+    }
+    & p:last-of-type:after {
+      content: close-quote;
+    }
   }
 
   figure {
@@ -378,6 +379,14 @@ main {
 
   & > .tags a::before {
     content: "#";
+  }
+
+  .post-datetime {
+    margin-block: 0.5em;
+  }
+
+  p:empty {
+    display: none;
   }
 }
 
@@ -477,8 +486,6 @@ body.index {
   align-items: center;
 }
 
-.blog-posts li a {
-}
 .blog-posts li span {
   order: 1;
   font-variant-numeric: tabular-nums;
