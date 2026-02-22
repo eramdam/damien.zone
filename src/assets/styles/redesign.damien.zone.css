@@ -111,7 +111,7 @@ header {
   display: none;
 }
 
-@supports (backdrop-fdilter: blur(0)) and (mask-image: none) and
+@supports (backdrop-filter: blur(0)) and (mask-image: none) and
   (width: calc(10px * pow(5, 2))) {
   header {
     position: sticky;
