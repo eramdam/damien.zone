@@ -55,6 +55,23 @@
   --color-link: var(--color-accent-off);
   --color-blockquote-border: var(--color-accent);
   --color-code-bg: rgb(from var(--color-accent) r g b / 1);
+  --header-shadow-color: var(--color-bg-header);
+}
+
+/* tulip was here ^o^ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: hsl(346 65% 55%);
+    --color-offwhite: hsl(346, 16%, 10%);
+    --color-offblack: hsl(346, 15%, 85%);
+    --color-accent-off: color-mix(
+      in srgb,
+      var(--color-accent) 90%,
+      var(--color-offblack)
+    );
+
+    --header-shadow-color: black;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -196,7 +213,7 @@ header > nav,
 header > a.logo {
   z-index: 1;
   filter: drop-shadow(
-    0 3px 6px color-mix(in srgb, transparent 50%, var(--color-bg-header))
+    0 3px 6px color-mix(in srgb, transparent 50%, var(--header-shadow-color))
   );
 }
 
