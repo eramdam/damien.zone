@@ -1,12 +1,19 @@
 /* Comentario overrides */
-body main .comentario-root.comentario-root {
+body
+  main
+  .comentario-root.comentario-root
+  :is(.comentario-profile-bar, .comentario-main-area, .comentario-footer) {
   /* Remove background behind composer wrapper */
   --cmntr-bg: transparent;
-  --cmntr-card-border: rgb(from var(--color-text-muted) r g b / 0.4);
 
   /* Tweak color in light mode */
   @media (prefers-color-scheme: light) {
     --cmntr-bg-shade: white;
+  }
+
+  textarea:focus {
+    box-shadow: 0 0 0 0.25rem rgb(from var(--color-accent) r g b / 30%);
+    border-color: transparent;
   }
 
   /* Theme-specific: Remove background behind `code` element inside code blocks */
@@ -19,47 +26,6 @@ body main .comentario-root.comentario-root {
   blockquote {
     border-top: transparent;
     border-bottom: transparent;
-  }
-
-  /* Theme-specific: Change color of default button */
-  .comentario-btn-tool,
-  .comentario-btn-link {
-    --cmntr-btn-hover-color: color-mix(in srgb, white 24%, var(--color-accent));
-    --cmntr-btn-active-color: color-mix(
-      in srgb,
-      black 30%,
-      var(--color-accent)
-    );
-  }
-  .comentario-btn-link {
-    --cmntr-btn-color: color-mix(in srgb, black 10%, var(--color-accent));
-  }
-
-  /* Theme-specific: Change color of primary button */
-  .comentario-btn-primary {
-    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
-    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
-    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
-  }
-
-  /* Theme-specific: Change style of secondary button */
-  .comentario-btn-secondary {
-    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
-    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
-    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
-    background-color: transparent;
-    box-shadow: none !important;
-    border: 2px solid var(--cmntr-btn-bg);
-    color: var(--cmntr-btn-bg);
-
-    &:hover {
-      border-color: var(--cmntr-btn-hover-bg);
-      color: white;
-    }
-    &:active {
-      border-color: var(--cmntr-btn-active-bg);
-      color: white;
-    }
   }
 
   /* Add quotes around blockquote content */
@@ -89,8 +55,8 @@ body main .comentario-root.comentario-root {
     Prevents the resizing of the textarea from feeling "laggy".
    */
   textarea {
-    transition-property: box-shadow, color, background-color, border,
-      border-color;
+    transition-property:
+      box-shadow, color, background-color, border, border-color;
   }
 
   /* Tweak background color of textarea */
@@ -115,7 +81,9 @@ body main .comentario-root.comentario-root {
 
   /* Hide colored borders. */
   [class*="comentario-border-"] {
-    border-left-color: transparent !important;
+    border-left-color: var(--color-accent) !important;
+    border-left-width: 1px !important;
+    border-left-style: dashed !important;
   }
 
   /* Hide background behind toolbar in preview mode. */
@@ -143,8 +111,8 @@ body main .comentario-root.comentario-root {
     }
   }
 
-  .comentario-card:first-child {
-    border-top: none;
+  .comentario-card {
+    border-top: 1px dashed var(--color-accent);
   }
 
   /* Make author links fit nicer with the rest of the style */
@@ -158,40 +126,106 @@ body main .comentario-root.comentario-root {
       color: currentColor;
     }
   }
+}
 
-  /* Make links in comments less "aggressive" */
-  .comentario-card-body a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    text-decoration-color: currentColor;
+body main .comentario-root.comentario-root .comentario-backdrop {
+  backdrop-filter: none;
+}
 
-    &:hover {
-      text-decoration-thickness: 2px;
-      color: currentColor;
-    }
-  }
-
-  /* Use site link color for "watermark" */
-  .comentario-footer {
-    --cmntr-link-color: var(--color-accent);
-    --cmntr-link-hover-color: color-mix(
+body main .comentario-root.comentario-root {
+  /* Theme-specific: Change color of default button */
+  .comentario-btn-tool,
+  .comentario-btn-link {
+    --cmntr-btn-hover-color: color-mix(in srgb, white 24%, var(--color-accent));
+    --cmntr-btn-active-color: color-mix(
       in srgb,
-      black 20%,
+      black 30%,
       var(--color-accent)
     );
   }
 
-  /* Hide sorting buttons
-    TODO: show it again and find a way to make the buttons not ugly
-  */
-  .comentario-sort-bar {
+  .comentario-btn-tool {
+    --cmntr-btn-color: var(--color-offblack);
+  }
+  .comentario-btn-link {
+    --cmntr-btn-color: color-mix(in srgb, black 10%, var(--color-accent));
+  }
+
+  /* Theme-specific: Change color of primary button */
+  .comentario-btn-primary {
+    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
+    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
+    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
+  }
+
+  /* Theme-specific: Change style of secondary button */
+  .comentario-btn-secondary {
+    --cmntr-btn-bg: color-mix(in srgb, black 10%, var(--color-accent));
+    --cmntr-btn-hover-bg: color-mix(in srgb, white 24%, var(--cmntr-btn-bg));
+    --cmntr-btn-active-bg: color-mix(in srgb, black 30%, var(--cmntr-btn-bg));
+    background-color: transparent;
+    box-shadow: none !important;
+    border: 2px solid var(--cmntr-btn-bg);
+    color: var(--cmntr-btn-bg);
+    transition: none;
+
+    &:hover {
+      border-color: var(--cmntr-btn-hover-bg);
+      background-color: var(--cmntr-btn-hover-bg);
+      color: var(--color-bg-main);
+    }
+    &:active {
+      border-color: var(--cmntr-btn-active-bg);
+      background-color: var(--cmntr-btn-active-bg);
+      color: var(--color-bg-main);
+    }
+  }
+
+  a:any-link,
+  .comentario-btn-link {
+    color: var(--color-link);
+    transition: none;
+  }
+
+  a:any-link:hover,
+  .comentario-btn-link:hover {
+    background-color: var(--color-link);
+    color: var(--color-bg-main);
+  }
+
+  .comentario-comment-count {
     display: none;
   }
 
-  .comentario-card .comentario-card-self {
-    padding-top: 18px;
+  .comentario-bg-anonymous,
+  .comentario-avatar-img {
+    border-radius: 8px;
+  }
+
+  .comentario-bg-anonymous {
+    background-image: none !important;
+    background-color: transparent !important;
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .comentario-bg-anonymous {
+      color: var(--color-bg-main);
+      background-color: var(--color-accent) !important;
+    }
+  }
+
+  .comentario-avatar,
+  .comentario-avatar-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .comentario-bg-anonymous svg {
+    max-width: 100%;
+    max-height: 100%;
   }
 }

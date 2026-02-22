@@ -1,14 +1,8 @@
 /* Comentario */
 @import url("./comentario.css");
 
-/* Syntax highlighting */
-/* @import url("./syntax.css"); */
-
 /* Image gallery */
 @import url("./image-gallery.css");
-
-/* Webmentions */
-@import url("./webmentions.css");
 
 ::before,
 ::after,

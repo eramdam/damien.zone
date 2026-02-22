@@ -25,6 +25,10 @@ export default defineConfig({
     enabled: false,
   },
 
+  server: {
+    port: 8080,
+  },
+
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
   compressHTML: false,
   markdown: {

@@ -1,5 +1,7 @@
 @import url("./redesign.reset.css");
 
+@import url("./comentario.css");
+
 /* Fonts and sizes. */
 :root {
   --font-fallback-main: system-ui, sans-serif;

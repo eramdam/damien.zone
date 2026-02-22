@@ -4,6 +4,11 @@ import CommonIncludes from "../components/CommonIncludes.redesign.astro";
 import Footer from "../components/Footer.redesign.astro";
 import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.redesign.astro";
+import SvgSpritesheet from "../components/svgSpritesheet.astro";
+
+interface Props {
+  isPost: boolean;
+}
 ---
 
 <!doctype html>
@@ -12,7 +17,12 @@ import Navigation from "../components/Navigation.redesign.astro";
     <Head {...Astro.props} />
     <CommonIncludes />
   </head>
-  <Body class:list={[Astro.props.frontmatter?.class_name, "damien-redesign"]}>
+  <!-- @ts-expect-error -->
+  <Body
+    class:list={[Astro.props.frontmatter?.class_name, "damien-redesign"]}
+    isPost={Astro.props.isPost}
+  >
+    <SvgSpritesheet />
     <Navigation />
     <main>
       <slot />

@@ -21,6 +21,6 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 ---
 
-<BaseLayout {...Astro.props.post}>
+<BaseLayout {...Astro.props.post} isPost>
   <BlogPost postProps={Astro.props.post} />
 </BaseLayout>

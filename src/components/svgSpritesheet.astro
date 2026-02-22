@@ -1,0 +1,19 @@
+---
+import path from "node:path";
+const svgSpritesheet = Object.entries(
+  import.meta.glob("../assets/anon-avatars/*.svg", {
+    eager: true,
+    query: "?raw",
+  }),
+)
+  .map(([key, value]) => {
+    const id = path.basename(key).replace(".svg", "");
+    // @ts-expect-error
+    return String(value.default)
+      .replace("<svg", `<symbol id=${id}`)
+      .replace("</svg", "</symbol");
+  })
+  .join("\n");
+---
+
+<svg id="svg-sprites" style="display: none;" set:html={svgSpritesheet} />
