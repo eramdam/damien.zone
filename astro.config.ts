@@ -26,7 +26,7 @@ export default defineConfig({
   },
 
   server: {
-    port: 8080,
+    allowedHosts: [".ngrok.app"],
   },
 
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
@@ -51,7 +51,7 @@ export default defineConfig({
   },
   integrations: [
     expressiveCode({
-      themes: ["github-light"],
+      themes: ["github-dark", "github-light"],
       styleOverrides: {
         frames: {
           frameBoxShadowCssValue: "none",
