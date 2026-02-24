@@ -1,16 +1,29 @@
-import satori from "satori";
+import { Renderer } from "@takumi-rs/core";
+import { fromJsx } from "@takumi-rs/helpers/jsx";
 import fs from "node:fs";
-import { optimize } from "svgo";
-import sharp from "sharp";
 
 (async () => {
   const fontBuffer = fs.readFileSync(
-    "./src/assets/styles/@fontsource/young-serif/files/young-serif-latin-400-normal.woff",
+    "./node_modules/@fontsource-variable/merriweather/files/merriweather-latin-standard-normal.woff2",
   );
-  const imgBase64 = fs.readFileSync("./src/static/avatar/avatar-border.png", {
-    encoding: "base64",
+  const imgData = fs.readFileSync("./public/avatar/avatar-border.png");
+
+  const renderer = new Renderer({
+    fonts: [
+      {
+        name: "Merriweather Variable",
+        data: fontBuffer,
+      },
+    ],
+    persistentImages: [
+      {
+        src: "avatar",
+        data: imgData,
+      },
+    ],
   });
-  const svg = await satori(
+
+  const node = await fromJsx(
     <div
       style={{
         height: "100%",
@@ -19,7 +32,8 @@ import sharp from "sharp";
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#212028",
+        backgroundColor: "#1e1517",
+        fontFamily: "Merriweather Variable",
       }}
     >
       <div
@@ -29,7 +43,7 @@ import sharp from "sharp";
         }}
       >
         <img
-          src={`data:image/png;base64,${imgBase64}`}
+          src="avatar"
           height={80}
           width={80}
           style={{
@@ -40,36 +54,23 @@ import sharp from "sharp";
           style={{
             color: "hsl(0, 33%, 96%)",
             fontSize: 36,
-            fontWeight: "normal",
+            fontWeight: "777",
             padding: "5px 14px",
             backgroundColor: "#be133c",
             borderRadius: 16,
           }}
         >
-          damien's zone
+          damien.zone
         </h1>
       </div>
     </div>,
-    {
-      width: 512,
-      height: 256,
-      fonts: [
-        {
-          name: "Young Serif",
-          data: fontBuffer,
-          weight: 400,
-          style: "normal",
-        },
-      ],
-    },
   );
-  const result = optimize(svg, {
-    multipass: true,
+
+  const image = await renderer.render(node, {
+    width: 512,
+    height: 256,
+    format: "webp",
   });
 
-  await sharp(Buffer.from(result.data))
-    .webp({
-      lossless: true,
-    })
-    .toFile("./src/assets/open_graph.webp");
+  fs.writeFileSync("./public/open_graph.webp", Buffer.from(image));
 })();
