@@ -113,106 +113,109 @@ header {
   display: none;
 }
 
-@supports (backdrop-filter: blur(0)) and (mask-image: none) and
-  (width: calc(10px * pow(5, 2))) {
-  /* Anything that has been anchored to should have extra scroll margin */
-  :target {
-    scroll-margin-block: 10ex;
-  }
+@media (min-width: 640px) {
+  @supports (backdrop-filter: blur(0)) and (mask-image: none) and
+    (width: calc(10px * pow(5, 2))) {
+    /* Anything that has been anchored to should have extra scroll margin */
+    :target {
+      scroll-margin-block: 10ex;
+    }
 
-  header {
-    position: sticky;
-    background-color: transparent;
-  }
+    header {
+      position: sticky;
+      background-color: transparent;
+      z-index: 9;
+    }
 
-  .progressive-blur-container {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    display: block;
-    position: absolute;
-    inset: 0;
-    transform: scaleY(-1);
-  }
+    .progressive-blur-container {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: block;
+      position: absolute;
+      inset: 0;
+      transform: scaleY(-1);
+    }
 
-  .progressive-blur-container > .blur-filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    .progressive-blur-container > .blur-filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
 
-    --final-blur: 64px;
-  }
+      --final-blur: 64px;
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(1) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 6)));
-    mask: linear-gradient(
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 10%,
-      rgba(0, 0, 0, 1) 30%,
-      rgba(0, 0, 0, 0) 40%
-    );
-  }
+    .progressive-blur-container > .blur-filter:nth-child(1) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 6)));
+      mask: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 10%,
+        rgba(0, 0, 0, 1) 30%,
+        rgba(0, 0, 0, 0) 40%
+      );
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(2) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 5)));
-    mask: linear-gradient(
-      rgba(0, 0, 0, 0) 10%,
-      rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 1) 40%,
-      rgba(0, 0, 0, 0) 50%
-    );
-  }
+    .progressive-blur-container > .blur-filter:nth-child(2) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 5)));
+      mask: linear-gradient(
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 0) 50%
+      );
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(3) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 4)));
-    mask: linear-gradient(
-      rgba(0, 0, 0, 0) 15%,
-      rgba(0, 0, 0, 1) 30%,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(0, 0, 0, 0) 60%
-    );
-  }
+    .progressive-blur-container > .blur-filter:nth-child(3) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 4)));
+      mask: linear-gradient(
+        rgba(0, 0, 0, 0) 15%,
+        rgba(0, 0, 0, 1) 30%,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0) 60%
+      );
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(4) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 3)));
-    mask: linear-gradient(
-      rgba(0, 0, 0, 0) 20%,
-      rgba(0, 0, 0, 1) 40%,
-      rgba(0, 0, 0, 1) 60%,
-      rgba(0, 0, 0, 0) 70%
-    );
-  }
+    .progressive-blur-container > .blur-filter:nth-child(4) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 3)));
+      mask: linear-gradient(
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0) 70%
+      );
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(5) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 2)));
-    mask: linear-gradient(
-      rgba(0, 0, 0, 0) 40%,
-      rgba(0, 0, 0, 1) 60%,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0) 90%
-    );
-  }
+    .progressive-blur-container > .blur-filter:nth-child(5) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 2)));
+      mask: linear-gradient(
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0) 90%
+      );
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(6) {
-    backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 1)));
-    mask: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%);
-  }
+    .progressive-blur-container > .blur-filter:nth-child(6) {
+      backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 1)));
+      mask: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%);
+    }
 
-  .progressive-blur-container > .blur-filter:nth-child(7) {
-    z-index: 10;
-    background-filter: blur(var(--final-blur));
-    mask: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
-  }
+    .progressive-blur-container > .blur-filter:nth-child(7) {
+      z-index: 10;
+      background-filter: blur(var(--final-blur));
+      mask: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
+    }
 
-  .progressive-blur-container > .gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(transparent, var(--color-bg-bg-header));
+    .progressive-blur-container > .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(transparent, var(--color-bg-bg-header));
+    }
   }
 }
 
@@ -620,4 +623,32 @@ body.index {
   max-width: 250px;
   margin: 100px auto;
   margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 20px;
+
+    & nav {
+      grid-column: unset;
+    }
+  }
+
+  ul.blog-posts li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul.blog-posts li span {
+    flex: unset;
+  }
+
+  footer .footer-button {
+    margin-top: 1em;
+    display: inline-block;
+    float: unset;
+  }
 }
