@@ -524,28 +524,6 @@ p:has(+ .buttons-mybutton) {
   margin-bottom: 20px;
 }
 
-/* Gallery stuff */
-.gallery ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 300px;
-  grid-gap: 8px;
-  padding: 20px 0;
-  list-style: none;
-}
-
-@media (max-width: var(--mobile-small)) {
-  .gallery ul {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px;
-  }
-}
-
-.big-image + .gallery ul {
-  margin: 0;
-  padding-top: 0;
-}
-
 .post-datetime {
   font-style: italic;
 }
