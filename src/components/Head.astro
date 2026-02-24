@@ -22,7 +22,6 @@ const image = contentProps?.image
   ? contentProps.image
   : new URL("/open_graph.webp", Astro.site);
 
-console.log(contentProps, Astro.site);
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);
 ---
