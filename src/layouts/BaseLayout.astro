@@ -7,7 +7,12 @@ import Navigation from "../components/Navigation.redesign.astro";
 import SvgSpritesheet from "../components/svgSpritesheet.astro";
 
 interface Props {
-  isPost: boolean;
+  isPost?: boolean;
+  content?: {
+    title?: string;
+    description: string;
+  };
+  frontmatter?: Record<string, string>;
 }
 ---
 

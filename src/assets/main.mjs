@@ -25,7 +25,7 @@
 })();
 
 function replaceAnonAvatars(mainPost) {
-  new MutationObserver((_muts, obs) => {
+  new MutationObserver((_muts) => {
     if (
       mainPost.querySelectorAll(
         "[id^=comentario-]:not([data-anonavatar]) .comentario-avatar.comentario-bg-anonymous",

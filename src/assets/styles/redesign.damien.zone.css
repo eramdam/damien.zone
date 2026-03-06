@@ -248,6 +248,11 @@ a.logo {
   padding: 2px 12px;
   border-radius: 12px;
   text-decoration: none;
+  --hover-bg: color-mix(in srgb, black 30%, var(--color-bg-header));
+
+  &:hover {
+    background-color: var(--hover-bg);
+  }
 
   span {
     font-weight: 200;
@@ -632,7 +637,7 @@ body.index {
 
 :is(body.links .links-links, .tags-list) {
   padding-left: 0;
-  column-count: 3;
+  column-count: 2;
   text-align: center;
 }
 
