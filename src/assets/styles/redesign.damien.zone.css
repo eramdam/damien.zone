@@ -1,6 +1,7 @@
 @import url("./redesign.reset.css");
 @import url("./comentario.css");
 @import url("./image-gallery.css");
+@import url("./fonts.css");
 
 /* Fonts and sizes. */
 :root {
@@ -14,6 +15,7 @@
 
   --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
   --font-logo: "Merriweather Variable", var(--font-fallback-serif);
+  --font-logo: var(--font-serif);
   --font-monospace:
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
   --font-serif: "Merriweather Variable", var(--font-fallback-serif);
@@ -21,10 +23,10 @@
   /* --font-serif: "OT Jubilee", var(--font-fallback-serif); */
   /* --font-serif: "PP Pangaia", var(--font-fallback-serif); */
   /* --font-serif: "OT Jubilee Ruby", var(--font-fallback-serif); */
-  /* --font-serif: "PP Right Serif", var(--font-fallback-serif); */
   /* --font-serif: "PP Writer", var(--font-fallback-serif); */
   /* --font-serif: "PP Editorial New", var(--font-fallback-serif); */
   /* --font-serif: "PP Woodland", var(--font-fallback-serif); */
+  --font-serif: "PP Right Serif Web", var(--font-fallback-serif);
 
   --font-size-main: 1.2rem;
   --font-size-small: 1rem;
@@ -243,7 +245,7 @@ a.logo {
   font-weight: 777;
   color: var(--color-fg-header);
   background-color: var(--color-bg-header);
-  padding: 5px 12px;
+  padding: 2px 12px;
   border-radius: 12px;
   text-decoration: none;
 
@@ -304,6 +306,7 @@ footer {
 
 h1.greeting {
   font-family: var(--font-serif);
+  font-synthesis: none;
   font-weight: 550;
   font-size: 3rem;
 }
@@ -547,7 +550,6 @@ body.index {
   /* order: 1; */
   /* flex: 1; */
   font-size: var(--font-size-small);
-  font-style: italic;
   font-family: var(--font-serif);
   text-align: right;
   min-width: 12ch;
