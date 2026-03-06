@@ -37,7 +37,7 @@
     "@types/node": "^22.15.3",
     "@types/sanitize-html": "^2.16.0",
     "@types/slug": "^5.0.9",
-    "astro": "^5.17.1",
+    "astro": "^5.18.0",
     "astro-broken-link-checker": "imazen/astro-broken-link-checker",
     "astro-expressive-code": "^0.41.2",
     "cheerio": "^1.0.0",
