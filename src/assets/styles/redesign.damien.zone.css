@@ -9,13 +9,22 @@
     ui-monospace, "Cascadia Code", "SFMono-Regular", "Menlo", "Monaco",
     "Consolas", "Liberation Mono", "Courier New", monospace;
   --font-fallback-serif:
-    Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
-    "Georgia Pro", Georgia, serif;
+    Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen,
+    serif;
 
+  --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
+  --font-logo: "Merriweather Variable", var(--font-fallback-serif);
   --font-monospace:
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
   --font-serif: "Merriweather Variable", var(--font-fallback-serif);
-  --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
+
+  /* --font-serif: "OT Jubilee", var(--font-fallback-serif); */
+  /* --font-serif: "PP Pangaia", var(--font-fallback-serif); */
+  /* --font-serif: "OT Jubilee Ruby", var(--font-fallback-serif); */
+  /* --font-serif: "PP Right Serif", var(--font-fallback-serif); */
+  /* --font-serif: "PP Writer", var(--font-fallback-serif); */
+  /* --font-serif: "PP Editorial New", var(--font-fallback-serif); */
+  /* --font-serif: "PP Woodland", var(--font-fallback-serif); */
 
   --font-size-main: 1.2rem;
   --font-size-small: 1rem;
@@ -230,7 +239,7 @@ header > a.logo {
 a.logo {
   grid-column: 1;
   font-size: 1.4em;
-  font-family: var(--font-serif);
+  font-family: var(--font-logo);
   font-weight: 777;
   color: var(--color-fg-header);
   background-color: var(--color-bg-header);
@@ -240,7 +249,7 @@ a.logo {
 
   span {
     font-weight: 200;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 }
 
@@ -390,7 +399,12 @@ main {
 
 main {
   .post-datetime {
+    font-family: var(--font-serif);
+    font-style: italic;
     margin-block: 0.5em;
+  }
+
+  .post-datetime {
   }
 
   p:empty {
@@ -523,15 +537,21 @@ body.index {
   flex-direction: row;
   align-items: center;
   position: relative;
+  gap: 10px;
+}
+
+.blog-posts li a {
 }
 
 .blog-posts li span {
-  order: 1;
-  font-variant-numeric: tabular-nums;
-  flex: 1;
+  /* order: 1; */
+  /* flex: 1; */
   font-size: var(--font-size-small);
-  font-style: normal;
+  font-style: italic;
+  font-family: var(--font-serif);
   text-align: right;
+  min-width: 12ch;
+  text-align: left;
 }
 
 .blog-posts p {
