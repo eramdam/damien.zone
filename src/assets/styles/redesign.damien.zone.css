@@ -17,7 +17,6 @@
   --font-logo: var(--font-serif);
   --font-monospace:
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
-  --font-serif: "Merriweather Variable", var(--font-fallback-serif);
 
   /* --font-serif: "OT Jubilee", var(--font-fallback-serif); */
   /* --font-serif: "PP Pangaia", var(--font-fallback-serif); */
@@ -574,7 +573,6 @@ body.index {
 
 .blog-feed h3 {
   display: flex;
-  font-family: var(--font-monospace);
 }
 
 .blog-feed h3 hr {
