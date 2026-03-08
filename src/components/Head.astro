@@ -20,7 +20,7 @@ if (
 
 const image = contentProps?.image
   ? contentProps.image
-  : new URL("/open_graph.png", Astro.site);
+  : new URL("/open_graph.webp", Astro.site);
 
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);

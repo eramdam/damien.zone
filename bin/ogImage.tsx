@@ -59,12 +59,13 @@ import sharp from "sharp";
         <h1
           style={{
             color: "#f7f1f1",
-            fontSize: 50,
-            borderRadius: 18,
+            fontSize: 70,
+            borderRadius: 20,
             fontWeight: 600,
-            padding: "5px 14px",
+            padding: "5px 16px",
             backgroundColor: "#b51d3e",
-            filter: `drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, #b51d3e))`,
+            // filter: `drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, #b51d3e))`,
+            filter: `drop-shadow(0 6px 12px color-mix(in srgb, transparent 50%, #b51d3e))`,
           }}
         >
           damien
@@ -83,12 +84,12 @@ import sharp from "sharp";
   );
 
   const image = await renderer.render(node, {
-    width: 512 * 2,
-    height: 256 * 2,
-    format: "png",
+    width: 600 * 2,
+    height: 315 * 2,
+    format: "webp",
     devicePixelRatio: 2,
     stylesheets,
   });
 
-  fs.writeFileSync("./public/open_graph.png", Buffer.from(image));
+  fs.writeFileSync("./public/open_graph.webp", Buffer.from(image));
 })();
