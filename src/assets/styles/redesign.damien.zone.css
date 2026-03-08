@@ -371,8 +371,16 @@ main {
     }
   }
 
+  figure[data-type] {
+    text-align: center;
+  }
+
   figure {
     margin-inline: 0;
+  }
+  figure > a:has(img) {
+    display: inline-block;
+    line-height: 0;
   }
 
   figure img {
@@ -685,4 +693,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-serif);
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed var(--color-accent);
 }

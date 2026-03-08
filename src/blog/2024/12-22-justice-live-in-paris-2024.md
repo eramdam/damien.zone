@@ -29,13 +29,13 @@ Oh and also, I renamed this blog to "damien's zone". It's not super creative, bu
 See y'all in the new year ❤️,  
 \- damien
 
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218212945.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218212945.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218214206.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218214206.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218215830.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218215830.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222617.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222617.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222629.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222629.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223033.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223033.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223039.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223039.jpg" loading="lazy" decoding="async" alt=""></a>
-<a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223450.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223450.jpg" loading="lazy" decoding="async" alt=""></a>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218212945.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218212945.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218214206.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218214206.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218215830.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218215830.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222617.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222617.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218222629.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218222629.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223033.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223033.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223039.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223039.jpg" loading="lazy" decoding="async" alt=""></a></figure>
+<figure><a href="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_20241218223450.jpg"><img src="https://damiensfiles.b-cdn.net/justice-paris-2024/DMN_INSTA_20241218223450.jpg" loading="lazy" decoding="async" alt=""></a></figure>
 
 [^1]: Boston, San Francisco, and now Paris.
