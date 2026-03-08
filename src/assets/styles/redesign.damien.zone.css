@@ -437,7 +437,8 @@ footer {
     color: var(--color-bg-main);
   }
 
-  figure a:any-link:hover {
+  figure a:any-link:hover,
+  a:any-link:has(img):hover {
     background-color: transparent;
     color: none;
   }
