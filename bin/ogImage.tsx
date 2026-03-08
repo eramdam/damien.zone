@@ -1,7 +1,6 @@
 import { Renderer } from "@takumi-rs/core";
 import { fromJsx } from "@takumi-rs/helpers/jsx";
 import fs from "node:fs";
-import sharp from "sharp";
 
 (async () => {
   const fontBuffer = fs.readFileSync(
