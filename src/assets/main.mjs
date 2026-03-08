@@ -1,27 +1,39 @@
 (() => {
-  const urlsAllowList = ["damien.zone", "localhost:8080"];
-  if (urlsAllowList.every((url) => !window.location.href.includes(url))) {
-    return;
+  const commentUrlsAllowList = ["damien.zone", "localhost:8080"];
+
+  if (commentUrlsAllowList.some((url) => window.location.href.includes(url))) {
+    const mainPost = document.querySelector("body.post > main");
+    if (mainPost) {
+      mainPost.insertAdjacentHTML(
+        "beforeend",
+        `<comentario-comments live-update="false" no-fonts="true"></comentario-comments>`,
+      );
+
+      const script = document.createElement("script");
+      script.setAttribute(
+        "src",
+        "https://comments.friendsofeggbug.org/comentario.js",
+      );
+      mainPost.insertAdjacentElement("beforeend", script);
+
+      replaceAnonAvatars(mainPost);
+    }
   }
-  const mainPost = document.querySelector("body.post > main");
-  // If we're not on a post page, nothing to do.
-  if (!mainPost) {
-    return;
+
+  const avatar = document.querySelector(".index-avatar img");
+
+  if (avatar instanceof HTMLImageElement) {
+    if (avatar.complete) {
+      document.querySelector(".img-shadow.hidden")?.classList.remove("hidden");
+    } else {
+      avatar.onload = () => {
+        console.log("avatar.onload");
+        document
+          .querySelector(".img-shadow.hidden")
+          ?.classList.remove("hidden");
+      };
+    }
   }
-
-  mainPost.insertAdjacentHTML(
-    "beforeend",
-    `<comentario-comments live-update="false" no-fonts="true"></comentario-comments>`,
-  );
-
-  const script = document.createElement("script");
-  script.setAttribute(
-    "src",
-    "https://comments.friendsofeggbug.org/comentario.js",
-  );
-  mainPost.insertAdjacentElement("beforeend", script);
-
-  replaceAnonAvatars(mainPost);
 })();
 
 function replaceAnonAvatars(mainPost) {

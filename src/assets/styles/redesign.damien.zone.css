@@ -478,12 +478,6 @@ footer .footer-button {
 }
 
 body.index {
-  .index-block {
-    /* display: grid; */
-    /* gap: 20px; */
-    /* grid-template-columns: 1fr 150px; */
-  }
-
   .index-avatar {
     float: right;
     /* filter: drop-shadow(0 3px 6px rgb(6 188 147 / 0.5)); */
@@ -500,6 +494,10 @@ body.index {
     mask-position: center;
   }
 
+  .img-shadow.hidden {
+    opacity: 0;
+  }
+
   .img-shadow {
     --avatar-offset: 2px;
     --avatar-size-shadow: calc(var(--avatar-size) + var(--avatar-offset));
@@ -508,7 +506,9 @@ body.index {
     top: calc(var(--avatar-offset) / 2);
     filter: blur(6px);
     opacity: 0.6;
-    transition: filter 200ms ease;
+    transition-property: opacity, filter;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
   }
 
   .index-avatar:hover .img-shadow {
@@ -516,7 +516,7 @@ body.index {
   }
 
   .index-avatar .img-shadow::after {
-    background-image: url("/avatar/portrait.jpg");
+    background-image: url("/avatar/portrait.webp");
     background-size: 100%;
     content: "";
     position: relative;
@@ -529,6 +529,7 @@ body.index {
     max-width: var(--avatar-size);
     margin-left: 20px;
     z-index: 1;
+    position: relative;
   }
 
   [data-footnotes] {
