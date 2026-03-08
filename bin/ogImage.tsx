@@ -60,7 +60,7 @@ import sharp from "sharp";
           style={{
             color: "#f7f1f1",
             fontSize: 50,
-            borderRadius: 16,
+            borderRadius: 18,
             fontWeight: 600,
             padding: "5px 14px",
             backgroundColor: "#b51d3e",
