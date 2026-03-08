@@ -3,10 +3,6 @@ import { fromJsx } from "@takumi-rs/helpers/jsx";
 import fs from "node:fs";
 
 (async () => {
-  const fontBuffer = fs.readFileSync(
-    "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
-  );
-
   const renderer = new Renderer({
     fonts: [
       {
