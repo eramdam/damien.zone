@@ -1,29 +1,43 @@
 import { Renderer } from "@takumi-rs/core";
 import { fromJsx } from "@takumi-rs/helpers/jsx";
 import fs from "node:fs";
+import sharp from "sharp";
 
 (async () => {
   const fontBuffer = fs.readFileSync(
-    "./node_modules/@fontsource-variable/merriweather/files/merriweather-latin-standard-normal.woff2",
+    "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
   );
-  const imgData = fs.readFileSync("./public/avatar/avatar-border.png");
 
   const renderer = new Renderer({
     fonts: [
       {
-        name: "Merriweather Variable",
-        data: fontBuffer,
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
+        ),
+        weight: 600,
+        style: "normal",
       },
-    ],
-    persistentImages: [
       {
-        src: "avatar",
-        data: imgData,
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Medium.woff",
+        ),
+        weight: 500,
+        style: "normal",
+      },
+      {
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Light.woff",
+        ),
+        weight: 300,
+        style: "normal",
       },
     ],
   });
 
-  const node = await fromJsx(
+  const { node, stylesheets } = await fromJsx(
     <div
       style={{
         height: "100%",
@@ -32,8 +46,8 @@ import fs from "node:fs";
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#1e1517",
-        fontFamily: "Merriweather Variable",
+        backgroundColor: "#f7f1f1",
+        fontFamily: "PP Right Serif Bold",
       }}
     >
       <div
@@ -42,35 +56,39 @@ import fs from "node:fs";
           alignItems: "center",
         }}
       >
-        <img
-          src="avatar"
-          height={80}
-          width={80}
-          style={{
-            marginRight: 14,
-          }}
-        />
         <h1
           style={{
-            color: "hsl(0, 33%, 96%)",
-            fontSize: 36,
-            fontWeight: "777",
-            padding: "5px 14px",
-            backgroundColor: "#be133c",
+            color: "#f7f1f1",
+            fontSize: 50,
             borderRadius: 16,
+            fontWeight: 600,
+            padding: "5px 14px",
+            backgroundColor: "#b51d3e",
+            filter: `drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, #b51d3e))`,
           }}
         >
-          damien.zone
+          damien
+          <span
+            style={{
+              fontWeight: 200,
+              color: "rgb(247 241 241 / 40%)",
+            }}
+          >
+            .
+          </span>
+          zone
         </h1>
       </div>
     </div>,
   );
 
   const image = await renderer.render(node, {
-    width: 512,
-    height: 256,
-    format: "webp",
+    width: 512 * 2,
+    height: 256 * 2,
+    format: "png",
+    devicePixelRatio: 2,
+    stylesheets,
   });
 
-  fs.writeFileSync("./public/open_graph.webp", Buffer.from(image));
+  fs.writeFileSync("./public/open_graph.png", Buffer.from(image));
 })();

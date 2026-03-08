@@ -14,7 +14,6 @@
     serif;
 
   --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
-  --font-logo: "Merriweather Variable", var(--font-fallback-serif);
   --font-logo: var(--font-serif);
   --font-monospace:
     "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
@@ -242,7 +241,7 @@ a.logo {
   grid-column: 1;
   font-size: 1.4em;
   font-family: var(--font-logo);
-  font-weight: 777;
+  font-weight: 700;
   color: var(--color-fg-header);
   background-color: var(--color-bg-header);
   padding: 2px 12px;
