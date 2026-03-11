@@ -14,8 +14,10 @@ Here is how it's pronounced in French:
 
 <audio controls src="https://upload.wikimedia.org/wikipedia/commons/5/51/LL-Q150_%28fra%29-Mecanautes-Damien.wav"></audio><br>
 
-But if you're a native English speaker, you'll probably say [Damian](https://en.wiktionary.org/wiki/Damian#English) `/ˈdeɪmɪən/`, which sounds like this:
+But if you're a native English speaker, you'll probably say [Damian](https://en.wiktionary.org/wiki/Damian#English)[^1] `/ˈdeɪmɪən/`, which sounds like this:
 
 <audio controls src="https://upload.wikimedia.org/wikipedia/commons/8/83/LL-Q1860_%28eng%29-Vealhurl-Damian.wav"></audio>
 
 <small>Recordings from Wiktionary</small>
+
+[^1]: Which is just an alternative spelling of "Damien" in English, apparently.
