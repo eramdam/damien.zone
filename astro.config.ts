@@ -26,7 +26,7 @@ export default defineConfig({
   },
 
   server: {
-    allowedHosts: [".ngrok.app"],
+    allowedHosts: [".ngrok.app", ".ngrok-free.app"],
   },
 
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
