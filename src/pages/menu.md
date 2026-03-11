@@ -12,7 +12,7 @@ class_name: "menu"
 - [Credits](/credits)
 - [Links](/links)
 - [Projects](/projects)
-- [Tags](/projects)
+- [Tags](/tags)
 - [How do you pronounce your name?](/pronounciation)
 - [RSS feed](/feed.xml)
 
