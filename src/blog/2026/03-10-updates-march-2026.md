@@ -1,13 +1,12 @@
 ---
-title: "Updates: March 2026"
-slug: gray-hairdresser
-date: 2026-03-11T02:24:29.964Z
-tags: 
-- meta
-- redesign
-- css
-description: ''
-image: ''
+title: 'Updates: March 2026'
+slug: updates-march-2026
+date: 2026-03-11T03:58:38.044Z
+tags:
+  - meta
+  - redesign
+  - css
+description: 'New year, new design! Yippee.'
 ---
 
 It's been a minute, hasn't it. In fact it has been _checks notes_ **10 months**?! Oh dear, well. Better late than never I suppose. If you're reading this directly on the website (and you should, imo), you'll see that things look quite different! 
