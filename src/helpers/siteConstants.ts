@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "damien's zone",
+  name: "damien.zone",
   author: "Damien Erambert",
   year: new Date().getUTCFullYear(),
 };
