@@ -6,6 +6,7 @@ import type { Element, Root, RootContent } from "hast";
 import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
+import sitemap from "@astrojs/sitemap";
 
 const isDev = import.meta.env.DEV;
 
@@ -67,5 +68,6 @@ export default defineConfig({
       logFilePath: "broken-links.log", // Optional: specify the log file path
       checkExternalLinks: false, // Optional: check external links (currently, caching to disk is not supported, and it is slow )
     }),
+    sitemap(),
   ],
 });
