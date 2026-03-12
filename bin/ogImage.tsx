@@ -1,16 +1,38 @@
-import satori from "satori";
+import { Renderer } from "@takumi-rs/core";
+import { fromJsx } from "@takumi-rs/helpers/jsx";
 import fs from "node:fs";
-import { optimize } from "svgo";
-import sharp from "sharp";
 
 (async () => {
-  const fontBuffer = fs.readFileSync(
-    "./src/assets/styles/@fontsource/young-serif/files/young-serif-latin-400-normal.woff",
-  );
-  const imgBase64 = fs.readFileSync("./src/static/avatar/avatar-border.png", {
-    encoding: "base64",
+  const renderer = new Renderer({
+    fonts: [
+      {
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
+        ),
+        weight: 600,
+        style: "normal",
+      },
+      {
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Medium.woff",
+        ),
+        weight: 500,
+        style: "normal",
+      },
+      {
+        name: "PP Right Serif",
+        data: fs.readFileSync(
+          "./src/assets/fonts/pp-right/PP Right Serif - Light.woff",
+        ),
+        weight: 300,
+        style: "normal",
+      },
+    ],
   });
-  const svg = await satori(
+
+  const { node, stylesheets } = await fromJsx(
     <div
       style={{
         height: "100%",
@@ -19,7 +41,8 @@ import sharp from "sharp";
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#212028",
+        backgroundColor: "#f7f1f1",
+        fontFamily: "PP Right Serif Bold",
       }}
     >
       <div
@@ -28,48 +51,40 @@ import sharp from "sharp";
           alignItems: "center",
         }}
       >
-        <img
-          src={`data:image/png;base64,${imgBase64}`}
-          height={80}
-          width={80}
-          style={{
-            marginRight: 14,
-          }}
-        />
         <h1
           style={{
-            color: "hsl(0, 33%, 96%)",
-            fontSize: 36,
-            fontWeight: "normal",
-            padding: "5px 14px",
-            backgroundColor: "#be133c",
-            borderRadius: 16,
+            color: "#f7f1f1",
+            fontSize: 70,
+            borderRadius: 20,
+            fontWeight: 600,
+            padding: "5px 16px",
+            backgroundColor: "#b51d3e",
+            // filter: `drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, #b51d3e))`,
+            filter: `drop-shadow(0 6px 12px color-mix(in srgb, transparent 50%, #b51d3e))`,
           }}
         >
-          damien's zone
+          damien
+          <span
+            style={{
+              fontWeight: 200,
+              color: "rgb(247 241 241 / 40%)",
+            }}
+          >
+            .
+          </span>
+          zone
         </h1>
       </div>
     </div>,
-    {
-      width: 512,
-      height: 256,
-      fonts: [
-        {
-          name: "Young Serif",
-          data: fontBuffer,
-          weight: 400,
-          style: "normal",
-        },
-      ],
-    },
   );
-  const result = optimize(svg, {
-    multipass: true,
+
+  const image = await renderer.render(node, {
+    width: 600 * 2,
+    height: 315 * 2,
+    format: "webp",
+    devicePixelRatio: 2,
+    stylesheets,
   });
 
-  await sharp(Buffer.from(result.data))
-    .webp({
-      lossless: true,
-    })
-    .toFile("./src/assets/open_graph.webp");
+  fs.writeFileSync("./public/open_graph.webp", Buffer.from(image));
 })();

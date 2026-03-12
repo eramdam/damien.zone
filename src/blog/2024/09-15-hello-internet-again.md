@@ -29,15 +29,12 @@ as far as I can tell bearblog seems to strike a right balance between making it 
 [erambert.me](https://erambert.me) will still exist as "the website I give by default" both because I like the separation of "concerns" ('business card type site' versus 'just me writing') and also because _so much_ is tied to this domain that I refuse to mess with it.
 anyway!
 
-&nbsp;
 
 this is [damien.zone](https://damien.zone).
 
-&nbsp;
 
 I'm nervous, I'm sad, I have thoughts, I'm excited to try this. let's go and post about it like it's 2007 again.
 
-<br />
    
 pardon the mess, appreciate you <3
 

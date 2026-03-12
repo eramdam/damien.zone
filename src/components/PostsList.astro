@@ -15,14 +15,12 @@ const posts = Astro.props.posts;
       return (
         <li>
           <span>
-            <i>
-              <time
-                datetime={dateToRfc3339(postDate)}
-                title={formatDate(postDate, "iii, MMM d, y, ppp")}
-              >
-                {formatDate(postDate, "d MMM, yyyy")}
-              </time>
-            </i>
+            <time
+              datetime={dateToRfc3339(postDate)}
+              title={formatDate(postDate, "iii, MMM d, y, ppp")}
+            >
+              {formatDate(postDate, "d MMM, yyyy")}
+            </time>
           </span>
           <a href={`/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
         </li>

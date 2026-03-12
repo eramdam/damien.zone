@@ -1,9 +1,18 @@
 ---
-import "../assets/styles/damien.zone.css";
 import Body from "../components/Body.astro";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.redesign.astro";
 import Head from "../components/Head.astro";
-import Navigation from "../components/Navigation.astro";
+import Navigation from "../components/Navigation.redesign.astro";
+import SvgSpritesheet from "../components/svgSpritesheet.astro";
+
+interface Props {
+  isPost?: boolean;
+  content?: {
+    title?: string;
+    description: string;
+  };
+  frontmatter?: Record<string, string>;
+}
 ---
 
 <!doctype html>
@@ -11,12 +20,17 @@ import Navigation from "../components/Navigation.astro";
   <head>
     <Head {...Astro.props} />
   </head>
-
-  <Body class:list={Astro.props.frontmatter?.class_name}>
+  <!-- @ts-expect-error -->
+  <Body
+    class:list={[Astro.props.frontmatter?.class_name, "damien-redesign"]}
+    isPost={Astro.props.isPost}
+  >
+    <SvgSpritesheet />
     <Navigation />
     <main>
       <slot />
     </main>
+
     <Footer />
   </Body>
 </html>

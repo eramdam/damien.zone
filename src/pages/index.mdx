@@ -1,18 +1,33 @@
 ---
+title: "Index"
 layout: ../layouts/BaseLayout.astro
 description: french software engineer living and working in the Bay Area on web stuff
+class_name: "index"
 ---
+
 import IndexPostsList from '../components/IndexPostsList.astro';
 
-<p>French software engineer living and working in the Bay Area on web stuff.</p>
+# Welcome!
 
-<p>You may know me as "Damien", or "eramdam" or even "damien cohost", for <a href="https://bettertweetdeck.erambert.me">Better TweetDeck</a>, as "the guy with Sakamoto from Nichijou as an avatar", for the <a href="https://damien.zone/projects/#mac-themes-garden">Mac Themes Garden</a>, or <a href="https://www.macstories.net/news/vlc-2-0-for-mac-final-design-previewed-coming-this-week/">VLC for Mac OS X</a> and <a href="https://www.macstories.net/news/vlc-for-ios-returns-to-the-app-store/">VLC for iOS</a>.</p>
+<div class="index-block">
 
-<h3>Recent posts</h3>
+<div class="index-avatar">
+  <img width={140} height={140} src="/avatar/portrait.webp" alt=""  />
+  <span className="img-shadow hidden"></span>
+</div>
+
+Hello there! I'm Damien<sup><a href="/pronounciation">?</a></sup> (a.k.a "eramdam") <small>(he/him)</small>, I'm a software engineer living and working in the Bay Area. I am into a lot of things, mostly revolving around video games, music and computers. This is my website, feel free to read my [blogposts](/blog) and explore the rest of the site via the [menu](/menu).
+
+</div>
+
+## Recent posts
+
 <IndexPostsList />
 
-<p>More in the <a href="/blog">blog archive</a>, subscribe to the <a href="/feed.xml">RSS/Atom feed</a>.</p>
+More in the [blog](/blog), subscribe to the [RSS/Atom feed](/feed.xml).
 
-<h3>See me around</h3>
+## See me around
 
-<p>I'm on mastodon at <a href="https://social.erambert.me/@eramdam">@eramdam@erambert.me</a> and Bluesky as <a href="https://bsky.app/profile/damien.zone">@damien.zone</a>, and many <a href="/links">other places</a>.</p>
+- Mastodon: [@eramdam@erambert.me](https://social.erambert.me/@eramdam)
+- Bluesky: [@damien.zone](https://bsky.app/profile/damien.zone)
+- GitHub: [eramdam](https://github.com/eramdam)

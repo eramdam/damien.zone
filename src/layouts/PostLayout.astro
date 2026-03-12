@@ -1,11 +1,9 @@
 ---
-import "../assets/styles/damien.zone.css";
 import BlogPost from "../components/BlogPost.astro";
-
 import Body from "../components/Body.astro";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.redesign.astro";
 import Head from "../components/Head.astro";
-import Navigation from "../components/Navigation.astro";
+import Navigation from "../components/Navigation.redesign.astro";
 ---
 
 <!doctype html>
@@ -13,12 +11,15 @@ import Navigation from "../components/Navigation.astro";
   <head>
     <Head {...Astro.props} />
   </head>
-
-  <Body isPost>
+  <Body
+    class:list={[Astro.props.frontmatter?.class_name, "damien-redesign"]}
+    isPost
+  >
     <Navigation />
-    <main class="h-entry">
+    <main>
       <BlogPost postProps={Astro.props} />
     </main>
+
     <Footer />
   </Body>
 </html>
