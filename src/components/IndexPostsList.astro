@@ -1,17 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import { sortPosts } from "../helpers/siteHelpers";
 import PostsList from "./PostsList.astro";
 
-const posts = Object.values(
-  import.meta.glob("../blog/**/*.md", { eager: true }),
-);
+const posts = await getCollection("blog");
 ---
 
-<PostsList
-  posts={(
-    sortPosts(posts) as {
-      frontmatter: Record<string, string>;
-      compiledContent: any;
-    }[]
-  ).slice(0, 5)}
-/>
+<PostsList posts={sortPosts(posts).slice(0, 5)} />

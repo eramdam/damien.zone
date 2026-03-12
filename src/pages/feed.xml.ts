@@ -1,4 +1,6 @@
 import type { APIContext } from "astro";
+import { getCollection, render } from "astro:content";
+import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import he from "he";
 import { dateToRfc3339 } from "../helpers/componentHelpers";
 import { sanitizeHtmlForRSS } from "../helpers/rssHelpers";
@@ -6,30 +8,33 @@ import { SITE } from "../helpers/siteConstants";
 import { sortPosts } from "../helpers/siteHelpers";
 
 export async function GET(context: APIContext) {
-  const items = Object.values(
-    import.meta.glob("../blog/**/*.md", { eager: true }),
-  );
+  const items = await getCollection("blog");
   const sortedPosts = sortPosts(items);
-  const newestPostDate = dateToRfc3339(
-    new Date(sortedPosts[0].frontmatter.date),
-  );
+  const newestPostDate = dateToRfc3339(sortedPosts[0].data.date);
+
+  const container = await AstroContainer.create();
 
   const postEntries = await Promise.all(
     sortedPosts.map(async (post) => {
-      const postUrl = new URL(post.frontmatter.slug, context.url);
+      const postUrl = new URL(post.data.slug, context.url);
+
+      const { Content, remarkPluginFrontmatter } = await render(post);
+      const rawHtml = await container.renderToString(Content);
+
+      const updated = remarkPluginFrontmatter.updated ?? post.data.updated;
 
       return `
         <entry>
-          <title>${he.encode(post.frontmatter.title)}</title>
+          <title>${he.encode(post.data.title)}</title>
           <link href="${postUrl}" rel="alternate"/>
           <id>${postUrl}</id>
-          <published>${dateToRfc3339(new Date(post.frontmatter.date))}</published>
-          <updated>${post.frontmatter.updated ? dateToRfc3339(new Date(post.frontmatter.updated)) : ""}</updated>
+          <published>${dateToRfc3339(post.data.date)}</published>
+          <updated>${updated ? dateToRfc3339(new Date(updated)) : ""}</updated>
           <author>
             <name>${SITE.author}</name>
           </author>
           <content type="html">
-            ${he.encode(sanitizeHtmlForRSS(await post.compiledContent(), context))}
+            ${he.encode(sanitizeHtmlForRSS(rawHtml, context))}
             ${he.encode(`<a href="${postUrl}">Comments →</a>`)}
           </content>
         </entry>

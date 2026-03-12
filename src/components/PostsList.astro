@@ -2,7 +2,7 @@
 import { dateToRfc3339, formatDate } from "../helpers/componentHelpers";
 
 interface Props {
-  posts: { frontmatter: Record<string, string>; compiledContent: any }[];
+  posts: { data: { date: Date; slug: string; title: string } }[];
 }
 
 const posts = Astro.props.posts;
@@ -11,7 +11,7 @@ const posts = Astro.props.posts;
 <ul class="blog-posts">
   {
     posts.map((post) => {
-      const postDate = new Date(post.frontmatter.date);
+      const postDate = post.data.date;
       return (
         <li>
           <span>
@@ -22,7 +22,7 @@ const posts = Astro.props.posts;
               {formatDate(postDate, "d MMM, yyyy")}
             </time>
           </span>
-          <a href={`/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+          <a href={`/${post.data.slug}`}>{post.data.title}</a>
         </li>
       );
     })

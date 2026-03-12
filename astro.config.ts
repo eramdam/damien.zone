@@ -1,7 +1,11 @@
 import mdx from "@astrojs/mdx";
 import astroBrokenLinksChecker from "astro-broken-link-checker";
 import expressiveCode from "astro-expressive-code";
-import { defineConfig, passthroughImageService } from "astro/config";
+import {
+  defineConfig,
+  passthroughImageService,
+  fontProviders,
+} from "astro/config";
 import type { Element, Root, RootContent } from "hast";
 import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
@@ -25,6 +29,45 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Atkinson Hyperlegible Next",
+      cssVariable: "--font-atkinson-hyperlegible-next",
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Atkinson Hyperlegible Mono",
+      cssVariable: "--font-atkinson-hyperlegible-mono",
+    },
+    {
+      provider: fontProviders.local(),
+      name: "PP Right Serif",
+      cssVariable: "--font-pp-right",
+      optimizedFallbacks: false,
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            weight: 300,
+            style: "normal",
+            src: ["./src/assets/fonts/pp-right/PP Right Serif - Light.woff2"],
+          },
+          {
+            weight: 500,
+            style: "normal",
+            src: ["./src/assets/fonts/pp-right/PP Right Serif - Medium.woff2"],
+          },
+          {
+            weight: 600,
+            style: "normal",
+            src: ["./src/assets/fonts/pp-right/PP Right Serif - Bold.woff2"],
+          },
+        ],
+      },
+    },
+  ],
 
   server: {
     allowedHosts: [".ngrok.app", ".ngrok-free.app"],

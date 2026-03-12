@@ -1,11 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import PostsList from "../components/PostsList.astro";
 import { sortPosts } from "../helpers/siteHelpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = Object.values(
-  import.meta.glob("../drafts/*.md", { eager: true })
-);
+const posts = await getCollection("drafts");
 ---
 
 <BaseLayout content={{ description: "🤫" }}>
@@ -13,14 +12,11 @@ const posts = Object.values(
     posts={sortPosts(posts).map((p) => {
       return {
         ...p,
-        frontmatter: {
-          ...p.frontmatter,
-          slug: `drafts/${p.frontmatter.slug}`,
+        data: {
+          ...p.data,
+          slug: `drafts/${p.data.slug}`,
         },
       };
-    }) as {
-      frontmatter: Record<string, string>;
-      compiledContent: any;
-    }[]}
+    })}
   />
 </BaseLayout>
