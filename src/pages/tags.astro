@@ -1,14 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import { uniq } from "lodash-es";
 import slug from "slug";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const posts = Object.values(
-  import.meta.glob("../blog/**/*.md", { eager: true })
-);
+const posts = await getCollection("blog");
 
 const tags = uniq(
-  posts.flatMap((p: any) => {
-    return p.frontmatter.tags;
+  posts.flatMap((p) => {
+    return p.data.tags;
   })
 ).toSorted();
 ---

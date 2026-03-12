@@ -1,27 +1,29 @@
 ---
 import type { GetStaticPaths } from "astro";
-import assert from "node:assert";
+import { getCollection, render } from "astro:content";
 import BlogPost from "../../components/BlogPost.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-export const getStaticPaths = (() => {
-  const posts = Object.values(
-    import.meta.glob("../../drafts/*.md", { eager: true }),
-  );
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("drafts");
 
-  return posts.map((post: any) => {
-    assert(post.frontmatter.slug);
-
+  return posts.map((post) => {
     return {
       props: { post },
       params: {
-        post: post.frontmatter.slug,
+        post: post.data.slug,
       },
     };
   });
 }) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+const data = { ...post.data, ...remarkPluginFrontmatter };
 ---
 
-<BaseLayout {...Astro.props.post} isPost>
-  <BlogPost postProps={Astro.props.post} />
+<BaseLayout frontmatter={data} content={data} isPost>
+  <BlogPost data={data}>
+    <Content />
+  </BlogPost>
 </BaseLayout>

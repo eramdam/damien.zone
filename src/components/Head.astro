@@ -13,7 +13,8 @@ const description =
 
 if (
   !Astro.props.file?.includes("src/drafts") &&
-  Astro.url.pathname !== "/drafts/"
+  Astro.url.pathname !== "/drafts/" &&
+  !Astro.url.pathname.startsWith("/drafts/")
 ) {
   assert(description, `Missing description for ${canonicalURL}`);
 }
