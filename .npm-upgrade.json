@@ -1,0 +1,8 @@
+{
+  "ignore": {
+    "@types/node": {
+      "versions": "25.*",
+      "reason": "staying on node 24 for now"
+    }
+  }
+}
