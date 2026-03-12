@@ -15,7 +15,7 @@ I've been meaning to touch up my website's design for, uh, most of last year to 
 
 I've stuck to the excellent [Atkinson Hyperlegible Next](https://fontsource.org/fonts/atkinson-hyperlegible-next)[^1] as a body font and switched the headings from [Merriweather](https://fonts.google.com/specimen/Merriweather) to [Pangrampangram's Right Serif](https://pangrampangram.com/products/right-serif), I think they look quite neat.
 
-I've made the website overall feel a bit more "professional". Not that I intend to write super serious stuff or anything but I eventually want to make https://erambert.me redirect to this website and avoid maintaining two websites with a _very_ similar purpose[^2].
+I've made the website overall feel a bit more "professional". Not that I intend to write super serious stuff or anything but ~~I eventually want to make~~ I made https://erambert.me redirect to this website ~~and~~ to avoid maintaining two websites with a _very_ similar purpose[^2].
 
 ## Little details
 
