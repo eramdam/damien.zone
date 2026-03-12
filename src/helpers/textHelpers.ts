@@ -10,6 +10,10 @@ export const htmlToText = initHtmlToText({
     { selector: "a", options: { ignoreHref: true } },
     { selector: "figure", format: "skip" },
     { selector: "details", format: "skip" },
+    { selector: "h1", options: { uppercase: false } },
+    { selector: "h2", options: { uppercase: false } },
+    { selector: "h3", options: { uppercase: false } },
+    { selector: "h4", options: { uppercase: false } },
   ],
 });
 

@@ -427,7 +427,7 @@ There was still uncertainty around whether or not Musk would end up buying Twitt
 
 This was a very silly decision, so I decided to make fun of it in what would be the last major feature update for Better TweetDeck.
 
-![](https://user-images.githubusercontent.com/1409924/201475115-71e23d45-63e7-416d-a993-ee5ec22aba1b.png alt='Setting to change the checkmark icon for "Blue verified" users')
+![Setting to change the checkmark icon for "Blue verified" users](https://user-images.githubusercontent.com/1409924/201475115-71e23d45-63e7-416d-a993-ee5ec22aba1b.png)
 
 
 Unsurprisingly, this made some of the most boring people on Earth (those who want to pay 8 bucks to feel important online) very upset, so it was well worth it.

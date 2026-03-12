@@ -1,12 +1,10 @@
 ---
-import "@fontsource-variable/atkinson-hyperlegible-mono";
-import "@fontsource-variable/atkinson-hyperlegible-next";
-import "@fontsource-variable/merriweather";
-
 import assert from "node:assert";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
 import { htmlToText, truncateText } from "../helpers/textHelpers";
+import { Font } from "astro:assets";
+import "../assets/styles/redesign.damien.zone.css";
 
 const finalTitle = getTitleFromProps(Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -23,18 +21,23 @@ if (
 }
 
 const image = contentProps?.image
-  ? contentProps.image.startsWith("/")
-    ? new URL(contentProps.image, Astro.site)
-    : contentProps.image
+  ? contentProps.image
   : new URL("/open_graph.webp", Astro.site);
+
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
 <meta name="generator" content={Astro.generator} />
 
+<Font cssVariable="--font-pp-right-serif" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-next" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-mono" preload />
 <link rel="canonical" href={canonicalURL} />
 <link
   rel="alternate"
@@ -62,37 +65,23 @@ assert(finalTitle, `Missing description for ${canonicalURL}`);
 <meta property="og:image" content={image} />
 <meta
   name="theme-color"
-  content="#212028"
+  content="#1d1517"
   class="color-scheme-theme"
   media="(prefers-color-scheme: dark)"
 />
 <meta
   name="theme-color"
-  content="#F8F1F1"
+  content="#f9f1f1"
   class="color-scheme-theme"
   media="(prefers-color-scheme: light)"
 />
 <!-- Should be picked up by Discord -->
 <meta
   name="theme-color"
-  content="#be133c"
+  content="#b51d3e"
   class="color-scheme-discord"
   media="(min-width: 99999999999px)"
 />
-<script is:inline>
-  const isChromeAndroid =
-    navigator.userAgentData?.brands.some((b) =>
-      b.brand.includes("Google Chrome")
-    ) && navigator.userAgentData.mobile;
-  if (isChromeAndroid) {
-    document
-      .querySelectorAll('meta[name="theme-color"].color-scheme-theme')
-      .forEach((e) => e.remove());
-    document
-      .querySelector('meta[name="theme-color"].color-scheme-discord')
-      ?.removeAttribute("media");
-  }
-</script>
 
 <!-- Fediverse / verification things -->
 <link rel="me" href="https://social.erambert.me/@eramdam" />

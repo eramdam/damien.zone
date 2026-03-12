@@ -1,3 +1,5 @@
 feed.liquid
 *.md
 /src/public
+!src/pages/redesign.md
+!src/pages/index-redesign.md

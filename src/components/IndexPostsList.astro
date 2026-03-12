@@ -3,7 +3,7 @@ import { sortPosts } from "../helpers/siteHelpers";
 import PostsList from "./PostsList.astro";
 
 const posts = Object.values(
-  import.meta.glob("../blog/**/*.md", { eager: true })
+  import.meta.glob("../blog/**/*.md", { eager: true }),
 );
 ---
 

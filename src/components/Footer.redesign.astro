@@ -2,23 +2,26 @@
 import { SITE } from "../helpers/siteConstants";
 ---
 
-<footer class="main-block">
+<footer>
   <p>
-    20XX - {SITE.year} - Damien Erambert - <a href="/credits">credits</a> - <a
-      href="/links">links</a
-    >
+    20XX - {SITE.year} - &copy; Damien Erambert - <a href="/credits">credits</a>
+    - <a href="/links">links</a>
+
     <a
       href="https://macthemes.garden"
+      class="footer-button"
       target="_blank"
-      style="float:right;"
       title="Mac Themes Garden"
       ><img
         src="https://macthemes.garden/buttons/88x31_macthemes.garden.png"
         alt="Mac Themes Garden"
         style="image-rendering:pixelated;"
+        width="88"
+        height="31"
       /></a
     >
   </p>
 </footer>
 
-<script src="../assets/script.js"></script>
+<script src="../assets/main.mjs"></script>
+<script src="../assets/comments.mjs"></script>
