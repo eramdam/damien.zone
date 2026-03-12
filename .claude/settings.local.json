@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "mcp__astro-docs__search_astro_docs"
+    ]
+  }
+}

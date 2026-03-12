@@ -2,23 +2,15 @@
 import slug from "slug";
 import { SITE } from "../helpers/siteConstants";
 import { type PostContentProps } from "../helpers/siteHelpers";
-import { truncateHTML } from "../helpers/truncateHtml";
 import PostDate from "./PostDate.astro";
 
 interface Props {
-  postProps: Record<string, any>;
-  inFeed?: boolean;
+  data: Record<string, any>;
 }
 
-const postProps = Astro.props.postProps;
-const contentProps = (postProps.content ??
-  postProps.frontmatter) as PostContentProps;
-const title = contentProps.title;
-const baseCompiledContent = await postProps.compiledContent();
-const postUrl = new URL(postProps.frontmatter.slug, Astro.site);
-const finalContent = Astro.props.inFeed
-  ? truncateHTML(baseCompiledContent, 300, postUrl)
-  : baseCompiledContent;
+const data = Astro.props.data as PostContentProps & Record<string, any>;
+const title = data.title;
+const postUrl = new URL(data.slug, Astro.site);
 ---
 
 <div class="p-author h-card">
@@ -31,14 +23,16 @@ const finalContent = Astro.props.inFeed
 </h1>
 
 <p class="post-datetime">
-  <PostDate class="dt-published" date={new Date(contentProps.date)} />
+  <PostDate class="dt-published" date={data.date instanceof Date ? data.date : new Date(data.date)} />
 </p>
 
-<div class="e-content" set:html={finalContent} />
+<div class="e-content">
+  <slot />
+</div>
 {
-  contentProps.tags && (
+  data.tags && (
     <p class="tags">
-      {contentProps.tags.map((t) => {
+      {data.tags.map((t: string) => {
         return <a href={`/tag/${slug(t)}`} class="p-category" set:text={t} />;
       })}
     </p>

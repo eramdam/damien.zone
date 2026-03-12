@@ -19,7 +19,9 @@ import Navigation from "../components/Navigation.redesign.astro";
   >
     <Navigation />
     <main>
-      <BlogPost postProps={Astro.props} />
+      <BlogPost data={Astro.props.frontmatter ?? {}}>
+        <slot />
+      </BlogPost>
     </main>
 
     <Footer />

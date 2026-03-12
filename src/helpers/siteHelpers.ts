@@ -17,21 +17,19 @@ export function getTitleFromProps(astro: AstroGlobal) {
   return [titleFromProps, baseTitle].filter(Boolean).join(" | ");
 }
 
-export function sortPosts(posts: any[]) {
+export function sortPosts<T extends { data: { date: Date } }>(
+  posts: T[],
+): T[] {
   return posts.toSorted((a, b) => {
-    return (
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
-    );
+    return b.data.date.valueOf() - a.data.date.valueOf();
   });
 }
 
-// Convert this to content collection schema maybe?
 export interface PostContentProps {
   title?: string;
   description?: string;
   is_page?: boolean;
-  date: string;
+  date: Date;
   tags?: string[];
-  url: string;
+  slug: string;
 }

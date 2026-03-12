@@ -1,14 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import { groupBy } from "lodash-es";
 
 import { sortPosts } from "../helpers/siteHelpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostsList from "../components/PostsList.astro";
-const basePosts = sortPosts(
-  Object.values(import.meta.glob("../blog/**/*.md", { eager: true })),
-);
+const basePosts = sortPosts(await getCollection("blog"));
 const postsByYear = groupBy(basePosts, (p) => {
-  return new Date(p.frontmatter.date).getUTCFullYear();
+  return p.data.date.getUTCFullYear();
 });
 ---
 
