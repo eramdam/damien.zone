@@ -3,6 +3,8 @@ import assert from "node:assert";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
 import { htmlToText, truncateText } from "../helpers/textHelpers";
+import { Font } from "astro:assets";
+import "../assets/styles/redesign.damien.zone.css";
 
 const finalTitle = getTitleFromProps(Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -33,6 +35,9 @@ assert(finalTitle, `Missing description for ${canonicalURL}`);
 />
 <meta name="generator" content={Astro.generator} />
 
+<Font cssVariable="--font-pp-right-serif" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-next" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-mono" preload />
 <link rel="canonical" href={canonicalURL} />
 <link
   rel="alternate"
