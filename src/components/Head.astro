@@ -1,5 +1,6 @@
 ---
 import assert from "node:assert";
+import { Font } from "astro:assets";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
 import { htmlToText, truncateText } from "../helpers/textHelpers";
@@ -92,3 +93,6 @@ assert(finalTitle, `Missing description for ${canonicalURL}`);
   is:inline
   data-domain="damien.zone"
   src="https://p.erambert.me/js/script.js"></script>
+<Font cssVariable="--font-pp-right" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-next" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-mono" preload />
