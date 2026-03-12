@@ -1,13 +1,22 @@
 @import url("./redesign.reset.css");
 @import url("./comentario.css");
 @import url("./image-gallery.css");
+@import url("./fonts.css");
 
 /* Fonts and sizes. */
 :root {
-  --font-main: var(--font-atkinson-hyperlegible-next);
-  --font-serif: var(--font-pp-right-serif);
-  --font-monospace: var(--font-atkinson-hyperlegible-mono);
+  --font-fallback-main: system-ui, sans-serif;
+  --font-fallback-mono:
+    ui-monospace, "Cascadia Code", "SFMono-Regular", "Menlo", "Monaco",
+    "Consolas", "Liberation Mono", "Courier New", monospace;
+  --font-fallback-serif:
+    Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen,
+    serif;
+
+  --font-main: "Atkinson Hyperlegible Next Variable", var(--font-fallback-main);
   --font-logo: var(--font-serif);
+  --font-monospace:
+    "Atkinson Hyperlegible Mono Variable", var(--font-fallback-mono);
 
   /* --font-serif: "OT Jubilee", var(--font-fallback-serif); */
   /* --font-serif: "PP Pangaia", var(--font-fallback-serif); */
@@ -15,6 +24,7 @@
   /* --font-serif: "PP Writer", var(--font-fallback-serif); */
   /* --font-serif: "PP Editorial New", var(--font-fallback-serif); */
   /* --font-serif: "PP Woodland", var(--font-fallback-serif); */
+  --font-serif: "PP Right Serif Web", var(--font-fallback-serif);
 
   --font-size-main: 1.2rem;
   --font-size-small: 1rem;
