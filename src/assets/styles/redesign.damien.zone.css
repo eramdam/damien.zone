@@ -56,6 +56,7 @@
   --color-bg-header: var(--color-accent);
   --color-fg-header: var(--color-offwhite);
   --color-text: var(--color-offblack);
+  --color-emphasis: var(--color-black);
   --color-link: var(--color-accent-off);
   --color-blockquote-border: var(--color-accent);
   --color-code-bg: rgb(from var(--color-accent) r g b / 1);
@@ -68,6 +69,7 @@
     --color-accent: hsl(346 65% 55%);
     --color-offwhite: hsl(346, 16%, 10%);
     --color-offblack: hsl(346, 15%, 85%);
+    --color-emphasis: var(--color-white);
     --color-accent-off: color-mix(
       in srgb,
       var(--color-accent) 90%,
@@ -321,6 +323,11 @@ main {
     font-size: 0.8em;
     font-weight: bold;
     opacity: 0.8;
+  }
+
+  em,
+  strong {
+    color: var(--color-emphasis);
   }
 
   del {
