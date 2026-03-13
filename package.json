@@ -59,7 +59,6 @@
     "to-vfile": "^8.0.0",
     "truncate-html": "^1.2.2",
     "unist-util-visit": "^5.1.0",
-    "user-agent-data-types": "^0.4.2",
     "vfile": "^6.0.3"
   },
   "devDependencies": {
