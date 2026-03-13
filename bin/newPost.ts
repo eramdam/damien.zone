@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import { generateSlug } from "random-word-slugs";
 
-const defaultSlug = generateSlug(2);
+const defaultSlug = generateSlug(4);
 const date = new Date();
 const year = date.getFullYear();
 const prefix =
