@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { uniq } from "lodash-es";
+import { uniq } from "es-toolkit";
 import slug from "slug";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const posts = await getCollection("blog");
@@ -8,7 +8,7 @@ const posts = await getCollection("blog");
 const tags = uniq(
   posts.flatMap((p) => {
     return p.data.tags;
-  })
+  }),
 ).toSorted();
 ---
 
