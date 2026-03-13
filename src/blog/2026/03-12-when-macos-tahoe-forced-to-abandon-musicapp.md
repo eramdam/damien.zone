@@ -16,6 +16,7 @@ I've been meaning to write this post for *checks notes* months but, life got in 
 Those who know me know that I listen to [_a lot_](https://listenbrainz.org/user/Eramdam/) of music, it's the one thing that has been consistent for...uh...most of my life at this point? I started maintaining a music library back when Windows Media Player on Windows XP was _the_ shit, then like everyone else at the time, I found out about WinAmp. Then I started using iTunes, I _think_ I used it before getting a [1st gen iPod Nano](https://en.wikipedia.org/wiki/IPod_Nano#/media/File:KoolgiyBlackNano.JPG) but frankly it has been so long I cannot remember exactly. 
 
 All that is to say, I've been collecting music files and organizing them through various means for a while. I endured through iTunes' idiosyncrasies for essentially most of my time with it, I put up with its weird quirks around music tag management. And I did the same when it transformed into Music.app on macOS.   
+
 At some point (circa 2015), I got fed up with having to re-tag stuff by hand and started using [beets](https://beets.readthedocs.io/en/stable/) to manage and tag my music library. It clearly wasn't _meant_ to be used in tandem with iTunes/Music.app but I made it work somewhat okay.   
 
 That lasted for a while, my library continued to grow, I briefly played around with [mpd](https://www.musicpd.org/) and [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp), but quickly went back to Music.app because I actually liked its UI a lot, despite it evolving sometimes for the worse.  
