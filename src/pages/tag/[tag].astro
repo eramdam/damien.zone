@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import { uniq } from "lodash-es";
+import { uniq } from "es-toolkit";
 import slug from "slug";
 import PostsList from "../../components/PostsList.astro";
 import { sortPosts } from "../../helpers/siteHelpers";
@@ -13,7 +13,7 @@ export const getStaticPaths = (async () => {
   const tags = uniq(
     posts.flatMap((p) => {
       return p.data.tags;
-    })
+    }),
   );
 
   return tags.map((tag) => {
@@ -21,7 +21,7 @@ export const getStaticPaths = (async () => {
       props: {
         tag,
         posts: sortPosts(posts).filter((p) =>
-          (p.data.tags || []).includes(tag)
+          (p.data.tags || []).includes(tag),
         ),
       },
       params: {
