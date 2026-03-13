@@ -466,7 +466,7 @@ section[data-footnotes] {
 }
 
 [data-footnotes] #footnote-label {
-  /* display: none; */
+  display: none;
 }
 
 footer {
