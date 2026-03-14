@@ -263,7 +263,7 @@ header nav {
 
   border-radius: 12px;
   text-transform: capitalize;
-  font-weight: 666;
+  font-weight: 600;
   font-size: var(--font-size-main);
   display: flex;
   overflow: hidden;
