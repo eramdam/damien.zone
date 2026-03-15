@@ -8,7 +8,6 @@ tags:
   - mac themes garden
 description: A website for old Macintosh themes and some background.
 image: /img/projects/macthemes-garden.webp
-templateEngineOverride: md
 ---
 
 ![](/img/projects/macthemes-garden.webp)

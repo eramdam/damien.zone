@@ -1,16 +1,20 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import slug from "slug";
 import { SITE } from "../helpers/siteConstants";
-import { type PostContentProps } from "../helpers/siteHelpers";
 import PostDate from "./PostDate.astro";
+import type { InferEntrySchema } from "astro:content";
 
 interface Props {
-  data: Record<string, any>;
+  data: InferEntrySchema<"blog" | "drafts">;
 }
 
-const data = Astro.props.data as PostContentProps & Record<string, any>;
+const data = Astro.props.data;
 const title = data.title;
-const postUrl = new URL(data.slug, Astro.site);
+const hasLinkedUrl = !!data.linkedUrl;
+const postUrl = data.linkedUrl
+  ? new URL(data.linkedUrl)
+  : new URL(data.slug, Astro.site);
 ---
 
 <div class="p-author h-card">
@@ -19,11 +23,17 @@ const postUrl = new URL(data.slug, Astro.site);
   <data class="u-photo" value="/avatar/portrait.webp"></data>
 </div>
 <h1 class="p-name">
-  <a href={postUrl} rel="canonical" class="u-url u-uid"> {title} </a>
+  <a href={postUrl} rel="canonical" class="u-url u-uid">
+    {title}
+    <span>{hasLinkedUrl && " →"}</span>
+  </a>
 </h1>
 
 <p class="post-datetime">
-  <PostDate class="dt-published" date={data.date instanceof Date ? data.date : new Date(data.date)} />
+  <PostDate
+    class="dt-published"
+    date={data.date instanceof Date ? data.date : new Date(data.date)}
+  />
 </p>
 
 <div class="e-content">

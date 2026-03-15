@@ -690,6 +690,37 @@ body.index {
   }
 }
 
+h1.p-name {
+  line-height: 1;
+}
+
+h1.p-name a {
+  color: inherit;
+  text-decoration-color: var(--color-accent);
+  /* text-underline-offset: 3px; */
+  text-decoration-thickness: 3px;
+  position: relative;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 100% 0%;
+  --duration: 75ms;
+  transition:
+    background-size var(--duration) ease-in,
+    color calc(var(--duration) * 2) ease;
+  background-repeat: no-repeat;
+  background-position: bottom 4px right 0px;
+
+  &:hover {
+    background-color: transparent;
+    background-size: 100% 100%;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 0;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+}
+
 h1,
 h2,
 h3,

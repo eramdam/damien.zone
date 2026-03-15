@@ -16,7 +16,9 @@ export async function GET(context: APIContext) {
 
   const postEntries = await Promise.all(
     sortedPosts.map(async (post) => {
-      const postUrl = new URL(post.data.slug, context.url);
+      const postUrl = post.data.linkedUrl
+        ? new URL(post.data.linkedUrl)
+        : new URL(post.data.slug, context.url);
 
       const { Content, remarkPluginFrontmatter } = await render(post);
       const rawHtml = await container.renderToString(Content);

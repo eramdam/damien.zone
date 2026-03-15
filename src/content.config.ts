@@ -12,7 +12,7 @@ const blogSchema = z.object({
   updated: z.coerce.date().optional(),
   class_name: z.string().optional(),
   layout: z.string().optional(),
-  templateEngineOverride: z.string().optional(),
+  linkedUrl: z.url().optional(),
 });
 
 const blog = defineCollection({
