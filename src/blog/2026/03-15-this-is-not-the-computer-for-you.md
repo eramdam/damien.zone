@@ -1,7 +1,7 @@
 ---
 title: “This Is Not The Computer For You”
 slug: this-is-not-the-computer-for-you
-date: 2026-03-15T02:22:16.972Z
+date: 2026-03-15T14:46:32.645Z
 tags:
   - apple
 description: ''
