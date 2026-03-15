@@ -37,7 +37,7 @@ export async function GET(context: APIContext) {
           </author>
           <content type="html">
             ${he.encode(sanitizeHtmlForRSS(rawHtml, context))}
-            ${he.encode(`<a href="${postUrl}">Comments →</a>`)}
+            ${he.encode(`<a href="${postUrl}">Permalink / Comments</a>`)}
           </content>
         </entry>
         `;
