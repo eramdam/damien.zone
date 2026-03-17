@@ -32,7 +32,7 @@
   --color-white: white;
   --color-black: black;
 
-  --color-offwhite: hsl(from var(--color-accent) h calc(s - 50) calc(l + 55));
+  --color-offwhite: hsl(from var(--color-accent) h calc(s - 35) calc(l + 55));
   --color-accent-comp: hsl(from var(--color-accent) calc(h - 145) s l);
   --color-accent-off: color-mix(
     in srgb,
