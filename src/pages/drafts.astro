@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import PostsList from "../components/PostsList.astro";
+import { getDrafts } from "../helpers/postsHelpers";
 import { sortPosts } from "../helpers/siteHelpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await getCollection("drafts");
+const posts = await getDrafts();
 ---
 
 <BaseLayout content={{ description: "🤫" }}>

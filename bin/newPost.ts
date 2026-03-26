@@ -7,8 +7,6 @@ const defaultSlug = generateSlug(4);
 const date = new Date();
 const year = date.getFullYear();
 const prefix =
-  year +
-  "-" +
   date.getDate().toString().padStart(2, "0") +
   "-" +
   (date.getMonth() + 1).toString().padStart(2, "0");
@@ -21,9 +19,10 @@ const fileContent = matter.stringify("", {
   tags: [],
   description: "",
   image: "",
+  isDraft: true,
 });
 
-const finalPath = `src/drafts/${filename}`;
+const finalPath = `src/blog/${year}/${filename}`;
 
 fs.writeFileSync(finalPath, fileContent, "utf8");
 

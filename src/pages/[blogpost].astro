@@ -1,9 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection, render } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { render } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
+import { getBlogPosts } from "../helpers/postsHelpers";
 import { truncateText } from "../helpers/textHelpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 function markdownToPlainText(md: string): string {
   return md
@@ -17,7 +18,7 @@ function markdownToPlainText(md: string): string {
 }
 
 export const getStaticPaths = (async () => {
-  const posts = await getCollection("blog");
+  const posts = await getBlogPosts();
   return posts.map((post) => {
     return {
       props: { post },

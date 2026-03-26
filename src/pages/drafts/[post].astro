@@ -1,11 +1,12 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import BlogPost from "../../components/BlogPost.astro";
+import { getDrafts } from "../../helpers/postsHelpers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export const getStaticPaths = (async () => {
-  const posts = await getCollection("drafts");
+  const posts = await getDrafts();
 
   return posts.map((post) => {
     return {

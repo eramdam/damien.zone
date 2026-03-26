@@ -13,15 +13,11 @@ const blogSchema = z.object({
   class_name: z.string().optional(),
   layout: z.string().optional(),
   linkedUrl: z.url().optional(),
+  isDraft: z.boolean().optional(),
 });
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/blog" }),
-  schema: blogSchema,
-});
-
-const drafts = defineCollection({
-  loader: glob({ pattern: "*.md", base: "./src/drafts" }),
   schema: blogSchema,
 });
 
@@ -30,4 +26,4 @@ export type BlogEntry = {
   data: z.infer<typeof blogSchema>;
 };
 
-export const collections = { blog, drafts };
+export const collections = { blog };

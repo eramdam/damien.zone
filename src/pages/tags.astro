@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import { uniq } from "es-toolkit";
 import slug from "slug";
+import { getBlogPosts } from "../helpers/postsHelpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const posts = await getCollection("blog");
+const posts = await getBlogPosts();
 
 const tags = uniq(
   posts.flatMap((p) => {

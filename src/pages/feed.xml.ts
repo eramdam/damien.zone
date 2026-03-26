@@ -1,14 +1,15 @@
 import type { APIContext } from "astro";
-import { getCollection, render } from "astro:content";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
+import { render } from "astro:content";
 import he from "he";
 import { dateToRfc3339 } from "../helpers/componentHelpers";
+import { getBlogPosts } from "../helpers/postsHelpers";
 import { sanitizeHtmlForRSS } from "../helpers/rssHelpers";
 import { SITE } from "../helpers/siteConstants";
 import { sortPosts } from "../helpers/siteHelpers";
 
 export async function GET(context: APIContext) {
-  const items = await getCollection("blog");
+  const items = await getBlogPosts();
   const sortedPosts = sortPosts(items);
   const newestPostDate = dateToRfc3339(sortedPosts[0].data.date);
 

@@ -9,7 +9,6 @@
     "build": "npm run check && astro build",
     "preview": "astro preview",
     "new": "npm run _tsx -- bin/newPost.ts",
-    "publish": "npm run _tsx -- bin/publishDraft.ts",
     "_tsx": "tsx --tsconfig ./bin/tsconfig.json",
     "ogImage": "npm run _tsx -- bin/ogImage.tsx",
     "buttons": "npm run _tsx -- bin/downloadButtons.ts"

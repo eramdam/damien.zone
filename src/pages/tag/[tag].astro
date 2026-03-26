@@ -1,14 +1,14 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
 import { uniq } from "es-toolkit";
 import slug from "slug";
 import PostsList from "../../components/PostsList.astro";
+import { getBlogPosts } from "../../helpers/postsHelpers";
 import { sortPosts } from "../../helpers/siteHelpers";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export const getStaticPaths = (async () => {
-  const posts = await getCollection("blog");
+  const posts = await getBlogPosts();
 
   const tags = uniq(
     posts.flatMap((p) => {
