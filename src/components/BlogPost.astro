@@ -1,12 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { InferEntrySchema } from "astro:content";
 import slug from "slug";
 import { SITE } from "../helpers/siteConstants";
 import PostDate from "./PostDate.astro";
-import type { InferEntrySchema } from "astro:content";
 
 interface Props {
-  data: InferEntrySchema<"blog" | "drafts">;
+  data: InferEntrySchema<"blog">;
 }
 
 const data = Astro.props.data;
