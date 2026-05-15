@@ -14,7 +14,10 @@ export function augmentFrontmatterFields() {
 
     // Convert `now` in the date to current date, like bearblog did.
     const dateVal = file.data.astro.frontmatter.date;
-    if (dateVal === "now" || (dateVal instanceof Date && isNaN(dateVal.getTime()))) {
+    if (
+      dateVal === "now" ||
+      (dateVal instanceof Date && isNaN(dateVal.getTime()))
+    ) {
       const newDate = new Date();
       file.data.astro.frontmatter.date = newDate.toISOString();
       const fileString = matter.stringify(

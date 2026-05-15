@@ -404,7 +404,7 @@ main {
     text-align: center;
   }
 
-  :is(table, p, figcaption) code {
+  :is(table, p, figcaption, li) code {
     font-size: var(--font-size-small);
     color: var(--color-bg-main);
     background-color: var(--color-code-bg);
