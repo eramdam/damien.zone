@@ -7,7 +7,6 @@ tags:
 - programming
 description: ''
 image: ''
-isDraft: true
 linkedUrl: https://justsitandgrin.im/posts/native-all-the-way-until-you-need-text/
 ---
 
