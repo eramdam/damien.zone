@@ -2,7 +2,14 @@
 import { dateToRfc3339, formatDate } from "../helpers/componentHelpers";
 
 interface Props {
-  posts: { data: { date: Date; slug: string; title: string } }[];
+  posts: {
+    data: {
+      date: Date;
+      slug: string;
+      title: string;
+      linkedUrl: string | undefined;
+    };
+  }[];
 }
 
 const posts = Astro.props.posts;
@@ -12,6 +19,7 @@ const posts = Astro.props.posts;
   {
     posts.map((post) => {
       const postDate = post.data.date;
+      const hasLinkedUrl = !!post.data.linkedUrl;
       return (
         <li>
           <span>
@@ -22,7 +30,10 @@ const posts = Astro.props.posts;
               {formatDate(postDate, "d MMM, yyyy")}
             </time>
           </span>
-          <a href={`/${post.data.slug}`}>{post.data.title}</a>
+          <a href={`/${post.data.slug}`}>
+            {post.data.title}
+            <span class="linked-arrow">{hasLinkedUrl && " →"}</span>
+          </a>
         </li>
       );
     })

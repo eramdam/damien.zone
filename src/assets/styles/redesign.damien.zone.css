@@ -562,7 +562,7 @@ body.index {
 .blog-posts li a {
 }
 
-.blog-posts li span {
+.blog-posts li > span {
   /* order: 1; */
   /* flex: 1; */
   font-size: var(--font-size-small);
@@ -570,6 +570,11 @@ body.index {
   text-align: right;
   min-width: 12ch;
   text-align: left;
+}
+
+.blog-posts li .linked-arrow {
+  font-family: var(--font-serif);
+  font-weight: bold;
 }
 
 .blog-posts p {
@@ -714,10 +719,6 @@ h1.p-name a {
     background-size: 100% 100%;
     text-decoration-skip-ink: none;
     text-decoration-thickness: 0;
-  }
-
-  span {
-    font-size: 0.8em;
   }
 }
 
