@@ -57,6 +57,7 @@ On the Mac, I ended up settling on [Feishin](https://github.com/jeffvli/feishin)
 
 !["How Feishin looks like for me"](/img/blog/feishin-showcase.webp)
 
+On iOS, [Arpeggi](https://apps.apple.com/us/app/arpeggi/id6503619183) has been my daily driver. It looks nice, fits pretty well on iOS, and the transcoding feature is _very_ handy when on a cellular network[^4], I'll happily pay for it (even with a subscription) ~~when it officially comes out~~ (update May 2026) it's out now!
 
 I am still managing files with [beets](https://beets.readthedocs.io/en/stable/) on the NAS directly. I did create a new library from scratch to re-tag things properly. I eventually "upgraded" my whole library to FLAC files and took the time to match as many things on [MusicBrainz](https://musicbrainz.org/) as possible; this meant adding releases when they weren't already present. 
 Yes, this took forever, but it makes me happy _and_ I'll be able to [sync changes from MusicBrainz](https://beets.readthedocs.io/en/stable/plugins/mbsync.html), which is neat.  
