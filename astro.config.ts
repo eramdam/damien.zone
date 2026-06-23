@@ -11,6 +11,7 @@ import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 import sitemap from "@astrojs/sitemap";
+import { unified } from "@astrojs/markdown-remark";
 
 const isDev = import.meta.env.DEV;
 
@@ -76,22 +77,24 @@ export default defineConfig({
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
   compressHTML: false,
   markdown: {
-    smartypants: false,
-    rehypePlugins: [
-      [
-        rehypeRewrite,
-        {
-          rewrite: (
-            node: Root | RootContent,
-            index?: number,
-            parent?: Root | Element,
-          ) => {
-            rewriteWithFigures(node, index, parent);
+    processor: unified({
+      smartypants: false,
+      rehypePlugins: [
+        [
+          rehypeRewrite,
+          {
+            rewrite: (
+              node: Root | RootContent,
+              index?: number,
+              parent?: Root | Element,
+            ) => {
+              rewriteWithFigures(node, index, parent);
+            },
           },
-        },
+        ],
+        augmentFrontmatterFields,
       ],
-      augmentFrontmatterFields,
-    ],
+    }),
   },
   integrations: [
     expressiveCode({
