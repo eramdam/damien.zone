@@ -41,7 +41,7 @@
     "es-toolkit": "^1.45.1",
     "fontkit": "^2.0.4",
     "gray-matter": "^4.0.3",
-    "hast": "^0.0.2",
+    "hast": "1.0.0",
     "hastscript": "^9.0.1",
     "he": "^1.2.0",
     "html-to-text": "^10.0.0",
