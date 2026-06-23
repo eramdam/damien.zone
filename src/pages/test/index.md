@@ -47,12 +47,25 @@ Wolf ramps subway tile listicle mlkshk fashion axe ut mollit. Eu church-key hell
 
 ## Gallery of images
 
-<div class="big-image"><a href="https://damiensfiles.b-cdn.net/justice-2024/IMG_6962 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/justice-2024/thumbs/IMG_6962 1 Edited.jpg" alt=""></a></div>
 <div class="gallery">
   <ul>
-    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6415 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6415 1 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6447 2 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6447 2 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
-    <li><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6497 3 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6497 3 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6415 1 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6415 1 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6447 2 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6447 2 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6497 3 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6497 3 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6535 4 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6535 4 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6540 5 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6540 5 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6546 6 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6546 6 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6558 7 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6558 7 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6568 8 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6568 8 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6577 9 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6577 9 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6578 10 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6578 10 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6585 11 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6585 11 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6589 12 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6589 12 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6628 13 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6628 13 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6644 14 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6644 14 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6646 15 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6646 15 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6686 16 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6686 16 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
+    <li><figure><a href="https://damiensfiles.b-cdn.net/gesaffelstein-2024/IMG_6719 17 Edited.jpg"><img loading="lazy" decoding="async" src="https://damiensfiles.b-cdn.net/gesaffelstein-2024/thumbs/IMG_6719 17 Edited.jpg" alt="Gesaffelstein on stage at Portola"></a></figure></li>
   </ul>
 </div>
 
@@ -81,7 +94,7 @@ Food truck hammock echo park [occaecat pariatur](https://example.com) 3 wolf moo
 
 ## Code Blocks
 
-```html title="index.html" {1,4} del={"1":2} ins={3}
+```html title="index.html" {1,4} del={1-2} ins={3}
 <!doctype html>
 <html lang="en">
   <head>

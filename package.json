@@ -36,7 +36,7 @@
     "@types/slug": "^5.0.9",
     "astro": "^6.3.3",
     "astro-broken-link-checker": "imazen/astro-broken-link-checker",
-    "astro-expressive-code": "^0.41.7",
+    "astro-expressive-code": "^0.43.1",
     "cheerio": "^1.2.0",
     "cross-spawn": "^7.0.6",
     "date-fns": "^4.1.0",
