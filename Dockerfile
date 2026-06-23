@@ -2,9 +2,10 @@
 
 # ---- Build stage ----
 # Debian slim (not alpine) so sharp's prebuilt glibc binaries work.
-FROM node:26-slim AS build
+FROM node:26.3.1-slim AS build
 
 # pnpm via corepack; version is pinned by package.json "packageManager".
+RUN npm install -g corepack@latest
 RUN corepack enable
 ENV PNPM_HOME=/pnpm
 ENV PATH="$PNPM_HOME:$PATH"
