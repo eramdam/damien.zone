@@ -75,6 +75,9 @@ export default defineConfig({
   },
 
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
+  build: {
+    assetsPrefix: "https://cdn.damien.zone",
+  },
   compressHTML: false,
   markdown: {
     processor: unified({
