@@ -7,7 +7,7 @@ import { sortPosts } from "../helpers/siteHelpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const basePosts = sortPosts(await getBlogPosts());
 const postsByYear = groupBy(basePosts, (p) => {
-  return p.data.date.getUTCFullYear();
+  return p.data.date.getUTCFullYear().toString();
 });
 ---
 

@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { Readable } from "node:stream";
 import { finished } from "node:stream/promises";
+import type { ReadableStream as NodeReadableStream } from "node:stream/web";
 import { URL } from "url";
 import buttons from "../src/_data/buttons.json" with { type: "json" };
 
@@ -35,7 +36,9 @@ async function downloadFile(url: string, filename: string) {
   const res = await fetch(url);
   const destination = path.resolve(".", "public/buttons/", filename);
   const fileStream = fs.createWriteStream(destination);
-  await finished(Readable.fromWeb(res.body!).pipe(fileStream));
+  await finished(
+    Readable.fromWeb(res.body as NodeReadableStream).pipe(fileStream),
+  );
 
   const rootDirname = __dirname.replace("bin", "");
 

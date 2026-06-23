@@ -20,11 +20,11 @@ export const htmlToText = initHtmlToText({
 /** Truncates text without breaking words. */
 export function truncateText(text: string, words = 150) {
   const regexp = /[ \n—]+/g;
-  let match: RegExpExecArray | undefined;
+  let match: RegExpExecArray | null = null;
   for (let i = 0; i < words; i++) {
     match = regexp.exec(text);
     if (!match) return text;
   }
 
-  return text.substring(0, match.index) + "…";
+  return text.substring(0, match?.index) + "…";
 }
