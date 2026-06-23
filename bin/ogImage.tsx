@@ -1,5 +1,5 @@
-import { Renderer } from "@takumi-rs/core";
-import { fromJsx } from "@takumi-rs/helpers/jsx";
+import { Renderer } from "takumi-js/node";
+import { fromJsx } from "takumi-js/helpers/jsx";
 import fs from "node:fs";
 
 (async () => {
@@ -59,8 +59,8 @@ import fs from "node:fs";
             fontWeight: 600,
             padding: "5px 16px",
             backgroundColor: "#b51d3e",
-            // filter: `drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, #b51d3e))`,
-            filter: `drop-shadow(0 6px 12px color-mix(in srgb, transparent 50%, #b51d3e))`,
+            boxShadow:
+              "0 6px 12px color-mix(in srgb, transparent 50%, #b51d3e)",
           }}
         >
           damien
