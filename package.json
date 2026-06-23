@@ -44,7 +44,7 @@
     "hast": "^0.0.2",
     "hastscript": "^9.0.1",
     "he": "^1.2.0",
-    "html-to-text": "^9.0.5",
+    "html-to-text": "^10.0.0",
     "prettier": "^3.8.1",
     "random-word-slugs": "^0.1.7",
     "rehype-rewrite": "^4.0.4",
