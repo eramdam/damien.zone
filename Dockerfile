@@ -2,7 +2,7 @@
 
 # ---- Build stage ----
 # Debian slim (not alpine) so sharp's prebuilt glibc binaries work.
-FROM node:26.3.1 AS build
+FROM node:26.3.1-slim AS build
 
 # pnpm via corepack; version is pinned by package.json "packageManager".
 RUN npm install -g corepack@latest
@@ -21,12 +21,6 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 
 COPY . .
 
-# astro build only — typecheck (astro check) runs in CI, not the deploy path.
-# NOTE: do NOT cache node_modules/.astro across builds. It holds the content-layer
-# data-store (rendered HTML keyed by a content digest). A fresh git clone reproduces
-# identical file contents, so digests match and Astro reuses the cached store while
-# skipping regeneration of the rendered-content modules — leaving <Content /> empty
-# on single-post pages. Rebuild the store from scratch every deploy.
 RUN pnpm exec astro build
 
 # ---- Runtime stage ----
