@@ -19,6 +19,7 @@ function getGitLastUpdatedTimeStamp(filePath: string) {
       ) * 1000
     );
   } catch (e) {
+    console.log("getGitLastUpdatedTimeStamp " + filePath);
     console.error(e);
     return undefined;
   }
