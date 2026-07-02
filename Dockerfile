@@ -17,11 +17,11 @@ WORKDIR /app
 # store warm across builds even when Docker prunes layers.
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
-    pnpm install --frozen-lockfile --prefer-offline
+    pnpm install --prod --frozen-lockfile --prefer-offline
 
 COPY . .
 
-RUN pnpm exec astro build
+RUN pnpm run astro build
 
 # ---- Runtime stage ----
 FROM nginx:alpine AS runtime
