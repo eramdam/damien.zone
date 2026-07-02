@@ -21,7 +21,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 
 COPY . .
 
-RUN pnpm run astro build
+RUN pnpm exec astro build
 
 # ---- Runtime stage ----
 FROM nginx:alpine AS runtime
