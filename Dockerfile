@@ -22,8 +22,12 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 COPY . .
 
 # astro build only — typecheck (astro check) runs in CI, not the deploy path.
-RUN --mount=type=cache,id=astro-build-cache,target=/app/node_modules/.astro \
-    pnpm exec astro build
+# NOTE: do NOT cache node_modules/.astro across builds. It holds the content-layer
+# data-store (rendered HTML keyed by a content digest). A fresh git clone reproduces
+# identical file contents, so digests match and Astro reuses the cached store while
+# skipping regeneration of the rendered-content modules — leaving <Content /> empty
+# on single-post pages. Rebuild the store from scratch every deploy.
+RUN pnpm exec astro build
 
 # ---- Runtime stage ----
 FROM nginx:alpine AS runtime
