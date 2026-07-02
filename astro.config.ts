@@ -1,5 +1,5 @@
 import mdx from "@astrojs/mdx";
-import astroBrokenLinksChecker from "astro-broken-link-checker";
+import astroBrokenLinksChecker from "astro-broken-links-checker";
 import expressiveCode from "astro-expressive-code";
 import {
   defineConfig,
