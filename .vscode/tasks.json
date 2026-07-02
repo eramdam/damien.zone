@@ -7,6 +7,12 @@
       "problemMatcher": [],
       "label": "npm: new",
       "detail": "npm run _tsx -- bin/newPost.ts"
+    },
+    {
+      "type": "shell",
+      "command": "pnpm run previewPost -- '${file}'",
+      "problemMatcher": [],
+      "label": "preview current post"
     }
   ]
 }

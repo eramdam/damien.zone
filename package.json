@@ -9,6 +9,7 @@
     "build": "pnpm run check && astro build",
     "preview": "astro preview",
     "new": "pnpm run _tsx -- bin/newPost.ts",
+    "previewPost": "pnpm run _tsx -- bin/previewPost.ts",
     "_tsx": "tsx --tsconfig ./bin/tsconfig.json",
     "ogImage": "pnpm run _tsx -- bin/ogImage.tsx",
     "buttons": "pnpm run _tsx -- bin/downloadButtons.ts"
