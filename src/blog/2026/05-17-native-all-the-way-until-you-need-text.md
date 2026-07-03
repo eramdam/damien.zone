@@ -1,15 +1,15 @@
 ---
-title: Native all the way, until you need text 
+title: 'Native all the way, until you need text'
 slug: native-all-the-way-until-you-need-text
 date: 2026-05-17T17:23:50.466Z
 tags:
-- apple
-- programming
+  - apple
+  - programming
 description: ''
 image: ''
-linkedUrl: https://justsitandgrin.im/posts/native-all-the-way-until-you-need-text/
+linkedUrl: 'https://justsitandgrin.im/posts/native-all-the-way-until-you-need-text/'
+updated: '2026-07-03T21:41:07.650Z'
 ---
-
 > Then you realise it will take months just to reach feature parity with basic native macOS behaviour: context menus, dictionary lookup, selection, accessibility, text interactions, all the small things users expect without thinking about them.
 >
 > So you try WebKit to render Markdown. And it works. There are caveats, of course, but mostly it just works. Performance is good. Typography is almost perfect. You have a proper level of control.

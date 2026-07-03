@@ -1,0 +1,41 @@
+---
+import { getBlogPosts } from "../../../helpers/postsHelpers";
+import BaseAdmin from "../../../layouts/admin/BaseAdmin.astro";
+export const prerender = false;
+
+const posts = await getBlogPosts();
+const { blogpost } = Astro.params;
+const post = posts.find((p) => p.data.slug === blogpost);
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+---
+
+<BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
+  <form>
+    <nav>
+      <button type="button" class="back-button">← Back</button>
+      <button type="submit">Save</button>
+    </nav>
+    <input type="hidden" name="filePath" value={post.filePath} />
+    <textarea name="body" id="post-edit-area">{post.body}</textarea>
+  </form>
+</BaseAdmin>
+
+<script>
+  import { actions } from "astro:actions";
+  import { navigate } from "astro:transitions/client";
+
+  const form = document.querySelector("form");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    console.log(await actions.updatePost(fd));
+  });
+
+  document.querySelector(".back-button")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigate("/admin/posts");
+  });
+</script>

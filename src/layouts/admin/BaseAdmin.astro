@@ -1,10 +1,11 @@
 ---
 import { kebabCase } from "es-toolkit";
-import "../../admin/admin.css";
+import "../../pages/admin/admin.css";
 import AdminNav from "../../components/admin/adminNav.astro";
 
 interface Props {
   title: string;
+  class?: string;
 }
 ---
 
@@ -15,10 +16,9 @@ interface Props {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>damien.zone - {Astro.props.title}</title>
   </head>
-  <body class:list={[kebabCase(Astro.props.title)]}>
+  <body class:list={[Astro.props.class]}>
     <main>
       <AdminNav />
-      <h1>{Astro.props.title}</h1>
       <slot />
     </main>
   </body>

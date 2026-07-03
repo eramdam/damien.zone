@@ -1,0 +1,65 @@
+@import url("./admin.reset.css");
+
+html {
+  color-scheme: light dark;
+  font-family: Verdana, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#post-edit-area {
+  width: 100%;
+  min-height: 500px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header nav {
+  flex: 1;
+  text-align: right;
+}
+
+.post-edit form nav {
+  display: flex;
+  gap: 10px;
+  padding-block: 4px;
+}
+
+.post-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.posts-list li {
+  display: flex;
+  gap: 14px;
+  border-bottom: 1px dashed rgba(from currentColor r g b / 60%);
+  padding-block: 1em;
+  align-items: baseline;
+
+}
+
+.posts-list li a {
+  line-height: 1.4;
+}
+
+.posts-list time {
+  font-family: monospace;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+}
