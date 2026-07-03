@@ -1,8 +1,16 @@
+@import url('./colors.css');
 @import url("./admin.reset.css");
 
 html {
   color-scheme: light dark;
   font-family: Verdana, sans-serif;
+
+  background-color: var(--color-bg-main);
+  color: var(--color-text);
+}
+
+h1 {
+  font-variant-emoji: unicode;
 }
 
 main {

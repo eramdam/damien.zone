@@ -1,6 +1,7 @@
 @import url("./redesign.reset.css");
 @import url("./comentario.css");
 @import url("./image-gallery.css");
+@import url('./colors.css');
 
 /* Fonts and sizes. */
 :root {
@@ -26,59 +27,6 @@
   --content-width: min(100vw, 55rem);
 }
 
-/* Colors */
-:root {
-  --color-accent: hsl(346 82% 41%);
-  --color-white: white;
-  --color-black: black;
-
-  --color-offwhite: hsl(from var(--color-accent) h calc(s - 35) calc(l + 55));
-  --color-accent-comp: hsl(from var(--color-accent) calc(h - 145) s l);
-  --color-accent-off: color-mix(
-    in srgb,
-    var(--color-accent) 90%,
-    var(--color-offwhite)
-  );
-  --color-offblack: color-mix(in srgb, var(--color-accent) 40%, black);
-  --color-offblack-comp: color-mix(
-    in srgb,
-    var(--color-accent-comp) 40%,
-    black
-  );
-}
-
-:root {
-  /* Semantic. */
-  --color-bg-main: var(--color-offwhite);
-  --color-bg-bg-header: var(--color-offwhite);
-  --color-bg-header: var(--color-accent);
-  --color-fg-header: var(--color-offwhite);
-  --color-text: var(--color-offblack);
-  --color-emphasis: var(--color-black);
-  --color-link: var(--color-accent-off);
-  --color-blockquote-border: var(--color-accent);
-  --color-code-bg: rgb(from var(--color-accent) r g b / 1);
-  --header-shadow-color: var(--color-bg-header);
-}
-
-/* tulip was here ^o^ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-accent: hsl(346 65% 55%);
-    /* --color-offwhite: hsl(346, 16%, 10%); */
-    --color-offwhite: hsl(from var(--color-accent) h calc(s - 49) calc(l - 45));
-    /* --color-offblack: hsl(346, 15%, 85%); */
-    --color-offblack: hsl(from var(--color-accent) h calc(s - 50) calc(l + 30));
-    --color-emphasis: var(--color-white);
-    --color-accent-off: color-mix(
-      in srgb,
-      var(--color-accent) 90%,
-      var(--color-offblack)
-    );
-
-    --header-shadow-color: black;
-  }
-}
 
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -120,8 +68,8 @@ header {
 }
 
 @media (min-width: 640px) {
-  @supports (backdrop-filter: blur(0)) and (mask-image: none) and
-    (width: calc(10px * pow(5, 2))) {
+  @supports (backdrop-filter: blur(0)) and (mask-image: none) and (width: calc(10px * pow(5, 2))) {
+
     /* Anything that has been anchored to should have extra scroll margin */
     :target {
       scroll-margin-block: 10ex;
@@ -143,7 +91,7 @@ header {
       transform: scaleY(-1);
     }
 
-    .progressive-blur-container > .blur-filter {
+    .progressive-blur-container>.blur-filter {
       position: absolute;
       top: 0;
       left: 0;
@@ -153,68 +101,58 @@ header {
       --final-blur: 64px;
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(1) {
+    .progressive-blur-container>.blur-filter:nth-child(1) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 6)));
-      mask: linear-gradient(
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 1) 10%,
-        rgba(0, 0, 0, 1) 30%,
-        rgba(0, 0, 0, 0) 40%
-      );
+      mask: linear-gradient(rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1) 10%,
+          rgba(0, 0, 0, 1) 30%,
+          rgba(0, 0, 0, 0) 40%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(2) {
+    .progressive-blur-container>.blur-filter:nth-child(2) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 5)));
-      mask: linear-gradient(
-        rgba(0, 0, 0, 0) 10%,
-        rgba(0, 0, 0, 1) 20%,
-        rgba(0, 0, 0, 1) 40%,
-        rgba(0, 0, 0, 0) 50%
-      );
+      mask: linear-gradient(rgba(0, 0, 0, 0) 10%,
+          rgba(0, 0, 0, 1) 20%,
+          rgba(0, 0, 0, 1) 40%,
+          rgba(0, 0, 0, 0) 50%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(3) {
+    .progressive-blur-container>.blur-filter:nth-child(3) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 4)));
-      mask: linear-gradient(
-        rgba(0, 0, 0, 0) 15%,
-        rgba(0, 0, 0, 1) 30%,
-        rgba(0, 0, 0, 1) 50%,
-        rgba(0, 0, 0, 0) 60%
-      );
+      mask: linear-gradient(rgba(0, 0, 0, 0) 15%,
+          rgba(0, 0, 0, 1) 30%,
+          rgba(0, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 0) 60%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(4) {
+    .progressive-blur-container>.blur-filter:nth-child(4) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 3)));
-      mask: linear-gradient(
-        rgba(0, 0, 0, 0) 20%,
-        rgba(0, 0, 0, 1) 40%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 0) 70%
-      );
+      mask: linear-gradient(rgba(0, 0, 0, 0) 20%,
+          rgba(0, 0, 0, 1) 40%,
+          rgba(0, 0, 0, 1) 60%,
+          rgba(0, 0, 0, 0) 70%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(5) {
+    .progressive-blur-container>.blur-filter:nth-child(5) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 2)));
-      mask: linear-gradient(
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 60%,
-        rgba(0, 0, 0, 1) 80%,
-        rgba(0, 0, 0, 0) 90%
-      );
+      mask: linear-gradient(rgba(0, 0, 0, 0) 40%,
+          rgba(0, 0, 0, 1) 60%,
+          rgba(0, 0, 0, 1) 80%,
+          rgba(0, 0, 0, 0) 90%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(6) {
+    .progressive-blur-container>.blur-filter:nth-child(6) {
       backdrop-filter: blur(calc(var(--final-blur) * pow(0.5, 1)));
       mask: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%);
     }
 
-    .progressive-blur-container > .blur-filter:nth-child(7) {
+    .progressive-blur-container>.blur-filter:nth-child(7) {
       z-index: 10;
       background-filter: blur(var(--final-blur));
       mask: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
     }
 
-    .progressive-blur-container > .gradient {
+    .progressive-blur-container>.gradient {
       position: absolute;
       top: 0;
       left: 0;
@@ -225,12 +163,10 @@ header {
   }
 }
 
-header > nav,
-header > a.logo {
+header>nav,
+header>a.logo {
   z-index: 1;
-  filter: drop-shadow(
-    0 3px 6px color-mix(in srgb, transparent 50%, var(--header-shadow-color))
-  );
+  filter: drop-shadow(0 3px 6px color-mix(in srgb, transparent 50%, var(--header-shadow-color)));
 }
 
 a.logo {
@@ -282,6 +218,7 @@ header nav {
   & a:first-child {
     border-right: 1px solid var(--hover-bg);
   }
+
   & a:last-child {
     border-left: 1px solid var(--hover-bg);
   }
@@ -290,6 +227,7 @@ header nav {
   & a {
     padding-inline-start: 12px;
   }
+
   & a:last-child,
   & a {
     padding-inline-end: 12px;
@@ -313,12 +251,14 @@ h1.greeting {
 
 /* Prose stuff */
 main {
+
   /* Make images easier to work with */
   img,
   picture,
   video {
     max-width: 100%;
   }
+
   small {
     font-size: 0.8em;
     font-weight: bold;
@@ -367,6 +307,7 @@ main {
     & p:first-of-type:before {
       content: open-quote;
     }
+
     & p:last-of-type:after {
       content: close-quote;
     }
@@ -379,7 +320,8 @@ main {
   figure {
     margin-inline: 0;
   }
-  figure > a:has(img) {
+
+  figure>a:has(img) {
     display: inline-block;
     line-height: 0;
   }
@@ -421,8 +363,7 @@ main {
     margin-block: 0.5em;
   }
 
-  .post-datetime {
-  }
+  .post-datetime {}
 
   p:empty {
     display: none;
@@ -559,10 +500,9 @@ body.index {
   gap: 10px;
 }
 
-.blog-posts li a {
-}
+.blog-posts li a {}
 
-.blog-posts li > span {
+.blog-posts li>span {
   /* order: 1; */
   /* flex: 1; */
   font-size: var(--font-size-small);
@@ -601,7 +541,7 @@ body.index {
   gap: 4px;
 }
 
-.page.links main:has(> :not(.main-block)) .buttons > :is(a, img) {
+.page.links main:has(> :not(.main-block)) .buttons> :is(a, img) {
   text-decoration: none;
   line-height: 0;
 }
