@@ -9,24 +9,13 @@ import {
   passthroughImageService,
 } from "astro/config";
 import type { Element, Root, RootContent } from "hast";
-import fs from "node:fs";
-import path from "node:path";
 import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 
 import node from "@astrojs/node";
-import type { InjectedRoute } from "astro";
 
 const isDev = import.meta.env.DEV;
-
-// Actions require a server output. We only want them in dev (node adapter).
-const actionsIndex = "src/actions/index.ts";
-if (isDev) {
-  fs.writeFileSync(actionsIndex, `export { server } from "./_server";\n`);
-} else {
-  fs.rmSync(actionsIndex, { force: true });
-}
 
 export default defineConfig({
   image: {
@@ -133,43 +122,6 @@ export default defineConfig({
       checkExternalLinks: false, // Optional: check external links (currently, caching to disk is not supported, and it is slow )
     }),
     sitemap(),
-    {
-      name: "damien.zone",
-      hooks: {
-        "astro:config:setup": async (options) => {
-          const { injectRoute, command, logger, addWatchFile } = options;
-          if (command !== "dev") {
-            return;
-          }
-
-          const dir = "src/admin";
-          addWatchFile(path.resolve(dir));
-          const files = fs.promises.glob("**/*.{astro,ts}", { cwd: dir });
-
-          for await (const file of files) {
-            const ext = path.extname(file);
-            if (![".astro", ".ts"].includes(ext)) {
-              continue;
-            }
-
-            const name = path.basename(file, ext);
-            const dirname = path.dirname(file);
-            let pattern = `/admin/${dirname !== "." ? dirname : ""}`;
-            if (name !== "index") {
-              pattern += `/${name}`;
-            }
-            pattern = pattern.replaceAll("//", "/");
-            const route = {
-              pattern,
-              entrypoint: `./${dir}/${file}`,
-            } satisfies InjectedRoute;
-            injectRoute(route);
-            logger.info(`injected ${JSON.stringify(route, null, 2)}`);
-          }
-          logger.info("admin routes (dev only)");
-        },
-      },
-    },
   ],
 
   adapter: isDev

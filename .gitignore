@@ -8,5 +8,4 @@ dist
 # Local Netlify folder
 .netlify
 
-# generated dev-only actions entrypoint
-src/actions/index.ts
+
