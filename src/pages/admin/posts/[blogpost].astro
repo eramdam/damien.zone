@@ -12,26 +12,47 @@ if (!post) {
 }
 ---
 
-<BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
-  <form>
-    <nav>
-      <button type="button" class="back-button">← Back</button>
-      <button type="submit">Save</button>
-      <button type="button" class="view-button">View</button>
-    </nav>
-    <input type="hidden" id="slug" name="slug" value={blogpost} />
-    <input type="hidden" name="filePath" value={post.filePath} />
-    <textarea name="body" id="post-edit-area">{post.body}</textarea>
-  </form>
-</BaseAdmin>
+<BaseAdmin class="post-edit" title=`Editing ${post.data.title}` />
+<script define:vars={{ post }}>
+  window.initData = post;
+</script>
+<form>
+  <nav>
+    <button type="button" class="back-button">← Back</button>
+    <button type="submit">Save</button>
+    <button type="button" class="view-button">View</button>
+  </nav>
+  <input type="hidden" id="slug" name="slug" value={blogpost} />
+  <input type="hidden" name="filePath" value={post.filePath} />
+  <div id="post-edit-area" style="height: 400px"></div>
+</form>
 
 <script>
   import { actions } from "astro:actions";
   import { navigate } from "astro:transitions/client";
+  import OverType from "overtype";
+  import type { getBlogPosts } from "../../../helpers/postsHelpers";
 
   const form = document.querySelector("form");
 
+  declare global {
+    interface Window {
+      initData: Awaited<ReturnType<typeof getBlogPosts>>[number];
+    }
+  }
+
   if (form) {
+    const initialPostData = window.initData;
+
+    const [editor] = new OverType("#post-edit-area", {
+      value: initialPostData.body,
+      theme: "cave",
+      toolbar: false,
+      textareaProps: {
+        name: "body",
+      },
+    });
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const fd = new FormData(form);
