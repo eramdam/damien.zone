@@ -17,7 +17,9 @@ if (!post) {
     <nav>
       <button type="button" class="back-button">← Back</button>
       <button type="submit">Save</button>
+      <button type="button" class="view-button">View</button>
     </nav>
+    <input type="hidden" id="slug" name="slug" value={blogpost} />
     <input type="hidden" name="filePath" value={post.filePath} />
     <textarea name="body" id="post-edit-area">{post.body}</textarea>
   </form>
@@ -28,14 +30,22 @@ if (!post) {
   import { navigate } from "astro:transitions/client";
 
   const form = document.querySelector("form");
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    console.log(await actions.updatePost(fd));
-  });
 
-  document.querySelector(".back-button")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    navigate("/admin/posts");
-  });
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      console.log(await actions.updatePost(fd));
+    });
+
+    document.querySelector(".back-button")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigate("/admin/posts");
+    });
+    document.querySelector(".view-button")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      // @ts-expect-error
+      window.open(`/${form.elements["slug"].value}`, "_blank");
+    });
+  }
 </script>

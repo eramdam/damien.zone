@@ -30,7 +30,9 @@ header {
 
 header nav {
   flex: 1;
-  text-align: right;
+  justify-content: flex-end;
+  display: flex;
+  gap: 10px;
 }
 
 .post-edit form nav {
