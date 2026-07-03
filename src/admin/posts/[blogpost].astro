@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getBlogPosts } from "../../helpers/postsHelpers";
+import BaseAdmin from "../../layouts/admin/BaseAdmin.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getBlogPosts();
+  return posts.map((post) => {
+    return {
+      props: { post },
+      params: {
+        blogpost: post.data.slug,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+console.log(post.data);
+---
+
+<BaseAdmin title=`Editing ${post.data.title}`>
+  <textarea name="" id="post-edit-area">{post.body}</textarea>
+</BaseAdmin>

@@ -2,4 +2,15 @@
 
 html {
   color-scheme: light dark;
+  font-family: Verdana, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#post-edit-area {
+  width: 100%;
+  min-height: 800px;
 }
