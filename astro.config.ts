@@ -1,19 +1,31 @@
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import astroBrokenLinksChecker from "astro-broken-links-checker";
 import expressiveCode from "astro-expressive-code";
 import {
   defineConfig,
-  passthroughImageService,
   fontProviders,
+  passthroughImageService,
 } from "astro/config";
 import type { Element, Root, RootContent } from "hast";
+import fs from "node:fs";
+import path from "node:path";
 import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
-import sitemap from "@astrojs/sitemap";
-import { unified } from "@astrojs/markdown-remark";
+
+import node from "@astrojs/node";
 
 const isDev = import.meta.env.DEV;
+
+// Actions require a server output. We only want them in dev (node adapter).
+const actionsIndex = "src/actions/index.ts";
+if (isDev) {
+  fs.writeFileSync(actionsIndex, `export { server } from "./_server";\n`);
+} else {
+  fs.rmSync(actionsIndex, { force: true });
+}
 
 export default defineConfig({
   image: {
@@ -75,10 +87,13 @@ export default defineConfig({
   },
 
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
+
   build: {
     assetsPrefix: "https://cdn.damien.zone",
   },
+
   compressHTML: false,
+
   markdown: {
     processor: unified({
       smartypants: false,
@@ -117,5 +132,42 @@ export default defineConfig({
       checkExternalLinks: false, // Optional: check external links (currently, caching to disk is not supported, and it is slow )
     }),
     sitemap(),
+    {
+      name: "damien.zone",
+      hooks: {
+        "astro:config:setup": async (options) => {
+          const { injectRoute, command, logger } = options;
+          if (command !== "dev") {
+            return;
+          }
+
+          const dir = "src/admin";
+          for (const file of await fs.promises.readdir(dir)) {
+            const ext = path.extname(file);
+            if (![".astro", ".ts"].includes(ext)) {
+              continue;
+            }
+
+            const name = path.basename(file, ext);
+            injectRoute({
+              pattern: `/admin/${name === "index" ? "" : name}`,
+              entrypoint: `./${dir}/${file}`,
+            });
+            logger.info(`injected ./${dir}/${file}`);
+          }
+          logger.info("admin routes (dev only)");
+        },
+      },
+    },
   ],
+
+  adapter: isDev
+    ? node({
+        mode: "standalone",
+      })
+    : undefined,
+
+  vite: {
+    build: {},
+  },
 });
