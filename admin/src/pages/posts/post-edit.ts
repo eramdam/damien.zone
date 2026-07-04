@@ -171,7 +171,7 @@ if (form) {
     });
   document.querySelector(".back-button")?.addEventListener("click", (e) => {
     e.preventDefault();
-    navigate("/admin/posts");
+    navigate("/posts");
   });
   document.querySelector(".view-button")?.addEventListener("click", (e) => {
     e.preventDefault();
