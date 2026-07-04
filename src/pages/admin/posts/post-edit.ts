@@ -64,6 +64,7 @@ if (form) {
       ...commonEditorOptions,
       padding: {
         top: 20,
+        bottom: 20,
       },
     },
   );

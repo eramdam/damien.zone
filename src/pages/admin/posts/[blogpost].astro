@@ -38,6 +38,13 @@ const loadTheme = async (themeName: string) => {
   ) as MonacoTheme;
 
   base.colors = {};
+  base.rules = [
+    ...base.rules,
+    {
+      token: "type",
+      fontStyle: "bold",
+    },
+  ];
 
   return base;
 };
