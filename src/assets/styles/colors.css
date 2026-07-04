@@ -15,6 +15,19 @@
       black);
 }
 
+:root {
+  /* Semantic. */
+  --color-bg-main: var(--color-offwhite);
+  --color-bg-bg-header: var(--color-offwhite);
+  --color-bg-header: var(--color-accent);
+  --color-fg-header: var(--color-offwhite);
+  --color-text: var(--color-offblack);
+  --color-emphasis: var(--color-black);
+  --color-link: var(--color-accent-off);
+  --color-blockquote-border: var(--color-accent);
+  --color-code-bg: rgb(from var(--color-accent) r g b / 1);
+  --header-shadow-color: var(--color-bg-header);
+}
 
 /* tulip was here ^o^ */
 @media (prefers-color-scheme: dark) {
@@ -31,18 +44,4 @@
 
     --header-shadow-color: black;
   }
-}
-
-:root {
-  /* Semantic. */
-  --color-bg-main: var(--color-offwhite);
-  --color-bg-bg-header: var(--color-offwhite);
-  --color-bg-header: var(--color-accent);
-  --color-fg-header: var(--color-offwhite);
-  --color-text: var(--color-offblack);
-  --color-emphasis: var(--color-black);
-  --color-link: var(--color-accent-off);
-  --color-blockquote-border: var(--color-accent);
-  --color-code-bg: rgb(from var(--color-accent) r g b / 1);
-  --header-shadow-color: var(--color-bg-header);
 }
