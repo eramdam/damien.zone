@@ -47,7 +47,8 @@
     "sanitize-html": "^2.17.1",
     "slug": "^11.0.1",
     "truncate-html": "^1.2.2",
-    "vfile": "^6.0.3"
+    "vfile": "^6.0.3",
+    "vite-plugin-node-polyfills": "^0.28.0"
   },
   "devDependencies": {
     "@inquirer/prompts": "^8.3.0",
