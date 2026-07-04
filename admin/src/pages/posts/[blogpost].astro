@@ -2,14 +2,32 @@
 export const prerender = false;
 
 import { z } from "astro/zod";
-import { getCollection } from "astro:content";
+import matter from "gray-matter";
+import { type InferEntrySchema } from "astro:content";
+import fs from "fs";
 import type { MonacoTheme } from "monaco-themes";
 import { createRequire } from "node:module";
-import type { blogSchema } from "../../../../src/content.config";
+import { blogCollectionBase, blogSchema } from "../../../../src/content.config";
 import BaseAdmin from "../../layouts/BaseAdmin.astro";
 
+const postsRaw = fs.globSync(`${blogCollectionBase}/**/*.md`);
 const require = createRequire(import.meta.url);
-const posts = await getCollection("blog");
+const posts: {
+  id: string;
+  body?: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">;
+  filePath?: string;
+}[] = postsRaw.map((raw) => {
+  const data = matter(fs.readFileSync(raw, "utf-8"), {});
+  return {
+    id: Date.now().toString(16),
+    body: data.content,
+    collection: "blog",
+    data: blogSchema.parse(data.data),
+    filePath: raw,
+  };
+});
 const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
   {
     title: "My post",

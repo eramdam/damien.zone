@@ -18,12 +18,13 @@ export const blogSchema = z.object({
   isDraft: z.boolean().optional(),
 });
 
-const base = fileURLToPath(path.dirname(import.meta.url)) + "/blog";
+export const blogCollectionBase =
+  fileURLToPath(path.dirname(import.meta.url)) + "/blog";
 
 const blog = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: base,
+    base: blogCollectionBase,
   }),
   schema: blogSchema,
 });
