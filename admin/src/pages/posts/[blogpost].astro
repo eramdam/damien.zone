@@ -4,12 +4,11 @@ export const prerender = false;
 import { z } from "astro/zod";
 import { getCollection } from "astro:content";
 import type { MonacoTheme } from "monaco-themes";
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 import type { blogSchema } from "../../../../src/content.config";
 import BaseAdmin from "../../layouts/BaseAdmin.astro";
 
+const require = createRequire(import.meta.url);
 const posts = await getCollection("blog");
 const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
   {
@@ -27,15 +26,7 @@ const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
   };
 
 const loadTheme = async (themeName: string) => {
-  const base = JSON.parse(
-    fs.readFileSync(
-      path.resolve(
-        fileURLToPath(import.meta.url),
-        `../../../../../node_modules/monaco-themes/themes/${themeName}.json`,
-      ),
-      "utf-8",
-    ),
-  ) as MonacoTheme;
+  const base = require(`../../../themes/${themeName}.json`) as MonacoTheme;
 
   base.colors = {};
   base.rules = [
@@ -65,7 +56,7 @@ if (!post) {
   window.darkTheme = darkTheme;
   window.lightTheme = lightTheme;
 </script>
-<script src="./post-edit.ts"></script>
+<script src="../../scripts/post-edit.ts"></script>
 <BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
   <form>
     <nav>
