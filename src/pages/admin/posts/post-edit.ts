@@ -136,11 +136,39 @@ if (form) {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const fd = new FormData(form);
-    fd.set("body", bodyEditor.getValue());
-    console.log(await actions.updatePost(fd));
+    await actions.updatePost(makeFormData(form));
   });
 
+  type UpdatePostInputAttrs = Parameters<typeof actions.updatePost>[0];
+  function makeFormData(form: HTMLFormElement): UpdatePostInputAttrs {
+    return {
+      body: bodyEditor.getValue(),
+      attrs: undefined,
+      // @ts-expect-error
+      filePath: form.elements["filePath"].value,
+    };
+  }
+
+  document
+    .querySelector(".publish-button")
+    ?.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const fd = makeFormData(form);
+      fd.attrs = {
+        isDraft: false,
+      };
+      await actions.updatePost(fd);
+    });
+  document
+    .querySelector(".unpublish-button")
+    ?.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const fd = makeFormData(form);
+      fd.attrs = {
+        isDraft: true,
+      };
+      await actions.updatePost(fd);
+    });
   document.querySelector(".back-button")?.addEventListener("click", (e) => {
     e.preventDefault();
     navigate("/admin/posts");

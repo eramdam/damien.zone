@@ -6,10 +6,10 @@ import matter from "gray-matter";
 
 export const server = {
   updatePost: defineAction({
-    accept: "form",
+    accept: "json",
     input: z.object({
       filePath: z.string(),
-      attrs: blogSchema.optional(),
+      attrs: blogSchema.partial().optional(),
       body: z.string(),
     }),
     handler: async (input, context) => {
@@ -18,8 +18,15 @@ export const server = {
         const fileAttrs = matter(file);
 
         fileAttrs.content = input.body;
+        fileAttrs.data = {
+          ...fileAttrs.data,
+          ...input.attrs,
+          tags: input.attrs?.tags?.length
+            ? input.attrs.tags
+            : fileAttrs.data.tags,
+        };
 
-        console.log(`updating ${input.filePath}`);
+        console.log(`updating ${input.filePath}`, fileAttrs);
         await fs.promises.writeFile(
           input.filePath,
           matter.stringify(fileAttrs.content, fileAttrs.data),
