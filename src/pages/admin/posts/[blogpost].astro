@@ -1,9 +1,50 @@
 ---
-import { getBlogPosts } from "../../../helpers/postsHelpers";
-import BaseAdmin from "../../../layouts/admin/BaseAdmin.astro";
 export const prerender = false;
 
+import type { MonacoTheme } from "monaco-themes";
+import fs from "node:fs";
+import { z } from "astro/zod";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { getAllTags, getBlogPosts } from "../../../helpers/postsHelpers";
+import BaseAdmin from "../../../layouts/admin/BaseAdmin.astro";
+import type { blogSchema } from "../../../content.config";
+
 const posts = await getBlogPosts();
+const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
+  {
+    title: "My post",
+    slug: "my-post",
+    class_name: "",
+    date: new Date().toISOString(),
+    description: "",
+    image: "https://crouton.net/crouton.png",
+    isDraft: "false",
+    layout: "../layouts/BaseLayout.astro",
+    linkedUrl: "",
+    tags: (await getAllTags()).join(", "),
+    updated: new Date().toISOString(),
+  };
+
+const loadTheme = async (themeName: string) => {
+  const base = JSON.parse(
+    fs.readFileSync(
+      path.resolve(
+        fileURLToPath(import.meta.url),
+        `../../../../../node_modules/monaco-themes/themes/${themeName}.json`,
+      ),
+      "utf-8",
+    ),
+  ) as MonacoTheme;
+
+  base.colors = {};
+
+  return base;
+};
+
+const darkTheme = await loadTheme("GitHub Dark");
+const lightTheme = await loadTheme("GitHub");
+
 const { blogpost } = Astro.params;
 const post = posts.find((p) => p.data.slug === blogpost);
 
@@ -12,8 +53,10 @@ if (!post) {
 }
 ---
 
-<script define:vars={{ post }}>
+<script define:vars={{ post, darkTheme, lightTheme }}>
   window.initData = post;
+  window.darkTheme = darkTheme;
+  window.lightTheme = lightTheme;
 </script>
 <script src="./post-edit.ts"></script>
 <BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
@@ -23,6 +66,18 @@ if (!post) {
       <button type="submit">Save</button>
       <button type="button" class="view-button">View</button>
     </nav>
+    <details>
+      <summary>Attributes</summary>
+      <p>
+        {
+          Object.entries(blogSchemeDescription).map((pair) => (
+            <Fragment>
+              {pair[0]}: {pair[1]} <br />
+            </Fragment>
+          ))
+        }
+      </p>
+    </details>
     <input type="hidden" id="slug" name="slug" value={blogpost} />
     <input type="hidden" name="filePath" value={post.filePath} />
     <div id="post-edit-area"></div>
