@@ -7,8 +7,8 @@ tags:
   - redesign
   - css
 description: 'New year, new design! Yippee.'
+updated: '2026-07-04T05:49:14.862Z'
 ---
-
 It's been a minute, hasn't it. In fact it has been _checks notes_ **10 months**?! Oh dear, well. Better late than never I suppose. If you're reading this directly on the website (and you should, imo), you'll see that things look quite different! 
 
 I've been meaning to touch up my website's design for, uh, most of last year to be honest but I haven't been able to get to it until a few weeks ago. So here it is. It's more of a reskin rather than a redesign but it feels fresher, lighter and tidier in ways I like so I'm pretty happy with it.  
