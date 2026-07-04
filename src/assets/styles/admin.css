@@ -9,6 +9,11 @@ html {
   color: var(--color-text);
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-variant-emoji: unicode;
 }
@@ -16,12 +21,11 @@ h1 {
 main {
   margin: 0 auto;
   max-width: 800px;
+  max-width: 90vw;
+  width: 100%;
 }
 
-#post-edit-area {
-  width: 100%;
-  min-height: 500px;
-}
+
 
 header {
   display: flex;
@@ -33,6 +37,28 @@ header nav {
   justify-content: flex-end;
   display: flex;
   gap: 10px;
+}
+
+.post-edit {
+  display: flex;
+  height: 100vh;
+}
+
+.post-edit main {
+  display: flex;
+  flex-direction: column;
+
+  & form {
+    flex: 1;
+  }
+}
+
+#post-edit-area {
+  margin-block: 20px;
+  margin-block-end: 20%;
+  /* width: 100%; */
+  flex: 1;
+  /* min-height: 500px; */
 }
 
 .post-edit form nav {

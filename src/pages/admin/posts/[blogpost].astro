@@ -12,25 +12,13 @@ if (!post) {
 }
 ---
 
-<BaseAdmin class="post-edit" title=`Editing ${post.data.title}` />
 <script define:vars={{ post }}>
   window.initData = post;
 </script>
-<form>
-  <nav>
-    <button type="button" class="back-button">← Back</button>
-    <button type="submit">Save</button>
-    <button type="button" class="view-button">View</button>
-  </nav>
-  <input type="hidden" id="slug" name="slug" value={blogpost} />
-  <input type="hidden" name="filePath" value={post.filePath} />
-  <div id="post-edit-area" style="height: 400px"></div>
-</form>
-
 <script>
   import { actions } from "astro:actions";
   import { navigate } from "astro:transitions/client";
-  import OverType from "overtype";
+  import * as monaco from "monaco-editor";
   import type { getBlogPosts } from "../../../helpers/postsHelpers";
 
   const form = document.querySelector("form");
@@ -44,13 +32,33 @@ if (!post) {
   if (form) {
     const initialPostData = window.initData;
 
-    const [editor] = new OverType("#post-edit-area", {
-      value: initialPostData.body,
-      theme: "cave",
-      toolbar: false,
-      textareaProps: {
-        name: "body",
-      },
+    const tm = monaco.editor.createModel(
+      initialPostData.body || "",
+      "markdown",
+    );
+    monaco.editor.create(document.querySelector("#post-edit-area")!, {
+      model: tm,
+      // Language
+      language: "markdown",
+      theme: "vs-dark",
+      fontFamily:
+        "Maple Mono, Hack, 'Consolas', Monaco, 'Courier New', monospace",
+      // Fonts
+      fontSize: 16,
+      wordWrap: "on",
+      lineNumbers: "off",
+      minimap: { enabled: false },
+      // Editing
+      // autoClosingBrackets: "always",
+      // autoClosingQuotes: "always",
+      // autoSurround: "languageDefined",
+      bracketPairColorization: { enabled: false },
+      matchBrackets: "never",
+      // Scrolling
+      scrollBeyondLastLine: false,
+      smoothScrolling: true,
+      // Performance
+      automaticLayout: true,
     });
 
     form.addEventListener("submit", async (e) => {
@@ -70,3 +78,15 @@ if (!post) {
     });
   }
 </script>
+<BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
+  <form>
+    <nav>
+      <button type="button" class="back-button">← Back</button>
+      <button type="submit">Save</button>
+      <button type="button" class="view-button">View</button>
+    </nav>
+    <input type="hidden" id="slug" name="slug" value={blogpost} />
+    <input type="hidden" name="filePath" value={post.filePath} />
+    <div id="post-edit-area"></div>
+  </form>
+</BaseAdmin>

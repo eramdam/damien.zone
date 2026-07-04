@@ -37,7 +37,7 @@
     "he": "^1.2.0",
     "html-to-text": "^10.0.0",
     "husky": "^9.1.7",
-    "overtype": "^2.4.0",
+    "monaco-editor": "^0.55.1",
     "rehype-rewrite": "^4.0.4",
     "sanitize-html": "^2.17.1",
     "slug": "^11.0.1",

@@ -1,5 +1,6 @@
 allowBuilds:
   esbuild: true
+  monaco-editor@https://codeload.github.com/microsoft/monaco-editor/tar.gz/d8c9ff06b7bcbd0c07d1ccb16e3d30f5e5962d08: true
   sharp: true
 minimumReleaseAgeExclude:
   - '@astrojs/markdown-satteri@0.3.1'
