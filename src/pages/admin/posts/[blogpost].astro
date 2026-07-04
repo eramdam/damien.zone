@@ -15,69 +15,7 @@ if (!post) {
 <script define:vars={{ post }}>
   window.initData = post;
 </script>
-<script>
-  import { actions } from "astro:actions";
-  import { navigate } from "astro:transitions/client";
-  import * as monaco from "monaco-editor";
-  import type { getBlogPosts } from "../../../helpers/postsHelpers";
-
-  const form = document.querySelector("form");
-
-  declare global {
-    interface Window {
-      initData: Awaited<ReturnType<typeof getBlogPosts>>[number];
-    }
-  }
-
-  if (form) {
-    const initialPostData = window.initData;
-
-    const tm = monaco.editor.createModel(
-      initialPostData.body || "",
-      "markdown",
-    );
-    monaco.editor.create(document.querySelector("#post-edit-area")!, {
-      model: tm,
-      // Language
-      language: "markdown",
-      theme: "vs-dark",
-      fontFamily:
-        "Maple Mono, Hack, 'Consolas', Monaco, 'Courier New', monospace",
-      // Fonts
-      fontSize: 16,
-      wordWrap: "on",
-      lineNumbers: "off",
-      minimap: { enabled: false },
-      // Editing
-      // autoClosingBrackets: "always",
-      // autoClosingQuotes: "always",
-      // autoSurround: "languageDefined",
-      bracketPairColorization: { enabled: false },
-      matchBrackets: "never",
-      // Scrolling
-      scrollBeyondLastLine: false,
-      smoothScrolling: true,
-      // Performance
-      automaticLayout: true,
-    });
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const fd = new FormData(form);
-      console.log(await actions.updatePost(fd));
-    });
-
-    document.querySelector(".back-button")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      navigate("/admin/posts");
-    });
-    document.querySelector(".view-button")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      // @ts-expect-error
-      window.open(`/${form.elements["slug"].value}`, "_blank");
-    });
-  }
-</script>
+<script src="./post-edit.ts"></script>
 <BaseAdmin class="post-edit" title=`Editing ${post.data.title}`>
   <form>
     <nav>
