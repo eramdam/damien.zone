@@ -1,5 +1,5 @@
 import { defineConfig, passthroughImageService } from "astro/config";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
+
 import node from "@astrojs/node";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17,11 +17,4 @@ export default defineConfig({
   cacheDir: path.join(adminDir, ".astro"),
   srcDir: path.join(adminDir, "src"),
   publicDir: path.join(adminDir, "public"),
-  vite: {
-    plugins: [
-      nodePolyfills({
-        include: ["buffer"],
-      }),
-    ],
-  },
 });
