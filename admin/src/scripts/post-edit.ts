@@ -47,6 +47,12 @@ if (form) {
       useShadows: false,
     },
     renderLineHighlight: "none",
+    unicodeHighlight: {
+      allowedLocales: {
+        fr: true,
+        en: true,
+      },
+    },
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
   const bodyModel = monaco.editor.createModel(
