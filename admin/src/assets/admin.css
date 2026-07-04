@@ -1,4 +1,4 @@
-@import url('./colors.css');
+@import url('../../../src/assets/styles/colors.css');
 @import url("./admin.reset.css");
 
 html {

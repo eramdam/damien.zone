@@ -1,8 +1,11 @@
 ---
-import { dateToRfc3339, formatDate } from "../../helpers/componentHelpers";
-import { getBlogPosts } from "../../helpers/postsHelpers";
-import { sortPosts } from "../../helpers/siteHelpers";
-import BaseAdmin from "../../layouts/admin/BaseAdmin.astro";
+import {
+  dateToRfc3339,
+  formatDate,
+} from "../../../src/helpers/componentHelpers";
+import { getBlogPosts } from "../../../src/helpers/postsHelpers";
+import { sortPosts } from "../../../src/helpers/siteHelpers";
+import BaseAdmin from "../layouts/BaseAdmin.astro";
 const posts = sortPosts(await getBlogPosts());
 ---
 
@@ -20,7 +23,7 @@ const posts = sortPosts(await getBlogPosts());
             >
               {formatDate(postDate, "dd MMM, yyyy")}
             </time>
-            <a href={`/admin/posts/${post.data.slug}`}>
+            <a href={`/posts/${post.data.slug}`}>
               {post.data.title}
               {post.data.title}
             </a>

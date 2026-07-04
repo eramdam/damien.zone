@@ -1,6 +1,8 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 
 export const blogSchema = z.object({
   title: z.string(),
@@ -16,8 +18,13 @@ export const blogSchema = z.object({
   isDraft: z.boolean().optional(),
 });
 
+const base = fileURLToPath(path.dirname(import.meta.url)) + "/blog";
+
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/blog" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: base,
+  }),
   schema: blogSchema,
 });
 

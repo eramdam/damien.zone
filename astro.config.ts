@@ -13,8 +13,6 @@ import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 
-import node from "@astrojs/node";
-
 const isDev = import.meta.env.DEV;
 
 export default defineConfig({
@@ -123,14 +121,4 @@ export default defineConfig({
     }),
     sitemap(),
   ],
-
-  adapter: isDev
-    ? node({
-        mode: "standalone",
-      })
-    : undefined,
-
-  vite: {
-    build: {},
-  },
 });

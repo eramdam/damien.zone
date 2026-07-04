@@ -1,9 +1,9 @@
-import matter from "gray-matter";
 import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
+import matter from "gray-matter";
 import * as monaco from "monaco-editor";
 import type { MonacoTheme } from "monaco-themes";
-import type { getBlogPosts } from "../../../helpers/postsHelpers";
+import type { getBlogPosts } from "../../../../src/helpers/postsHelpers";
 
 const form = document.querySelector("form");
 

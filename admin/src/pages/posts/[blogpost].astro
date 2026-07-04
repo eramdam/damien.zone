@@ -7,9 +7,8 @@ import type { MonacoTheme } from "monaco-themes";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { blogSchema } from "../../../content.config";
-import { getAllTags } from "../../../helpers/postsHelpers";
-import BaseAdmin from "../../../layouts/admin/BaseAdmin.astro";
+import type { blogSchema } from "../../../../src/content.config";
+import BaseAdmin from "../../layouts/BaseAdmin.astro";
 
 const posts = await getCollection("blog");
 const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
@@ -23,7 +22,7 @@ const blogSchemeDescription: Record<keyof z.infer<typeof blogSchema>, string> =
     isDraft: "false",
     layout: "../layouts/BaseLayout.astro",
     linkedUrl: "",
-    tags: (await getAllTags()).join(", "),
+    tags: [].join(", "),
     updated: new Date().toISOString(),
   };
 

@@ -5,7 +5,8 @@ date: '2026-05-15T16:36:59.163Z'
 tags: []
 description: ''
 image: /open_graph.webp
-updated: '2026-07-04T01:56:26.414Z'
+updated: '2026-07-04T04:54:58.577Z'
+isDraft: false
 ---
 <small>Note: I wrote this post two months before publishing it because I wrote the draft and then...forgot to post it so I'm just posting it now to get it out of the way, it's probably fine but I just want to set expectations lol</small>
 
