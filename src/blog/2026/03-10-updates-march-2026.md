@@ -7,7 +7,7 @@ tags:
   - redesign
   - css
 description: 'New year, new design! Yippee.'
-updated: '2026-07-04T05:49:14.862Z'
+updated: '2026-07-04T23:20:58.199Z'
 ---
 It's been a minute, hasn't it. In fact it has been _checks notes_ **10 months**?! Oh dear, well. Better late than never I suppose. If you're reading this directly on the website (and you should, imo), you'll see that things look quite different! 
 
