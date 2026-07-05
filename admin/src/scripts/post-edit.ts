@@ -4,6 +4,7 @@ import { dump } from "js-yaml";
 import * as monaco from "monaco-editor";
 
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {
   getWorker() {
@@ -235,7 +236,7 @@ if (form) {
             bodyEditor.executeEdits("media-upload", [
               {
                 range: range,
-                text: `![](${f.file})`,
+                text: makeMarkupForFile(f),
               },
             ]);
           });
@@ -255,7 +256,7 @@ function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
 
 async function uploadFiles(files: File[]) {
   const queue = [...files];
-  const results: { file: string }[] = [];
+  const results: FileUploadResponse[] = [];
 
   async function worker() {
     let file: File | undefined;
@@ -264,14 +265,26 @@ async function uploadFiles(files: File[]) {
         const res = await fetch("/api/file-upload", {
           method: "POST",
           body: file,
-          headers: { "x-filename": file.name },
+          headers: { "x-filename": file.name, "x-type": file.type },
         });
-        const json = (await res.json()) as { path: string };
-        results.push({ file: json.path });
+        const json = (await res.json()) as FileUploadResponse;
+        results.push(json);
       } catch (e) {}
     }
   }
 
   await Promise.all(Array.from({ length: 2 }, worker));
   return results;
+}
+
+function makeMarkupForFile(file: FileUploadResponse) {
+  if (file.type.startsWith("image/")) {
+    return `![](${file.path})`;
+  } else if (file.type.startsWith("video/")) {
+    return `<video src="${file.path}" playsinline controls preload="none"></video>`;
+  } else if (file.type.startsWith("audio/")) {
+    return `<audio src="${file.path}" controls preload="none"></audio>`;
+  }
+
+  return "";
 }

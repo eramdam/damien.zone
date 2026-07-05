@@ -7,7 +7,8 @@ import { formatDate } from "../../../../src/helpers/componentHelpers";
 
 export const POST = (async ({ request }: APIContext) => {
   const name = request.headers.get("x-filename");
-  if (!name || !request.body) {
+  const type = request.headers.get("x-type");
+  if (!name || !type || !request.body) {
     return new Response("Bad request", { status: 400 });
   }
 
@@ -17,7 +18,6 @@ export const POST = (async ({ request }: APIContext) => {
     `${formatDate(new Date(), "yy/MM")}`,
     path.basename(name),
   );
-  console.log({ dest });
   const dirPath = path.dirname(dest);
   fs.mkdirSync(dirPath, { recursive: true });
   await pipeline(request.body, fs.createWriteStream(dest));
@@ -25,7 +25,10 @@ export const POST = (async ({ request }: APIContext) => {
   return new Response(
     JSON.stringify({
       path: dest.split("public")[1],
-    }),
+      type: type,
+    } satisfies FileUploadResponse),
     { status: 201 },
   );
 }) satisfies APIRoute;
+
+export type FileUploadResponse = { path: string; type: string };
