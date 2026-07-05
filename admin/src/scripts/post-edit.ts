@@ -2,11 +2,9 @@ import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
 import { dump } from "js-yaml";
 import * as monaco from "monaco-editor";
-import loader from "@monaco-editor/loader";
+
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
 
-loader.config({ monaco: monaco });
-const monacoInstance = await loader.init();
 self.MonacoEnvironment = {
   getWorker() {
     return new editorWorker();
@@ -18,13 +16,13 @@ const form = document.querySelector("form");
 if (form) {
   const { postEditMeta } = window;
 
-  monacoInstance.editor.defineTheme("md-dark", {
+  monaco.editor.defineTheme("md-dark", {
     ...postEditMeta.darkTheme,
     colors: {
       "editor.background": "#ffffff04",
     },
   });
-  monacoInstance.editor.defineTheme("md-light", postEditMeta.lightTheme);
+  monaco.editor.defineTheme("md-light", postEditMeta.lightTheme);
 
   const mdDark = window.matchMedia("(prefers-color-scheme:dark)");
   const commonEditorOptions = {
@@ -55,11 +53,11 @@ if (form) {
     },
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
-  const bodyModel = monacoInstance.editor.createModel(
+  const bodyModel = monaco.editor.createModel(
     postEditMeta.post?.body || "",
     "markdown",
   );
-  const bodyEditor = monacoInstance.editor.create(
+  const bodyEditor = monaco.editor.create(
     document.querySelector("#post-edit-area")!,
     {
       model: bodyModel,
@@ -77,9 +75,9 @@ if (form) {
   );
 
   const attrsRaw = dump(postEditMeta.post?.data || { title: "" }).trim();
-  const attrsModel = monacoInstance.editor.createModel(attrsRaw, "yaml");
+  const attrsModel = monaco.editor.createModel(attrsRaw, "yaml");
 
-  const attrsEditor = monacoInstance.editor.create(
+  const attrsEditor = monaco.editor.create(
     document.querySelector("#attrs-edit-area")!,
     {
       model: attrsModel,
@@ -226,8 +224,8 @@ if (form) {
             const lines = bodyModel.getLineCount();
             const range =
               pos && bodyEditor.hasTextFocus()
-                ? new monacoInstance.Range(pos.lineNumber, 1, pos.lineNumber, 1)
-                : new monacoInstance.Range(
+                ? new monaco.Range(pos.lineNumber, 1, pos.lineNumber, 1)
+                : new monaco.Range(
                     lines,
                     bodyModel.getLineMaxColumn(lines),
                     lines,
