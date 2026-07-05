@@ -14,6 +14,7 @@ import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 
 const isDev = import.meta.env.DEV;
+const assetsPrefix = "https://cdn.damien.zone";
 
 export default defineConfig({
   image: {
@@ -77,7 +78,7 @@ export default defineConfig({
   site: isDev ? "http://localhost:4321" : "https://damien.zone",
 
   build: {
-    assetsPrefix: "https://cdn.damien.zone",
+    assetsPrefix,
   },
 
   compressHTML: false,
@@ -91,10 +92,10 @@ export default defineConfig({
           {
             rewrite: (
               node: Root | RootContent,
-              index?: number,
-              parent?: Root | Element,
+              _index?: number,
+              _parent?: Root | Element,
             ) => {
-              rewriteWithFigures(node, index, parent);
+              rewriteWithFigures(node, !isDev ? assetsPrefix : undefined);
             },
           },
         ],

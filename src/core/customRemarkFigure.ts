@@ -4,9 +4,11 @@ import type { RehypeRewriteOptions } from "rehype-rewrite";
 
 const isDev = import.meta.env?.DEV ?? process.env.NODE_ENV !== "production";
 
-export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
-  node,
-) {
+type RewriteParams = Parameters<RehypeRewriteOptions["rewrite"]>;
+export const rewriteWithFigures = function (
+  node: RewriteParams[0],
+  assetsPrefix?: string,
+): ReturnType<RehypeRewriteOptions["rewrite"]> {
   if (node.type !== "element") {
     return;
   }
@@ -30,16 +32,18 @@ export const rewriteWithFigures: RehypeRewriteOptions["rewrite"] = function (
     .filter((e): e is Element => {
       return e.type === "element" && e.tagName === "img";
     })
-    .map(makeFigureFromImage);
+    .map((i) => makeFigureFromImage(i, assetsPrefix));
 
   node.children = images;
 };
 
-function makeFigureFromImage(img: Element): Element {
+function makeFigureFromImage(img: Element, assetsPrefix?: string): Element {
   const props = img.properties;
   const title = props.title;
   const alt = props.alt || title;
-  const src = props.src;
+  const src = String(props.src).startsWith("/")
+    ? `${assetsPrefix}${props.src}`
+    : props.src;
 
   return h("figure", { "data-type": "image" }, [
     h("a", { href: src }, [
