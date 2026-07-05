@@ -36,6 +36,7 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  output: "server",
   cacheDir: path.join(adminDir, ".astro"),
   srcDir: path.join(adminDir, "src"),
   publicDir: path.join(adminDir, "public"),
