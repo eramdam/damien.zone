@@ -11,7 +11,6 @@
     "dev": "astro dev",
     "check": "astro check",
     "prepare": "husky",
-    "stamp-updated": "pnpm run _tsx -- bin/stampUpdated.ts",
     "build": "pnpm run check && astro build",
     "preview": "astro preview",
     "new": "pnpm run _tsx -- bin/newPost.ts",
