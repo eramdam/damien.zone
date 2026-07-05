@@ -1,20 +1,32 @@
 import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
 import matter from "gray-matter";
+import { dump } from "js-yaml";
 import * as monaco from "monaco-editor";
+import loader from "@monaco-editor/loader";
+import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+
+loader.config({ monaco: monaco });
+const monacoInstance = await loader.init();
+self.MonacoEnvironment = {
+  getWorker() {
+    return new editorWorker();
+  },
+};
 
 const form = document.querySelector("form");
 
 if (form) {
   const { postEditMeta } = window;
 
-  monaco.editor.defineTheme("md-dark", {
+  monacoInstance.editor.defineTheme("md-dark", {
     ...postEditMeta.darkTheme,
     colors: {
       "editor.background": "#ffffff04",
     },
   });
   monaco.editor.defineTheme("md-light", postEditMeta.lightTheme);
+  monacoInstance.editor.defineTheme("md-light", postEditMeta.lightTheme);
 
   const mdDark = window.matchMedia("(prefers-color-scheme:dark)");
   const commonEditorOptions = {
@@ -46,10 +58,11 @@ if (form) {
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
   const bodyModel = monaco.editor.createModel(
+  const bodyModel = monacoInstance.editor.createModel(
     postEditMeta.post?.body || "",
     "markdown",
   );
-  const bodyEditor = monaco.editor.create(
+  const bodyEditor = monacoInstance.editor.create(
     document.querySelector("#post-edit-area")!,
     {
       model: bodyModel,
@@ -70,9 +83,10 @@ if (form) {
     .stringify("", postEditMeta.post?.data || { title: "" })
     .replaceAll("---", "")
     .trim();
-  const attrsModel = monaco.editor.createModel(attrsRaw, "yaml");
+  const attrsModel = monacoInstance.editor.createModel(attrsRaw, "yaml");
 
   const attrsEditor = monaco.editor.create(
+  const attrsEditor = monacoInstance.editor.create(
     document.querySelector("#attrs-edit-area")!,
     {
       model: attrsModel,
