@@ -25,6 +25,13 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  devToolbar: {
+    enabled: false,
+  },
+  security: {
+    actionBodySizeLimit: 30 * 1024 * 1024,
+  },
+
   root: adminDir,
   adapter: node({
     mode: "standalone",

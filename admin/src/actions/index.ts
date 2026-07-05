@@ -156,6 +156,19 @@ export const server = {
       }
     },
   }),
+  uploadMedia: defineAction({
+    accept: "form",
+    input: z.object({
+      files: z.array(z.any()),
+    }),
+    async handler(input, context) {
+      console.log(input.files);
+      const files = await Promise.all(input.files.map((f) => f.arrayBuffer()));
+      files.forEach((f, index) => {
+        fs.writeFileSync(`/tmp/${input.files[index].name}`, Buffer.from(f));
+      });
+    },
+  }),
 };
 
 async function makeUniqueSlug(title: string) {

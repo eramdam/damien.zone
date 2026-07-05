@@ -67,7 +67,7 @@ const lightTheme = await loadTheme("GitHub");
   class="post-edit"
   title={isCreatingPost ? `New post` : `Editing ${post.data.title}`}
 >
-  <form>
+  <form enctype="multipart/form-data">
     <nav>
       <button type="button" class="back-button">← Back</button>
       <!-- save+isDraft:false -->
@@ -98,7 +98,7 @@ const lightTheme = await loadTheme("GitHub");
         )
       }
       <span style="flex:1;"></span>
-      <button class="delete-button danger">Delete</button>
+      {post && <button class="delete-button danger">Delete</button>}
     </nav>
     <details>
       <summary>Attributes</summary>
@@ -115,5 +115,18 @@ const lightTheme = await loadTheme("GitHub");
 
     <div id="attrs-edit-area"></div>
     <div id="post-edit-area"></div>
+    <input
+      id="file-input"
+      type="file"
+      name="files"
+      hidden
+      multiple
+      accept="image/*, audio/*, video/*"
+    />
+    <aside>
+      <a class="insert-media-btn">Insert media</a> | <a class="media-btn"
+        >Media</a
+      >
+    </aside>
   </form>
 </BaseAdmin>

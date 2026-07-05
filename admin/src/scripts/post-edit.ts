@@ -197,10 +197,23 @@ if (form) {
       navigate("/posts/");
     }
   });
+
+  onButtonClick(".insert-media-btn", async (e) => {
+    e.preventDefault();
+    const fileInput = document.querySelector<HTMLInputElement>("#file-input");
+    if (fileInput) {
+      fileInput.addEventListener("change", async (e) => {
+        const fd = new FormData(form);
+        await actions.uploadMedia(fd);
+      });
+      fileInput.click();
+    }
+  });
 }
 
 function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
   document
-    .querySelector<HTMLButtonElement>(sel)
+    .querySelector<HTMLButtonElement | HTMLAnchorElement>(sel)
+    // @ts-expect-error
     ?.addEventListener("click", listener);
 }
