@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "admin:astro": "astro --config admin/astro.config.ts",
+    "admin:astro": "cd admin && astro",
     "admin:dev": "pnpm run admin:astro -- dev",
     "admin:check": "pnpm run admin:astro -- check",
     "admin:build": "pnpm run admin:astro -- build",
