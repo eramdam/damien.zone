@@ -23,7 +23,7 @@ export const server = {
       attrs: adminBlogPostScheme.partial().optional(),
       body: z.string(),
     }),
-    handler: async (input, context) => {
+    async handler(input, context) {
       try {
         const filePath = path.resolve(
           path.dirname(fileURLToPath(import.meta.url)),
@@ -88,7 +88,7 @@ export const server = {
       attrs: adminBlogPostScheme.partial().optional(),
       body: z.string().optional(),
     }),
-    handler: async (input, context) => {
+    async handler(input, context) {
       try {
         const { attrs } = input;
         const dateToUse = attrs?.date ?? new Date();
@@ -128,6 +128,30 @@ export const server = {
         throw new ActionError({
           message: String(e),
           code: "INTERNAL_SERVER_ERROR",
+        });
+      }
+    },
+  }),
+  deletePost: defineAction({
+    accept: "json",
+    input: z.object({ filePath: z.string() }),
+    async handler(input, context) {
+      try {
+        const filePath = path.resolve(
+          path.dirname(fileURLToPath(import.meta.url)),
+          "../../",
+          input.filePath,
+        );
+        if (fs.existsSync(filePath)) {
+          fs.rmSync(filePath);
+        }
+
+        return undefined;
+      } catch (e) {
+        context.logger.error(String(e));
+        throw new ActionError({
+          message: "File not found",
+          code: "NOT_FOUND",
         });
       }
     },

@@ -189,6 +189,14 @@ if (form) {
       }
     }
   });
+
+  onButtonClick(".delete-button", async (e) => {
+    e.preventDefault();
+    if (confirm("Are you sure?") && postEditMeta.post) {
+      await actions.deletePost({ filePath: postEditMeta.post.filePath });
+      navigate("/posts/");
+    }
+  });
 }
 
 function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
