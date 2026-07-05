@@ -8,7 +8,6 @@ tags:
 description: ''
 image: ''
 linkedUrl: 'https://justsitandgrin.im/posts/native-all-the-way-until-you-need-text/'
-updated: '2026-07-05T01:57:07.483Z'
 ---
 > Then you realise it will take months just to reach feature parity with basic native macOS behaviour: context menus, dictionary lookup, selection, accessibility, text interactions, all the small things users expect without thinking about them.
 >
