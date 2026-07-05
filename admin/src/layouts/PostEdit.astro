@@ -1,0 +1,95 @@
+---
+import type { InferEntrySchema } from "astro:content";
+import type { MonacoTheme } from "monaco-themes";
+import { createRequire } from "node:module";
+import type { BlogEntry } from "../../../src/content.config";
+import { getAllTags } from "../../../src/helpers/postsHelpers";
+import BaseAdmin from "./BaseAdmin.astro";
+
+const require = createRequire(import.meta.url);
+
+interface Props {
+  post:
+    | {
+        id: string;
+        body?: string;
+        collection: "blog";
+        data: InferEntrySchema<"blog">;
+        filePath: string;
+      }
+    | undefined;
+}
+
+const { post } = Astro.props;
+const isCreatingPost = !post;
+
+const loadTheme = async (themeName: string) => {
+  const base = require(`../../themes/${themeName}.json`) as MonacoTheme;
+
+  base.colors = {};
+  base.rules = [
+    ...base.rules,
+    {
+      token: "type",
+      fontStyle: "bold",
+    },
+  ];
+
+  return base;
+};
+
+const blogSchemeDescription: Record<keyof BlogEntry, string> = {
+  title: "My post",
+  slug: "my-post",
+  class_name: "",
+  date: new Date().toISOString(),
+  description: "",
+  image: "https://crouton.net/crouton.png",
+  isDraft: "false",
+  layout: "../layouts/BaseLayout.astro",
+  linkedUrl: "",
+  tags: (await getAllTags()).join(", "),
+  updated: new Date().toISOString(),
+};
+
+const darkTheme = await loadTheme("GitHub Dark");
+const lightTheme = await loadTheme("GitHub");
+---
+
+<script is:inline define:vars={{ post, darkTheme, lightTheme }}>
+  window.postEditMeta = {
+    post,
+    darkTheme,
+    lightTheme,
+  };
+</script>
+<script src="../scripts/post-edit.ts"></script>
+<BaseAdmin
+  class="post-edit"
+  title={isCreatingPost ? `New post` : `Editing ${post.data.title}`}
+>
+  <form>
+    <nav>
+      <button type="button" class="back-button">← Back</button>
+      <button type="submit">Save</button>
+      <button type="button" class="publish-button">Publish</button>
+      <button type="button" class="view-button">View</button>
+      <button type="button" class="unpublish-button danger">Unpublish</button>
+    </nav>
+    <details>
+      <summary>Attributes</summary>
+      <p>
+        {
+          Object.entries(blogSchemeDescription).map((pair) => (
+            <Fragment>
+              {pair[0]}: {pair[1]} <br />
+            </Fragment>
+          ))
+        }
+      </p>
+    </details>
+
+    <div id="attrs-edit-area"></div>
+    <div id="post-edit-area"></div>
+  </form>
+</BaseAdmin>

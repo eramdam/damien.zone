@@ -2,29 +2,19 @@ import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
 import matter from "gray-matter";
 import * as monaco from "monaco-editor";
-import type { MonacoTheme } from "monaco-themes";
-import type { getBlogPosts } from "../../../src/helpers/postsHelpers";
 
 const form = document.querySelector("form");
 
-declare global {
-  interface Window {
-    initData: Awaited<ReturnType<typeof getBlogPosts>>[number];
-    darkTheme: MonacoTheme;
-    lightTheme: MonacoTheme;
-  }
-}
-
 if (form) {
-  const initialPostData = window.initData;
+  const { postEditMeta } = window;
 
   monaco.editor.defineTheme("md-dark", {
-    ...window.darkTheme,
+    ...postEditMeta.darkTheme,
     colors: {
       "editor.background": "#ffffff04",
     },
   });
-  monaco.editor.defineTheme("md-light", window.lightTheme);
+  monaco.editor.defineTheme("md-light", postEditMeta.lightTheme);
 
   const mdDark = window.matchMedia("(prefers-color-scheme:dark)");
   const commonEditorOptions = {
@@ -56,7 +46,7 @@ if (form) {
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
   const bodyModel = monaco.editor.createModel(
-    initialPostData.body || "",
+    postEditMeta.post.body || "",
     "markdown",
   );
   const bodyEditor = monaco.editor.create(
@@ -76,7 +66,7 @@ if (form) {
   );
 
   const attrsRaw = matter
-    .stringify("", initialPostData.data)
+    .stringify("", postEditMeta.post.data)
     .replaceAll("---", "")
     .trim();
   const attrsModel = monaco.editor.createModel(attrsRaw, "yaml");
@@ -142,46 +132,48 @@ if (form) {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    await actions.updatePost(makeFormData(form));
+    await actions.updatePost(makeUpdateFormData());
   });
 
   type UpdatePostInputAttrs = Parameters<typeof actions.updatePost>[0];
-  function makeFormData(form: HTMLFormElement): UpdatePostInputAttrs {
+  function makeUpdateFormData(): UpdatePostInputAttrs {
     return {
       body: bodyEditor.getValue(),
       attrs: undefined,
-      // @ts-expect-error
-      filePath: form.elements["filePath"].value,
+      filePath: postEditMeta.post.filePath,
     };
   }
 
   document
-    .querySelector(".publish-button")
+    .querySelector<HTMLButtonElement>(".publish-button")
     ?.addEventListener("click", async (e) => {
       e.preventDefault();
-      const fd = makeFormData(form);
+      const fd = makeUpdateFormData();
       fd.attrs = {
         isDraft: false,
       };
       await actions.updatePost(fd);
     });
   document
-    .querySelector(".unpublish-button")
+    .querySelector<HTMLButtonElement>(".unpublish-button")
     ?.addEventListener("click", async (e) => {
       e.preventDefault();
-      const fd = makeFormData(form);
+      const fd = makeUpdateFormData();
       fd.attrs = {
         isDraft: true,
       };
       await actions.updatePost(fd);
     });
-  document.querySelector(".back-button")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    navigate("/posts");
-  });
-  document.querySelector(".view-button")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    // @ts-expect-error
-    window.open(`/${form.elements["slug"].value}`, "_blank");
-  });
+  document
+    .querySelector<HTMLButtonElement>(".back-button")
+    ?.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigate("/posts");
+    });
+  document
+    .querySelector<HTMLButtonElement>(".view-button")
+    ?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(`/${postEditMeta.post.data.slug}`, "_blank");
+    });
 }

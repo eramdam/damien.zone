@@ -1,11 +1,11 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, type InferEntrySchema } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 export const blogSchema = z.object({
-  title: z.string(),
+  title: z.string().optional(),
   slug: z.string(),
   date: z.coerce.date(),
   tags: z.array(z.string()).default([]),
@@ -29,9 +29,6 @@ const blog = defineCollection({
   schema: blogSchema,
 });
 
-export type BlogEntry = {
-  id: string;
-  data: z.infer<typeof blogSchema>;
-};
+export type BlogEntry = InferEntrySchema<"blog">;
 
 export const collections = { blog };
