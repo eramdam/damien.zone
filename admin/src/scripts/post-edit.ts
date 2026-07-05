@@ -30,7 +30,7 @@ if (form) {
     hideCursorInOverviewRuler: true,
     overviewRulerLanes: 0,
     scrollBeyondLastLine: false,
-    automaticLayout: false,
+    automaticLayout: true,
     scrollbar: {
       vertical: "auto",
       verticalScrollbarSize: 8,
