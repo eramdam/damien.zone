@@ -46,13 +46,14 @@ if (form) {
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
   const bodyModel = monaco.editor.createModel(
-    postEditMeta.post.body || "",
+    postEditMeta.post?.body || "",
     "markdown",
   );
   const bodyEditor = monaco.editor.create(
     document.querySelector("#post-edit-area")!,
     {
       model: bodyModel,
+      placeholder: "...",
       fontFamily:
         "Maple Mono, Hack, 'Consolas', Monaco, 'Courier New', monospace",
       // Language
@@ -66,7 +67,7 @@ if (form) {
   );
 
   const attrsRaw = matter
-    .stringify("", postEditMeta.post.data)
+    .stringify("", postEditMeta.post?.data || { title: "" })
     .replaceAll("---", "")
     .trim();
   const attrsModel = monaco.editor.createModel(attrsRaw, "yaml");
@@ -79,7 +80,6 @@ if (form) {
       // Language
       language: "yaml",
       ...commonEditorOptions,
-      automaticLayout: false,
       padding: {
         top: 10,
         bottom: 10,
@@ -130,50 +130,69 @@ if (form) {
     },
   });
 
-  form.addEventListener("submit", async (e) => {
+  type UpdatePostInputAttrs = Parameters<typeof actions.updatePost>[0];
+  type CreatePostInputAttrs = Parameters<typeof actions.createPost>[0];
+
+  onButtonClick(".back-button", (e) => {
     e.preventDefault();
-    await actions.updatePost(makeUpdateFormData());
+    navigate("/posts");
   });
 
-  type UpdatePostInputAttrs = Parameters<typeof actions.updatePost>[0];
-  function makeUpdateFormData(): UpdatePostInputAttrs {
-    return {
-      body: bodyEditor.getValue(),
-      attrs: undefined,
-      filePath: postEditMeta.post.filePath,
-    };
-  }
-
-  document
-    .querySelector<HTMLButtonElement>(".publish-button")
-    ?.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const fd = makeUpdateFormData();
+  // Publish: save+isDraft:false
+  onButtonClick(".publish-button", async (e) => {
+    e.preventDefault();
+    if (postEditMeta.post) {
+      const fd: UpdatePostInputAttrs = {
+        body: bodyEditor.getValue(),
+        attrs: undefined,
+        filePath: postEditMeta.post.filePath,
+      };
       fd.attrs = {
         isDraft: false,
       };
       await actions.updatePost(fd);
-    });
-  document
-    .querySelector<HTMLButtonElement>(".unpublish-button")
-    ?.addEventListener("click", async (e) => {
+    }
+  });
+
+  onButtonClick(".view-button", (e) => {
+    if (postEditMeta.post) {
       e.preventDefault();
-      const fd = makeUpdateFormData();
+      window.open(`/${postEditMeta.post.data.slug}`, "_blank");
+    }
+  });
+
+  // Unpublish/save-draft: save+isDraft:true
+  onButtonClick(".unpublish-button,.save-draft-button", async (e) => {
+    e.preventDefault();
+    if (postEditMeta.post) {
+      const fd: UpdatePostInputAttrs = {
+        body: bodyEditor.getValue(),
+        attrs: undefined,
+        filePath: postEditMeta.post.filePath,
+      };
       fd.attrs = {
         isDraft: true,
       };
       await actions.updatePost(fd);
-    });
+    } else {
+      const fd: CreatePostInputAttrs = {
+        body: bodyEditor.getValue(),
+        attrs: undefined,
+      };
+      fd.attrs = {
+        isDraft: true,
+      };
+      const res = await actions.createPost(fd);
+      console.log(res.data);
+      if (!res.error) {
+        return navigate("/posts/" + res.data.slug);
+      }
+    }
+  });
+}
+
+function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
   document
-    .querySelector<HTMLButtonElement>(".back-button")
-    ?.addEventListener("click", (e) => {
-      e.preventDefault();
-      navigate("/posts");
-    });
-  document
-    .querySelector<HTMLButtonElement>(".view-button")
-    ?.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.open(`/${postEditMeta.post.data.slug}`, "_blank");
-    });
+    .querySelector<HTMLButtonElement>(sel)
+    ?.addEventListener("click", listener);
 }

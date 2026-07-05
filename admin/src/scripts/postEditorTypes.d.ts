@@ -1,12 +1,19 @@
 import type { MonacoTheme } from "monaco-themes";
-import type { getBlogPosts } from "../../../src/helpers/postsHelpers";
+import type { AdminBlogEntry } from "../../../src/contentCommon";
 
 declare global {
   interface Window {
     postEditMeta: {
-      post: Awaited<ReturnType<typeof getBlogPosts>>[number] & {
-        filePath: string;
-      };
+      post:
+        | Pick<
+            {
+              data: AdminBlogEntry;
+              body: string;
+              filePath: string;
+            },
+            "data" | "body" | "filePath"
+          >
+        | undefined;
       darkTheme: MonacoTheme;
       lightTheme: MonacoTheme;
     };

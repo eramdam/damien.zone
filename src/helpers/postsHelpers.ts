@@ -1,5 +1,5 @@
 import { getCollection } from "astro:content";
-import { uniq, uniqBy } from "es-toolkit";
+import { uniqBy } from "es-toolkit";
 
 export async function getBlogPosts() {
   return (await getCollection("blog")).filter((b) => !b.data.isDraft);

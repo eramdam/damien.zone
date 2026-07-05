@@ -1,30 +1,26 @@
 import { z } from "astro/zod";
-import {
-  ActionError,
-  defineAction,
-  type ActionAPIContext,
-} from "astro:actions";
+import { ActionError, defineAction } from "astro:actions";
 import matter from "gray-matter";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import slug from "slug";
 import {
+  adminBlogPostScheme,
   blogCollectionBase,
-  blogSchema,
-  type BlogEntry,
-} from "../../../src/content.config";
+  type AdminBlogEntry,
+} from "../../../src/contentCommon";
 
-import { getCollection } from "astro:content";
+import { isEqual, omit, omitBy } from "es-toolkit";
 import { formatDate } from "../../../src/helpers/componentHelpers";
-import { isEqual, isEqualWith } from "es-toolkit";
+import { getAllPostsFromDisk } from "../contentHelpers";
 
 export const server = {
   updatePost: defineAction({
     accept: "json",
     input: z.object({
       filePath: z.string(),
-      attrs: blogSchema.partial().optional(),
+      attrs: adminBlogPostScheme.partial().optional(),
       body: z.string(),
     }),
     handler: async (input, context) => {
@@ -37,10 +33,10 @@ export const server = {
         const file = await fs.promises.readFile(filePath, "utf8");
         const fileAttrs = matter(file);
         const currentBody = String(fileAttrs.content);
-        const currentAttrsData = blogSchema.parse(fileAttrs.data);
+        const currentAttrsData = adminBlogPostScheme.parse(fileAttrs.data);
 
         fileAttrs.content = input.body;
-        const fileAttrsData = blogSchema.parse({
+        const fileAttrsData = adminBlogPostScheme.parse({
           ...currentAttrsData,
           ...input.attrs,
           tags: input.attrs?.tags?.length
@@ -56,7 +52,7 @@ export const server = {
           fileAttrsData.isDraft = false;
         }
 
-        const didChange = hasPostChanged(
+        const { didChange, onlyDraftChanged } = hasPostChanged(
           { body: currentBody, data: currentAttrsData },
           { body: input.body, data: fileAttrsData },
         );
@@ -65,7 +61,10 @@ export const server = {
           return undefined;
         }
 
-        fileAttrsData.updated = new Date();
+        if (!onlyDraftChanged) {
+          fileAttrsData.updated = new Date();
+        }
+
         context.logger.info(`updating ${input.filePath}`);
         await fs.promises.writeFile(
           filePath,
@@ -86,7 +85,7 @@ export const server = {
   createPost: defineAction({
     accept: "json",
     input: z.object({
-      attrs: blogSchema.partial().optional(),
+      attrs: adminBlogPostScheme.partial().optional(),
       body: z.string().optional(),
     }),
     handler: async (input, context) => {
@@ -123,9 +122,9 @@ export const server = {
         await fs.promises.writeFile(filePath, fileContent, "utf8");
         context.logger.info(`Created ${filePath}`);
 
-        return undefined;
+        return { slug: postSlug };
       } catch (e) {
-        context.logger.error(String(e));
+        console.error(e);
         throw new ActionError({
           message: String(e),
           code: "INTERNAL_SERVER_ERROR",
@@ -143,7 +142,7 @@ async function makeUniqueSlug(title: string) {
 
 async function uniqueSlug(titleSlug: string) {
   const allSlugs = new Set(
-    ...(await getCollection("blog")).map((p) => p.data.slug),
+    (await getAllPostsFromDisk()).map((p) => p.data.slug),
   );
 
   while (allSlugs.has(titleSlug)) {
@@ -153,15 +152,25 @@ async function uniqueSlug(titleSlug: string) {
   return titleSlug;
 }
 
-type BlogEntryWithRequiredFields = Partial<BlogEntry> & { slug: string };
+type BlogEntryWithRequiredFields = Partial<AdminBlogEntry> & { slug: string };
 function makePostFileString(body: string, data: BlogEntryWithRequiredFields) {
-  return matter.stringify(body, data);
+  return matter.stringify(
+    body,
+    omitBy(data, (v) => v === undefined),
+  );
 }
 
 type ComparedPost = { body?: string; data: BlogEntryWithRequiredFields };
 function hasPostChanged(currentPost: ComparedPost, newPost: ComparedPost) {
   const bodyChanged = currentPost.body?.trim() !== newPost.body?.trim();
   const dataChanged = !isEqual(currentPost.data, newPost.data);
-  console.log({ bodyChanged, dataChanged });
-  return bodyChanged || dataChanged;
+  const nonDraftChanged = !isEqual(
+    omit(currentPost.data, ["isDraft"]),
+    omit(newPost.data, ["isDraft"]),
+  );
+
+  return {
+    didChange: bodyChanged || dataChanged,
+    onlyDraftChanged: !nonDraftChanged,
+  };
 }

@@ -3,14 +3,17 @@ import {
   dateToRfc3339,
   formatDate,
 } from "../../../src/helpers/componentHelpers";
-import { getBlogPosts } from "../../../src/helpers/postsHelpers";
 import { sortPosts } from "../../../src/helpers/siteHelpers";
+import { getAllPostsFromDisk } from "../contentHelpers";
 import BaseAdmin from "../layouts/BaseAdmin.astro";
-const posts = sortPosts(await getBlogPosts());
+const posts = sortPosts(await getAllPostsFromDisk());
 ---
 
 <BaseAdmin title="Posts">
   <h1>Posts</h1>
+  <nav>
+    <button onclick="window.location = '/posts/new';">New post</button>
+  </nav>
   <ul class="posts-list">
     {
       posts.map((post) => {
@@ -24,6 +27,7 @@ const posts = sortPosts(await getBlogPosts());
               {formatDate(postDate, "dd MMM, yyyy")}
             </time>
             <a href={`/posts/${post.data.slug}`}>{post.data.title}</a>
+            {post.data.isDraft && <small>(not published)</small>}
           </li>
         );
       })

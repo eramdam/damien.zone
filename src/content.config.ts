@@ -1,25 +1,6 @@
-import { defineCollection, type InferEntrySchema } from "astro:content";
 import { glob } from "astro/loaders";
-import { z } from "astro/zod";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-
-export const blogSchema = z.object({
-  title: z.string().optional(),
-  slug: z.string(),
-  date: z.coerce.date(),
-  tags: z.array(z.string()).default([]),
-  description: z.string().optional().default(""),
-  image: z.string().optional(),
-  updated: z.coerce.date().optional(),
-  class_name: z.string().optional(),
-  layout: z.string().optional(),
-  linkedUrl: z.url().optional(),
-  isDraft: z.boolean().optional(),
-});
-
-export const blogCollectionBase =
-  fileURLToPath(path.dirname(import.meta.url)) + "/blog";
+import { defineCollection } from "astro:content";
+import { blogCollectionBase, blogSchema } from "./contentCommon";
 
 const blog = defineCollection({
   loader: glob({
@@ -28,7 +9,5 @@ const blog = defineCollection({
   }),
   schema: blogSchema,
 });
-
-export type BlogEntry = InferEntrySchema<"blog">;
 
 export const collections = { blog };

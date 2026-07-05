@@ -1,9 +1,8 @@
 ---
-import type { InferEntrySchema } from "astro:content";
 import type { MonacoTheme } from "monaco-themes";
 import { createRequire } from "node:module";
-import type { BlogEntry } from "../../../src/content.config";
-import { getAllTags } from "../../../src/helpers/postsHelpers";
+import type { AdminBlogEntry } from "../../../src/contentCommon";
+import { getAllTagsFromDisk } from "../contentHelpers";
 import BaseAdmin from "./BaseAdmin.astro";
 
 const require = createRequire(import.meta.url);
@@ -14,7 +13,7 @@ interface Props {
         id: string;
         body?: string;
         collection: "blog";
-        data: InferEntrySchema<"blog">;
+        data: AdminBlogEntry;
         filePath: string;
       }
     | undefined;
@@ -38,7 +37,7 @@ const loadTheme = async (themeName: string) => {
   return base;
 };
 
-const blogSchemeDescription: Record<keyof BlogEntry, string> = {
+const blogSchemeDescription: Record<keyof AdminBlogEntry, string> = {
   title: "My post",
   slug: "my-post",
   class_name: "",
@@ -48,7 +47,7 @@ const blogSchemeDescription: Record<keyof BlogEntry, string> = {
   isDraft: "false",
   layout: "../layouts/BaseLayout.astro",
   linkedUrl: "",
-  tags: (await getAllTags()).join(", "),
+  tags: (await getAllTagsFromDisk()).join(", "),
   updated: new Date().toISOString(),
 };
 
@@ -71,10 +70,33 @@ const lightTheme = await loadTheme("GitHub");
   <form>
     <nav>
       <button type="button" class="back-button">← Back</button>
-      <button type="submit">Save</button>
+      <!-- save+isDraft:false -->
       <button type="button" class="publish-button">Publish</button>
-      <button type="button" class="view-button">View</button>
-      <button type="button" class="unpublish-button danger">Unpublish</button>
+      <!-- TODO -->
+      {
+        !!post && (
+          <button type="button" class="view-button">
+            {post?.data.isDraft ? "View draft" : "View"}
+          </button>
+        )
+      }
+      <!-- save+isDraft:true -->
+      {
+        (!post || post?.data.isDraft) && (
+          <button class="save-draft-button" type="button">
+            Save as draft
+          </button>
+        )
+      }
+
+      <!-- save+isDraft:true -->
+      {
+        post && post?.data.isDraft && (
+          <button type="button" class="unpublish-button danger">
+            Unpublish
+          </button>
+        )
+      }
     </nav>
     <details>
       <summary>Attributes</summary>
