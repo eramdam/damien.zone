@@ -1,6 +1,5 @@
 import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
-import matter from "gray-matter";
 import { dump } from "js-yaml";
 import * as monaco from "monaco-editor";
 import loader from "@monaco-editor/loader";
@@ -25,7 +24,6 @@ if (form) {
       "editor.background": "#ffffff04",
     },
   });
-  monaco.editor.defineTheme("md-light", postEditMeta.lightTheme);
   monacoInstance.editor.defineTheme("md-light", postEditMeta.lightTheme);
 
   const mdDark = window.matchMedia("(prefers-color-scheme:dark)");
@@ -57,7 +55,6 @@ if (form) {
     },
   } satisfies monaco.editor.IStandaloneEditorConstructionOptions;
 
-  const bodyModel = monaco.editor.createModel(
   const bodyModel = monacoInstance.editor.createModel(
     postEditMeta.post?.body || "",
     "markdown",
@@ -79,13 +76,9 @@ if (form) {
     },
   );
 
-  const attrsRaw = matter
-    .stringify("", postEditMeta.post?.data || { title: "" })
-    .replaceAll("---", "")
-    .trim();
+  const attrsRaw = dump(postEditMeta.post?.data || { title: "" }).trim();
   const attrsModel = monacoInstance.editor.createModel(attrsRaw, "yaml");
 
-  const attrsEditor = monaco.editor.create(
   const attrsEditor = monacoInstance.editor.create(
     document.querySelector("#attrs-edit-area")!,
     {
@@ -217,8 +210,38 @@ if (form) {
     const fileInput = document.querySelector<HTMLInputElement>("#file-input");
     if (fileInput) {
       fileInput.addEventListener("change", async (e) => {
-        const fd = new FormData(form);
-        await actions.uploadMedia(fd);
+        if (e.target instanceof HTMLInputElement) {
+          const fileList = e.target.files;
+          const files: File[] = [];
+          if (fileList) {
+            for (const file of fileList) {
+              files.push(file);
+            }
+          }
+
+          const filesJson = await uploadFiles(files);
+
+          filesJson.forEach((f) => {
+            const pos = bodyEditor.getPosition();
+            const lines = bodyModel.getLineCount();
+            const range =
+              pos && bodyEditor.hasTextFocus()
+                ? new monacoInstance.Range(pos.lineNumber, 1, pos.lineNumber, 1)
+                : new monacoInstance.Range(
+                    lines,
+                    bodyModel.getLineMaxColumn(lines),
+                    lines,
+                    bodyModel.getLineMaxColumn(lines),
+                  );
+
+            bodyEditor.executeEdits("media-upload", [
+              {
+                range: range,
+                text: `![](${f.file})`,
+              },
+            ]);
+          });
+        }
       });
       fileInput.click();
     }
@@ -230,4 +253,27 @@ function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
     .querySelector<HTMLButtonElement | HTMLAnchorElement>(sel)
     // @ts-expect-error
     ?.addEventListener("click", listener);
+}
+
+async function uploadFiles(files: File[]) {
+  const queue = [...files];
+  const results: { file: string }[] = [];
+
+  async function worker() {
+    let file: File | undefined;
+    while ((file = queue.shift())) {
+      try {
+        const res = await fetch("/api/file-upload", {
+          method: "POST",
+          body: file,
+          headers: { "x-filename": file.name },
+        });
+        const json = (await res.json()) as { path: string };
+        results.push({ file: json.path });
+      } catch (e) {}
+    }
+  }
+
+  await Promise.all(Array.from({ length: 2 }, worker));
+  return results;
 }
