@@ -1,0 +1,29 @@
+---
+import { getCollection, render, type InferEntrySchema } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const previewPosts = await getCollection("previewPost");
+const post = previewPosts[0];
+const { Content, remarkPluginFrontmatter } = await render(post);
+const data = { ...post.data, ...remarkPluginFrontmatter };
+
+if (!data.description) {
+  data.description = "";
+}
+
+if (!data.date) {
+  data.date = new Date();
+}
+---
+
+<BaseLayout
+  frontmatter={data}
+  content={data as InferEntrySchema<"blog">}
+  isPost
+  isPreview
+>
+  <BlogPost data={data as InferEntrySchema<"blog">}>
+    <Content />
+  </BlogPost>
+</BaseLayout>

@@ -13,6 +13,7 @@ const description =
   truncateText(htmlToText(await Astro.props.compiledContent?.()), 10);
 
 if (
+  !Astro.props.isPreview &&
   !Astro.props.file?.includes("src/drafts") &&
   Astro.url.pathname !== "/drafts/" &&
   !Astro.url.pathname.startsWith("/drafts/")

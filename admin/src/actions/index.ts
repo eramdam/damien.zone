@@ -156,6 +156,31 @@ export const server = {
       }
     },
   }),
+  updatePreviewPost: defineAction({
+    accept: "json",
+    input: z.object({
+      attrs: adminBlogPostScheme.partial().optional(),
+      body: z.string(),
+    }),
+    async handler(input, context) {
+      const filePath = path.resolve(
+        fileURLToPath(import.meta.url),
+        "../../../../",
+        "src/tmp-preview.md",
+      );
+
+      fs.promises.writeFile(
+        filePath,
+        makePostFileString(
+          input.body,
+          input.attrs as BlogEntryWithRequiredFields,
+        ),
+        "utf-8",
+      );
+
+      return undefined;
+    },
+  }),
 };
 
 async function makeUniqueSlug(title: string) {

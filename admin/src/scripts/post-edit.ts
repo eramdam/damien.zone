@@ -1,8 +1,11 @@
 import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
+import { dump, load } from "js-yaml";
 import * as monaco from "monaco-editor";
 
+import { debounce } from "es-toolkit";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+import { DEV_URL } from "../../../shared/constants";
 import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {
@@ -15,6 +18,7 @@ const form = document.querySelector("form");
 
 if (form) {
   const { postEditMeta } = window;
+  let shouldUpdatePreview = false;
 
   monaco.editor.defineTheme("md-dark", {
     ...postEditMeta.darkTheme,
@@ -92,7 +96,12 @@ if (form) {
     },
   );
 
+  const onEditorsChanged = debounce(callUpdatePreviewPost, 500);
   const attrsFromEditor = () => load(attrsEditor.getValue());
+
+  attrsEditor.onDidChangeModelContent(onEditorsChanged);
+  bodyEditor.onDidChangeModelContent(onEditorsChanged);
+
   const updateAttrsHeight = (e: { contentHeightChanged: boolean }) => {
     if (!e.contentHeightChanged) {
       return;
@@ -150,7 +159,6 @@ if (form) {
     if (postEditMeta.post) {
       const fd: UpdatePostInputAttrs = {
         body: bodyEditor.getValue(),
-        attrs: undefined,
         attrs: attrsFromEditor() as unknown as UpdatePostInputAttrs["attrs"],
         filePath: postEditMeta.post.filePath,
       };
@@ -165,7 +173,25 @@ if (form) {
   onButtonClick(".view-button", (e) => {
     if (postEditMeta.post) {
       e.preventDefault();
-      window.open(`/${postEditMeta.post.data.slug}`, "_blank");
+      if (postEditMeta.post.data.isDraft) {
+        window.open(
+          `${DEV_URL}/drafts/${postEditMeta.post.data.slug}`,
+          "_blank",
+        );
+      } else {
+        window.open(`${DEV_URL}/${postEditMeta.post.data.slug}`, "_blank");
+      }
+    }
+  });
+
+  onButtonClick(".preview-btn", (e) => {
+    if (postEditMeta.post) {
+      e.preventDefault();
+      shouldUpdatePreview = true;
+      if (!postEditMeta.post.data.isDraft) {
+        callUpdatePreviewPost();
+        window.open(`${DEV_URL}/preview`, "_blank", "width=600,height=600");
+      }
     }
   });
 
@@ -175,7 +201,6 @@ if (form) {
     if (postEditMeta.post) {
       const fd: UpdatePostInputAttrs = {
         body: bodyEditor.getValue(),
-        attrs: undefined,
         attrs: attrsFromEditor() as undefined as UpdatePostInputAttrs["attrs"],
         filePath: postEditMeta.post.filePath,
       };
@@ -250,6 +275,13 @@ if (form) {
       fileInput.click();
     }
   });
+
+  async function callUpdatePreviewPost() {
+    actions.updatePreviewPost({
+      body: bodyEditor.getValue(),
+      attrs: attrsFromEditor() as UpdatePostInputAttrs["attrs"],
+    });
+  }
 }
 
 function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {

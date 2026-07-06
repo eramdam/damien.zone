@@ -5,7 +5,4 @@ dist
 .cache
 .astro
 
-# Local Netlify folder
-.netlify
-
-
+tmp-preview.md
