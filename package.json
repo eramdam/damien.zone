@@ -5,6 +5,7 @@
   "scripts": {
     "admin:astro": "cd admin && astro",
     "admin:dev": "pnpm run admin:astro -- dev",
+    "cms": "concurrently 'pnpm run dev' 'pnpm run admin:dev'",
     "admin:check": "pnpm run admin:astro -- check",
     "admin:build": "pnpm run admin:astro -- build",
     "admin:preview": "pnpm run admin:astro -- preview",
@@ -62,6 +63,7 @@
     "@types/sanitize-html": "^2.16.1",
     "@types/slug": "^5.0.9",
     "cheerio": "^1.2.0",
+    "concurrently": "^10.0.3",
     "fontkit": "^2.0.4",
     "prettier": "^3.8.1",
     "random-word-slugs": "^0.1.7",

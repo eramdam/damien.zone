@@ -12,6 +12,7 @@ import type { Element, Root, RootContent } from "hast";
 import rehypeRewrite from "rehype-rewrite";
 import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
 import { rewriteWithFigures } from "./src/core/customRemarkFigure";
+import { DEV_PORT } from "./shared/constants";
 
 const isDev = import.meta.env.DEV;
 const assetsPrefix = "https://cdn.damien.zone";
@@ -73,6 +74,7 @@ export default defineConfig({
 
   server: {
     allowedHosts: [".ngrok.app", ".ngrok-free.app"],
+    port: DEV_PORT,
   },
 
   site: isDev ? "http://localhost:4321" : "https://damien.zone",

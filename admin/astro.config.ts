@@ -4,6 +4,7 @@ import node from "@astrojs/node";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
+import { ADMIN_DEV_PORT } from "../shared/constants";
 
 const adminDir = path.dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +31,9 @@ export default defineConfig({
   },
   security: {
     actionBodySizeLimit: 30 * 1024 * 1024,
+  },
+  server: {
+    port: ADMIN_DEV_PORT,
   },
 
   root: adminDir,
