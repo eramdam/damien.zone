@@ -1,6 +1,5 @@
 import { actions } from "astro:actions";
 import { navigate } from "astro:transitions/client";
-import { dump } from "js-yaml";
 import * as monaco from "monaco-editor";
 
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
@@ -93,6 +92,7 @@ if (form) {
     },
   );
 
+  const attrsFromEditor = () => load(attrsEditor.getValue());
   const updateAttrsHeight = (e: { contentHeightChanged: boolean }) => {
     if (!e.contentHeightChanged) {
       return;
@@ -151,9 +151,11 @@ if (form) {
       const fd: UpdatePostInputAttrs = {
         body: bodyEditor.getValue(),
         attrs: undefined,
+        attrs: attrsFromEditor() as unknown as UpdatePostInputAttrs["attrs"],
         filePath: postEditMeta.post.filePath,
       };
       fd.attrs = {
+        ...fd.attrs,
         isDraft: false,
       };
       await actions.updatePost(fd);
@@ -174,18 +176,21 @@ if (form) {
       const fd: UpdatePostInputAttrs = {
         body: bodyEditor.getValue(),
         attrs: undefined,
+        attrs: attrsFromEditor() as undefined as UpdatePostInputAttrs["attrs"],
         filePath: postEditMeta.post.filePath,
       };
       fd.attrs = {
+        ...fd.attrs,
         isDraft: true,
       };
       await actions.updatePost(fd);
     } else {
       const fd: CreatePostInputAttrs = {
         body: bodyEditor.getValue(),
-        attrs: undefined,
+        attrs: attrsFromEditor() as undefined as CreatePostInputAttrs["attrs"],
       };
       fd.attrs = {
+        ...fd.attrs,
         isDraft: true,
       };
       const res = await actions.createPost(fd);
