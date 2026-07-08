@@ -22,9 +22,13 @@ const postUrl = data.linkedUrl
   <data class="u-photo" value="/avatar/portrait.webp"></data>
 </div>
 <h1 class="p-name">
-  <a href={postUrl} rel="canonical" class="u-url u-uid">
+  <a
+    href={postUrl}
+    rel="canonical"
+    class="u-url u-uid"
+    class:list={["u-url", "u-uid", hasLinkedUrl && "with-link"]}
+  >
     {title}
-    <span>{hasLinkedUrl && " →"}</span>
   </a>
 </h1>
 
