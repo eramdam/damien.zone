@@ -12,7 +12,8 @@ import { DEV_PORT } from "./shared/constants";
 import { makeUnifiedMarkdownConfig } from "./shared/markdown";
 
 const isDev = import.meta.env.DEV;
-const assetsPrefix = "https://cdn.damien.zone";
+const isCI = import.meta.env.CI === "true";
+const assetsPrefix = isCI ? "https://cdn.damien.zone" : undefined;
 
 export default defineConfig({
   image: {
@@ -74,7 +75,7 @@ export default defineConfig({
     port: DEV_PORT,
   },
 
-  site: isDev ? "http://localhost:4321" : "https://damien.zone",
+  site: isCI ? "https://damien.zone" : "http://localhost:4321",
 
   build: {
     assetsPrefix,
@@ -83,9 +84,7 @@ export default defineConfig({
   compressHTML: false,
 
   markdown: {
-    processor: unified(
-      makeUnifiedMarkdownConfig(!isDev ? assetsPrefix : undefined),
-    ),
+    processor: unified(makeUnifiedMarkdownConfig(assetsPrefix)),
   },
   integrations: [
     expressiveCode({

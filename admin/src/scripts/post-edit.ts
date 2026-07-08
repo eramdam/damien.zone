@@ -203,16 +203,11 @@ if (form) {
             return;
           }
           courier.attachWindow(win, DEV_URL);
+          shouldUpdatePreview = true;
           callUpdatePreviewPost();
           window.removeEventListener("message", msg);
         });
       }
-
-      // shouldUpdatePreview = true;
-      // if (!postEditMeta.post.data.isDraft) {
-      //   callUpdatePreviewPost();
-      //   window.open(`${DEV_URL}/preview`, "_blank", "width=600,height=600");
-      // }
     }
   });
 
@@ -298,11 +293,16 @@ if (form) {
   });
 
   async function callUpdatePreviewPost() {
-    courier.sendPreviewPost({ body: bodyEditor.getValue() });
-    // actions.updatePreviewPost({
-    //   body: bodyEditor.getValue(),
-    //   attrs: attrsFromEditor() as UpdatePostInputAttrs["attrs"],
-    // });
+    if (shouldUpdatePreview) {
+      const attrsForPreview =
+        attrsFromEditor() as UpdatePostInputAttrs["attrs"];
+      courier.sendPreviewPost({
+        body: bodyEditor.getValue(),
+        attrs: {
+          title: attrsForPreview?.title,
+        },
+      });
+    }
   }
 }
 

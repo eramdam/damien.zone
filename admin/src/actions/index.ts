@@ -5,15 +5,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import slug from "slug";
-import {
-  adminBlogPostScheme,
-  blogCollectionBase,
-  type AdminBlogEntry,
-} from "../../../src/contentCommon";
+import { blogCollectionBase } from "../../../src/contentCommon";
 
 import { isEqual, omit, omitBy } from "es-toolkit";
 import { formatDate } from "../../../src/helpers/componentHelpers";
 import { getAllPostsFromDisk } from "../contentHelpers";
+import {
+  adminBlogPostScheme,
+  type AdminBlogEntry,
+} from "../../../shared/commonTypes";
 
 export const server = {
   updatePost: defineAction({

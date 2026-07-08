@@ -9,6 +9,9 @@ export const PREVIEW_LOCAL_STORAGE = "__damien.zone__preview";
 
 const previewPostSchema = z.object({
   body: z.string(),
+  attrs: z.object({
+    title: z.string().optional(),
+  }),
 });
 export type PreviewPostSchema = z.infer<typeof previewPostSchema>;
 export class PostEditorCourier {

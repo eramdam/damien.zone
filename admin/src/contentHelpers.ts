@@ -1,11 +1,11 @@
 import { uniqBy } from "es-toolkit";
 import fs from "fs";
 import matter from "gray-matter";
+import { blogCollectionBase } from "../../src/contentCommon";
 import {
-  blogCollectionBase,
-  adminBlogPostScheme,
   type AdminBlogEntry,
-} from "../../src/contentCommon";
+  adminBlogPostScheme,
+} from "../../shared/commonTypes";
 
 export async function getAllPostsFromDisk() {
   const postsRaw = fs.globSync(`${blogCollectionBase}/**/*.md`);

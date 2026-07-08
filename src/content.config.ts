@@ -1,6 +1,7 @@
 import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
-import { blogCollectionBase, blogSchema } from "./contentCommon";
+import { blogCollectionBase } from "./contentCommon";
+import { blogSchema } from "../shared/commonTypes";
 
 const blog = defineCollection({
   loader: glob({
