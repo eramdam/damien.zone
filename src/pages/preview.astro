@@ -23,6 +23,11 @@ if (!data.date) {
 </BaseLayout>
 
 <script>
+  import {
+    ADMIN_DEV_URL,
+    PostPreviewReceiver,
+    type PreviewPostSchema,
+  } from "../../shared/constants";
   import { makeUnifiedMarkdownConfig } from "../../shared/markdown";
 
   // @ts-expect-error
@@ -33,10 +38,15 @@ if (!data.date) {
   const { unified } = await import("@astrojs/markdown-remark");
   const unifiedInstance = unified(makeUnifiedMarkdownConfig(undefined));
   const renderer = await unifiedInstance.createRenderer({});
-  updatePreviewContent();
 
-  async function updatePreviewContent() {
-    const markdownContent = await renderer.render("");
+  if (window.opener) {
+    window.opener.postMessage("ping", ADMIN_DEV_URL);
+    const receiver = new PostPreviewReceiver(window, ADMIN_DEV_URL);
+    receiver.onPreviewUpdate(updatePreviewContent);
+  }
+
+  async function updatePreviewContent(payload: PreviewPostSchema) {
+    const markdownContent = await renderer.render(payload.body || "");
     const contentEl = document.querySelector(".e-content");
     if (contentEl) {
       contentEl.innerHTML = markdownContent.code;

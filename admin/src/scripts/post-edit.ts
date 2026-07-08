@@ -5,7 +5,7 @@ import * as monaco from "monaco-editor";
 
 import { debounce } from "es-toolkit";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
-import { DEV_URL } from "../../../shared/constants";
+import { DEV_URL, PostEditorCourier } from "../../../shared/constants";
 import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {
@@ -15,6 +15,7 @@ self.MonacoEnvironment = {
 };
 
 const form = document.querySelector("form");
+const courier = new PostEditorCourier();
 
 if (form) {
   const { postEditMeta } = window;
@@ -185,13 +186,33 @@ if (form) {
   });
 
   onButtonClick(".preview-btn", (e) => {
-    if (postEditMeta.post) {
+    if (postEditMeta.post || true) {
       e.preventDefault();
-      shouldUpdatePreview = true;
-      if (!postEditMeta.post.data.isDraft) {
-        callUpdatePreviewPost();
-        window.open(`${DEV_URL}/preview`, "_blank", "width=600,height=600");
+      const win = window.open(
+        `${DEV_URL}/preview`,
+        "_blank",
+        "width=600,height=600",
+      );
+
+      if (win) {
+        window.onbeforeunload = () => {
+          win.close();
+        };
+        window.addEventListener("message", function msg(e) {
+          if (e.origin !== DEV_URL) {
+            return;
+          }
+          courier.attachWindow(win, DEV_URL);
+          callUpdatePreviewPost();
+          window.removeEventListener("message", msg);
+        });
       }
+
+      // shouldUpdatePreview = true;
+      // if (!postEditMeta.post.data.isDraft) {
+      //   callUpdatePreviewPost();
+      //   window.open(`${DEV_URL}/preview`, "_blank", "width=600,height=600");
+      // }
     }
   });
 
@@ -277,10 +298,11 @@ if (form) {
   });
 
   async function callUpdatePreviewPost() {
-    actions.updatePreviewPost({
-      body: bodyEditor.getValue(),
-      attrs: attrsFromEditor() as UpdatePostInputAttrs["attrs"],
-    });
+    courier.sendPreviewPost({ body: bodyEditor.getValue() });
+    // actions.updatePreviewPost({
+    //   body: bodyEditor.getValue(),
+    //   attrs: attrsFromEditor() as UpdatePostInputAttrs["attrs"],
+    // });
   }
 }
 
