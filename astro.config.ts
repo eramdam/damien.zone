@@ -8,11 +8,8 @@ import {
   fontProviders,
   passthroughImageService,
 } from "astro/config";
-import type { Element, Root, RootContent } from "hast";
-import rehypeRewrite from "rehype-rewrite";
-import { augmentFrontmatterFields } from "./src/core/augmentFrontmatter";
-import { rewriteWithFigures } from "./src/core/customRemarkFigure";
 import { DEV_PORT } from "./shared/constants";
+import { makeUnifiedMarkdownConfig } from "./shared/markdown";
 
 const isDev = import.meta.env.DEV;
 const assetsPrefix = "https://cdn.damien.zone";
@@ -86,24 +83,9 @@ export default defineConfig({
   compressHTML: false,
 
   markdown: {
-    processor: unified({
-      smartypants: false,
-      rehypePlugins: [
-        [
-          rehypeRewrite,
-          {
-            rewrite: (
-              node: Root | RootContent,
-              _index?: number,
-              _parent?: Root | Element,
-            ) => {
-              rewriteWithFigures(node, !isDev ? assetsPrefix : undefined);
-            },
-          },
-        ],
-        augmentFrontmatterFields,
-      ],
-    }),
+    processor: unified(
+      makeUnifiedMarkdownConfig(!isDev ? assetsPrefix : undefined),
+    ),
   },
   integrations: [
     expressiveCode({
