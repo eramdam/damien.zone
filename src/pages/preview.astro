@@ -1,29 +1,45 @@
 ---
-import { getCollection, render, type InferEntrySchema } from "astro:content";
+import { type InferEntrySchema } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const previewPosts = await getCollection("previewPost");
-const post = previewPosts[0];
-const { Content, remarkPluginFrontmatter } = await render(post);
-const data = { ...post.data, ...remarkPluginFrontmatter };
+const data = {};
 
+// @ts-expect-error
 if (!data.description) {
+  // @ts-expect-error
   data.description = "";
 }
 
+// @ts-expect-error
 if (!data.date) {
+  // @ts-expect-error
   data.date = new Date();
 }
 ---
 
-<BaseLayout
-  frontmatter={data}
-  content={data as InferEntrySchema<"blog">}
-  isPost
-  isPreview
->
-  <BlogPost data={data as InferEntrySchema<"blog">}>
-    <Content />
-  </BlogPost>
+<BaseLayout frontmatter={{}} isPost isPreview>
+  <BlogPost data={data as InferEntrySchema<"blog">} />
 </BaseLayout>
+
+<script>
+  import { makeUnifiedMarkdownConfig } from "../../shared/markdown";
+
+  // @ts-expect-error
+  window.process = {
+    env: {},
+  };
+
+  const { unified } = await import("@astrojs/markdown-remark");
+  const unifiedInstance = unified(makeUnifiedMarkdownConfig(undefined));
+  const renderer = await unifiedInstance.createRenderer({});
+  updatePreviewContent();
+
+  async function updatePreviewContent() {
+    const markdownContent = await renderer.render("");
+    const contentEl = document.querySelector(".e-content");
+    if (contentEl) {
+      contentEl.innerHTML = markdownContent.code;
+    }
+  }
+</script>
