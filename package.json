@@ -9,7 +9,7 @@
     "admin:check": "pnpm run admin:astro -- check",
     "admin:build": "pnpm run admin:astro -- build",
     "admin:preview": "pnpm run admin:astro -- preview",
-    "dev": "astro dev",
+    "dev": "rimraf .astro && astro dev",
     "check": "astro check",
     "prepare": "husky",
     "build": "pnpm run check && astro build",
