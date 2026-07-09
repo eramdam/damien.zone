@@ -7,7 +7,6 @@ const isDev = import.meta.env?.DEV ?? process.env.NODE_ENV !== "production";
 type RewriteParams = Parameters<RehypeRewriteOptions["rewrite"]>;
 export const rewriteWithFigures = function (
   node: RewriteParams[0],
-  assetsPrefix?: string,
 ): ReturnType<RehypeRewriteOptions["rewrite"]> {
   if (node.type !== "element") {
     return;
@@ -32,18 +31,16 @@ export const rewriteWithFigures = function (
     .filter((e): e is Element => {
       return e.type === "element" && e.tagName === "img";
     })
-    .map((i) => makeFigureFromImage(i, assetsPrefix));
+    .map(makeFigureFromImage);
 
   node.children = images;
 };
 
-function makeFigureFromImage(img: Element, assetsPrefix?: string): Element {
+function makeFigureFromImage(img: Element): Element {
   const props = img.properties;
   const title = props.title;
   const alt = props.alt || title;
-  const src = String(props.src).startsWith("/")
-    ? `${assetsPrefix}${props.src}`
-    : props.src;
+  const src = props.src;
 
   return h("figure", { "data-type": "image" }, [
     h("a", { href: src }, [

@@ -37,7 +37,9 @@ if (!data.date) {
   };
 
   const { unified } = await import("@astrojs/markdown-remark");
-  const unifiedInstance = unified(makeUnifiedMarkdownConfig(undefined));
+  const unifiedInstance = unified(
+    makeUnifiedMarkdownConfig(`${ADMIN_DEV_URL}/api/proxy`),
+  );
   const renderer = await unifiedInstance.createRenderer({});
 
   if (window.opener) {
