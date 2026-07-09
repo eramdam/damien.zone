@@ -191,7 +191,7 @@ if (form) {
       const win = window.open(
         `${DEV_URL}/preview`,
         "_blank",
-        "width=600,height=600",
+        "width=800,height=800",
       );
 
       if (win) {
