@@ -20,7 +20,12 @@ export const server = {
     accept: "json",
     input: z.object({
       filePath: z.string(),
-      attrs: adminBlogPostScheme.partial().optional(),
+      attrs: adminBlogPostScheme
+        .extend({
+          date: z.union([z.literal("now"), z.coerce.date()]),
+        })
+        .partial()
+        .optional(),
       body: z.string(),
     }),
     async handler(input, context) {
@@ -39,6 +44,7 @@ export const server = {
         const fileAttrsData = adminBlogPostScheme.parse({
           ...currentAttrsData,
           ...input.attrs,
+          date: input.attrs?.date === "now" ? new Date() : input.attrs?.date,
           tags: input.attrs?.tags?.length
             ? input.attrs.tags
             : fileAttrs.data.tags,
