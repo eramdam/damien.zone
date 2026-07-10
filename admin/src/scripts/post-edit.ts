@@ -168,6 +168,7 @@ if (form) {
         isDraft: false,
       };
       await actions.updatePost(fd);
+      window.location.reload();
     }
   });
 
@@ -225,6 +226,7 @@ if (form) {
         isDraft: true,
       };
       await actions.updatePost(fd);
+      window.location.reload();
     } else {
       const fd: CreatePostInputAttrs = {
         body: bodyEditor.getValue(),
