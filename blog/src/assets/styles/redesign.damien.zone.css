@@ -1,7 +1,7 @@
 @import url("./redesign.reset.css");
 @import url("./comentario.css");
 @import url("./image-gallery.css");
-@import url('./colors.css');
+@import url('@damien.zone/shared/colors.css');
 
 /* Fonts and sizes. */
 :root {

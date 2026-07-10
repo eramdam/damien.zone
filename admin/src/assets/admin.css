@@ -1,4 +1,4 @@
-@import url('../../../src/assets/styles/colors.css');
+@import url('@damien.zone/shared/colors.css');
 @import url("./admin.reset.css");
 
 html {
