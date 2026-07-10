@@ -2,11 +2,10 @@ import type { Element } from "hast";
 import { h } from "hastscript";
 import type { RehypeRewriteOptions } from "rehype-rewrite";
 
-const isDev = import.meta.env?.DEV ?? process.env.NODE_ENV !== "production";
-
 type RewriteParams = Parameters<RehypeRewriteOptions["rewrite"]>;
 export const rewriteWithFigures = function (
   node: RewriteParams[0],
+  isDev: boolean,
 ): ReturnType<RehypeRewriteOptions["rewrite"]> {
   if (node.type !== "element") {
     return;
@@ -31,12 +30,12 @@ export const rewriteWithFigures = function (
     .filter((e): e is Element => {
       return e.type === "element" && e.tagName === "img";
     })
-    .map(makeFigureFromImage);
+    .map((i) => makeFigureFromImage(i, isDev));
 
   node.children = images;
 };
 
-function makeFigureFromImage(img: Element): Element {
+function makeFigureFromImage(img: Element, isDev: boolean): Element {
   const props = img.properties;
   const title = props.title;
   const alt = props.alt || title;

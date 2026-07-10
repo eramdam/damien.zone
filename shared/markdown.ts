@@ -1,17 +1,18 @@
-import rehypeRewrite, { type RehypeRewriteOptions } from "rehype-rewrite";
-import type { Element, Root, RootContent } from "hast";
 import type { UnifiedProcessorOptions } from "@astrojs/markdown-remark";
-import { rewriteWithFigures } from "../src/core/customRemarkFigure";
+import type { Root } from "hast";
+import rehypeRewrite, { type RehypeRewriteOptions } from "rehype-rewrite";
 import type { VFile } from "vfile";
+import { rewriteWithFigures } from "./customRemarkFigure.js";
 
 export const makeUnifiedMarkdownConfig = (
   assetsPrefix: string | undefined,
+  isDev: boolean,
 ): UnifiedProcessorOptions => {
   return {
     smartypants: false,
     rehypePlugins: [
       makeRewritePlugin((node) => rewriteMediaSrc(node, assetsPrefix)),
-      makeRewritePlugin((node) => rewriteWithFigures(node)),
+      makeRewritePlugin((node) => rewriteWithFigures(node, isDev)),
       augmentFrontmatterFields,
     ],
   };

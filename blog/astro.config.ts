@@ -8,8 +8,8 @@ import {
   fontProviders,
   passthroughImageService,
 } from "astro/config";
-import { DEV_PORT } from "./shared/constants";
-import { makeUnifiedMarkdownConfig } from "./shared/markdown";
+import { DEV_PORT } from "@damien.zone/shared/constants";
+import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
 
 const isDev = import.meta.env.DEV;
 const isCI = import.meta.env.CI === "true";
