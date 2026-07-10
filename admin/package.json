@@ -15,7 +15,6 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/markdown-remark": "^7.2.1",
-    "@astrojs/mdx": "^7.0.2",
     "@astrojs/node": "^11.0.2",
     "@damien.zone/blog": "workspace:blog@*",
     "@damien.zone/shared": "workspace:shared@*",
@@ -23,7 +22,6 @@
     "astro": "^7.0.7",
     "es-toolkit": "^1.45.1",
     "gray-matter": "^4.0.3",
-    "husky": "^9.1.7",
     "js-yaml": "^5.2.1",
     "mime-types": "^3.0.2",
     "monaco-editor": "^0.55.1",
