@@ -4,8 +4,8 @@ import { createRequire } from "node:module";
 import type { AdminBlogEntry } from "@damien.zone/shared/commonTypes";
 import { getAllTagsFromDisk } from "../contentHelpers";
 import BaseAdmin from "./BaseAdmin.astro";
-
-const require = createRequire(import.meta.url);
+import GithubDarkTheme from "../assets/GitHub Dark";
+import GithubTheme from "../assets/GitHub";
 
 interface Props {
   post:
@@ -22,8 +22,8 @@ interface Props {
 const { post } = Astro.props;
 const isCreatingPost = !post;
 
-const loadTheme = async (themeName: string) => {
-  const base = require(`../../themes/${themeName}.json`) as MonacoTheme;
+const buildTheme = async (themeJson: MonacoTheme) => {
+  const base = themeJson;
 
   base.colors = {};
   base.rules = [
@@ -51,8 +51,8 @@ const blogSchemeDescription: Record<keyof AdminBlogEntry, string> = {
   updated: new Date().toISOString(),
 };
 
-const darkTheme = await loadTheme("GitHub Dark");
-const lightTheme = await loadTheme("GitHub");
+const darkTheme = await buildTheme(GithubDarkTheme);
+const lightTheme = await buildTheme(GithubTheme);
 ---
 
 <script is:inline define:vars={{ post, darkTheme, lightTheme }}>

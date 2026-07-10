@@ -20,11 +20,15 @@ const courier = new PostEditorCourier();
 if (form) {
   const { postEditMeta } = window;
   let shouldUpdatePreview = false;
+  const bgColor = getComputedStyle(document.documentElement).getPropertyValue(
+    "background-color",
+  );
+  const editorBackground = getColorString(bgColor, "rgba(255,255,255,.06");
 
   monaco.editor.defineTheme("md-dark", {
     ...postEditMeta.darkTheme,
     colors: {
-      "editor.background": "#ffffff04",
+      "editor.background": editorBackground,
     },
   });
   monaco.editor.defineTheme("md-light", postEditMeta.lightTheme);
@@ -93,6 +97,10 @@ if (form) {
       padding: {
         top: 10,
         bottom: 10,
+      },
+      scrollbar: {
+        vertical: "hidden",
+        useShadows: false,
       },
     },
   );
@@ -348,4 +356,25 @@ function makeMarkupForFile(file: FileUploadResponse) {
   }
 
   return "";
+}
+
+function getColorString(...colorStrings: string[]) {
+  const canvas = document.createElement("canvas");
+  canvas.height = 20;
+  canvas.width = 20;
+  const ctx = canvas.getContext("2d")!;
+  colorStrings.forEach((c) => {
+    ctx.fillStyle = c;
+    console.log(ctx.fillStyle);
+    ctx.fillRect(0, 0, canvas.height, canvas.width);
+  });
+  const [r, g, b] = Array.from(
+    ctx.getImageData(0, 0, canvas.height, canvas.width, {
+      colorSpace: "srgb",
+    }).data,
+  );
+
+  canvas.remove();
+
+  return "#" + [r, g, b].map((n) => n.toString(16)).join("");
 }
