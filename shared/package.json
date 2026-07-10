@@ -1,9 +1,9 @@
 {
   "name": "shared",
+  "type": "module",
   "scripts": {
     "check": "tsc -b ."
   },
-  "type": "module",
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",
     "@date-fns/tz": "^1.5.0",

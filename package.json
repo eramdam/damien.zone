@@ -1,12 +1,20 @@
 {
   "name": "damien.zone",
   "version": "1.0.0",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": "",
-  "dependencies": {},
-  "devDependencies": {},
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "package.json": "sort-package-json"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "sort-package-json": "^4.0.0"
+  },
   "packageManager": "pnpm@11.7.0"
 }
