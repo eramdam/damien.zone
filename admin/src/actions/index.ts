@@ -5,15 +5,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import slug from "slug";
-import { blogCollectionBase } from "../../../src/contentCommon";
 
-import { isEqual, omit, omitBy } from "es-toolkit";
-import { formatDate } from "../../../src/helpers/componentHelpers";
-import { getAllPostsFromDisk } from "../contentHelpers";
+import { BLOG_POSTS_ROOT } from "@damien.zone/blog";
 import {
   adminBlogPostScheme,
   type AdminBlogEntry,
-} from "../../../shared/commonTypes";
+} from "@damien.zone/shared/commonTypes";
+import { isEqual, omit, omitBy } from "es-toolkit";
+import { getAllPostsFromDisk } from "../contentHelpers";
+import { formatDate } from "@damien.zone/shared/helpers";
 
 export const server = {
   updatePost: defineAction({
@@ -120,7 +120,7 @@ export const server = {
         });
 
         const filePath = path.resolve(
-          blogCollectionBase,
+          BLOG_POSTS_ROOT,
           year,
           `${prefix}-${postSlug}.md`,
         );

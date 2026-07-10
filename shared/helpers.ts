@@ -22,3 +22,9 @@ export function dateToRfc3339(dateObj: Date) {
 
   return split.join("") + "Z";
 }
+
+export function sortPosts<T extends { data: { date: Date } }>(posts: T[]): T[] {
+  return posts.toSorted((a, b) => {
+    return b.data.date.valueOf() - a.data.date.valueOf();
+  });
+}

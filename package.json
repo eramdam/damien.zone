@@ -6,10 +6,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "typescript": "^6.0.3",
-    "@types/node": "^26"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "packageManager": "pnpm@11.7.0"
 }

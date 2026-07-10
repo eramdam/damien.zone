@@ -84,7 +84,7 @@ export default defineConfig({
   compressHTML: false,
 
   markdown: {
-    processor: unified(makeUnifiedMarkdownConfig(assetsPrefix)),
+    processor: unified(makeUnifiedMarkdownConfig(assetsPrefix, isDev)),
   },
   integrations: [
     expressiveCode({

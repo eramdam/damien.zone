@@ -6,7 +6,7 @@ import { dateToRfc3339 } from "../helpers/componentHelpers";
 import { getBlogPosts } from "../helpers/postsHelpers";
 import { sanitizeHtmlForRSS } from "../helpers/rssHelpers";
 import { SITE } from "../helpers/siteConstants";
-import { sortPosts } from "../helpers/siteHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
 
 export async function GET(context: APIContext) {
   const items = await getBlogPosts();

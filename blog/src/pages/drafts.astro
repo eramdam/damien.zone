@@ -1,7 +1,7 @@
 ---
 import PostsList from "../components/PostsList.astro";
 import { getDrafts } from "../helpers/postsHelpers";
-import { sortPosts } from "../helpers/siteHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = await getDrafts();

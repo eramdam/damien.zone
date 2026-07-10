@@ -2,8 +2,8 @@
 import {
   dateToRfc3339,
   formatDate,
-} from "../../../src/helpers/componentHelpers";
-import { sortPosts } from "../../../src/helpers/siteHelpers";
+  sortPosts,
+} from "@damien.zone/shared/helpers";
 import { getAllPostsFromDisk } from "../contentHelpers";
 import BaseAdmin from "../layouts/BaseAdmin.astro";
 const posts = sortPosts(await getAllPostsFromDisk());

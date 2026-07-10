@@ -1,9 +1,9 @@
+import { formatDate } from "@damien.zone/shared/helpers";
 import type { APIContext, APIRoute } from "astro";
 import fs from "node:fs";
 import path from "node:path";
 import { pipeline } from "node:stream/promises";
 import { fileURLToPath } from "node:url";
-import { formatDate } from "../../../../src/helpers/componentHelpers";
 
 export const POST = (async ({ request }: APIContext) => {
   const name = request.headers.get("x-filename");

@@ -17,14 +17,6 @@ export function getTitleFromProps(astro: AstroGlobal) {
   return [titleFromProps, baseTitle].filter(Boolean).join(" | ");
 }
 
-export function sortPosts<T extends { data: { date: Date } }>(
-  posts: T[],
-): T[] {
-  return posts.toSorted((a, b) => {
-    return b.data.date.valueOf() - a.data.date.valueOf();
-  });
-}
-
 export interface PostContentProps {
   title?: string;
   description?: string;

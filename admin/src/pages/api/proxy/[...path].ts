@@ -9,7 +9,7 @@ const ROOT = path.resolve(
   fileURLToPath(import.meta.url),
   "../../../../../../public",
 );
-export const GET = (async ({ redirect, request, params }) => {
+export const GET = (async ({ params }) => {
   const targetFile = params.path ?? "";
   const filePath = path.resolve(ROOT, targetFile);
 

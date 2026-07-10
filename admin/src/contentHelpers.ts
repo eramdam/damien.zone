@@ -1,14 +1,14 @@
-import { uniqBy } from "es-toolkit";
-import fs from "fs";
-import matter from "gray-matter";
-import { blogCollectionBase } from "../../src/contentCommon";
+import { BLOG_POSTS_ROOT } from "@damien.zone/blog";
 import {
   type AdminBlogEntry,
   adminBlogPostScheme,
-} from "../../shared/commonTypes";
+} from "@damien.zone/shared/commonTypes";
+import { uniqBy } from "es-toolkit";
+import fs from "fs";
+import matter from "gray-matter";
 
 export async function getAllPostsFromDisk() {
-  const postsRaw = fs.globSync(`${blogCollectionBase}/**/*.md`);
+  const postsRaw = fs.globSync(`${BLOG_POSTS_ROOT}/**/*.md`);
   const posts: {
     id: string;
     body?: string;

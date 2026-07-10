@@ -28,8 +28,8 @@ if (!data.date) {
     ADMIN_DEV_URL,
     PostPreviewReceiver,
     type PreviewPostSchema,
-  } from "../../shared/constants";
-  import { makeUnifiedMarkdownConfig } from "../../shared/markdown";
+  } from "@damien.zone/shared/constants";
+  import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
 
   // @ts-expect-error
   window.process = {
@@ -38,7 +38,10 @@ if (!data.date) {
 
   const { unified } = await import("@astrojs/markdown-remark");
   const unifiedInstance = unified(
-    makeUnifiedMarkdownConfig(`${ADMIN_DEV_URL}/api/proxy`),
+    makeUnifiedMarkdownConfig(
+      `${ADMIN_DEV_URL}/api/proxy`,
+      import.meta.env.DEV,
+    ),
   );
   const renderer = await unifiedInstance.createRenderer({});
 

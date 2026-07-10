@@ -6,14 +6,7 @@ settings:
 
 importers:
 
-  .:
-    dependencies:
-      '@types/node':
-        specifier: ^26
-        version: 26.0.0
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
+  .: {}
 
   admin:
     dependencies:
@@ -29,6 +22,12 @@ importers:
       '@astrojs/node':
         specifier: ^11.0.2
         version: 11.0.2(astro@7.0.0(@astrojs/markdown-remark@7.2.0)(@emnapi/core@1.10.0)(@emnapi/runtime@1.11.1)(@types/node@26.0.0)(rollup@4.62.2)(tsx@4.22.4)(yaml@2.9.0))
+      '@damien.zone/blog':
+        specifier: workspace:blog@*
+        version: link:../blog
+      '@damien.zone/shared':
+        specifier: workspace:shared@*
+        version: link:../shared
       '@types/mime-types':
         specifier: ^3.0.1
         version: 3.0.1
@@ -229,15 +228,27 @@ importers:
       '@astrojs/markdown-remark':
         specifier: ^7.2.0
         version: 7.2.0
+      '@damien.zone/blog':
+        specifier: workspace:blog@*
+        version: link:../blog
+      '@date-fns/tz':
+        specifier: ^1.5.0
+        version: 1.5.0
+      '@pnpm/workspace.root-finder':
+        specifier: ^1100.0.3
+        version: 1100.0.3
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
       '@types/node':
-        specifier: ^26
+        specifier: ^26.0.0
         version: 26.0.0
       astro:
         specifier: ^7.0.0
         version: 7.0.0(@astrojs/markdown-remark@7.2.0)(@emnapi/core@1.10.0)(@emnapi/runtime@1.11.1)(@types/node@26.0.0)(rollup@4.62.2)(tsx@4.22.4)(yaml@2.9.0)
+      date-fns:
+        specifier: ^4.4.0
+        version: 4.4.0
       hast:
         specifier: 1.0.0
         version: 1.0.0
@@ -970,6 +981,18 @@ packages:
 
   '@oxc-project/types@0.133.0':
     resolution: {integrity: sha512-KzkdCd6Uxqnf6l3HOw1xfatAlUURA0g14cvBYFyJ5SaNOQbOUvBr9PKArcPcrNIeRsBdgcUzOGrhKveVpvOIGA==}
+
+  '@pnpm/constants@1100.0.0':
+    resolution: {integrity: sha512-CSJ5fKSUgqXrON5J2zQd1LwttU4gdqffJ3zYyHGAEhZ8u22fhQEVfCnc4+3aczDHbBNU0pNRX2ajiioPj46YtA==}
+    engines: {node: '>=22.13'}
+
+  '@pnpm/error@1100.0.1':
+    resolution: {integrity: sha512-+SRTHRx9/etv+6AYMv6RX/uGW6CEQbV/o2Ojtjk4aHkmdVMe1Q9LekOV6gKmlEmeWOzv6zTzH/soFcuOWxIxTA==}
+    engines: {node: '>=22.13'}
+
+  '@pnpm/workspace.root-finder@1100.0.3':
+    resolution: {integrity: sha512-uPncbuLmu4f7BLunwIBdrLoRRygCCZNhMzhIiVQMFaSx0v21tfjtysH5YbG3YPlVTluB+eQxYJziONpHXXljFQ==}
+    engines: {node: '>=22.13'}
 
   '@rolldown/binding-android-arm64@1.0.3':
     resolution: {integrity: sha512-454rs7jHngixp/NMxd5srYD57OnzSlZ/eFTETjORQHLwJG1lRtmNOJcBerZlfu4GjKqeq8aCCIQrMdHyhI51Hw==}
@@ -1764,6 +1787,10 @@ packages:
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
+
+  empathic@2.0.1:
+    resolution: {integrity: sha512-YGRs8knHhKHVShLkFET/rWAU8kmHbOV5LwN938RHI0pljAJ1Gf6SzXsSmRaEzcXTtOOmVqJ5+WtQPL5uigY50Q==}
+    engines: {node: '>=14'}
 
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
@@ -3982,6 +4009,17 @@ snapshots:
 
   '@oxc-project/types@0.133.0': {}
 
+  '@pnpm/constants@1100.0.0': {}
+
+  '@pnpm/error@1100.0.1':
+    dependencies:
+      '@pnpm/constants': 1100.0.0
+
+  '@pnpm/workspace.root-finder@1100.0.3':
+    dependencies:
+      '@pnpm/error': 1100.0.1
+      empathic: 2.0.1
+
   '@rolldown/binding-android-arm64@1.0.3':
     optional: true
 
@@ -4732,6 +4770,8 @@ snapshots:
   emoji-regex@10.6.0: {}
 
   emoji-regex@8.0.0: {}
+
+  empathic@2.0.1: {}
 
   encodeurl@2.0.0: {}
 

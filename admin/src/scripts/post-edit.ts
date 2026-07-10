@@ -5,7 +5,7 @@ import * as monaco from "monaco-editor";
 
 import { debounce } from "es-toolkit";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
-import { DEV_URL, PostEditorCourier } from "../../../shared/constants";
+import { DEV_URL, PostEditorCourier } from "@damien.zone/shared/constants";
 import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {

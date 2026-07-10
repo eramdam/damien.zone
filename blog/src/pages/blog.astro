@@ -3,7 +3,7 @@ import { groupBy } from "es-toolkit";
 
 import PostsList from "../components/PostsList.astro";
 import { getBlogPosts } from "../helpers/postsHelpers";
-import { sortPosts } from "../helpers/siteHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const basePosts = sortPosts(await getBlogPosts());
 const postsByYear = groupBy(basePosts, (p) => {

@@ -4,7 +4,7 @@ import node from "@astrojs/node";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
-import { ADMIN_DEV_PORT } from "../shared/constants";
+import { ADMIN_DEV_PORT } from "@damien.zone/shared/constants";
 
 const adminDir = path.dirname(fileURLToPath(import.meta.url));
 
