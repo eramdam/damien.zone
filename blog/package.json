@@ -7,7 +7,6 @@
     "check": "astro check",
     "build": "pnpm run check && astro build",
     "preview": "astro preview",
-    "new": "pnpm run _tsx -- bin/newPost.ts",
     "ogImage": "pnpm run _tsx -- bin/ogImage.tsx",
     "buttons": "pnpm run _tsx -- bin/downloadButtons.ts"
   },
