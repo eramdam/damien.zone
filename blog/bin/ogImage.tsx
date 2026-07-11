@@ -3,34 +3,34 @@ import { fromJsx } from "takumi-js/helpers/jsx";
 import fs from "node:fs";
 
 (async () => {
-  const renderer = new Renderer({
-    fonts: [
-      {
-        name: "PP Right Serif",
-        data: fs.readFileSync(
-          "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
-        ),
-        weight: 600,
-        style: "normal",
-      },
-      {
-        name: "PP Right Serif",
-        data: fs.readFileSync(
-          "./src/assets/fonts/pp-right/PP Right Serif - Medium.woff",
-        ),
-        weight: 500,
-        style: "normal",
-      },
-      {
-        name: "PP Right Serif",
-        data: fs.readFileSync(
-          "./src/assets/fonts/pp-right/PP Right Serif - Light.woff",
-        ),
-        weight: 300,
-        style: "normal",
-      },
-    ],
-  });
+  const renderer = new Renderer();
+
+  const fonts = [
+    {
+      name: "PP Right Serif",
+      data: fs.readFileSync(
+        "./src/assets/fonts/pp-right/PP Right Serif - Bold.woff",
+      ),
+      weight: 600,
+      style: "normal",
+    },
+    {
+      name: "PP Right Serif",
+      data: fs.readFileSync(
+        "./src/assets/fonts/pp-right/PP Right Serif - Medium.woff",
+      ),
+      weight: 500,
+      style: "normal",
+    },
+    {
+      name: "PP Right Serif",
+      data: fs.readFileSync(
+        "./src/assets/fonts/pp-right/PP Right Serif - Light.woff",
+      ),
+      weight: 300,
+      style: "normal",
+    },
+  ];
 
   const { node, stylesheets } = await fromJsx(
     <div
@@ -84,6 +84,7 @@ import fs from "node:fs";
     format: "webp",
     devicePixelRatio: 2,
     stylesheets,
+    fonts,
   });
 
   fs.writeFileSync("./public/open_graph.webp", Buffer.from(image));
