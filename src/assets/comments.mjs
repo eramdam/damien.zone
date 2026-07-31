@@ -3,10 +3,16 @@ if (urlsAllowList.some((url) => window.location.href.includes(url))) {
   const mainPost = document.querySelector("body.post > main");
   // If we're not on a post page, nothing to do.
   if (mainPost) {
-    mainPost.insertAdjacentHTML(
-      "beforeend",
-      `<comentario-comments live-update="false" no-fonts="true"></comentario-comments>`,
+    const { pathname } = window.location;
+    const commentsElement = document.createElement("comentario-comments");
+    commentsElement.setAttribute("live-updates", "false");
+    commentsElement.setAttribute("no-fonts", "true");
+    commentsElement.setAttribute(
+      "page-id",
+      pathname.endsWith("/") ? pathname : `${pathname}/`,
     );
+
+    mainPost.insertAdjacentElement("beforeend", commentsElement);
 
     const script = document.createElement("script");
     script.setAttribute(
