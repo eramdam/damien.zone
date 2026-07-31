@@ -6,6 +6,7 @@
   "license": "ISC",
   "author": "",
   "scripts": {
+    "cms": "pnpm run --filter=admin dev",
     "prepare": "husky"
   },
   "lint-staged": {
