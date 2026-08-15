@@ -16,7 +16,7 @@ console.log("process.env", process.env);
 const isDev = import.meta.env.DEV;
 const isCI =
   import.meta.env.CI === "true" || process.env.COOLIFY_URL !== undefined;
-const assetsPrefix = isCI ? "https://cdn.damien.zone" : undefined;
+const assetsPrefix = isCI ? "https://cdn.dam2ien.zone" : undefined;
 
 export default defineConfig({
   image: {
