@@ -109,11 +109,89 @@ if (form) {
     },
   );
 
-  const onEditorsChanged = debounce(callUpdatePreviewPost, 500);
+  let needsSaving = false;
+
+  function markAsDirty() {
+    if (!needsSaving) {
+      needsSaving = true;
+      document.title = `* ${document.title}`;
+    }
+  }
+  function markAsClean() {
+    needsSaving = false;
+    document.title = document.title.replace(/^\* /, "");
+  }
+
+  window.addEventListener("beforeunload", (event) => {
+    if (needsSaving) {
+      event.preventDefault();
+      event.returnValue = true;
+    }
+  });
+
+  async function savePost(
+    isDraft: undefined | boolean,
+    shouldNavigate: boolean,
+  ) {
+    markAsClean();
+    if (postEditMeta.post) {
+      const fd: UpdatePostInputAttrs = {
+        body: bodyEditor.getValue(),
+        attrs: attrsFromEditor() as undefined as UpdatePostInputAttrs["attrs"],
+        filePath: postEditMeta.post.filePath,
+      };
+      fd.attrs = {
+        ...fd.attrs,
+        // isDraft: true,
+      };
+      if (typeof isDraft !== "undefined") {
+        fd.attrs.isDraft = isDraft;
+      }
+      await actions.updatePost(fd);
+      if (shouldNavigate) {
+        window.location.reload();
+      }
+    } else {
+      const fd: CreatePostInputAttrs = {
+        body: bodyEditor.getValue(),
+        attrs: attrsFromEditor() as undefined as CreatePostInputAttrs["attrs"],
+      };
+      fd.attrs = {
+        ...fd.attrs,
+      };
+      if (typeof isDraft !== "undefined") {
+        fd.attrs.isDraft = isDraft;
+      }
+      const res = await actions.createPost(fd);
+      console.log(res.data);
+      if (!res.error && shouldNavigate) {
+        return navigate("/posts/" + res.data.slug);
+      }
+    }
+  }
+
+  const onSaveShortcut = () => {
+    savePost(undefined, false);
+  };
+
+  attrsEditor.addCommand(
+    monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
+    onSaveShortcut,
+  );
+  bodyEditor.addCommand(
+    monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
+    onSaveShortcut,
+  );
+
+  const updatePreviewDebounced = debounce(callUpdatePreviewPost, 500);
+  const onEditorChange = () => {
+    markAsDirty();
+    updatePreviewDebounced();
+  };
   const attrsFromEditor = () => load(attrsEditor.getValue());
 
-  attrsEditor.onDidChangeModelContent(onEditorsChanged);
-  bodyEditor.onDidChangeModelContent(onEditorsChanged);
+  attrsEditor.onDidChangeModelContent(onEditorChange);
+  bodyEditor.onDidChangeModelContent(onEditorChange);
 
   const updateAttrsHeight = (e: { contentHeightChanged: boolean }) => {
     if (!e.contentHeightChanged) {
@@ -201,8 +279,9 @@ if (form) {
   onButtonClick(".preview-btn", (e) => {
     if (postEditMeta.post || true) {
       e.preventDefault();
+      const previewOrigin = `https://damien.zone`;
       const win = window.open(
-        `${DEV_URL}/preview`,
+        `${previewOrigin}/preview`,
         "_blank",
         "width=800,height=800",
       );
@@ -212,10 +291,10 @@ if (form) {
           win.close();
         };
         window.addEventListener("message", function msg(e) {
-          if (e.origin !== DEV_URL) {
+          if (e.origin !== previewOrigin) {
             return;
           }
-          courier.attachWindow(win, DEV_URL);
+          courier.attachWindow(win, previewOrigin);
           shouldUpdatePreview = true;
           callUpdatePreviewPost();
           window.removeEventListener("message", msg);
@@ -227,33 +306,7 @@ if (form) {
   // Unpublish/save-draft: save+isDraft:true
   onButtonClick(".unpublish-button,.save-draft-button", async (e) => {
     e.preventDefault();
-    if (postEditMeta.post) {
-      const fd: UpdatePostInputAttrs = {
-        body: bodyEditor.getValue(),
-        attrs: attrsFromEditor() as undefined as UpdatePostInputAttrs["attrs"],
-        filePath: postEditMeta.post.filePath,
-      };
-      fd.attrs = {
-        ...fd.attrs,
-        isDraft: true,
-      };
-      await actions.updatePost(fd);
-      window.location.reload();
-    } else {
-      const fd: CreatePostInputAttrs = {
-        body: bodyEditor.getValue(),
-        attrs: attrsFromEditor() as undefined as CreatePostInputAttrs["attrs"],
-      };
-      fd.attrs = {
-        ...fd.attrs,
-        isDraft: true,
-      };
-      const res = await actions.createPost(fd);
-      console.log(res.data);
-      if (!res.error) {
-        return navigate("/posts/" + res.data.slug);
-      }
-    }
+    savePost(true, true);
   });
 
   onButtonClick(".delete-button", async (e) => {
