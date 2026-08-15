@@ -6,11 +6,14 @@
   "license": "ISC",
   "author": "",
   "scripts": {
-    "cms": "pnpm run --filter=admin dev",
+    "cms": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog dev'",
     "prepare": "husky"
   },
   "lint-staged": {
     "package.json": "sort-package-json"
+  },
+  "dependencies": {
+    "concurrently": "^10.0.4"
   },
   "devDependencies": {
     "husky": "^9.1.7",
