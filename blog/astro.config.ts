@@ -8,7 +8,7 @@ import {
   fontProviders,
   passthroughImageService,
 } from "astro/config";
-import { DEV_PORT } from "@damien.zone/shared/constants";
+import { DEV_PORT, DEV_URL } from "@damien.zone/shared/constants";
 import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
 
 console.log("import.meta.env", import.meta.env);
@@ -78,7 +78,7 @@ export default defineConfig({
     port: DEV_PORT,
   },
 
-  site: isCI ? "https://damien.zone" : "http://localhost:4321",
+  site: isCI ? "https://damien.zone" : DEV_URL,
 
   build: {
     assetsPrefix,
