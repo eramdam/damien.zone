@@ -6,7 +6,8 @@
   "license": "ISC",
   "author": "",
   "scripts": {
-    "cms": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog dev'",
+    "cms": "pnpm run --filter=admin dev",
+    "cms-both": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog dev'",
     "prepare": "husky"
   },
   "lint-staged": {
