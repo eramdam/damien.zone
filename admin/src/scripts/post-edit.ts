@@ -348,7 +348,7 @@ async function uploadFiles(files: File[]) {
 
 function makeMarkupForFile(file: FileUploadResponse) {
   if (file.type.startsWith("image/")) {
-    return `![](${file.path})`;
+    return `![](<${file.path}>)`;
   } else if (file.type.startsWith("video/")) {
     return `<video src="${file.path}" playsinline controls preload="none"></video>`;
   } else if (file.type.startsWith("audio/")) {

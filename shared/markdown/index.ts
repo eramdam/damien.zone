@@ -45,6 +45,12 @@ function rewriteMediaSrc(
         node.tagName === "picture"
       ) {
         if ("src" in node.properties) {
+          if (
+            node.properties.src?.includes("https:") ||
+            node.properties.src?.includes("http:")
+          ) {
+            return;
+          }
           node.properties.src = `${assetsPrefix}${node.properties.src}`;
         }
       }
