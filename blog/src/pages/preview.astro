@@ -1,0 +1,65 @@
+---
+import { type InferEntrySchema } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const data = {};
+
+// @ts-expect-error
+if (!data.description) {
+  // @ts-expect-error
+  data.description = "";
+}
+
+// @ts-expect-error
+if (!data.date) {
+  // @ts-expect-error
+  data.date = new Date();
+}
+---
+
+<BaseLayout frontmatter={{}} isPost isPreview>
+  <BlogPost data={data as InferEntrySchema<"blog">} />
+</BaseLayout>
+
+<script>
+  import { escape } from "he";
+  import {
+    ADMIN_DEV_URL,
+    PostPreviewReceiver,
+    type PreviewPostSchema,
+  } from "@damien.zone/shared/constants";
+  import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
+
+  // @ts-expect-error
+  window.process = {
+    env: {},
+  };
+
+  const { unified } = await import("@astrojs/markdown-remark");
+  const unifiedInstance = unified(
+    makeUnifiedMarkdownConfig(
+      `${ADMIN_DEV_URL}/api/proxy`,
+      import.meta.env.DEV,
+    ),
+  );
+  const renderer = await unifiedInstance.createRenderer({});
+
+  if (window.opener) {
+    window.opener.postMessage("ping", ADMIN_DEV_URL);
+    const receiver = new PostPreviewReceiver(window, ADMIN_DEV_URL);
+    receiver.onPreviewUpdate(updatePreviewContent);
+  }
+
+  async function updatePreviewContent(payload: PreviewPostSchema) {
+    const markdownContent = await renderer.render(payload.body || "");
+    const contentEl = document.querySelector(".e-content");
+    if (contentEl) {
+      contentEl.innerHTML = markdownContent.code;
+    }
+    const titleEl = document.querySelector(".p-name a");
+    if (titleEl) {
+      titleEl.textContent = escape(payload.attrs.title || "");
+    }
+  }
+</script>

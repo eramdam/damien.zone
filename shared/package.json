@@ -1,0 +1,23 @@
+{
+  "name": "shared",
+  "type": "module",
+  "scripts": {
+    "check": "tsc -b ."
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.1",
+    "@date-fns/tz": "^1.5.0",
+    "@pnpm/workspace.root-finder": "^1100.0.3",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/hast": "^3.0.5",
+    "@types/node": "^26.1.1",
+    "astro": "^7.0.7",
+    "cross-spawn": "^7.0.6",
+    "date-fns": "^4.4.0",
+    "hast": "1.0.0",
+    "hastscript": "^9.0.1",
+    "rehype-rewrite": "^4.0.4",
+    "typescript": "^6.0.3",
+    "vfile": "^6.0.3"
+  }
+}

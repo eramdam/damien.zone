@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from "astro";
+import { uniq } from "es-toolkit";
+import slug from "slug";
+import PostsList from "../../components/PostsList.astro";
+import { getBlogPosts } from "../../helpers/postsHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getBlogPosts();
+
+  const tags = uniq(
+    posts.flatMap((p) => {
+      return p.data.tags;
+    }),
+  );
+
+  return tags.map((tag) => {
+    return {
+      props: {
+        tag,
+        posts: sortPosts(posts).filter((p) =>
+          (p.data.tags || []).includes(tag),
+        ),
+      },
+      params: {
+        tag: slug(tag),
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+const { posts } = Astro.props;
+---
+
+<BaseLayout
+  content={{
+    title: `Posts tagged with ${Astro.props.tag}`,
+    description: `Posts tagged with ${Astro.props.tag}`,
+  }}
+>
+  <h1 class="tag">Posts with #{Astro.props.tag}</h1>
+  <PostsList posts={posts} />
+</BaseLayout>

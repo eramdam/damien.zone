@@ -1,9 +1,0 @@
----
-import { sortPosts } from "../helpers/siteHelpers";
-import PostsList from "./PostsList.astro";
-import { getBlogPosts } from "../helpers/postsHelpers";
-
-const posts = await getBlogPosts();
----
-
-<PostsList posts={sortPosts(posts).slice(0, 5)} />

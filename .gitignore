@@ -5,5 +5,5 @@ dist
 .cache
 .astro
 
-# Local Netlify folder
-.netlify
+**/*.tsbuildinfo
+*.tsbuildinfo

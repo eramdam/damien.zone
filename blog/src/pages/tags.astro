@@ -1,0 +1,23 @@
+---
+import slug from "slug";
+import { getAllTags } from "../helpers/postsHelpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const tags = await getAllTags();
+---
+
+<BaseLayout content={{ description: "List of tags" }}>
+  <h1>tags</h1>
+
+  <ul class="tags-list">
+    {
+      tags.map((tag) => {
+        return (
+          <li>
+            <a href={`/tag/${slug(tag)}`}>#{tag}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</BaseLayout>

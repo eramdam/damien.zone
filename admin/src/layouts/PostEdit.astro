@@ -1,0 +1,131 @@
+---
+import type { MonacoTheme } from "monaco-themes";
+import type { AdminBlogEntry } from "@damien.zone/shared/commonTypes";
+import { getAllTagsFromDisk } from "../contentHelpers";
+import BaseAdmin from "./BaseAdmin.astro";
+import GithubDarkTheme from "../assets/GitHub Dark";
+import GithubTheme from "../assets/GitHub";
+
+interface Props {
+  post:
+    | {
+        id: string;
+        body?: string;
+        collection: "blog";
+        data: AdminBlogEntry;
+        filePath: string;
+      }
+    | undefined;
+}
+
+const { post } = Astro.props;
+const isCreatingPost = !post;
+
+const buildTheme = async (themeJson: MonacoTheme) => {
+  const base = themeJson;
+
+  base.colors = {};
+  base.rules = [
+    ...base.rules,
+    {
+      token: "type",
+      fontStyle: "bold",
+    },
+  ];
+
+  return base;
+};
+
+const blogSchemeDescription: Record<keyof AdminBlogEntry, string> = {
+  title: "My post",
+  slug: "my-post",
+  class_name: "",
+  date: new Date().toISOString(),
+  description: "",
+  image: "https://crouton.net/crouton.png",
+  isDraft: "false",
+  layout: "../layouts/BaseLayout.astro",
+  linkedUrl: "",
+  tags: (await getAllTagsFromDisk()).join(", "),
+  updated: new Date().toISOString(),
+};
+
+const darkTheme = await buildTheme(GithubDarkTheme);
+const lightTheme = await buildTheme(GithubTheme);
+---
+
+<script is:inline define:vars={{ post, darkTheme, lightTheme }}>
+  window.postEditMeta = {
+    post,
+    darkTheme,
+    lightTheme,
+  };
+</script>
+<script src="../scripts/post-edit.ts"></script>
+<BaseAdmin
+  class="post-edit"
+  title={isCreatingPost ? `New post` : `Editing ${post.data.title}`}
+>
+  <form enctype="multipart/form-data">
+    <nav>
+      <button type="button" class="back-button">← Back</button>
+      <!-- save+isDraft:false -->
+      <button type="button" class="publish-button">Publish</button>
+      <!-- TODO -->
+      {
+        !!post && (
+          <button type="button" class="view-button">
+            {post?.data.isDraft ? "View draft" : "View"}
+          </button>
+        )
+      }
+      <!-- save+isDraft:true -->
+      {
+        (!post || post?.data.isDraft) && (
+          <button class="save-draft-button" type="button">
+            Save as draft
+          </button>
+        )
+      }
+
+      <!-- save+isDraft:true -->
+      {
+        post && post?.data.isDraft && (
+          <button type="button" class="unpublish-button danger">
+            Unpublish
+          </button>
+        )
+      }
+      <span style="flex:1;"></span>
+      {post && <button class="delete-button danger">Delete</button>}
+    </nav>
+    <details>
+      <summary>Attributes</summary>
+      <p>
+        {
+          Object.entries(blogSchemeDescription).map((pair) => (
+            <Fragment>
+              {pair[0]}: {pair[1]} <br />
+            </Fragment>
+          ))
+        }
+      </p>
+    </details>
+
+    <div id="attrs-edit-area"></div>
+    <div id="post-edit-area"></div>
+    <input
+      id="file-input"
+      type="file"
+      name="files"
+      hidden
+      multiple
+      accept="image/*, audio/*, video/*"
+    />
+    <aside>
+      <a class="insert-media-btn">Insert media</a> | <a class="media-btn"
+        >Media</a
+      > | <a class="preview-btn">Preview</a>
+    </aside>
+  </form>
+</BaseAdmin>

@@ -1,0 +1,41 @@
+---
+import { groupBy } from "es-toolkit";
+
+import PostsList from "../components/PostsList.astro";
+import { getBlogPosts } from "../helpers/postsHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const basePosts = sortPosts(await getBlogPosts());
+const postsByYear = groupBy(basePosts, (p) => {
+  return p.data.date.getUTCFullYear().toString();
+});
+---
+
+<BaseLayout
+  content={{
+    title: "Blog",
+    description:
+      "french software engineer living and working in the Bay Area on web stuff",
+  }}
+  frontmatter={{
+    class_name: "blog-feed",
+  }}
+>
+  <h1>Blog</h1>
+
+  {
+    Object.keys(postsByYear)
+      .toReversed()
+      .map((k) => {
+        return (
+          <>
+            <h3>
+              {k}
+              <hr />
+            </h3>
+            <PostsList posts={postsByYear[k]} />
+          </>
+        );
+      })
+  }
+</BaseLayout>

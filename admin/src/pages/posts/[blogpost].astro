@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+
+import { getAllPostsFromDisk } from "../../contentHelpers";
+import PostEdit from "../../layouts/PostEdit.astro";
+
+const posts = await getAllPostsFromDisk();
+
+const { blogpost } = Astro.params;
+const post = posts.find((p) => p.data.slug === blogpost);
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+---
+
+<PostEdit post={post} />

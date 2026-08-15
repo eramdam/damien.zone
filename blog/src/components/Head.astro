@@ -1,0 +1,99 @@
+---
+import assert from "node:assert";
+import { Font } from "astro:assets";
+import { SITE } from "../helpers/siteConstants";
+import { getTitleFromProps } from "../helpers/siteHelpers";
+import { htmlToText, truncateText } from "../helpers/textHelpers";
+
+const finalTitle = getTitleFromProps(Astro);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const contentProps = Astro.props.content ?? Astro.props.frontmatter;
+const description =
+  contentProps?.description ||
+  truncateText(htmlToText(await Astro.props.compiledContent?.()), 10);
+
+if (
+  !Astro.props.isPreview &&
+  !Astro.props.file?.includes("src/drafts") &&
+  Astro.url.pathname !== "/drafts/" &&
+  !Astro.url.pathname.startsWith("/drafts/")
+) {
+  assert(description, `Missing description for ${canonicalURL}`);
+}
+
+const image = contentProps?.image
+  ? contentProps.image
+  : new URL("/open_graph.webp", Astro.site);
+
+assert(image);
+assert(finalTitle, `Missing description for ${canonicalURL}`);
+---
+
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href={canonicalURL} />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href={new URL("feed.xml", Astro.site)}
+/>
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content={SITE.name} />
+
+<title>{finalTitle}</title>
+<!-- Primary Meta Tags -->
+<meta name="title" content={finalTitle} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={finalTitle} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta
+  name="theme-color"
+  content="#1d1517"
+  class="color-scheme-theme"
+  media="(prefers-color-scheme: dark)"
+/>
+<meta
+  name="theme-color"
+  content="#f9f1f1"
+  class="color-scheme-theme"
+  media="(prefers-color-scheme: light)"
+/>
+<!-- Should be picked up by Discord -->
+<meta
+  name="theme-color"
+  content="#b51d3e"
+  class="color-scheme-discord"
+  media="(min-width: 99999999999px)"
+/>
+
+<!-- Fediverse / verification things -->
+<link rel="me" href="https://social.erambert.me/@eramdam" />
+<link rel="me" href="https://github.com/eramdam" />
+<meta name="fediverse:creator" content="@eramdam@erambert.me" />
+<!-- Webmentions / pingback -->
+<link rel="webmention" href="https://webmention.io/damien.zone/webmention" />
+<link rel="pingback" href="https://webmention.io/damien.zone/xmlrpc" />
+<!-- Analytics -->
+<script
+  defer
+  is:inline
+  data-domain="damien.zone"
+  src="https://p.erambert.me/js/script.js"></script>
+<Font cssVariable="--font-pp-right" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-next" preload />
+<Font cssVariable="--font-atkinson-hyperlegible-mono" preload />

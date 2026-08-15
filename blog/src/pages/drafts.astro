@@ -1,0 +1,22 @@
+---
+import PostsList from "../components/PostsList.astro";
+import { getDrafts } from "../helpers/postsHelpers";
+import { sortPosts } from "@damien.zone/shared/helpers";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = await getDrafts();
+---
+
+<BaseLayout content={{ description: "🤫" }}>
+  <PostsList
+    posts={sortPosts(posts).map((p) => {
+      return {
+        ...p,
+        data: {
+          ...p.data,
+          slug: `drafts/${p.data.slug}`,
+        },
+      };
+    })}
+  />
+</BaseLayout>
