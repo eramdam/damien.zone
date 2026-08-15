@@ -29,6 +29,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 COPY . .
 
 RUN pnpm --filter blog exec astro build
+RUN pnpm --filter blog test
 
 # ---- Runtime stage ----
 FROM nginx:alpine AS runtime

@@ -17,7 +17,9 @@
     "check": "astro check",
     "dev": "rimraf .astro && astro dev",
     "ogImage": "pnpm run _tsx -- bin/ogImage.tsx",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node --test",
+    "test-and-build": "COOLIFY_URL='foo' astro build && node --test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -40,6 +42,7 @@
     "astro-expressive-code": "^0.44.1",
     "cheerio": "^1.2.0",
     "es-toolkit": "^1.50.0",
+    "fast-xml-parser": "^5.10.1",
     "fontkit": "^2.0.4",
     "gray-matter": "^4.0.3",
     "hastscript": "^9.0.1",
