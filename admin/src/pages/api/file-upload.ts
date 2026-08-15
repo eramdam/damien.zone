@@ -1,3 +1,4 @@
+import { BLOG_PUBLIC_ROOT } from "@damien.zone/blog";
 import { formatDate } from "@damien.zone/shared/helpers";
 import type { APIContext, APIRoute } from "astro";
 import fs from "node:fs";
@@ -14,7 +15,7 @@ export const POST = (async ({ request }: APIContext) => {
 
   const dest = path.resolve(
     fileURLToPath(import.meta.url),
-    "../../../../../public/media/blog/",
+    `${BLOG_PUBLIC_ROOT}/media/blog/`,
     `${formatDate(new Date(), "yy/MM")}`,
     path.basename(name),
   );

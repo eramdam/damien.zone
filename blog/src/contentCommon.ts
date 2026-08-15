@@ -7,3 +7,13 @@ import { fileURLToPath } from "node:url";
 export const blogCollectionBase =
   process.env.BLOG_POSTS_ROOT ??
   fileURLToPath(path.dirname(import.meta.url)) + "/blog";
+
+export const blogPublicPath = path.resolve(
+  fileURLToPath(path.dirname(import.meta.url)),
+  "../public/",
+);
+
+export const gitPath = path.resolve(
+  fileURLToPath(path.dirname(import.meta.url)),
+  "../../",
+);

@@ -5,7 +5,11 @@ import * as monaco from "monaco-editor";
 
 import { debounce } from "es-toolkit";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
-import { DEV_URL, PostEditorCourier } from "@damien.zone/shared/constants";
+import {
+  DEV_URL,
+  PostEditorCourier,
+  ADMIN_DEV_URL,
+} from "@damien.zone/shared/constants";
 import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {
@@ -300,6 +304,11 @@ if (form) {
       });
       fileInput.click();
     }
+  });
+
+  onButtonClick(".media-btn", async (e) => {
+    e.preventDefault();
+    window.open(`${ADMIN_DEV_URL}/media`, "_blank", "width=800,height=800");
   });
 
   async function callUpdatePreviewPost() {

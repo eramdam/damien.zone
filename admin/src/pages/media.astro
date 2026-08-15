@@ -1,0 +1,76 @@
+---
+import { formatDate } from "@damien.zone/shared/helpers";
+import { getAllMediaFromDisk } from "../contentHelpers";
+import BaseAdmin from "../layouts/BaseAdmin.astro";
+const mediaPaths = await getAllMediaFromDisk();
+---
+
+<style>
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    overflow: hidden;
+    gap: 20px;
+  }
+
+  .media-grid > div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .media-item-meta {
+    font-family: monospace;
+  }
+
+  .media-item-meta button {
+    font-family: monospace;
+    color-scheme: light dark;
+  }
+
+  .media-item-wrapper {
+    height: 150px;
+  }
+
+  .media-item-wrapper img {
+    object-fit: contain;
+    height: 100%;
+  }
+</style>
+<script>
+  document.addEventListener("click", (e) => {
+    if (e.target instanceof HTMLElement) {
+      if (e.target.matches("button[data-path]")) {
+        navigator.clipboard.writeText(e.target.getAttribute("data-path") || "");
+      }
+    }
+  });
+</script>
+<BaseAdmin class={"media-page"} title="Media">
+  <div class="media-grid">
+    {
+      mediaPaths
+        .filter((p) => !p.path.includes(".mp4"))
+        .map((p) => {
+          const { path, date } = p;
+          return (
+            <div>
+              <div class="media-item-wrapper">
+                <img src={`/api/proxy${path}`} alt="" />
+              </div>
+              <div class="media-item-meta">
+                {date && <div>{formatDate(date, `dd MMM, yyyy`)}</div>}
+                <div>
+                  <button data-path={path}>Copy URL </button>
+                </div>
+              </div>
+            </div>
+          );
+        })
+    }
+  </div>
+</BaseAdmin>
