@@ -1,5 +1,6 @@
 ---
 import assert from "node:assert";
+import { build } from "astro:config/server";
 import { Font } from "astro:assets";
 import { SITE } from "../helpers/siteConstants";
 import { getTitleFromProps } from "../helpers/siteHelpers";
@@ -27,6 +28,10 @@ const image = contentProps?.image
 
 assert(image);
 assert(finalTitle, `Missing description for ${canonicalURL}`);
+const assetsPrefix =
+  (typeof build.assetsPrefix === "object"
+    ? build.assetsPrefix.fallback
+    : build.assetsPrefix) || "";
 ---
 
 <meta charset="utf-8" />
@@ -35,6 +40,7 @@ assert(finalTitle, `Missing description for ${canonicalURL}`);
   content="width=device-width, initial-scale=1, viewport-fit=cover"
 />
 <meta name="generator" content={Astro.generator} />
+<meta name="assetsPrefix" content={assetsPrefix} />
 
 <link rel="canonical" href={canonicalURL} />
 <link
