@@ -11,6 +11,8 @@ import {
 import { DEV_PORT } from "@damien.zone/shared/constants";
 import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
 
+console.log("import.meta.env", import.meta.env);
+console.log("process.env", process.env);
 const isDev = import.meta.env.DEV;
 const isCI = import.meta.env.CI === "true";
 const assetsPrefix = isCI ? "https://cdn.damien.zone" : undefined;
