@@ -4,7 +4,7 @@ import { dump, load } from "js-yaml";
 import * as monaco from "monaco-editor";
 
 import { debounce } from "es-toolkit";
-import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+import editorWorker from "monaco-editor/editor/editor.worker?worker";
 import {
   DEV_URL,
   PostEditorCourier,
