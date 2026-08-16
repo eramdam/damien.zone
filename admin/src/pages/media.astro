@@ -2,6 +2,7 @@
 import { formatDate } from "@damien.zone/shared/helpers";
 import { getAllMediaFromDisk } from "../contentHelpers";
 import BaseAdmin from "../layouts/BaseAdmin.astro";
+import { orderBy, sortBy } from "es-toolkit";
 const mediaPaths = await getAllMediaFromDisk();
 ---
 
@@ -53,24 +54,27 @@ const mediaPaths = await getAllMediaFromDisk();
 <BaseAdmin class={"media-page"} title="Media">
   <div class="media-grid">
     {
-      mediaPaths
-        .filter((p) => !p.path.includes(".mp4"))
-        .map((p) => {
-          const { path, date } = p;
-          return (
-            <div>
-              <div class="media-item-wrapper">
-                <img src={`/api/proxy${path}`} alt="" />
-              </div>
-              <div class="media-item-meta">
-                {date && <div>{formatDate(date, `dd MMM, yyyy`)}</div>}
-                <div>
-                  <button data-path={path}>Copy URL </button>
-                </div>
+      orderBy(
+        mediaPaths.filter((p) => !p.path.includes(".mp4")),
+        [(p) => p.date],
+        ["desc"],
+      ).map((p) => {
+        const { path, date } = p;
+        return (
+          <div>
+            <div class="media-item-wrapper">
+              <img src={`/api/proxy${path}`} alt="" />
+            </div>
+            <div class="media-item-meta">
+              {date && <div>{formatDate(date, `dd MMM, yyyy`)}</div>}
+              <div>{path}</div>
+              <div>
+                <button data-path={path}>Copy URL </button>
               </div>
             </div>
-          );
-        })
+          </div>
+        );
+      })
     }
   </div>
 </BaseAdmin>
