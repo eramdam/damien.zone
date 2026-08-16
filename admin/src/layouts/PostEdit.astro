@@ -96,6 +96,9 @@ const lightTheme = await buildTheme(GithubTheme);
           </button>
         )
       }
+      <button type="button" class="insert-media-btn">Insert media</button>
+      <button type="button" class="media-btn">Media</button>
+      <button type="button" class="preview-btn">Preview</button>
       <span style="flex:1;"></span>
       {post && <button class="delete-button danger">Delete</button>}
     </nav>
@@ -112,8 +115,10 @@ const lightTheme = await buildTheme(GithubTheme);
       </p>
     </details>
 
-    <div id="attrs-edit-area"></div>
-    <div id="post-edit-area"></div>
+    <div id="editors-wrapper">
+      <div id="attrs-edit-area"></div>
+      <div id="post-edit-area"></div>
+    </div>
     <input
       id="file-input"
       type="file"
@@ -122,10 +127,10 @@ const lightTheme = await buildTheme(GithubTheme);
       multiple
       accept="image/*, audio/*, video/*"
     />
-    <aside>
+    <!-- <aside>
       <a class="insert-media-btn">Insert media</a> | <a class="media-btn"
         >Media</a
       > | <a class="preview-btn">Preview</a>
-    </aside>
+    </aside> -->
   </form>
 </BaseAdmin>

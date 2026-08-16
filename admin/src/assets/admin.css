@@ -104,3 +104,7 @@ header nav {
 .danger {
   color: red;
 }
+
+#editors-wrapper>div:first-child:not(:last-child) {
+  border-bottom: 1px solid var(--color-blockquote-border);
+}
