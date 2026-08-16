@@ -7,7 +7,7 @@
   "author": "",
   "scripts": {
     "cms": "pnpm run --filter=admin dev",
-    "cms-both": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog dev'",
+    "cms-both": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog preview'",
     "prepare": "husky"
   },
   "lint-staged": {
