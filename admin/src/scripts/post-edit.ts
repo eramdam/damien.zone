@@ -380,10 +380,11 @@ if (form) {
 }
 
 function onButtonClick(sel: string, listener: (e: PointerEvent) => void) {
-  document
-    .querySelector<HTMLButtonElement | HTMLAnchorElement>(sel)
-    // @ts-expect-error
-    ?.addEventListener("click", listener);
+  document.addEventListener("click", (e) => {
+    if (e.target instanceof HTMLElement && e.target.matches(sel)) {
+      listener(e);
+    }
+  });
 }
 
 async function uploadFiles(files: File[]) {
