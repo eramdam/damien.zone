@@ -8,7 +8,7 @@ tags:
   - tutorial
 description: 'Or how to set up custom cursors in general, I guess'
 updated: 2026-08-16T20:50:54.869Z
-isDraft: true
+isDraft: false
 ---
 This post is the type of posts I write for myself so I can find it again easily the next time I set up a Mac computer from scratch. Today was one of these days and I figured I'd take the time to write it so I can easily refer to it later, and I know it'll be useful for other folks too.
 
