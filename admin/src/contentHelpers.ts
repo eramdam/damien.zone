@@ -1,9 +1,8 @@
-import { BLOG_POSTS_ROOT, BLOG_PUBLIC_ROOT, GIT_ROOT } from "@damien.zone/blog";
+import { BLOG_POSTS_ROOT, BLOG_PUBLIC_ROOT } from "@damien.zone/blog";
 import {
   type AdminBlogEntry,
   adminBlogPostScheme,
 } from "@damien.zone/shared/commonTypes";
-import { getLastUpdatedTimestamp } from "@damien.zone/shared/git";
 import { uniqBy } from "es-toolkit";
 import fs from "fs";
 import matter from "gray-matter";
@@ -46,11 +45,9 @@ export async function getAllMediaFromDisk() {
   const augmented = mediaRaw.map((f) => {
     const stat = fs.statSync(f);
     const fsDate = new Date(stat.birthtimeMs);
-    const gitDate = getLastUpdatedTimestamp(f.replace(GIT_ROOT + "/", ""));
     return {
       path: f.replace(BLOG_PUBLIC_ROOT, ""),
       date: fsDate,
-      gitDate: gitDate,
     };
   });
 
