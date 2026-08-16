@@ -281,7 +281,7 @@ if (form) {
   onButtonClick(".preview-btn", (e) => {
     if (postEditMeta.post || true) {
       e.preventDefault();
-      const previewOrigin = `https://damien.zone`;
+      const previewOrigin = DEV_URL;
       const win = window.open(
         `${previewOrigin}/preview`,
         "_blank",
@@ -338,15 +338,14 @@ if (form) {
           filesJson.forEach((f) => {
             const pos = bodyEditor.getPosition();
             const lines = bodyModel.getLineCount();
-            const range =
-              pos && bodyEditor.hasTextFocus()
-                ? new monaco.Range(pos.lineNumber, 1, pos.lineNumber, 1)
-                : new monaco.Range(
-                    lines,
-                    bodyModel.getLineMaxColumn(lines),
-                    lines,
-                    bodyModel.getLineMaxColumn(lines),
-                  );
+            const range = pos
+              ? new monaco.Range(pos.lineNumber, 1, pos.lineNumber, 1)
+              : new monaco.Range(
+                  lines,
+                  bodyModel.getLineMaxColumn(lines),
+                  lines,
+                  bodyModel.getLineMaxColumn(lines),
+                );
 
             bodyEditor.executeEdits("media-upload", [
               {
