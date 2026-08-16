@@ -56,6 +56,7 @@ if (form) {
       vertical: "auto",
       verticalScrollbarSize: 8,
       useShadows: false,
+      alwaysConsumeMouseWheel: false,
     },
     renderLineHighlight: "none",
     unicodeHighlight: {
@@ -103,6 +104,7 @@ if (form) {
         bottom: 10,
       },
       scrollbar: {
+        ...commonEditorOptions.scrollbar,
         vertical: "hidden",
         useShadows: false,
       },
