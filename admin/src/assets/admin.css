@@ -9,10 +9,6 @@ html {
   color: var(--color-text);
 }
 
-button {
-  color-scheme: light;
-}
-
 body {
   margin: 0;
   padding: 0;
