@@ -1,16 +1,16 @@
 ---
-title: Set up the Wiimote cursors on macOS in 2026
-slug: set-up-the-wiimote-cursors-on-macos-in-2026
-date: 2026-08-15T22:40:23.932Z
+title: Setting up the Wiimote cursors on macOS in 2026
+slug: setting-up-the-wiimote-cursors-on-macos-in-2026
+date: 2026-08-16T20:49:07.305Z
 tags:
   - apple
   - mac
   - tutorial
 description: 'Or how to set up custom cursors in general, I guess'
-updated: 2026-08-16T16:29:28.771Z
+updated: 2026-08-16T20:50:54.869Z
 isDraft: true
 ---
-This post is the type of posts I write for myself so I can find it again easily the next time I set up a (new) Mac computer from scratch. Today was one of these days and I figured I'd take the time to write it so I can easily refer to it later, and I know it'll be useful for other folks too.
+This post is the type of posts I write for myself so I can find it again easily the next time I set up a Mac computer from scratch. Today was one of these days and I figured I'd take the time to write it so I can easily refer to it later, and I know it'll be useful for other folks too.
 
 As the title implies, this will be a short "tutorial" explaining how to set up the (excellent) [Wiimote pointer cursors](https://primmr.dev/projects/wii-pointer-cursors/) by [PrimmR](https://primmr.dev) on current macOS (26 as of writing this). 
 
@@ -57,4 +57,4 @@ Relaunch Mousecape, select which variant of the cursors you want on the left sid
 Hope this little post was useful to you!
 
 [^1]: Or any terminal emulator, but if you know what a terminal emulator is and use one regularly, you probably don't need help opening one.
-[^2]: Short version: this is a bit appended by browsers and such when downloading apps on macOS and it tells macOS to display a warning to the user. Long version: https://eclecticlight.co/2023/03/13/ventura-has-changed-app-quarantine-with-a-new-xattr/
+[^2]: Short version: this is a bit appended by browsers and such when downloading apps on macOS and it tells macOS to display a warning to the user before opening them. Long version: https://eclecticlight.co/2023/03/13/ventura-has-changed-app-quarantine-with-a-new-xattr/
