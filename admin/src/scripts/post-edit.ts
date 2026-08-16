@@ -3,13 +3,13 @@ import { navigate } from "astro:transitions/client";
 import { dump, load } from "js-yaml";
 import * as monaco from "monaco-editor";
 
-import { debounce } from "es-toolkit";
-import editorWorker from "monaco-editor/editor/editor.worker?worker";
 import {
+  ADMIN_DEV_URL,
   DEV_URL,
   PostEditorCourier,
-  ADMIN_DEV_URL,
 } from "@damien.zone/shared/constants";
+import { debounce } from "es-toolkit";
+import editorWorker from "monaco-editor/editor/editor.worker?worker";
 import type { FileUploadResponse } from "../pages/api/file-upload";
 
 self.MonacoEnvironment = {
@@ -151,7 +151,7 @@ if (form) {
       }
       await actions.updatePost(fd);
       if (shouldNavigate) {
-        window.location.reload();
+        return navigate("/posts/" + fd.attrs.slug);
       }
     } else {
       const fd: CreatePostInputAttrs = {
