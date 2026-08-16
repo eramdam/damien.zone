@@ -53,6 +53,7 @@ header nav {
 
   & form {
     flex: 1;
+    padding-bottom: 20px;
   }
 }
 
