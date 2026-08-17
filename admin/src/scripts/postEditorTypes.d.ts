@@ -1,5 +1,5 @@
 import type { MonacoTheme } from "monaco-themes";
-import type { AdminBlogEntry } from "../../../src/contentCommon";
+import type { AdminBlogEntry } from "@damien.zone/shared/commonTypes";
 
 declare global {
   interface Window {
