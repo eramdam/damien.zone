@@ -11,8 +11,6 @@ import {
 import { DEV_PORT, DEV_URL } from "@damien.zone/shared/constants";
 import { makeUnifiedMarkdownConfig } from "@damien.zone/shared/markdown";
 
-console.log("import.meta.env", import.meta.env);
-console.log("process.env", process.env);
 const isDev = import.meta.env.DEV;
 const isCI =
   import.meta.env.CI === "true" || process.env.COOLIFY_URL !== undefined;
