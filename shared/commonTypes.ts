@@ -11,6 +11,8 @@ const baseProps = {
   layout: z.string().optional(),
   linkedUrl: z.url().optional(),
   isDraft: z.boolean().optional(),
+  mastodonUrl: z.url().optional(),
+  blueskyUrl: z.url().optional(),
 };
 
 export const blogSchema = z.object({

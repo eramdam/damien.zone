@@ -398,7 +398,7 @@ p.tags {
   gap: 0.6ch;
 }
 
-p.tags a::before {
+p.tags a.p-category::before {
   content: "#";
 }
 

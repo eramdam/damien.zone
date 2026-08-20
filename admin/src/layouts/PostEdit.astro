@@ -48,6 +48,8 @@ const blogSchemeDescription: Record<keyof AdminBlogEntry, string> = {
   linkedUrl: "",
   tags: (await getAllTagsFromDisk()).join(", "),
   updated: new Date().toISOString(),
+  mastodonUrl: "",
+  blueskyUrl: "",
 };
 
 const darkTheme = await buildTheme(GithubDarkTheme);

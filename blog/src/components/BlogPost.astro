@@ -49,6 +49,25 @@ const postUrl = data.linkedUrl
         {data.tags.map((t: string) => {
           return <a href={`/tag/${slug(t)}`} class="p-category" set:text={t} />;
         })}
+        {(data.mastodonUrl || data.blueskyUrl) && (
+          <Fragment>
+            •{" "}
+            {data.mastodonUrl && (
+              <a
+                rel="syndication"
+                class="u-syndication"
+                href={data.mastodonUrl}
+              >
+                Mastodon
+              </a>
+            )}
+            {data.blueskyUrl && (
+              <a rel="syndication" class="u-syndication" href={data.blueskyUrl}>
+                Bluesky
+              </a>
+            )}
+          </Fragment>
+        )}
       </p>
     )
   }

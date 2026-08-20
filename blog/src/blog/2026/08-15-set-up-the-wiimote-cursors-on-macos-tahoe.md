@@ -8,8 +8,10 @@ tags:
   - tutorial
 description: 'Or how to set up custom cursors in general, I guess'
 image: /media/blog/26/08/wiimote-cursor-applied.webp
-updated: 2026-08-17T03:49:40.540Z
+updated: 2026-08-20T05:38:38.794Z
 isDraft: false
+mastodonUrl: 'https://social.erambert.me/@eramdam/117108994024174928'
+blueskyUrl: 'https://bsky.app/profile/damien.zone/post/3mtathfhd3c2f'
 ---
 This post is the type of posts I write for myself so I can find it again easily the next time I set up a Mac computer from scratch. Today was one of these days and I figured I'd take the time to write it so I can easily refer to it later, and I know it'll be useful for other folks too.
 
