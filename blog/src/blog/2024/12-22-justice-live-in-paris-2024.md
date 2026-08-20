@@ -11,6 +11,7 @@ tags:
   - photography
 description: "pictures of Justice live in Paris on December 18th, and a tiny update"
 image: "https://damiensfiles.b-cdn.net/justice-paris-2024/article-og.webp"
+mastodonUrl: https://social.erambert.me/@eramdam/113695691788312832
 ---
 
 Saw Justice two times in Paris last week, which makes it four times this year[^1]. While my spot for the first Paris show was not great (literally the highest, furthest from the stage), I had a much better spot the night after.

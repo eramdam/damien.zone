@@ -11,6 +11,7 @@ description: >-
   I keep telling myself I should stop thinking about social media so much,
   especially in the "current moment". Anyway, here are some random thoughts
   about Mastodon and Bluesky.
+mastodonUrl: https://social.erambert.me/@eramdam/113534578818191058
 ---
 
 I keep telling myself I should stop thinking about social media so much, especially in the "current moment", but it keeps happening. This post started as a bunch of posts on Mastodon until I stopped myself and decided to Blog About It instead.

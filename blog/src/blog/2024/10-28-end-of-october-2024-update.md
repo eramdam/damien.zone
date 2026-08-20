@@ -8,6 +8,7 @@ tags:
   - meta
   - musée mécanique
   - nicky flowers
+mastodonUrl: https://social.erambert.me/@eramdam/113383365204609692
 ---
 
 Hello, little blog, it's been a while! The past two weeks have been uncharacteristically busy for me so, huh, I didn't write much here, oops!

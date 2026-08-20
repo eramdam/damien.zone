@@ -7,6 +7,7 @@ tags:
   - cohost
 description: a little post about the Bay Araa Cohost Wake that happened today
 image: "/img/blog/img_7694.webp"
+mastodonUrl: https://social.erambert.me/@eramdam/113264305871432206
 ---
 
 <figure data-type="image">

@@ -5,6 +5,7 @@ date: 2025-01-07T02:07:13.112Z
 tags:
   - meta
 image: /img/blog/damienzone25/damien-zone-2025.webp
+mastodonUrl: https://social.erambert.me/@eramdam/113785067457503634
 ---
 
 <figure data-type="image">

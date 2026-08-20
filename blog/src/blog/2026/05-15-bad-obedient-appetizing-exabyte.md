@@ -7,6 +7,8 @@ description: ''
 image: /open_graph.webp
 updated: '2026-07-04T04:54:58.577Z'
 isDraft: false
+blueskyUrl: https://bsky.app/profile/damien.zone/post/3mnukjvybos26
+mastodonUrl: https://social.erambert.me/@eramdam/116720950991340345
 ---
 <small>Note: I wrote this post two months before publishing it because I wrote the draft and then...forgot to post it so I'm just posting it now to get it out of the way, it's probably fine but I just want to set expectations lol</small>
 

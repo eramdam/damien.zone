@@ -8,6 +8,8 @@ tags:
   - mac themes garden
 description: A website for old Macintosh themes and some background.
 image: /img/projects/macthemes-garden.webp
+blueskyUrl: https://bsky.app/profile/damien.zone/post/3lohwzfkglc2o
+mastodonUrl: https://social.erambert.me/@eramdam/114458779438545155
 ---
 
 ![](/img/projects/macthemes-garden.webp)

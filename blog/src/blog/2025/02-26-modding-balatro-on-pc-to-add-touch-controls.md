@@ -12,6 +12,7 @@ description: >-
   process of making the mod itself.
 image: /img/blog/balatro-touch/sticky-fingers-hero.webp
 slug: modding-balatro-on-pc-to-add-touch-controls
+mastodonUrl: https://social.erambert.me/@eramdam/114090637316828157
 ---
 
 ![](/img/blog/balatro-touch/sticky-fingers-hero.webp)

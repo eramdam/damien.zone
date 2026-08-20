@@ -9,6 +9,7 @@ tags:
   - navidrome
 description: ''
 image: ''
+mastodonUrl: https://social.erambert.me/@eramdam/116224656256965020
 ---
 
 I've been meaning to write this post for *checks notes* months but, life got in the way, you know how it is.  

@@ -10,6 +10,7 @@ tags:
 description: In which I yap about Spatial Audio on Apple Music
 image: ""
 class_name: ""
+mastodonUrl: https://social.erambert.me/@eramdam/113643998820115573
 ---
 
 Ever since I first tried it shortly after its introduction, Dolby Atmos on Apple Music felt, to me, gimmicky at best and counterproductive at worst? It's like, either the effect is _too_ noticeable and it's distracting _or_ it just doesn't add anything when it just doesn't make a whole song fall flat? If that makes sense?

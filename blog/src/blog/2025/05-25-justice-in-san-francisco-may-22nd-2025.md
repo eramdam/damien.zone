@@ -11,6 +11,8 @@ tags:
   - ricoh gr iii
 description: Doing a trial by fire with the Ricoh GR III at the Justice show
 image: /img/blog/justice-05-2025/justice-opengraph.png
+blueskyUrl: https://bsky.app/profile/damien.zone/post/3lpybn5mly227
+mastodonUrl: https://social.erambert.me/@eramdam/114567595463373828
 ---
 
 In a very on-brand move, I saw Justice live in San Francisco last Thursday[^1], I took a bunch of pictures. BUT! This time, I used my newly-acquired Ricoh GR III, because what better way to really get familiarized with a camera than to use it to take hundreds of pictures for 3 hours in a dark environment, right?

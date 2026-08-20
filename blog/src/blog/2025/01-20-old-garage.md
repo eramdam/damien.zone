@@ -4,6 +4,7 @@ slug: site-update-january-2025
 date: 2025-01-20T09:50:43.741Z
 tags:
   - meta
+mastodonUrl: https://social.erambert.me/@eramdam/113861873896956615
 ---
 
 I've done some tweaks to the layout of the site around [links](https://damien.zone), `code bits` and other things I'm probably forgetting. The [/blog](/blog) page looks a bit more feed-like now as well.

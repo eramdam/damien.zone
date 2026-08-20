@@ -12,6 +12,7 @@ tags:
   - photography
 image: "https://damiensfiles.b-cdn.net/justice-2024/IMG_6962 1 Edited.jpg"
 class_name: justice-portola-2024
+mastodonUrl: https://social.erambert.me/@eramdam/113229439038844835
 ---
 
 Well, it turns out I was pretty lucky because Justice's show last night (September 29th) was a very very good one in terms of pictures! I got literally as close as one could realistically be, even if I was slightly off center!

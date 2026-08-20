@@ -4,6 +4,7 @@ slug: cool-selection-of-stuff-early-december-2024
 date: 2024-12-07T23:20:11.607Z
 updated: 2024-12-07T23:20:11.609Z
 tags: []
+mastodonUrl: https://social.erambert.me/@eramdam/113614169531565091
 ---
 
 Last month definitely has been something, huh? Globally and also personally because, _man_, time has been _flying_ these past few weeks. What started as a small list of links at the beginning of November morphed into whatever will happen in this post, welp!
