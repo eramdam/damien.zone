@@ -6,10 +6,19 @@
   "license": "ISC",
   "author": "",
   "scripts": {
+    "admin:build": "pnpm run --filter=admin build",
+    "admin:check": "pnpm run --filter=admin check",
+    "admin:dev": "pnpm run --filter=admin dev",
+    "admin:preview": "pnpm run --filter=admin preview",
+    "blog:build": "pnpm run --filter=blog build",
+    "blog:check": "pnpm run --filter=blog check",
+    "blog:dev": "pnpm run --filter=blog dev",
+    "blog:preview": "pnpm run --filter=blog preview",
     "cms": "pnpm run --filter=admin dev",
     "cms-both": "concurrently 'pnpm run --filter=admin dev' 'pnpm run --filter=blog preview'",
     "cms-dev-both": "concurrently 'pnpm run --filter=admin dev' 'sleep 1 && pnpm run --filter=blog dev'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "shared:check": "pnpm run --filter=shared check"
   },
   "lint-staged": {
     "package.json": "sort-package-json"
