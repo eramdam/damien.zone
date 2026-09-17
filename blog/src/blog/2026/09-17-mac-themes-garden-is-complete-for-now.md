@@ -10,6 +10,7 @@ tags:
   - macos
 description: ''
 isDraft: false
+image: /media/blog/26/09/6.png
 ---
 ![](</media/blog/26/09/6.png>)
 
