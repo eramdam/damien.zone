@@ -1,7 +1,7 @@
 ---
 title: Mac Themes Garden is complete!
 slug: mac-themes-garden-is-complete-for-now
-date: 2026-09-08T03:09:46.328Z
+date: 2026-09-17T04:23:34.381Z
 tags:
   - apple
   - retrocomputing
