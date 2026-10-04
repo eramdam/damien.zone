@@ -323,39 +323,43 @@ if (form) {
     e.preventDefault();
     const fileInput = document.querySelector<HTMLInputElement>("#file-input");
     if (fileInput) {
-      fileInput.addEventListener("change", async (e) => {
-        if (e.target instanceof HTMLInputElement) {
-          const fileList = e.target.files;
-          const files: File[] = [];
-          if (fileList) {
-            for (const file of fileList) {
-              files.push(file);
+      fileInput.addEventListener(
+        "change",
+        async (e) => {
+          if (e.target instanceof HTMLInputElement) {
+            const fileList = e.target.files;
+            const files: File[] = [];
+            if (fileList) {
+              for (const file of fileList) {
+                files.push(file);
+              }
             }
+
+            const filesJson = await uploadFiles(files);
+
+            filesJson.forEach((f) => {
+              const pos = bodyEditor.getPosition();
+              const lines = bodyModel.getLineCount();
+              const range = pos
+                ? new monaco.Range(pos.lineNumber, 1, pos.lineNumber, 1)
+                : new monaco.Range(
+                    lines,
+                    bodyModel.getLineMaxColumn(lines),
+                    lines,
+                    bodyModel.getLineMaxColumn(lines),
+                  );
+
+              bodyEditor.executeEdits("media-upload", [
+                {
+                  range: range,
+                  text: makeMarkupForFile(f),
+                },
+              ]);
+            });
           }
-
-          const filesJson = await uploadFiles(files);
-
-          filesJson.forEach((f) => {
-            const pos = bodyEditor.getPosition();
-            const lines = bodyModel.getLineCount();
-            const range = pos
-              ? new monaco.Range(pos.lineNumber, 1, pos.lineNumber, 1)
-              : new monaco.Range(
-                  lines,
-                  bodyModel.getLineMaxColumn(lines),
-                  lines,
-                  bodyModel.getLineMaxColumn(lines),
-                );
-
-            bodyEditor.executeEdits("media-upload", [
-              {
-                range: range,
-                text: makeMarkupForFile(f),
-              },
-            ]);
-          });
-        }
-      });
+        },
+        { once: true },
+      );
       fileInput.click();
     }
   });
