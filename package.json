@@ -31,5 +31,5 @@
     "lint-staged": "^17.3.0",
     "sort-package-json": "^4.0.0"
   },
-  "packageManager": "pnpm@11.7.0"
+  "packageManager": "pnpm@12.15.0"
 }
