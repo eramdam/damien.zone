@@ -13,7 +13,7 @@ image: ''
 class_name: ''
 ---
 
-Welp, here we are. As I write this, it seems TweetDeck is heading toward the paywall[^1], so I decided to [discontinue Better TweetDeck](https://better.tw/).
+Welp, here we are. As I write this, it seems TweetDeck is heading toward the paywall[^1], so I decided to [discontinue Better TweetDeck](https://bettertweetdeck.erambert.me/).
 
 If you've been using it, I'm sure you have many questions on your mind. Some of which I've answered in the past already on my various accounts, but I feel they deserve to be all answered in the same place.
 

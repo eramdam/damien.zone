@@ -48,7 +48,7 @@ Twitter also got me a ton of work. I got close with one of the friends I met on 
 Without Twitter, I wouldn't have met some of my closest friends.  
 Without Twitter, I wouldn't have worked with VideoLAN on [VLC 2 for Mac OS X](https://www.macstories.net/news/vlc-2-0-for-mac-final-design-previewed-coming-this-week/) and [iOS](https://www.macstories.net/news/vlc-for-ios-returns-to-the-app-store/).  
 Without Twitter, I literally would not be typing this blog post 9,000 kilometers away from the French city I was born in.
-And of course, without Twitter, TweetDeck wouldn’t exist and... I wouldn't have started [Better TweetDeck](https://better.tw) in 2014.
+And of course, without Twitter, TweetDeck wouldn’t exist and... I wouldn't have started [Better TweetDeck](https://bettertweetdeck.erambert.me/) in 2014.
 
 In the middle of 2015, I moved to San Francisco. A year later, Donald Trump would get elected president. Twitter died a first time on that day.
 Twitter suddenly became _serious_ (derogatory), it was now the most powerful man on Earth's megaphone, and posting on it meant there was a non-zero chance of being noticed either by him or his army of bigoted fans.

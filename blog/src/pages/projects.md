@@ -49,7 +49,7 @@ A "swipe-based" tool that lets you clean up your Mastodon followings list. Based
 
 ## Better TweetDeck
 
-[better.tw](https://better.tw) - [https://github.com/eramdam/bettertweetdeck](https://github.com/eramdam/bettertweetdeck)
+[better.tw](https://bettertweetdeck.erambert.me/) - [https://github.com/eramdam/bettertweetdeck](https://github.com/eramdam/bettertweetdeck)
 
 <picture>
   <source srcset="/img/projects/01.png" media="(prefers-color-scheme: dark)" type="image/png">
